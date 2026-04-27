@@ -1,0 +1,18 @@
+# Default — owner approves all changes
+*                    @Ev-gen-ux
+
+# Tokens are critical: any change requires DS owner review
+/tokens/              @Ev-gen-ux
+
+# Components — main library surface
+/src/components/      @Ev-gen-ux
+/src/patterns/        @Ev-gen-ux
+/src/layouts/         @Ev-gen-ux
+
+# Infra — workflows, Code Connect, build config
+/.github/             @Ev-gen-ux
+/scripts/             @Ev-gen-ux
+
+# Docs and contract
+/CLAUDE.md            @Ev-gen-ux
+/docs/                @Ev-gen-ux

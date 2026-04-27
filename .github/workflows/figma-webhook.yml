@@ -1,0 +1,66 @@
+name: Pull Tokens from Figma
+
+# Запускается двумя способами:
+#  1. Вручную через Actions UI
+#  2. По webhook от Figma (через repository_dispatch)
+#     В Figma настраивается webhook на LIBRARY_PUBLISH, который дёргает
+#     POST https://api.github.com/repos/Ev-gen-ux/AI-PDP-DS/dispatches
+#     с event_type=figma-library-publish
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [figma-library-publish]
+
+concurrency:
+  group: tokens-pull
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  pull-from-figma:
+    name: Pull tokens from Figma → create PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci --prefer-offline --no-audit
+
+      - name: Pull tokens from Figma
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
+        run: npm run tokens:pull
+
+      - name: Build to verify
+        run: npm run tokens:build
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'tokens: sync from Figma library publish'
+          title: 'tokens: sync from Figma'
+          body: |
+            🎨 Автоматическая синхронизация токенов из Figma.
+
+            Триггер: ${{ github.event_name == 'repository_dispatch' && 'Figma LIBRARY_PUBLISH webhook' || 'Manual dispatch' }}
+
+            Перед merge:
+            - проверь diff в `/tokens/**`
+            - убедись, что нет неожиданных переименований переменных
+            - запусти Storybook и проверь визуально
+          branch: tokens/sync-from-figma
+          branch-suffix: timestamp
+          delete-branch: true
+          labels: |
+            tokens
+            automated

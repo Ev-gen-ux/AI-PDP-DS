@@ -1,0 +1,48 @@
+name: Sync Tokens to Figma
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tokens/**'
+      - 'scripts/style-dictionary.config.js'
+      - 'scripts/figma-tokens-push.js'
+  workflow_dispatch: # позволяет запустить руками
+
+concurrency:
+  group: tokens-sync
+  cancel-in-progress: false # не отменяем — каждое изменение должно дойти
+
+permissions:
+  contents: read
+
+jobs:
+  sync-to-figma:
+    name: Push tokens to Figma
+    runs-on: ubuntu-latest
+    environment: figma-sync # требует одобрения если настроено в Settings
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci --prefer-offline --no-audit
+
+      - name: Build tokens
+        run: npm run tokens:build
+
+      - name: Push to Figma Variables API
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
+        run: npm run tokens:push
+
+      - name: Upload Figma tokens artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: figma-tokens
+          path: dist/figma.tokens.json
+          retention-days: 30
