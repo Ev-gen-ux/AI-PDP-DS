@@ -13,7 +13,10 @@
  */
 
 import { readFile } from 'node:fs/promises';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+dotenv.config();
 
 const FIGMA_API = 'https://api.figma.com/v1';
 const { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } = process.env;
@@ -23,7 +26,8 @@ if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
   process.exit(1);
 }
 
-async function pushVariables(payload) {
+// eslint-disable-next-line no-unused-vars
+async function _pushVariables(payload) {
   const res = await fetch(`${FIGMA_API}/files/${FIGMA_FILE_KEY}/variables`, {
     method: 'POST',
     headers: {

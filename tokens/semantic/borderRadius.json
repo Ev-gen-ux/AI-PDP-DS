@@ -1,0 +1,8 @@
+{
+  "componentInner": { "$value": "4px", "$type": "dimension" },
+  "componentBase": { "$value": "8px", "$type": "dimension" },
+  "sectionInner": { "$value": "12px", "$type": "dimension" },
+  "containerBase": { "$value": "16px", "$type": "dimension" },
+  "sectionBase": { "$value": "24px", "$type": "dimension" },
+  "rounded": { "$value": "999px", "$type": "dimension" }
+}

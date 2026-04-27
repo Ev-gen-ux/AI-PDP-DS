@@ -1,0 +1,24 @@
+{
+  "inner": {
+    "closest": { "$value": "{space.4}", "$type": "dimension" },
+    "close": { "$value": "{space.8}", "$type": "dimension" },
+    "related": { "$value": "{space.12}", "$type": "dimension" },
+    "grouped": { "$value": "{space.16}", "$type": "dimension" }
+  },
+  "outer": {
+    "close": { "$value": "{space.16}", "$type": "dimension" },
+    "related": { "$value": "{space.24}", "$type": "dimension" },
+    "grouped": { "$value": "{space.32}", "$type": "dimension" },
+    "section": { "$value": "{space.48}", "$type": "dimension" }
+  },
+  "paddings": {
+    "compact": { "$value": "{space.12}", "$type": "dimension" },
+    "default": { "$value": "{space.16}", "$type": "dimension" },
+    "medium": { "$value": "{space.24}", "$type": "dimension" }
+  },
+  "height": {
+    "small": { "$value": "32px", "$type": "dimension" },
+    "medium": { "$value": "40px", "$type": "dimension" },
+    "large": { "$value": "48px", "$type": "dimension" }
+  }
+}

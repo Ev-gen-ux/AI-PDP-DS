@@ -1,0 +1,49 @@
+{
+  "button": {
+    "primary": {
+      "background": {
+        "enabled": { "$value": "{blue.600}", "$type": "color" },
+        "hover": { "$value": "{blue.500}", "$type": "color" },
+        "active": { "$value": "{blue.700}", "$type": "color" },
+        "disabled": { "$value": "{neutral.700}", "$type": "color" }
+      },
+      "label": {
+        "enabled": { "$value": "{neutral.0}", "$type": "color" },
+        "disabled": { "$value": "{neutral.500}", "$type": "color" }
+      }
+    },
+    "outline": {
+      "background": {
+        "enabled": { "$value": "{neutral.900}", "$type": "color" },
+        "hover": { "$value": "{neutral.700}", "$type": "color" },
+        "active": { "$value": "{neutral.700}", "$type": "color" },
+        "disabled": { "$value": "{neutral.900}", "$type": "color" }
+      },
+      "label": {
+        "enabled": { "$value": "{neutral.0}", "$type": "color" },
+        "disabled": { "$value": "{neutral.500}", "$type": "color" }
+      },
+      "border": {
+        "enabled": { "$value": "{neutral.500}", "$type": "color" },
+        "hover": { "$value": "{neutral.300}", "$type": "color" },
+        "active": { "$value": "{neutral.100}", "$type": "color" },
+        "disabled": { "$value": "{neutral.700}", "$type": "color" }
+      }
+    },
+    "flat": {
+      "background": {
+        "enabled": { "$value": "{neutral.900}", "$type": "color" },
+        "hover": { "$value": "{neutral.700}", "$type": "color" },
+        "active": { "$value": "{neutral.700}", "$type": "color" },
+        "disabled": { "$value": "{neutral.900}", "$type": "color" }
+      },
+      "label": {
+        "enabled": { "$value": "{blue.500}", "$type": "color" },
+        "disabled": { "$value": "{neutral.500}", "$type": "color" }
+      }
+    },
+    "focusRing": {
+      "enabled": { "$value": "{blue.500}", "$type": "color" }
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/react';
-import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/theme/tokens';
 import '../src/theme/variables.light.css';

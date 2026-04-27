@@ -15,7 +15,10 @@
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+dotenv.config();
 
 const FIGMA_API = 'https://api.figma.com/v1';
 const { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } = process.env;
@@ -66,6 +69,38 @@ function buildTree(variables, modeId, variablesById) {
   return tree;
 }
 
+const outputFileMap = {
+  _palette: '_palette.json',
+  _typographyBase: '_typographyBase.json',
+  _spacers: '_spacers.json',
+  colors: {
+    'light theme': 'colors.light-theme.json',
+    'dark theme': 'colors.dark-theme.json',
+  },
+  typography: {
+    XL: 'typography.xl.json',
+    MD: 'typography.md.json',
+    XS: 'typography.xs.json',
+  },
+  spacing: 'spacing.json',
+  borderRadius: 'borderRadius.json',
+};
+
+function resolveOutputFilename(collectionName, modeName, hasManyModes) {
+  const mapped = outputFileMap[collectionName];
+  if (typeof mapped === 'string') {
+    return mapped;
+  }
+  if (mapped && typeof mapped === 'object') {
+    return mapped[modeName] || `${collectionName}.${modeName.toLowerCase().replace(/\s+/g, '-')}.json`;
+  }
+  if (!hasManyModes) {
+    return `${collectionName}.json`;
+  }
+  const modeSlug = modeName.toLowerCase().replace(/\s+/g, '-');
+  return `${collectionName}.${modeSlug}.json`;
+}
+
 async function writeJson(path, data) {
   await mkdir(dirname(path), { recursive: true });
   await writeFile(path, JSON.stringify(data, null, 2) + '\n', 'utf8');
@@ -86,11 +121,7 @@ async function main() {
     );
 
     for (const mode of collection.modes) {
-      const modeSlug = mode.name.toLowerCase().replace(/\s+/g, '-');
-      const filename =
-        collection.modes.length > 1
-          ? `${collection.name}.${modeSlug}.json`
-          : `${collection.name}.json`;
+      const filename = resolveOutputFilename(collection.name, mode.name, collection.modes.length > 1);
       const path = join('tokens', folder, filename);
       const tree = buildTree(collectionVars, mode.modeId, variablesById);
       await writeJson(path, tree);

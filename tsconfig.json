@@ -38,6 +38,9 @@
     "src/**/*.tsx",
     "scripts/**/*.ts",
     ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "vite.config.ts",
+    "vitest.config.ts",
     "**/*.stories.tsx",
     "**/*.figma.tsx"
   ],

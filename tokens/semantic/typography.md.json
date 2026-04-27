@@ -1,0 +1,32 @@
+{
+  "md": {
+    "fontSize": {
+      "heading": {
+        "h1": { "$value": "32px", "$type": "dimension" },
+        "h2": { "$value": "28px", "$type": "dimension" }
+      },
+      "text": {
+        "base": { "$value": "15px", "$type": "dimension" },
+        "small": { "$value": "13px", "$type": "dimension" }
+      },
+      "component": {
+        "base": { "$value": "15px", "$type": "dimension" },
+        "small": { "$value": "13px", "$type": "dimension" }
+      }
+    },
+    "lineHeight": {
+      "heading": {
+        "h1": { "$value": "40px", "$type": "dimension" },
+        "h2": { "$value": "36px", "$type": "dimension" }
+      },
+      "text": {
+        "base": { "$value": "22px", "$type": "dimension" },
+        "small": { "$value": "18px", "$type": "dimension" }
+      },
+      "component": {
+        "base": { "$value": "22px", "$type": "dimension" },
+        "small": { "$value": "18px", "$type": "dimension" }
+      }
+    }
+  }
+}
