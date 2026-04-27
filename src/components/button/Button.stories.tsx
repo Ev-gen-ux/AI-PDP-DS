@@ -26,7 +26,7 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {};
 
 export const AllVariants: Story = {
-  render: args => (
+  render: (args) => (
     <Stack gap="grouped">
       <Cluster gap="related">
         <Button {...args} appearance="primary" size="large" text="Primary / Large" />

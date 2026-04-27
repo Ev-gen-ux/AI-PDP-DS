@@ -77,7 +77,8 @@ export default [
       'no-restricted-syntax': [
         'error',
         {
-          selector: 'TemplateLiteral[expressions.length=0] > TemplateElement[value.raw=/#[0-9a-fA-F]{3,8}/]',
+          selector:
+            'TemplateLiteral[expressions.length=0] > TemplateElement[value.raw=/#[0-9a-fA-F]{3,8}/]',
           message: 'Не использовать литеральные hex-цвета в коде. Используй theme.colors.*',
         },
       ],
@@ -89,6 +90,13 @@ export default [
     rules: { ...storybookPlugin.configs.recommended.rules },
   },
   {
-    ignores: ['dist', 'storybook-static', 'coverage', 'node_modules', 'src/theme/tokens.ts', 'src/theme/variables.css'],
+    ignores: [
+      'dist',
+      'storybook-static',
+      'coverage',
+      'node_modules',
+      'src/theme/tokens.ts',
+      'src/theme/variables.css',
+    ],
   },
 ];

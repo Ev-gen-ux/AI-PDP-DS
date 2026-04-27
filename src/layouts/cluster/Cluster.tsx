@@ -39,9 +39,9 @@ const gapStyles = (gap: InnerGap) => css`
 const Root = styled.div<ClusterStyledProps>`
   display: flex;
   flex-wrap: wrap;
-  align-items: ${props => alignMap[props.$align]};
-  justify-content: ${props => justifyMap[props.$justify]};
-  ${props => gapStyles(props.$gap)}
+  align-items: ${(props) => alignMap[props.$align]};
+  justify-content: ${(props) => justifyMap[props.$justify]};
+  ${(props) => gapStyles(props.$gap)}
 `;
 
 export const Cluster = ({

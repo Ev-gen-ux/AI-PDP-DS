@@ -45,13 +45,14 @@ npm run storybook          # запускает Storybook на :6006
 
 Система мультирежимная. На разных уровнях токенов используются разные оси:
 
-| Уровень | Ось режимов | Значения |
-|---|---|---|
-| `colors` | тема | `light theme`, `dark theme` |
-| `typography` | размер вьюпорта | `XL`, `MD`, `XS` |
-| `spacing`, `borderRadius` | — | один режим |
+| Уровень                   | Ось режимов     | Значения                    |
+| ------------------------- | --------------- | --------------------------- |
+| `colors`                  | тема            | `light theme`, `dark theme` |
+| `typography`              | размер вьюпорта | `XL`, `MD`, `XS`            |
+| `spacing`, `borderRadius` | —               | один режим                  |
 
 Это значит:
+
 - Цвета переключаются через `<ThemeProvider theme={lightTheme}>` или `<ThemeProvider theme={darkTheme}>`.
 - Типографика **сама** адаптируется к ширине вьюпорта через CSS-переменные, которые переопределяются в media-query-блоках.
 - Spacing и border-radius — единые для всех режимов.
@@ -114,12 +115,14 @@ sidebarNavigationItem/icon/active
 ```
 
 В TS:
+
 ```ts
-theme.colors.button.primary.background.enabled
-theme.colors.input.border.error
+theme.colors.button.primary.background.enabled;
+theme.colors.input.border.error;
 ```
 
 В CSS:
+
 ```css
 var(--color-button-primary-background-enabled)
 ```
@@ -155,16 +158,16 @@ var(--color-button-primary-background-enabled)
 
 ## 5. Палитра
 
-| Семейство | Назначение |
-|---|---|
-| `neutral/25-900` | фоны, бордеры, текст, иконки |
-| `blue/25-900` | основной брендовый, акценты, ссылки |
-| `green/25-900` | успех, online-статусы |
-| `red/25-900` | ошибки, required-маркеры |
-| `yellow/25-900` | предупреждения |
-| `cyan/25-900` | информационные |
-| `pink/25-900` | специальные акценты |
-| `base/white` | чистый белый (отдельно от neutral) |
+| Семейство        | Назначение                          |
+| ---------------- | ----------------------------------- |
+| `neutral/25-900` | фоны, бордеры, текст, иконки        |
+| `blue/25-900`    | основной брендовый, акценты, ссылки |
+| `green/25-900`   | успех, online-статусы               |
+| `red/25-900`     | ошибки, required-маркеры            |
+| `yellow/25-900`  | предупреждения                      |
+| `cyan/25-900`    | информационные                      |
+| `pink/25-900`    | специальные акценты                 |
+| `base/white`     | чистый белый (отдельно от neutral)  |
 
 **Правило:** в коде компонентов **никогда** не используй переменные палитры напрямую (`palette.blue.500`). Только через семантические токены (`colors.button.primary.background.enabled`). Палитра — только для генерации семантики.
 
@@ -219,8 +222,12 @@ const appearanceStyles = {
       background-color: ${({ theme }) => theme.colors.button.primary.background.active};
     }
   `,
-  outline: css`/* ... */`,
-  flat: css`/* ... */`,
+  outline: css`
+    /* ... */
+  `,
+  flat: css`
+    /* ... */
+  `,
 } as const;
 
 const sizeStyles = {
@@ -232,7 +239,9 @@ const sizeStyles = {
     line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
     font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
   `,
-  large: css`/* ... */`,
+  large: css`
+    /* ... */
+  `,
 } as const;
 
 const StyledButton = Styled.button<StyledProps>`
@@ -301,17 +310,17 @@ export const Button: React.FC<IButtonProps> = ({
 
 Единая для всей библиотеки. **Не отступать.**
 
-| Назначение | Имя пропа | Допустимые значения |
-|---|---|---|
-| Визуальный вариант | `appearance` | `'primary' \| 'outline' \| 'flat' \| 'secondary'` |
-| Размер | `size` | `'small' \| 'medium' \| 'large'` |
-| Состояние формы | `disabled`, `loading`, `invalid`, `readOnly` | `boolean` |
-| Тип статуса | `status` | `'success' \| 'information' \| 'alert' \| 'wait' \| 'error'` |
-| Иконка слева | `iconBefore` | `IconName` |
-| Иконка справа | `iconAfter` | `IconName` |
-| Текст в простых компонентах | `text` или `children` | `string` / `React.ReactNode` |
-| Лейбл | `label` | `string` |
-| Описание | `description` | `string` |
+| Назначение                  | Имя пропа                                    | Допустимые значения                                          |
+| --------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
+| Визуальный вариант          | `appearance`                                 | `'primary' \| 'outline' \| 'flat' \| 'secondary'`            |
+| Размер                      | `size`                                       | `'small' \| 'medium' \| 'large'`                             |
+| Состояние формы             | `disabled`, `loading`, `invalid`, `readOnly` | `boolean`                                                    |
+| Тип статуса                 | `status`                                     | `'success' \| 'information' \| 'alert' \| 'wait' \| 'error'` |
+| Иконка слева                | `iconBefore`                                 | `IconName`                                                   |
+| Иконка справа               | `iconAfter`                                  | `IconName`                                                   |
+| Текст в простых компонентах | `text` или `children`                        | `string` / `React.ReactNode`                                 |
+| Лейбл                       | `label`                                      | `string`                                                     |
+| Описание                    | `description`                                | `string`                                                     |
 
 Не использовать: `variant`, `kind`, `type` (для визуального варианта), `theme`, `mode`.
 
@@ -326,7 +335,7 @@ theme.breakpoints = {
   xs: '480px',
   md: '768px',
   xl: '1280px',
-}
+};
 ```
 
 Соответствуют режимам типографики (`XS` / `MD` / `XL`).
@@ -348,11 +357,15 @@ CSS-переменные типографики переопределяются
 }
 
 @media (max-width: 1279px) {
-  :root { --font-size-heading-h1: 40px; } /* MD */
+  :root {
+    --font-size-heading-h1: 40px;
+  } /* MD */
 }
 
 @media (max-width: 767px) {
-  :root { --font-size-heading-h1: 32px; } /* XS */
+  :root {
+    --font-size-heading-h1: 32px;
+  } /* XS */
 }
 ```
 
@@ -400,16 +413,18 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = { args: { appearance: 'primary', text: 'Button' } };
 export const Outline: Story = { args: { appearance: 'outline', text: 'Button' } };
 export const Flat: Story = { args: { appearance: 'flat', text: 'Button' } };
-export const WithIcons: Story = { args: { iconBefore: 'placeholder', iconAfter: 'caret-down', text: 'Button' } };
+export const WithIcons: Story = {
+  args: { iconBefore: 'placeholder', iconAfter: 'caret-down', text: 'Button' },
+};
 export const Loading: Story = { args: { loading: true, text: 'Button' } };
 export const Disabled: Story = { args: { disabled: true, text: 'Button' } };
 
 export const AllVariants: Story = {
   render: () => (
     <Stack gap="md">
-      {(['primary', 'outline', 'flat'] as const).map(a => (
+      {(['primary', 'outline', 'flat'] as const).map((a) => (
         <Cluster key={a} gap="sm">
-          {(['medium', 'large'] as const).map(s => (
+          {(['medium', 'large'] as const).map((s) => (
             <Button key={s} appearance={a} size={s} text={`${a} / ${s}`} />
           ))}
         </Cluster>
@@ -486,6 +501,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 Уже определены в Figma. Порядок реализации — по зависимостям.
 
 **Атомы (`src/components/`):**
+
 - [x] Icon — есть
 - [x] Button — есть, требует рефакторинга по пунктам 6.2
 - [ ] Spinner
@@ -498,6 +514,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - [ ] InlineMessage
 
 **Молекулы (`src/patterns/`):**
+
 - [ ] BenefitCard
 - [ ] NotificationSnackbar
 - [ ] SidebarNavigationItem
@@ -508,6 +525,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - [ ] Accordion
 
 **Layout-примитивы (`src/layouts/`):**
+
 - [ ] Stack — вертикальная компоновка с `gap`
 - [ ] Cluster — горизонтальная компоновка с переносом
 - [ ] Grid — адаптивная сетка через `repeat(auto-fit, minmax(...))`
@@ -569,14 +587,14 @@ Settings → Secrets and variables → Actions:
 
 Создать в `.github/workflows/`:
 
-| Файл | Триггер | Назначение |
-|---|---|---|
-| `ci.yml` | PR в `main` | lint, typecheck, test, build |
-| `tokens-sync.yml` | push в `main` с изменениями `/tokens/**` | Style Dictionary build → push в Figma через Variables API |
-| `figma-webhook.yml` | repository_dispatch от Figma `LIBRARY_PUBLISH` | создание PR с обновлёнными токенами из Figma |
-| `code-connect-publish.yml` | push в `main` с изменениями `*.figma.tsx` | `figma connect publish` |
-| `release.yml` | push в `main` с Changesets | публикация npm-пакета и тегов |
-| `chromatic.yml` | PR в `main` | visual regression для Storybook |
+| Файл                       | Триггер                                        | Назначение                                                |
+| -------------------------- | ---------------------------------------------- | --------------------------------------------------------- |
+| `ci.yml`                   | PR в `main`                                    | lint, typecheck, test, build                              |
+| `tokens-sync.yml`          | push в `main` с изменениями `/tokens/**`       | Style Dictionary build → push в Figma через Variables API |
+| `figma-webhook.yml`        | repository_dispatch от Figma `LIBRARY_PUBLISH` | создание PR с обновлёнными токенами из Figma              |
+| `code-connect-publish.yml` | push в `main` с изменениями `*.figma.tsx`      | `figma connect publish`                                   |
+| `release.yml`              | push в `main` с Changesets                     | публикация npm-пакета и тегов                             |
+| `chromatic.yml`            | PR в `main`                                    | visual regression для Storybook                           |
 
 ### 15.4 CODEOWNERS
 

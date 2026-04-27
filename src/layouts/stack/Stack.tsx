@@ -22,7 +22,7 @@ const gapStyles = (gap: GapToken) => css`
 const Root = styled.div<StackStyledProps>`
   display: flex;
   flex-direction: column;
-  ${props => gapStyles(props.$gap)}
+  ${(props) => gapStyles(props.$gap)}
 `;
 
 export const Stack = ({ gap = 'related', children }: StackProps) => {

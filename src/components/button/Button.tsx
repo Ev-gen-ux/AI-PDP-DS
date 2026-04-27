@@ -108,8 +108,8 @@ const Root = styled.button<StyledProps>`
     color 0.15s ease,
     opacity 0.15s ease;
   cursor: pointer;
-  ${props => appearanceStyles[props.$appearance]}
-  ${props => sizeStyles[props.$size]}
+  ${(props) => appearanceStyles[props.$appearance]}
+  ${(props) => sizeStyles[props.$size]}
 
   &:focus-visible {
     outline: 2px solid ${({ theme }) => theme.colors.button.focusRing.enabled};
@@ -120,7 +120,7 @@ const Root = styled.button<StyledProps>`
     cursor: not-allowed;
   }
 
-  ${props =>
+  ${(props) =>
     props.$loading &&
     css`
       opacity: 0.85;

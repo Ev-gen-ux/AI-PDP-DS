@@ -45,19 +45,19 @@ CLAUDE.md        ← контракт для AI-агентов и разрабо
 
 ## Команды
 
-| Команда | Назначение |
-|---|---|
-| `npm run dev` | Vite dev-server (для песочницы) |
-| `npm run storybook` | Storybook на :6006 |
-| `npm run tokens:build` | Style Dictionary → CSS + TS + Figma JSON |
-| `npm run tokens:pull` | Подтянуть переменные из Figma в `/tokens` |
-| `npm run tokens:push` | Залить токены в Figma Variables |
-| `npm run build` | Собрать библиотеку в `/dist` |
-| `npm run lint` / `lint:fix` | ESLint |
-| `npm run typecheck` | TypeScript проверка |
-| `npm run test` / `test:watch` | Vitest |
-| `npm run figma:publish` | Опубликовать Code Connect в Figma |
-| `npm run changeset` | Создать changeset перед PR |
+| Команда                       | Назначение                                |
+| ----------------------------- | ----------------------------------------- |
+| `npm run dev`                 | Vite dev-server (для песочницы)           |
+| `npm run storybook`           | Storybook на :6006                        |
+| `npm run tokens:build`        | Style Dictionary → CSS + TS + Figma JSON  |
+| `npm run tokens:pull`         | Подтянуть переменные из Figma в `/tokens` |
+| `npm run tokens:push`         | Залить токены в Figma Variables           |
+| `npm run build`               | Собрать библиотеку в `/dist`              |
+| `npm run lint` / `lint:fix`   | ESLint                                    |
+| `npm run typecheck`           | TypeScript проверка                       |
+| `npm run test` / `test:watch` | Vitest                                    |
+| `npm run figma:publish`       | Опубликовать Code Connect в Figma         |
+| `npm run changeset`           | Создать changeset перед PR                |
 
 ## Лицензия
 

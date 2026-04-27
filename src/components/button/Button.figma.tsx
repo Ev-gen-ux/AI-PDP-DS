@@ -11,5 +11,8 @@ export const figma = {
     size: ['large', 'medium'],
     disabled: [true, false],
     loading: [true, false],
-  } satisfies Record<keyof Pick<ButtonProps, 'appearance' | 'size' | 'disabled' | 'loading'>, unknown>,
+  } satisfies Record<
+    keyof Pick<ButtonProps, 'appearance' | 'size' | 'disabled' | 'loading'>,
+    unknown
+  >,
 };

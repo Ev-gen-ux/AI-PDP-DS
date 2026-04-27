@@ -96,6 +96,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^2.1.9",
     "axios": "^1.7.9",
     "babel-plugin-styled-components": "^2.1.4",
     "chromatic": "^11.20.0",

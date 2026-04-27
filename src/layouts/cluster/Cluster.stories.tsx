@@ -20,7 +20,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Cluster {...args}>
       <Chip>React</Chip>
       <Chip>TypeScript</Chip>

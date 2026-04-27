@@ -39,7 +39,10 @@ async function fetchVariables() {
 }
 
 function rgbaToHex({ r, g, b, a = 1 }) {
-  const h = (n) => Math.round(n * 255).toString(16).padStart(2, '0');
+  const h = (n) =>
+    Math.round(n * 255)
+      .toString(16)
+      .padStart(2, '0');
   return `#${h(r)}${h(g)}${h(b)}${a < 1 ? h(a) : ''}`;
 }
 
@@ -47,7 +50,10 @@ function variableToDTCG(variable, modeId, variablesById) {
   const value = variable.valuesByMode[modeId];
   if (value && typeof value === 'object' && value.type === 'VARIABLE_ALIAS') {
     const alias = variablesById[value.id];
-    return { $value: `{${alias?.name?.replace(/\//g, '.')}}`, $type: variable.resolvedType.toLowerCase() };
+    return {
+      $value: `{${alias?.name?.replace(/\//g, '.')}}`,
+      $type: variable.resolvedType.toLowerCase(),
+    };
   }
   if (value && typeof value === 'object' && 'r' in value) {
     return { $value: rgbaToHex(value), $type: 'color' };
@@ -92,7 +98,9 @@ function resolveOutputFilename(collectionName, modeName, hasManyModes) {
     return mapped;
   }
   if (mapped && typeof mapped === 'object') {
-    return mapped[modeName] || `${collectionName}.${modeName.toLowerCase().replace(/\s+/g, '-')}.json`;
+    return (
+      mapped[modeName] || `${collectionName}.${modeName.toLowerCase().replace(/\s+/g, '-')}.json`
+    );
   }
   if (!hasManyModes) {
     return `${collectionName}.json`;
@@ -121,7 +129,11 @@ async function main() {
     );
 
     for (const mode of collection.modes) {
-      const filename = resolveOutputFilename(collection.name, mode.name, collection.modes.length > 1);
+      const filename = resolveOutputFilename(
+        collection.name,
+        mode.name,
+        collection.modes.length > 1,
+      );
       const path = join('tokens', folder, filename);
       const tree = buildTree(collectionVars, mode.modeId, variablesById);
       await writeJson(path, tree);

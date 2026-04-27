@@ -18,7 +18,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Grid {...args}>
       <Tile>Alpha</Tile>
       <Tile>Beta</Tile>
