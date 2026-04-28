@@ -73,6 +73,9 @@
     "styled-components": "^6.0.0"
   },
   "dependencies": {
+    "@fontsource/geologica": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-slot": "^1.1.0",
     "@tokens-studio/sd-transforms": "^2.0.3"
   },

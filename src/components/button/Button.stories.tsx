@@ -17,6 +17,8 @@ const meta = {
   argTypes: {
     appearance: { control: 'inline-radio', options: ['primary', 'outline', 'flat'] },
     size: { control: 'inline-radio', options: ['large', 'medium'] },
+    iconBefore: { control: 'boolean' },
+    iconAfter: { control: 'boolean' },
   },
 } satisfies Meta<typeof Button>;
 
@@ -24,6 +26,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {};
+
+export const WithIcons: Story = {
+  args: {
+    iconBefore: true,
+    iconAfter: true,
+    text: 'With icons',
+  },
+};
 
 export const AllVariants: Story = {
   render: (args) => (
