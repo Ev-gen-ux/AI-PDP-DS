@@ -2,23 +2,24 @@
  * figma-tokens-pull.js
  *
  * Получает Local Variables из Figma через REST API
- *  и трансформирует их в W3C DTCG JSON в /tokens.
+ * и трансформирует их в W3C DTCG JSON в /tokens.
  *
  * Запуск:  npm run tokens:pull
  * Env:     FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY
  *
- * ВНИМАНИЕ: это стартовый каркас. Финальная маппинг-логика
- *           зависит от структуры твоих Figma Variables и должна
- *           согласовать имена коллекций и path-сепараторы.
- *           Дорабатывается одновременно с tokens:build.
+ * Архитектура:
+ *  - Коллекции с префиксом '_' → primitives (raw values, без alias до других слоёв)
+ *  - Коллекции без префикса     → semantic (могут ссылаться на primitives)
+ *  - Коллекции с несколькими модами создают отдельный файл на каждый мод:
+ *      colors (light theme, dark theme)  → colors.light-theme.json + colors.dark-theme.json
+ *      typography (XL, MD, XS)           → typography.xl.json + typography.md.json + typography.xs.json
+ *  - Алиасы маппятся через путь {collection.path.to.token}, например {palette.blue.500}
+ *  - Префикс коллекции в alias-пути = имя коллекции без ведущего '_'.
  */
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: '.env.local' });
-dotenv.config();
+import 'dotenv/config';
 
 const FIGMA_API = 'https://api.figma.com/v1';
 const { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } = process.env;
@@ -38,6 +39,23 @@ async function fetchVariables() {
   return res.json();
 }
 
+const collectionAliasPrefix = (collectionName) => collectionName.replace(/^_/, '');
+
+const dtcgType = (figmaType) => {
+  switch (figmaType) {
+    case 'COLOR':
+      return 'color';
+    case 'FLOAT':
+      return 'number';
+    case 'STRING':
+      return 'string';
+    case 'BOOLEAN':
+      return 'boolean';
+    default:
+      return 'string';
+  }
+};
+
 function rgbaToHex({ r, g, b, a = 1 }) {
   const h = (n) =>
     Math.round(n * 255)
@@ -46,77 +64,47 @@ function rgbaToHex({ r, g, b, a = 1 }) {
   return `#${h(r)}${h(g)}${h(b)}${a < 1 ? h(a) : ''}`;
 }
 
-function variableToDTCG(variable, modeId, variablesById) {
-  const value = variable.valuesByMode[modeId];
-  if (value && typeof value === 'object' && value.type === 'VARIABLE_ALIAS') {
-    const alias = variablesById[value.id];
-    return {
-      $value: `{${alias?.name?.replace(/\//g, '.')}}`,
-      $type: variable.resolvedType.toLowerCase(),
+function aliasFor(varId, variablesById, collectionsById) {
+  const v = variablesById[varId];
+  if (!v) return null;
+  const c = collectionsById[v.variableCollectionId];
+  if (!c) return null;
+  const prefix = collectionAliasPrefix(c.name);
+  const path = v.name.split('/').join('.');
+  return `{${prefix}.${path}}`;
+}
+
+function dtcgValue(variable, modeId, variablesById, collectionsById) {
+  const raw = variable.valuesByMode[modeId];
+  if (raw === undefined) return undefined;
+  if (raw && typeof raw === 'object' && raw.type === 'VARIABLE_ALIAS') {
+    return aliasFor(raw.id, variablesById, collectionsById);
+  }
+  if (variable.resolvedType === 'COLOR' && raw && typeof raw === 'object' && 'r' in raw) {
+    return rgbaToHex(raw);
+  }
+  return raw;
+}
+
+function buildTree(vars, modeId, variablesById, collectionsById) {
+  const tree = {};
+  for (const v of vars) {
+    const segments = v.name.split('/');
+    let cursor = tree;
+    for (let i = 0; i < segments.length - 1; i++) {
+      cursor[segments[i]] = cursor[segments[i]] || {};
+      cursor = cursor[segments[i]];
+    }
+    const leafName = segments[segments.length - 1];
+    const value = dtcgValue(v, modeId, variablesById, collectionsById);
+    if (value === undefined || value === null) continue;
+    cursor[leafName] = {
+      $value: value,
+      $type: dtcgType(v.resolvedType),
+      ...(v.description ? { $description: v.description } : {}),
     };
   }
-  if (value && typeof value === 'object' && 'r' in value) {
-    return { $value: rgbaToHex(value), $type: 'color' };
-  }
-  return { $value: value, $type: variable.resolvedType.toLowerCase() };
-}
-
-const tokenNameFixMap = {
-  successe: 'success',
-  sucesse: 'success',
-  ssuccess: 'success',
-};
-
-function normalizePathSegment(segment) {
-  return tokenNameFixMap[segment] ?? segment;
-}
-
-function buildTree(variables, modeId, variablesById) {
-  const tree = {};
-  for (const v of Object.values(variables)) {
-    const path = v.name.split('/').map(normalizePathSegment);
-    let cursor = tree;
-    for (let i = 0; i < path.length - 1; i++) {
-      cursor[path[i]] = cursor[path[i]] || {};
-      cursor = cursor[path[i]];
-    }
-    cursor[path[path.length - 1]] = variableToDTCG(v, modeId, variablesById);
-  }
   return tree;
-}
-
-const outputFileMap = {
-  _palette: '_palette.json',
-  _typographyBase: '_typographyBase.json',
-  _spacers: '_spacers.json',
-  colors: {
-    'light theme': 'colors.light-theme.json',
-    'dark theme': 'colors.dark-theme.json',
-  },
-  typography: {
-    XL: 'typography.xl.json',
-    MD: 'typography.md.json',
-    XS: 'typography.xs.json',
-  },
-  spacing: 'spacing.json',
-  borderRadius: 'borderRadius.json',
-};
-
-function resolveOutputFilename(collectionName, modeName, hasManyModes) {
-  const mapped = outputFileMap[collectionName];
-  if (typeof mapped === 'string') {
-    return mapped;
-  }
-  if (mapped && typeof mapped === 'object') {
-    return (
-      mapped[modeName] || `${collectionName}.${modeName.toLowerCase().replace(/\s+/g, '-')}.json`
-    );
-  }
-  if (!hasManyModes) {
-    return `${collectionName}.json`;
-  }
-  const modeSlug = modeName.toLowerCase().replace(/\s+/g, '-');
-  return `${collectionName}.${modeSlug}.json`;
 }
 
 async function writeJson(path, data) {
@@ -129,28 +117,44 @@ async function main() {
   console.log(`Pulling variables from Figma file ${FIGMA_FILE_KEY}...`);
   const { meta } = await fetchVariables();
   const variablesById = meta.variables;
-  const collections = meta.variableCollections;
+  const collectionsById = meta.variableCollections;
 
-  for (const collection of Object.values(collections)) {
+  const totalCollections = Object.keys(collectionsById).length;
+  console.log(
+    `Found ${totalCollections} collections, ${Object.keys(variablesById).length} variables.`,
+  );
+
+  let totalFilesWritten = 0;
+  for (const collection of Object.values(collectionsById)) {
     const isPrimitive = collection.name.startsWith('_');
     const folder = isPrimitive ? 'primitives' : 'semantic';
-    const collectionVars = Object.fromEntries(
-      Object.entries(variablesById).filter(([, v]) => v.variableCollectionId === collection.id),
+    const baseName = collectionAliasPrefix(collection.name);
+    const collectionVars = Object.values(variablesById).filter(
+      (v) => v.variableCollectionId === collection.id,
     );
 
-    for (const mode of collection.modes) {
-      const filename = resolveOutputFilename(
-        collection.name,
-        mode.name,
-        collection.modes.length > 1,
+    if (collection.modes.length === 1) {
+      const tree = buildTree(
+        collectionVars,
+        collection.modes[0].modeId,
+        variablesById,
+        collectionsById,
       );
-      const path = join('tokens', folder, filename);
-      const tree = buildTree(collectionVars, mode.modeId, variablesById);
-      await writeJson(path, tree);
+      await writeJson(join('tokens', folder, `${baseName}.json`), tree);
+      totalFilesWritten++;
+    } else {
+      for (const mode of collection.modes) {
+        const modeSlug = mode.name.toLowerCase().replace(/\s+/g, '-');
+        const tree = buildTree(collectionVars, mode.modeId, variablesById, collectionsById);
+        await writeJson(join('tokens', folder, `${baseName}.${modeSlug}.json`), tree);
+        totalFilesWritten++;
+      }
     }
   }
 
-  console.log('Done. Run `npm run tokens:build` to regenerate theme files.');
+  console.log(
+    `\nDone. Wrote ${totalFilesWritten} files. Run \`npm run tokens:build\` to regenerate theme.`,
+  );
 }
 
 main().catch((err) => {

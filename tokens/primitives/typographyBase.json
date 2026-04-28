@@ -1,0 +1,104 @@
+{
+  "typographyBase": {
+    "fontFamily": {
+      "base": {
+        "$value": "inter",
+        "$type": "string"
+      },
+      "monospace": {
+        "$value": "monospace",
+        "$type": "string"
+      }
+    },
+    "fontSize": {
+      "h1": {
+        "$value": "{spacers.48}",
+        "$type": "number"
+      },
+      "h2": {
+        "$value": "{spacers.40}",
+        "$type": "number"
+      },
+      "h3": {
+        "$value": "{spacers.32}",
+        "$type": "number"
+      },
+      "h4": {
+        "$value": "{spacers.24}",
+        "$type": "number"
+      },
+      "h5": {
+        "$value": "{spacers.20}",
+        "$type": "number"
+      },
+      "h6": {
+        "$value": "{spacers.16}",
+        "$type": "number"
+      },
+      "base": {
+        "$value": "{spacers.16}",
+        "$type": "number"
+      },
+      "small": {
+        "$value": "{spacers.14}",
+        "$type": "number"
+      },
+      "extraSmall": {
+        "$value": "{spacers.12}",
+        "$type": "number"
+      }
+    },
+    "lineHeight": {
+      "h1": {
+        "$value": "{spacers.56}",
+        "$type": "number"
+      },
+      "h2": {
+        "$value": "{spacers.48}",
+        "$type": "number"
+      },
+      "h3": {
+        "$value": "{spacers.40}",
+        "$type": "number"
+      },
+      "h4": {
+        "$value": "{spacers.32}",
+        "$type": "number"
+      },
+      "h5": {
+        "$value": "{spacers.32}",
+        "$type": "number"
+      },
+      "h6": {
+        "$value": "{spacers.24}",
+        "$type": "number"
+      },
+      "base": {
+        "$value": "{spacers.24}",
+        "$type": "number"
+      },
+      "small": {
+        "$value": "{spacers.20}",
+        "$type": "number"
+      },
+      "extraSmall": {
+        "$value": "{spacers.16}",
+        "$type": "number"
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "$value": "regular",
+        "$type": "string"
+      },
+      "medium": {
+        "$value": "medium",
+        "$type": "string"
+      },
+      "semiBold": {
+        "$value": "semibold",
+        "$type": "string"
+      }
+    }
+  }
+}

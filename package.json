@@ -40,7 +40,7 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
-    "tokens:build": "style-dictionary build --config ./scripts/style-dictionary.config.js",
+    "tokens:build": "node ./scripts/style-dictionary.build.js",
     "tokens:pull": "node ./scripts/figma-tokens-pull.js",
     "tokens:push": "node ./scripts/figma-tokens-push.js",
     "tokens:watch": "style-dictionary build --config ./scripts/style-dictionary.config.js --watch",

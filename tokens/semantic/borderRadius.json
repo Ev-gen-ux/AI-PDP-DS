@@ -1,8 +1,26 @@
 {
-  "componentInner": { "$value": "4px", "$type": "dimension" },
-  "componentBase": { "$value": "8px", "$type": "dimension" },
-  "sectionInner": { "$value": "12px", "$type": "dimension" },
-  "containerBase": { "$value": "16px", "$type": "dimension" },
-  "sectionBase": { "$value": "24px", "$type": "dimension" },
-  "rounded": { "$value": "999px", "$type": "dimension" }
+  "componentInner": {
+    "$value": "{spacers.4}",
+    "$type": "number"
+  },
+  "componentBase": {
+    "$value": "{spacers.8}",
+    "$type": "number"
+  },
+  "sectionInner": {
+    "$value": "{spacers.12}",
+    "$type": "number"
+  },
+  "containerBase": {
+    "$value": "{spacers.16}",
+    "$type": "number"
+  },
+  "sectionBase": {
+    "$value": "{spacers.24}",
+    "$type": "number"
+  },
+  "rounded": {
+    "$value": "{spacers.999}",
+    "$type": "number"
+  }
 }

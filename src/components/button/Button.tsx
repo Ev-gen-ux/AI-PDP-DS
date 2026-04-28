@@ -43,27 +43,27 @@ const appearanceStyles = {
     border-style: solid;
     &:enabled {
       border-color: ${({ theme }) => theme.colors.button.outline.border.enabled};
-      background-color: ${({ theme }) => theme.colors.button.outline.background.enabled};
+      background-color: ${({ theme }) => theme.colors.button.primary.background.enabled};
       color: ${({ theme }) => theme.colors.button.outline.label.enabled};
     }
     &:hover:enabled {
-      border-color: ${({ theme }) => theme.colors.button.outline.border.hover};
+      border-color: ${({ theme }) => theme.colors.button.outline.border.enabled};
       background-color: ${({ theme }) => theme.colors.button.outline.background.hover};
     }
     &:active:enabled {
-      border-color: ${({ theme }) => theme.colors.button.outline.border.active};
+      border-color: ${({ theme }) => theme.colors.button.outline.border.enabled};
       background-color: ${({ theme }) => theme.colors.button.outline.background.active};
     }
     &:disabled {
       border-color: ${({ theme }) => theme.colors.button.outline.border.disabled};
-      background-color: ${({ theme }) => theme.colors.button.outline.background.disabled};
+      background-color: ${({ theme }) => theme.colors.button.primary.background.disabled};
       color: ${({ theme }) => theme.colors.button.outline.label.disabled};
     }
   `,
   flat: css`
     border: none;
     &:enabled {
-      background-color: ${({ theme }) => theme.colors.button.flat.background.enabled};
+      background-color: ${({ theme }) => theme.colors.button.primary.background.enabled};
       color: ${({ theme }) => theme.colors.button.flat.label.enabled};
     }
     &:hover:enabled {
@@ -73,7 +73,7 @@ const appearanceStyles = {
       background-color: ${({ theme }) => theme.colors.button.flat.background.active};
     }
     &:disabled {
-      background-color: ${({ theme }) => theme.colors.button.flat.background.disabled};
+      background-color: ${({ theme }) => theme.colors.button.primary.background.disabled};
       color: ${({ theme }) => theme.colors.button.flat.label.disabled};
     }
   `,
@@ -87,7 +87,7 @@ const sizeStyles = {
     line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   `,
   medium: css`
-    min-height: ${({ theme }) => theme.spacing.height.medium};
+    min-height: ${({ theme }) => theme.spacing.height.base};
     padding: 0 ${({ theme }) => theme.spacing.paddings.default};
     font-size: ${({ theme }) => theme.typography.fontSize.component.small};
     line-height: ${({ theme }) => theme.typography.lineHeight.component.small};
@@ -100,7 +100,7 @@ const Root = styled.button<StyledProps>`
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.inner.close};
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
-  font-family: ${({ theme }) => theme.typography.fontFamily.base};
+  font-family: ${({ theme }) => theme.typography.fontFamily.component};
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   transition:
     background-color 0.15s ease,
@@ -112,7 +112,7 @@ const Root = styled.button<StyledProps>`
   ${(props) => sizeStyles[props.$size]}
 
   &:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.colors.button.focusRing.enabled};
+    outline: 2px solid ${({ theme }) => theme.colors.button.primary.border.focus};
     outline-offset: 2px;
   }
 
