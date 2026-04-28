@@ -8,7 +8,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Текстовое поле для ввода данных с поддержкой состояний, подсказки и сообщения об ошибке.',
+        component:
+          'Текстовое поле для ввода данных с поддержкой состояний, подсказки и сообщения об ошибке.',
       },
     },
   },
@@ -36,14 +37,23 @@ const meta = {
   argTypes: {
     label: { control: 'text', description: 'Текст метки поля.' },
     placeholder: { control: 'text', description: 'Текст-подсказка в пустом поле.' },
-    defaultValue: { control: 'text', description: 'Начальное значение для неконтролируемого режима.' },
+    defaultValue: {
+      control: 'text',
+      description: 'Начальное значение для неконтролируемого режима.',
+    },
     required: { control: 'boolean', description: 'Отмечает поле как обязательное.' },
     disabled: { control: 'boolean', description: 'Блокирует поле и взаимодействие с ним.' },
-    readOnly: { control: 'boolean', description: 'Поле доступно для копирования, но недоступно для редактирования.' },
+    readOnly: {
+      control: 'boolean',
+      description: 'Поле доступно для копирования, но недоступно для редактирования.',
+    },
     invalid: { control: 'boolean', description: 'Переключает поле в состояние ошибки.' },
     success: { control: 'boolean', description: 'Переключает поле в успешное состояние.' },
     helpMessage: { control: 'text', description: 'Дополнительная подсказка под полем.' },
-    errorMessage: { control: 'text', description: 'Сообщение об ошибке; имеет приоритет над helpMessage при invalid=true.' },
+    errorMessage: {
+      control: 'text',
+      description: 'Сообщение об ошибке; имеет приоритет над helpMessage при invalid=true.',
+    },
   },
 } satisfies Meta<typeof InputText>;
 
