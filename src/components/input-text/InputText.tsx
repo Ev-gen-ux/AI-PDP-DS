@@ -13,8 +13,10 @@ import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { Label } from '@/components/label';
 
-export interface InputTextProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type' | 'value' | 'defaultValue' | 'onChange'> {
+export interface InputTextProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'size' | 'type' | 'value' | 'defaultValue' | 'onChange'
+> {
   label?: string;
   value?: string;
   defaultValue?: string;
@@ -76,7 +78,9 @@ const Field = styled.div<FieldProps>`
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
   padding: 0 ${({ theme }) => theme.spacing.paddings.default};
   background-color: ${({ theme, $state }) =>
-    $state === 'disabled' ? theme.colors.input.background.disabled : theme.colors.input.background.enabled};
+    $state === 'disabled'
+      ? theme.colors.input.background.disabled
+      : theme.colors.input.background.enabled};
   transition:
     border-color 0.15s ease,
     background-color 0.15s ease;
@@ -94,11 +98,15 @@ const NativeInput = styled.input<{ $hasValue: boolean; $disabled: boolean }>`
   line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
   color: ${({ theme, $hasValue }) =>
-    $hasValue ? theme.colors.input.textPlaceholderValue.enabled : theme.colors.input.textPlaceholder.enabled};
+    $hasValue
+      ? theme.colors.input.textPlaceholderValue.enabled
+      : theme.colors.input.textPlaceholder.enabled};
 
   &::placeholder {
     color: ${({ theme, $disabled }) =>
-      $disabled ? theme.colors.input.textPlaceholder.disabled : theme.colors.input.textPlaceholder.enabled};
+      $disabled
+        ? theme.colors.input.textPlaceholder.disabled
+        : theme.colors.input.textPlaceholder.enabled};
   }
 
   &:read-only {
@@ -247,7 +255,9 @@ export const InputText = ({
           </ClearButton>
         ) : null}
       </Field>
-      {hasErrorMessage ? <InlineMessage id={messageId} message={errorMessage as string} status="error" /> : null}
+      {hasErrorMessage ? (
+        <InlineMessage id={messageId} message={errorMessage as string} status="error" />
+      ) : null}
       {hasHelpMessage ? <InlineMessage id={messageId} message={helpMessage as string} /> : null}
     </Root>
   );
