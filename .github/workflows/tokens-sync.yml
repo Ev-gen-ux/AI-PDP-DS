@@ -19,6 +19,7 @@ permissions:
 jobs:
   sync-to-figma:
     name: Push tokens to Figma
+    if: ${{ secrets.FIGMA_ACCESS_TOKEN != '' && secrets.FIGMA_FILE_KEY != '' }}
     runs-on: ubuntu-latest
     environment: figma-sync # требует одобрения если настроено в Settings
     steps:
