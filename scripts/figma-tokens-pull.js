@@ -61,10 +61,20 @@ function variableToDTCG(variable, modeId, variablesById) {
   return { $value: value, $type: variable.resolvedType.toLowerCase() };
 }
 
+const tokenNameFixMap = {
+  successe: 'success',
+  sucesse: 'success',
+  ssuccess: 'success',
+};
+
+function normalizePathSegment(segment) {
+  return tokenNameFixMap[segment] ?? segment;
+}
+
 function buildTree(variables, modeId, variablesById) {
   const tree = {};
   for (const v of Object.values(variables)) {
-    const path = v.name.split('/');
+    const path = v.name.split('/').map(normalizePathSegment);
     let cursor = tree;
     for (let i = 0; i < path.length - 1; i++) {
       cursor[path[i]] = cursor[path[i]] || {};
