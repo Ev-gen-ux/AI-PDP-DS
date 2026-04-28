@@ -34,7 +34,18 @@ const preview: Preview = {
       const themeMode = context.globals.theme as 'light' | 'dark';
       return (
         <ThemeProvider theme={theme}>
-          <div data-theme={themeMode} style={{ padding: '2rem', minHeight: '100vh' }}>
+          <div
+            key={themeMode}
+            data-theme={themeMode}
+            style={{
+              padding: '2rem',
+              minHeight: '100vh',
+              backgroundColor: 'var(--colors-background-body-calm)',
+              color: 'var(--colors-text-base)',
+              colorScheme: themeMode,
+              transition: 'background-color 150ms ease, color 150ms ease',
+            }}
+          >
             <Story />
           </div>
         </ThemeProvider>
