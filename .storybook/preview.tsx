@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/theme/tokens';
+import '../src/theme/fonts.css';
 import '../src/theme/variables.light.css';
 import '../src/theme/variables.dark.css';
 

@@ -22,6 +22,8 @@ describe('Button', () => {
       </ThemeProvider>,
     );
 
-    expect(screen.getByRole('button', { name: 'Submit' })).toHaveAttribute('aria-busy', 'true');
+    const button = screen.getByRole('button');
+    expect(button).toHaveAttribute('aria-busy', 'true');
+    expect(screen.getByRole('status', { name: 'Loading' })).toBeInTheDocument();
   });
 });

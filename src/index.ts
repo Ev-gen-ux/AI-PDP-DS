@@ -8,8 +8,16 @@ export type { Theme } from './theme/tokens';
 // Components — atoms
 export { Button } from './components/button';
 export type { ButtonProps } from './components/button';
-// export { Icon } from './components/icon';
-// ...
+export { InputText } from './components/input-text';
+export type { InputTextProps } from './components/input-text';
+export { InlineMessage } from './components/inline-message';
+export type { InlineMessageProps, InlineMessageStatus } from './components/inline-message';
+export { Icon } from './components/icon';
+export type { IconProps, IconSize } from './components/icon';
+export { Spinner } from './components/spinner';
+export type { SpinnerProps, SpinnerSize } from './components/spinner';
+export { Label } from './components/label';
+export type { LabelProps, LabelState } from './components/label';
 
 // Patterns — molecules
 // ...

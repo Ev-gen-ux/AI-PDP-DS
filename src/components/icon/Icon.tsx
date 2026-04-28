@@ -1,0 +1,28 @@
+import type { ComponentType } from 'react';
+import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
+import styled from 'styled-components';
+
+export type IconSize = 16 | 24;
+
+type GlyphComponent = ComponentType<PhosphorIconProps>;
+
+export interface IconProps extends Omit<PhosphorIconProps, 'size' | 'weight'> {
+  icon: GlyphComponent;
+  size?: IconSize;
+}
+
+const Root = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  color: inherit;
+`;
+
+export const Icon = ({ icon: Glyph, size = 24, color = 'currentColor', ...rest }: IconProps) => {
+  return (
+    <Root>
+      <Glyph size={size} weight="bold" color={color} {...rest} />
+    </Root>
+  );
+};

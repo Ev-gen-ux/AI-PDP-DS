@@ -1,5 +1,8 @@
-import type { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
+import { isValidElement, type ButtonHTMLAttributes, type MouseEventHandler, type ReactNode } from 'react';
+import { Code } from '@phosphor-icons/react';
 import styled, { css } from 'styled-components';
+import { Icon } from '@/components/icon';
+import { Spinner } from '@/components/spinner';
 
 type ButtonAppearance = 'primary' | 'outline' | 'flat';
 type ButtonSize = 'large' | 'medium';
@@ -8,8 +11,8 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
   appearance?: ButtonAppearance;
   size?: ButtonSize;
   loading?: boolean;
-  iconBefore?: ReactNode;
-  iconAfter?: ReactNode;
+  iconBefore?: ReactNode | boolean;
+  iconAfter?: ReactNode | boolean;
   text?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
@@ -34,7 +37,8 @@ const appearanceStyles = {
       background-color: ${({ theme }) => theme.colors.button.primary.background.active};
     }
     &:disabled {
-      background-color: ${({ theme }) => theme.colors.button.primary.background.disabled};
+      border: 1px solid ${({ theme }) => theme.colors.button.primary.border.disabled};
+      background-color: transparent;
       color: ${({ theme }) => theme.colors.button.primary.label.disabled};
     }
   `,
@@ -43,7 +47,7 @@ const appearanceStyles = {
     border-style: solid;
     &:enabled {
       border-color: ${({ theme }) => theme.colors.button.outline.border.enabled};
-      background-color: ${({ theme }) => theme.colors.button.primary.background.enabled};
+      background-color: transparent;
       color: ${({ theme }) => theme.colors.button.outline.label.enabled};
     }
     &:hover:enabled {
@@ -56,14 +60,14 @@ const appearanceStyles = {
     }
     &:disabled {
       border-color: ${({ theme }) => theme.colors.button.outline.border.disabled};
-      background-color: ${({ theme }) => theme.colors.button.primary.background.disabled};
+      background-color: transparent;
       color: ${({ theme }) => theme.colors.button.outline.label.disabled};
     }
   `,
   flat: css`
     border: none;
     &:enabled {
-      background-color: ${({ theme }) => theme.colors.button.primary.background.enabled};
+      background-color: transparent;
       color: ${({ theme }) => theme.colors.button.flat.label.enabled};
     }
     &:hover:enabled {
@@ -73,7 +77,8 @@ const appearanceStyles = {
       background-color: ${({ theme }) => theme.colors.button.flat.background.active};
     }
     &:disabled {
-      background-color: ${({ theme }) => theme.colors.button.primary.background.disabled};
+      border: none;
+      background-color: transparent;
       color: ${({ theme }) => theme.colors.button.flat.label.disabled};
     }
   `,
@@ -81,12 +86,14 @@ const appearanceStyles = {
 
 const sizeStyles = {
   large: css`
+    gap: ${({ theme }) => theme.spacing.inner.grouped};
     min-height: ${({ theme }) => theme.spacing.height.large};
     padding: 0 ${({ theme }) => theme.spacing.paddings.medium};
     font-size: ${({ theme }) => theme.typography.fontSize.component.base};
     line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   `,
   medium: css`
+    gap: ${({ theme }) => theme.spacing.inner.related};
     min-height: ${({ theme }) => theme.spacing.height.base};
     padding: 0 ${({ theme }) => theme.spacing.paddings.default};
     font-size: ${({ theme }) => theme.typography.fontSize.component.small};
@@ -98,10 +105,9 @@ const Root = styled.button<StyledProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing.inner.close};
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
   font-family: ${({ theme }) => theme.typography.fontFamily.component};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
   transition:
     background-color 0.15s ease,
     border-color 0.15s ease,
@@ -123,7 +129,6 @@ const Root = styled.button<StyledProps>`
   ${(props) =>
     props.$loading &&
     css`
-      opacity: 0.85;
       pointer-events: none;
     `}
 `;
@@ -146,22 +151,47 @@ export const Button = ({
   type = 'button',
   ...rest
 }: ButtonProps) => {
-  const isDisabled = disabled || loading;
+  const isDisabled = Boolean(disabled);
   const content = children ?? text;
+  const iconSize = size === 'large' ? 24 : 16;
+
+  const resolveIcon = (iconProp: ReactNode | boolean | undefined) => {
+    if (iconProp === undefined || iconProp === null || iconProp === false) {
+      return null;
+    }
+    if (iconProp === true) {
+      return <Icon icon={Code} size={iconSize} />;
+    }
+    if (typeof iconProp === 'string' || typeof iconProp === 'number' || isValidElement(iconProp)) {
+      return iconProp;
+    }
+    // Storybook controls can pass {} for mixed prop types.
+    return <Icon icon={Code} size={iconSize} />;
+  };
+
+  const beforeIconNode = resolveIcon(iconBefore);
+  const afterIconNode = resolveIcon(iconAfter);
 
   return (
     <Root
       type={type}
       aria-busy={loading || undefined}
+      aria-disabled={loading || undefined}
       disabled={isDisabled}
       $appearance={appearance}
       $size={size}
       $loading={loading}
       {...rest}
     >
-      {iconBefore ? <IconSlot>{iconBefore}</IconSlot> : null}
-      <span>{content}</span>
-      {iconAfter ? <IconSlot>{iconAfter}</IconSlot> : null}
+      {loading ? (
+        <Spinner size={iconSize} />
+      ) : (
+        <>
+          {beforeIconNode ? <IconSlot>{beforeIconNode}</IconSlot> : null}
+          <span>{content}</span>
+          {afterIconNode ? <IconSlot>{afterIconNode}</IconSlot> : null}
+        </>
+      )}
     </Root>
   );
 };
