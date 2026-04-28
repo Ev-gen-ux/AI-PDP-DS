@@ -76,7 +76,7 @@ const Field = styled.div<FieldProps>`
   border-width: 1px;
   border-style: solid;
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
-  padding: 0 ${({ theme }) => theme.spacing.paddings.default};
+  padding: 0 16px;
   background-color: ${({ theme, $state }) =>
     $state === 'disabled'
       ? theme.colors.input.background.disabled
@@ -90,6 +90,7 @@ const Field = styled.div<FieldProps>`
 const NativeInput = styled.input<{ $hasValue: boolean; $disabled: boolean }>`
   flex: 1;
   min-width: 0;
+  padding: 0;
   border: none;
   outline: none;
   background: transparent;
@@ -119,9 +120,9 @@ const ClearButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: ${({ theme }) => theme.spacing.height.base};
-  height: ${({ theme }) => theme.spacing.height.base};
-  margin-right: calc(-1 * ${({ theme }) => theme.spacing.inner.closest});
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.componentInner};
   background: transparent;

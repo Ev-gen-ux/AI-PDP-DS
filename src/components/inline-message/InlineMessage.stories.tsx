@@ -1,30 +1,58 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { InlineMessage } from './InlineMessage';
-import { Stack } from '@/layouts/stack';
 
 const meta = {
   title: 'Components/InlineMessage',
   component: InlineMessage,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Вспомогательное текстовое сообщение под полем ввода: подсказка или ошибка.',
+      },
+    },
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '24px' }}>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     message: 'Help message',
     status: 'default',
   },
   argTypes: {
-    status: { control: 'inline-radio', options: ['default', 'error'] },
+    message: { control: 'text', description: 'Текст сообщения.' },
+    status: {
+      control: 'inline-radio',
+      options: ['default', 'error'],
+      description: 'Тип сообщения: стандартное или ошибка.',
+    },
   },
 } satisfies Meta<typeof InlineMessage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Default: Story = {
+  args: {
+    status: 'default',
+    message: 'Help message',
+  },
+};
 
-export const AllVariants: Story = {
-  render: () => (
-    <Stack gap="close">
-      <InlineMessage status="default" message="Help message" />
-      <InlineMessage status="error" message="Error message" />
-    </Stack>
-  ),
+export const Error: Story = {
+  args: {
+    status: 'error',
+    message: 'Error message',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Сообщение об ошибке для невалидного состояния поля.',
+      },
+    },
+  },
 };
