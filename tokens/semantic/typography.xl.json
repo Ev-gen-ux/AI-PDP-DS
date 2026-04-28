@@ -1,40 +1,146 @@
 {
-  "xl": {
-    "fontFamily": {
-      "base": { "$value": "Inter, system-ui, sans-serif", "$type": "fontFamily" }
+  "fontFamily": {
+    "heading": {
+      "$value": "{typographyBase.fontFamily.base}",
+      "$type": "string"
     },
-    "fontWeight": {
-      "regular": { "$value": "400", "$type": "fontWeight" },
-      "medium": { "$value": "500", "$type": "fontWeight" },
-      "semiBold": { "$value": "600", "$type": "fontWeight" }
+    "text": {
+      "$value": "{typographyBase.fontFamily.base}",
+      "$type": "string"
     },
-    "fontSize": {
-      "heading": {
-        "h1": { "$value": "40px", "$type": "dimension" },
-        "h2": { "$value": "32px", "$type": "dimension" }
+    "component": {
+      "$value": "{typographyBase.fontFamily.base}",
+      "$type": "string"
+    },
+    "monospace": {
+      "$value": "{typographyBase.fontFamily.monospace}",
+      "$type": "string"
+    }
+  },
+  "fontSize": {
+    "heading": {
+      "h1": {
+        "$value": "{typographyBase.fontSize.h1}",
+        "$type": "number"
       },
-      "text": {
-        "base": { "$value": "16px", "$type": "dimension" },
-        "small": { "$value": "14px", "$type": "dimension" }
+      "h2": {
+        "$value": "{typographyBase.fontSize.h2}",
+        "$type": "number"
       },
-      "component": {
-        "base": { "$value": "16px", "$type": "dimension" },
-        "small": { "$value": "14px", "$type": "dimension" }
+      "h3": {
+        "$value": "{typographyBase.fontSize.h3}",
+        "$type": "number"
+      },
+      "h4": {
+        "$value": "{typographyBase.fontSize.h4}",
+        "$type": "number"
+      },
+      "h5": {
+        "$value": "{typographyBase.fontSize.h5}",
+        "$type": "number"
+      },
+      "h6": {
+        "$value": "{typographyBase.fontSize.h6}",
+        "$type": "number"
       }
     },
-    "lineHeight": {
-      "heading": {
-        "h1": { "$value": "48px", "$type": "dimension" },
-        "h2": { "$value": "40px", "$type": "dimension" }
+    "text": {
+      "base": {
+        "$value": "{typographyBase.fontSize.base}",
+        "$type": "number"
       },
-      "text": {
-        "base": { "$value": "24px", "$type": "dimension" },
-        "small": { "$value": "20px", "$type": "dimension" }
+      "small": {
+        "$value": "{typographyBase.fontSize.small}",
+        "$type": "number"
       },
-      "component": {
-        "base": { "$value": "24px", "$type": "dimension" },
-        "small": { "$value": "20px", "$type": "dimension" }
+      "extraSmall": {
+        "$value": "{typographyBase.fontSize.extraSmall}",
+        "$type": "number"
       }
+    },
+    "component": {
+      "base": {
+        "$value": "{typographyBase.fontSize.base}",
+        "$type": "number"
+      },
+      "small": {
+        "$value": "{typographyBase.fontSize.small}",
+        "$type": "number"
+      },
+      "extraSmall": {
+        "$value": "{typographyBase.fontSize.extraSmall}",
+        "$type": "number"
+      }
+    }
+  },
+  "lineHeight": {
+    "heading": {
+      "h1": {
+        "$value": "{typographyBase.lineHeight.h1}",
+        "$type": "number"
+      },
+      "h2": {
+        "$value": "{typographyBase.lineHeight.h2}",
+        "$type": "number"
+      },
+      "h3": {
+        "$value": "{typographyBase.lineHeight.h3}",
+        "$type": "number"
+      },
+      "h4": {
+        "$value": "{typographyBase.lineHeight.h4}",
+        "$type": "number"
+      },
+      "h5": {
+        "$value": "{typographyBase.lineHeight.h5}",
+        "$type": "number"
+      },
+      "h6": {
+        "$value": "{typographyBase.lineHeight.h6}",
+        "$type": "number"
+      }
+    },
+    "text": {
+      "base": {
+        "$value": "{typographyBase.lineHeight.base}",
+        "$type": "number"
+      },
+      "small": {
+        "$value": "{typographyBase.lineHeight.small}",
+        "$type": "number"
+      },
+      "extraSmall": {
+        "$value": "{typographyBase.lineHeight.extraSmall}",
+        "$type": "number"
+      }
+    },
+    "component": {
+      "base": {
+        "$value": "{typographyBase.lineHeight.base}",
+        "$type": "number"
+      },
+      "small": {
+        "$value": "{typographyBase.lineHeight.small}",
+        "$type": "number"
+      },
+      "extraSmall": {
+        "$value": "{typographyBase.lineHeight.extraSmall}",
+        "$type": "number"
+      }
+    }
+  },
+  "fontWeight": {
+    "regular": {
+      "$value": "{typographyBase.fontWeight.regular}",
+      "$type": "string"
+    },
+    "medium": {
+      "$value": "{typographyBase.fontWeight.medium}",
+      "$type": "string"
+    },
+    "semiBold": {
+      "$value": "{typographyBase.fontWeight.semiBold}",
+      "$type": "string"
     }
   }
 }
