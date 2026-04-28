@@ -127,8 +127,8 @@ const Root = styled.button<StyledProps>`
   ${(props) => sizeStyles[props.$size]}
 
   &:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.colors.button.primary.border.focus};
-    outline-offset: 2px;
+    outline: none;
+    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.colors.focus.ring.default};
   }
 
   &:disabled {

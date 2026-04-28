@@ -89,6 +89,14 @@
       }
     }
   },
+  "focus": {
+    "ring": {
+      "default": {
+        "$value": "{palette.blue.200}",
+        "$type": "color"
+      }
+    }
+  },
   "avatar": {
     "background": {
       "enabled": {

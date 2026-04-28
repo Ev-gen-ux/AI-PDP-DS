@@ -50,6 +50,7 @@ const stateStyles = {
   `,
   focus: css`
     border-color: ${({ theme }) => theme.colors.input.border.focus};
+    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.colors.focus.ring.default};
   `,
   readOnly: css`
     border-color: transparent;
