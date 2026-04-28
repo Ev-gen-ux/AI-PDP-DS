@@ -236,14 +236,14 @@ var(--color-button-primary-background-enabled)
 6. **Mobile-first media queries:** `@media (min-width: ${theme.breakpoints.md})`.
 7. **Container queries** для контентных компонентов (BenefitCard, NotificationSnackbar, TableCell — там где компонент может стоять в колонках разной ширины).
 8. **Нет `!important`.** Никогда.
-9. **Единый стиль фокуса для интерактивных компонентов:** `box-shadow: 0px 0px 0px 2px #9DC3EA;`.
+9. **Единый стиль фокуса для интерактивных компонентов:** только через токен `theme.colors.focus.ring.default` (без hex-хардкодов).
 
 ### 6.3 Стандарт focus ring
 
-- Для `button`, `input`, `textarea`, `select` и кастомных интерактивных компонентов используется единый focus ring:
+- Для `button`, `input`, `textarea`, `select` и кастомных интерактивных компонентов используется единый focus ring через токен темы:
 
 ```css
-box-shadow: 0px 0px 0px 2px #9dc3ea;
+box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.colors.focus.ring.default};
 ```
 
 - Для кнопок применять в `:focus-visible`.
@@ -589,14 +589,14 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 
 - [x] Icon — есть
 - [x] Button — есть, требует рефакторинга по пунктам 6.2
-- [ ] Spinner
+- [x] Spinner
 - [ ] Avatar
-- [ ] Label
+- [x] Label
 - [ ] StatusLabel
 - [ ] Checkbox
 - [ ] Radio
-- [ ] InputText
-- [ ] InlineMessage
+- [x] InputText
+- [x] InlineMessage
 
 **Молекулы (`src/patterns/`):**
 
@@ -746,9 +746,9 @@ Settings → Secrets and variables → Actions:
 
 ---
 
-## 16. Известные проблемы в Figma (требуют исправления)
+## 16. Известные проблемы в Figma (история и контроль)
 
-Перед первой синхронизацией токенов в код **починить в Figma**:
+Ниже перечислены исторические ошибки нейминга/значений, которые уже встречались в Figma и могут повториться при будущих правках библиотеки:
 
 - `avatar/backgroun/enabled`, `avatar/backgroun/hover`, `avatar/backgroun/active` → `background`
 - `notification/snackbar/border/ssuccess` → `success`
@@ -758,7 +758,13 @@ Settings → Secrets and variables → Actions:
 - `ink/bakcground/calm/enabled` → `background`
 - `_spacers/80` имеет значение 72 — должно быть 80 (либо переименовать токен)
 
-Эти опечатки приедут в код буквально и засорят `theme.colors.avatar.backgroun.enabled` навсегда. Лучше починить сразу, до настройки CI.
+Эти ошибки критичны, потому что синхронизация переносит названия буквально в код и API темы.
+
+Правило для текущего состояния проекта:
+
+1. При обнаружении новых опечаток сначала исправлять их в Figma как в source of truth.
+2. После исправления перетягивать токены и проверять diff в `/tokens/**`.
+3. Не вводить временные алиасы в компонентах под неверные имена токенов.
 
 ---
 
