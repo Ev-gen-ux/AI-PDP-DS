@@ -4,9 +4,8 @@ import {
   type MouseEventHandler,
   type ReactNode,
 } from 'react';
-import { Code } from '@phosphor-icons/react';
 import styled, { css } from 'styled-components';
-import { Icon } from '@/components/icon';
+import { fallbackIconGlyph, Icon } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 
 type ButtonAppearance = 'primary' | 'outline' | 'flat';
@@ -93,14 +92,14 @@ const sizeStyles = {
   large: css`
     gap: ${({ theme }) => theme.spacing.inner.grouped};
     min-height: ${({ theme }) => theme.spacing.height.large};
-    padding: 0 ${({ theme }) => theme.spacing.paddings.medium};
+    padding: 0 ${({ theme }) => theme.spacing.paddings.relaxed};
     font-size: ${({ theme }) => theme.typography.fontSize.component.base};
     line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   `,
   medium: css`
-    gap: ${({ theme }) => theme.spacing.inner.related};
+    gap: ${({ theme }) => theme.spacing.inner.grouped};
     min-height: ${({ theme }) => theme.spacing.height.base};
-    padding: 0 ${({ theme }) => theme.spacing.paddings.default};
+    padding: 0 ${({ theme }) => theme.spacing.paddings.compactMedium};
     font-size: ${({ theme }) => theme.typography.fontSize.component.small};
     line-height: ${({ theme }) => theme.typography.lineHeight.component.small};
   `,
@@ -160,7 +159,7 @@ export const Button = ({
   type = 'button',
   ...rest
 }: ButtonProps) => {
-  const isDisabled = Boolean(disabled);
+  const isDisabled = Boolean(disabled || loading);
   const content = children ?? text;
   const iconSize = size === 'large' ? 24 : 16;
 
@@ -169,13 +168,13 @@ export const Button = ({
       return null;
     }
     if (iconProp === true) {
-      return <Icon icon={Code} size={iconSize} />;
+      return <Icon icon={fallbackIconGlyph} size={iconSize} />;
     }
     if (typeof iconProp === 'string' || typeof iconProp === 'number' || isValidElement(iconProp)) {
       return iconProp;
     }
     // Storybook controls can pass {} for mixed prop types.
-    return <Icon icon={Code} size={iconSize} />;
+    return <Icon icon={fallbackIconGlyph} size={iconSize} />;
   };
 
   const beforeIconNode = resolveIcon(iconBefore);
