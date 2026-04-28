@@ -185,6 +185,19 @@ var(--color-button-primary-background-enabled)
 6. **Mobile-first media queries:** `@media (min-width: ${theme.breakpoints.md})`.
 7. **Container queries** для контентных компонентов (BenefitCard, NotificationSnackbar, TableCell — там где компонент может стоять в колонках разной ширины).
 8. **Нет `!important`.** Никогда.
+9. **Единый стиль фокуса для интерактивных компонентов:** `box-shadow: 0px 0px 0px 2px #9DC3EA;`.
+
+### 6.3 Стандарт focus ring
+
+- Для `button`, `input`, `textarea`, `select` и кастомных интерактивных компонентов используется единый focus ring:
+
+```css
+box-shadow: 0px 0px 0px 2px #9dc3ea;
+```
+
+- Для кнопок применять в `:focus-visible`.
+- Для полей ввода применять в состоянии фокуса контейнера поля.
+- Не накладывать одновременно `outline` и `box-shadow`, если это даёт двойной фокус.
 
 ### 6.2 Эталонный паттерн
 
