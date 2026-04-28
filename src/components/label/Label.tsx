@@ -28,7 +28,12 @@ const RequiredMark = styled.span`
   color: ${({ theme }) => theme.colors.input.required.enabled};
 `;
 
-export const Label = ({ htmlFor, text = 'Label', required = false, state = 'default' }: LabelProps) => {
+export const Label = ({
+  htmlFor,
+  text = 'Label',
+  required = false,
+  state = 'default',
+}: LabelProps) => {
   return (
     <Root htmlFor={htmlFor} $state={state}>
       {text}
