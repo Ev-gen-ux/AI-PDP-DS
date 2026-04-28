@@ -36,12 +36,9 @@ jobs:
         uses: changesets/action@v1
         with:
           # Когда есть changesets:  делает PR "Version Packages"
-          # Когда PR смержен:       публикует пакет в npm, создаёт GitHub Release
+          # Публикация в npm отключена до настройки scope/NPM прав.
           version: npm run changeset:version
-          publish: npm run changeset:publish
           commit: 'chore: version packages'
           title: 'chore: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: 'true'
