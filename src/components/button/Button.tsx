@@ -31,7 +31,7 @@ type StyledProps = {
 const appearanceStyles = {
   primary: css`
     &:enabled {
-      border: none;
+      border-color: transparent;
       background-color: ${({ theme }) => theme.colors.button.primary.background.enabled};
       color: ${({ theme }) => theme.colors.button.primary.label.enabled};
     }
@@ -70,7 +70,7 @@ const appearanceStyles = {
     }
   `,
   flat: css`
-    border: none;
+    border-color: transparent;
     &:enabled {
       background-color: transparent;
       color: ${({ theme }) => theme.colors.button.flat.label.enabled};
@@ -82,7 +82,7 @@ const appearanceStyles = {
       background-color: ${({ theme }) => theme.colors.button.flat.background.active};
     }
     &:disabled {
-      border: none;
+      border-color: transparent;
       background-color: transparent;
       color: ${({ theme }) => theme.colors.button.flat.label.disabled};
     }
@@ -108,8 +108,12 @@ const sizeStyles = {
 
 const Root = styled.button<StyledProps>`
   display: inline-flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
   font-family: ${({ theme }) => theme.typography.fontFamily.component};
   font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};

@@ -8,6 +8,7 @@ import '../src/theme/variables.dark.css';
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
+    layout: 'fullscreen',
     controls: {
       matchers: { color: /(background|color)$/i, date: /Date$/i },
     },
@@ -38,8 +39,7 @@ const preview: Preview = {
             key={themeMode}
             data-theme={themeMode}
             style={{
-              padding: '2rem',
-              minHeight: '100vh',
+              padding: 0,
               backgroundColor: 'var(--colors-background-body-calm)',
               color: 'var(--colors-text-base)',
               colorScheme: themeMode,

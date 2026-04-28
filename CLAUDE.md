@@ -389,7 +389,45 @@ CSS-переменные типографики переопределяются
 
 ## 10. Storybook story (обязательно)
 
-Каждый компонент имеет story со всеми вариантами. Минимум:
+### 10.1 Общий принцип оформления stories
+
+Каждый компонент в Storybook оформляется по единому шаблону:
+
+1. `tags: ['autodocs']` обязательно.
+2. В `parameters.docs.description.component` добавляется краткое описание компонента.
+3. Для ключевых пропсов в `argTypes` добавляется `description` (не только control).
+4. Для ключевых состояний/вариантов создаются **отдельные stories** (`Primary`, `Outline`, `Flat`, `Disabled`, `Error` и т.д.).
+5. Для отдельных stories добавляется `parameters.docs.description.story`, если нужно пояснение состояния.
+6. Внутренние отступы в контейнере story задаются через `decorators` и единый паттерн:
+
+```tsx
+decorators: [
+  (Story) => (
+    <div style={{ padding: '24px' }}>
+      <Story />
+    </div>
+  ),
+];
+```
+
+7. Если компонент не должен растягиваться на всю ширину (например, `InputText`), в декораторе задаётся фиксированная ширина обёртки:
+
+```tsx
+decorators: [
+  (Story) => (
+    <div style={{ padding: '24px' }}>
+      <div style={{ width: '320px' }}>
+        <Story />
+      </div>
+    </div>
+  ),
+];
+```
+
+8. Не использовать фиксированную высоту `docs.story.height`, если это приводит к внутреннему скроллу в контейнере. Контейнер должен "обнимать" компонент по высоте.
+9. Матрица `AllVariants` не обязательна. По текущему стандарту предпочтительны отдельные истории по каждому варианту/состоянию.
+
+### 10.2 Минимальный пример
 
 ```tsx
 // Button.stories.tsx
@@ -413,25 +451,8 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = { args: { appearance: 'primary', text: 'Button' } };
 export const Outline: Story = { args: { appearance: 'outline', text: 'Button' } };
 export const Flat: Story = { args: { appearance: 'flat', text: 'Button' } };
-export const WithIcons: Story = {
-  args: { iconBefore: 'placeholder', iconAfter: 'caret-down', text: 'Button' },
-};
 export const Loading: Story = { args: { loading: true, text: 'Button' } };
 export const Disabled: Story = { args: { disabled: true, text: 'Button' } };
-
-export const AllVariants: Story = {
-  render: () => (
-    <Stack gap="md">
-      {(['primary', 'outline', 'flat'] as const).map((a) => (
-        <Cluster key={a} gap="sm">
-          {(['medium', 'large'] as const).map((s) => (
-            <Button key={s} appearance={a} size={s} text={`${a} / ${s}`} />
-          ))}
-        </Cluster>
-      ))}
-    </Stack>
-  ),
-};
 ```
 
 ---
@@ -545,7 +566,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 3. **Сравнить с эталонным паттерном** (раздел 6.2 этого документа).
 4. **Создать ветку** `feat/<component-name>` от актуального `main`.
 5. **Написать компонент** строго по правилам стилизации и naming convention.
-6. **Создать story** со всеми вариантами + matrix-стори "AllVariants".
+6. **Создать story** с отдельными вариантами/состояниями компонента (без обязательного "AllVariants").
 7. **Создать `.figma.tsx`** с маппингом всех вариантов и пропсов.
 8. **Проверить accessibility** по чеклисту раздела 9.
 9. **Запустить локально** — Storybook должен отрисовать без warnings в консоли.

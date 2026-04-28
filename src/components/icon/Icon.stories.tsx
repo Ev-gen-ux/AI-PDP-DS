@@ -1,12 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AirplaneTakeoff, X } from '@phosphor-icons/react';
 import { Icon } from './Icon';
-import { Cluster } from '@/layouts/cluster';
 
 const meta = {
   title: 'Components/Icon',
   component: Icon,
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '24px 0 24px 24px' }}>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     icon: AirplaneTakeoff,
     size: 24,
@@ -19,15 +25,30 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+export const Airplane24: Story = {
+  args: {
+    icon: AirplaneTakeoff,
+    size: 24,
+  },
+};
 
-export const Sizes: Story = {
-  render: () => (
-    <Cluster gap="related">
-      <Icon icon={AirplaneTakeoff} size={16} />
-      <Icon icon={AirplaneTakeoff} size={24} />
-      <Icon icon={X} size={16} />
-      <Icon icon={X} size={24} />
-    </Cluster>
-  ),
+export const Airplane16: Story = {
+  args: {
+    icon: AirplaneTakeoff,
+    size: 16,
+  },
+};
+
+export const Cross24: Story = {
+  args: {
+    icon: X,
+    size: 24,
+  },
+};
+
+export const Cross16: Story = {
+  args: {
+    icon: X,
+    size: 16,
+  },
 };
