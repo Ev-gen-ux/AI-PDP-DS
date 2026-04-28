@@ -1,10 +1,13 @@
 import type { ComponentType } from 'react';
+import { Code } from '@phosphor-icons/react';
 import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
 import styled from 'styled-components';
 
 export type IconSize = 16 | 24;
 
 type GlyphComponent = ComponentType<PhosphorIconProps>;
+
+export const fallbackIconGlyph: GlyphComponent = Code;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size' | 'weight'> {
   icon: GlyphComponent;
