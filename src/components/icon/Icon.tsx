@@ -4,6 +4,7 @@ import {
   ClockIcon,
   CodeIcon,
   InfoIcon,
+  LinkIcon,
   MetaLogoIcon,
   WarningIcon,
   XCircleIcon,
@@ -17,6 +18,7 @@ type GlyphComponent = ComponentType<PhosphorIconProps>;
 
 export const fallbackIconGlyph: GlyphComponent = CodeIcon;
 export const metaIconGlyph: GlyphComponent = MetaLogoIcon;
+export const linkIconGlyph: GlyphComponent = LinkIcon;
 export const statusSuccessIconGlyph: GlyphComponent = CheckCircleIcon;
 export const statusInformationIconGlyph: GlyphComponent = InfoIcon;
 export const statusAlertIconGlyph: GlyphComponent = WarningIcon;
