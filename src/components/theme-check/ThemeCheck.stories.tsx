@@ -1,11 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Code } from '@phosphor-icons/react';
+import { Avatar } from '@/components/avatar';
 import { Button } from '@/components/button';
+import { ButtonIcon } from '@/components/button-icon';
+import { ButtonLink } from '@/components/button-link';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
 import { Spinner } from '@/components/spinner';
+import { StatusLabel } from '@/components/status-label';
+import { StatusMark } from '@/components/status-mark';
+import { ToggleButton } from '@/components/toggle-button';
 import { Cluster } from '@/layouts/cluster';
 import { Stack } from '@/layouts/stack';
 
@@ -44,6 +50,10 @@ export const Showcase: Story = {
           <Button appearance="flat" text="Flat" />
           <Button appearance="primary" text="Loading" loading />
           <Button appearance="outline" text="Disabled" disabled />
+          <ButtonLink appearance="primary" text="Link Label" iconBefore iconAfter />
+          <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
+          <ButtonIcon appearance="primary" />
+          <ButtonIcon appearance="secondary" />
         </Cluster>
       </div>
 
@@ -62,6 +72,24 @@ export const Showcase: Story = {
             <InputText label="Disabled" placeholder="Placeholder" disabled />
           </Stack>
         </div>
+      </div>
+
+      <div style={{ padding: '24px' }}>
+        <Cluster gap="related">
+          <Avatar initials="ЕВ" state="enabled" />
+          <StatusMark size="Extra Small 12px" />
+          <StatusLabel appearance="primary" status="success" size="medium" text="Success" />
+          <StatusLabel
+            appearance="secondary"
+            status="information"
+            size="medium"
+            text="Information"
+          />
+          <ToggleButton appearance="primary" selected={false} text="Toggle Button" />
+          <ToggleButton appearance="primary" selected text="Toggle Button" />
+          <ToggleButton appearance="secondary" selected={false} />
+          <ToggleButton appearance="secondary" selected />
+        </Cluster>
       </div>
 
       <div style={{ padding: '24px' }}>
