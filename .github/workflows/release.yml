@@ -35,10 +35,12 @@ jobs:
       - name: Create Release PR or Publish
         uses: changesets/action@v1
         with:
-          # Когда есть changesets:  делает PR "Version Packages"
-          # Публикация в npm отключена до настройки scope/NPM прав.
+          # Когда есть changesets: делает PR "Version Packages"
+          # Когда changesets нет: публикует пакет и создает git tags/GitHub Releases
           version: npm run changeset:version
+          publish: npm run changeset:publish
           commit: 'chore: version packages'
           title: 'chore: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
