@@ -18,6 +18,13 @@ export { Spinner } from './components/spinner';
 export type { SpinnerProps, SpinnerSize } from './components/spinner';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
+export { StatusLabel } from './components/status-label';
+export type {
+  StatusLabelAppearance,
+  StatusLabelProps,
+  StatusLabelSize,
+  StatusLabelStatus,
+} from './components/status-label';
 
 // Patterns — molecules
 // ...

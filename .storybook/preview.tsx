@@ -9,6 +9,12 @@ const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     layout: 'fullscreen',
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        locales: 'en-US',
+      },
+    },
     controls: {
       matchers: { color: /(background|color)$/i, date: /Date$/i },
     },
