@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AirplaneTakeoff, X } from '@phosphor-icons/react';
+import { AirplaneTakeoffIcon, XIcon } from '@phosphor-icons/react';
 import { Icon } from './Icon';
 
 const meta = {
@@ -14,7 +14,7 @@ const meta = {
     ),
   ],
   args: {
-    icon: AirplaneTakeoff,
+    icon: AirplaneTakeoffIcon,
     size: 24,
   },
   argTypes: {
@@ -27,28 +27,28 @@ type Story = StoryObj<typeof meta>;
 
 export const Airplane24: Story = {
   args: {
-    icon: AirplaneTakeoff,
+    icon: AirplaneTakeoffIcon,
     size: 24,
   },
 };
 
 export const Airplane16: Story = {
   args: {
-    icon: AirplaneTakeoff,
+    icon: AirplaneTakeoffIcon,
     size: 16,
   },
 };
 
 export const Cross24: Story = {
   args: {
-    icon: X,
+    icon: XIcon,
     size: 24,
   },
 };
 
 export const Cross16: Story = {
   args: {
-    icon: X,
+    icon: XIcon,
     size: 16,
   },
 };
