@@ -719,6 +719,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 `VERSIONING VIOLATION: <что нарушено>`.
 
 Дальше обязательно указать, что исправить:
+
 - нужен ли changeset,
 - какой тип bump выбрать,
 - какую формулировку добавить в PR.
@@ -831,7 +832,7 @@ Settings → Secrets and variables → Actions:
 
 ```md
 ---
-"@ev-gen-ux/ai-pdp-ds": patch
+'@ev-gen-ux/ai-pdp-ds': patch
 ---
 
 Button: fix keyboard lock while loading by applying native disabled state.
