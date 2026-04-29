@@ -27,6 +27,8 @@ export type {
 } from './components/status-label';
 export { StatusMark } from './components/status-mark';
 export type { StatusMarkProps, StatusMarkSize } from './components/status-mark';
+export { Avatar } from './components/avatar';
+export type { AvatarProps, AvatarState } from './components/avatar';
 
 // Patterns — molecules
 // ...
