@@ -4,6 +4,17 @@
 
 ---
 
+## Runtime TL;DR (обязательно перед каждой задачей)
+
+1. Пройти `Protocol Check` и зафиксировать `Component Kickoff` (см. `0.1`).
+2. До кода собрать `Component Spec` артефакты: Variant Matrix + Numeric/State Token Matrix + Hard Constraints (см. `0.2.2` и `0.2.3`).
+3. Реализовать компонент token-first и пройти `Type Safety Gate` (см. `0.5`, `6.1`, `14.2`).
+4. Настроить stories по единому паттерну (`Default` interactive + demo stories по appearance) и пройти visual parity (см. `0.2.4`, `10.1`, `14.3`).
+5. Обновить `ThemeCheck` для нового/изменённого компонента (см. `14.7`).
+6. Пройти pre-commit проверки (`format`, `typecheck`, `lint`, `test`) и versioning requirements (см. `0.4`, `14.6`, `18`).
+
+---
+
 ## 0. Mandatory Compliance Protocol (обязательно)
 
 Этот протокол обязателен для **каждой** новой задачи по компоненту.
@@ -56,6 +67,7 @@
 2. Матрица должна быть отражена 1:1 в `props` типах, style maps и stories.
 3. Если в ходе разработки обнаружен новый вариант, агент обязан остановиться, обновить матрицу и только после этого продолжить реализацию.
 4. Матрица вариантов считается расширяемой частью процесса: по мере разработки библиотеки и появления новых компонентов/паттернов список вариантов должен дополняться и актуализироваться, а не фиксироваться один раз навсегда.
+5. Матрица оформляется как часть единого `Component Spec Document` (см. раздел `0.2.5`), отдельные разрозненные артефакты не допускаются.
 
 ### 0.2.3 Before Code Numeric Check (обязательно)
 
@@ -84,6 +96,7 @@
 9. Перед реализацией обязателен артефакт `State Token Matrix` (в ответе агента): строки = все комбинации `appearance/state/selected/loading` (если применимо), колонки = `background`, `border`, `label`, `icon`, `padding`, `height`, `radius`, формат = `Figma raw -> token -> resolved value`.
 10. Для каждого компонента обязателен блок `Hard Constraints` (из master-node), который нельзя нарушать без Clarification Gate: фиксированные размеры, отсутствие/наличие заливки в конкретных состояниях, единые padding-правила по осям, фиксированные радиусы и прочие неизменяемые требования.
 11. `Token Priority Rule` (обязательный): при конфликте между существующим кодовым паттерном и текущим master-node Figma приоритет всегда у master-node. Использование "как в предыдущем компоненте" без прямого совпадения с master-node запрещено.
+12. `Numeric map`, `State Token Matrix` и `Hard Constraints` оформляются как единый `Component Spec Document` (см. `0.2.5`).
 
 ### 0.2.4 Component Fidelity Gate (обязательный)
 
@@ -98,6 +111,27 @@
 4. **Icon semantic check:** до завершения компонента подтвердить 4 пункта — источник `@/components/icon`, fallback `meta`, корректный semantic icon, и явный `componentSize -> iconSize` map.
 5. **Code Connect check:** для компонентов с `.figma.tsx` выполнить проверку публикации (`npm run figma:publish` или эквивалентный CI-run) и убедиться, что нет ошибок сопоставления props/node.
 6. **Pre-Story Visual Parity check:** до завершения задачи агент обязан вручную сверить в Storybook критические комбинации из `State Token Matrix` (минимум `enabled`, `hover`, `active`, `focus`, `disabled`, `loading`; для каждой appearance и selected-ветки, если есть) и подтвердить, что визуальные результаты соответствуют master-node Figma.
+7. Проверки пунктов 1–6 фиксируются в конце единого `Component Spec Document` (см. `0.2.5`) секцией `Verification`.
+
+### 0.2.5 Component Spec Document (обязательный единый артефакт)
+
+Перед реализацией компонента агент обязан создать **один** структурированный артефакт `Component Spec Document` и вести его до завершения задачи.
+Базовый шаблон: `docs/templates/component-spec.md`.
+
+Обязательная структура:
+
+1. `Component Kickoff` (`component`, `figma node`, `stories`, `a11y`, `done criteria`).
+2. `Variant Matrix` (все оси: `appearance`, `size`, `state/status`, `selected`, `loading`, и т.п.).
+3. `Numeric Map` (`padding`, `gap`, `radius`, `font-size`, `line-height` + `Figma raw -> token -> resolved value`).
+4. `State Token Matrix` (комбинации состояний по `background/border/label/icon/padding/height/radius`).
+5. `Hard Constraints` (фиксированные требования master-node, которые нельзя нарушать).
+6. `Verification` (state parity, interactive default story, icon semantic check, code connect check, pre-story visual parity).
+
+Правила:
+
+- В задаче разрешён только один `Component Spec Document` на компонент.
+- Дублирующие артефакты вне этого шаблона запрещены.
+- Любое изменение матрицы/ограничений в ходе работы обновляется в этом же документе до изменения кода.
 
 ### 0.3 Stop Condition
 
@@ -1002,5 +1036,10 @@ InputText: align clear button spacing and preserve readOnly copy behavior.
 
 ---
 
-**Версия инструкции:** 1.1
-**Последнее обновление:** добавлен GitHub-репозиторий и git workflow
+**Версия инструкции:** 1.2.0
+**Последнее обновление:** 2026-04-29
+**Краткий changelog версии 1.2.0:**
+
+- Добавлен `Runtime TL;DR` для быстрого и стабильного исполнения обязательного процесса.
+- Усилены гейты качества в `0.2.3` и `0.2.4` (`State Token Matrix`, `Hard Constraints`, `Token Priority Rule`, `Pre-Story Visual Parity`).
+- Добавлен обязательный `ThemeCheck Sync Gate` (`14.7`) и интеграция в workflow/DoD.
