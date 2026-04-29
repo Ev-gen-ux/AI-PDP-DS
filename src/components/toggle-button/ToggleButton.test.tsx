@@ -36,4 +36,22 @@ describe('ToggleButton', () => {
     expect(screen.getByRole('button')).toBeDisabled();
     expect(screen.getByRole('status')).toBeInTheDocument();
   });
+
+  it('sets aria-pressed for selected state', () => {
+    const { rerender } = render(
+      <ThemeProvider theme={theme}>
+        <ToggleButton selected={false} />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute('aria-pressed', 'false');
+
+    rerender(
+      <ThemeProvider theme={theme}>
+        <ToggleButton selected />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute('aria-pressed', 'true');
+  });
 });

@@ -146,6 +146,7 @@
 - accessibility-пункты из разделов 9 и 14.4 выполнены,
 - пройдены проверки Type Safety Gate (раздел 0.5),
 - пройдены проверки Component Fidelity Gate (раздел 0.2.4),
+- пройден code-review чеклист: `type="button"`, `:focus-visible`, transient props (`$prop`),
 - перед commit обязательно выполнены `npm run format` и `npm run format:check`,
 - пройдены `typecheck`, `lint`, `test`, `format:check`.
 
@@ -575,6 +576,7 @@ CSS-переменные типографики переопределяются
 
 - Все интерактивные элементы получают видимый `:focus-visible`.
 - Кнопки: `type="button"` по умолчанию (иначе сабмитят форму).
+- Для toggle-кнопок `aria-pressed` обязателен.
 - `aria-busy={loading}` при загрузке.
 - `aria-disabled` для визуально-disabled состояний без блокировки фокуса (где это нужно для tooltip).
 - `aria-invalid="true"` + `aria-describedby` для полей с ошибкой.
