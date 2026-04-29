@@ -81,6 +81,9 @@
 6. Для каждого size-варианта радиус (`border-radius`) проверяется отдельно по мастер-компоненту Figma. Запрещено переносить радиус "по аналогии" с другого варианта.
 7. Если ось размера в Figma задана строковыми вариантами (например, `Extra Extra Small 8px`), агент обязан сохранить её 1:1 в story/code-connect mapping и не упрощать до числового enum без явного согласования.
 8. Если токен по имени выглядит подходящим, но его фактическое значение не совпадает с Figma (например, `4xSmall` ≠ `8px`), использование такого токена запрещено до уточнения/корректировки через Clarification Gate (0.2.1).
+9. Перед реализацией обязателен артефакт `State Token Matrix` (в ответе агента): строки = все комбинации `appearance/state/selected/loading` (если применимо), колонки = `background`, `border`, `label`, `icon`, `padding`, `height`, `radius`, формат = `Figma raw -> token -> resolved value`.
+10. Для каждого компонента обязателен блок `Hard Constraints` (из master-node), который нельзя нарушать без Clarification Gate: фиксированные размеры, отсутствие/наличие заливки в конкретных состояниях, единые padding-правила по осям, фиксированные радиусы и прочие неизменяемые требования.
+11. `Token Priority Rule` (обязательный): при конфликте между существующим кодовым паттерном и текущим master-node Figma приоритет всегда у master-node. Использование "как в предыдущем компоненте" без прямого совпадения с master-node запрещено.
 
 ### 0.2.4 Component Fidelity Gate (обязательный)
 
@@ -94,6 +97,7 @@
 3. **No ad-hoc public props:** запрещено добавлять новый публичный проп, если ему нет соответствующей оси/свойства в мастер-компоненте Figma (без явного согласования через Clarification Gate).
 4. **Icon semantic check:** до завершения компонента подтвердить 4 пункта — источник `@/components/icon`, fallback `meta`, корректный semantic icon, и явный `componentSize -> iconSize` map.
 5. **Code Connect check:** для компонентов с `.figma.tsx` выполнить проверку публикации (`npm run figma:publish` или эквивалентный CI-run) и убедиться, что нет ошибок сопоставления props/node.
+6. **Pre-Story Visual Parity check:** до завершения задачи агент обязан вручную сверить в Storybook критические комбинации из `State Token Matrix` (минимум `enabled`, `hover`, `active`, `focus`, `disabled`, `loading`; для каждой appearance и selected-ветки, если есть) и подтвердить, что визуальные результаты соответствуют master-node Figma.
 
 ### 0.3 Stop Condition
 
