@@ -1,5 +1,5 @@
 ---
-"@ev-gen-ux/ai-pdp-ds": patch
+'@ev-gen-ux/ai-pdp-ds': patch
 ---
 
 Docs: align and strengthen component delivery governance in CLAUDE.md.
