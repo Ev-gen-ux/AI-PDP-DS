@@ -86,7 +86,12 @@
 - stories оформлены по разделу 10,
 - accessibility-пункты из разделов 9 и 14.4 выполнены,
 - пройдены проверки Type Safety Gate (раздел 0.5),
+- перед commit обязательно выполнены `npm run format` и `npm run format:check`,
 - пройдены `typecheck`, `lint`, `test`, `format:check`.
+
+Если `format:check` не пройден, commit запрещён. Агент обязан остановиться и вывести:
+
+`FORMAT VIOLATION: run npm run format and npm run format:check before commit`.
 
 ### 0.5 Type Safety Gate (обязательный)
 

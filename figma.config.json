@@ -1,6 +1,6 @@
 {
   "codeConnect": {
-    "include": ["src/**/*.figma.tsx"],
+    "include": ["src/**/*.figma.tsx", "src/components/**/*.tsx"],
     "exclude": ["node_modules/**", "dist/**", "storybook-static/**"],
     "parser": "react",
     "importPaths": {
