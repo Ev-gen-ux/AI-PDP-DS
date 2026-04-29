@@ -41,7 +41,21 @@ const Root = styled.div<{ $state: AvatarState }>`
   line-height: ${({ theme }) => theme.typography.lineHeight.component.extraSmall};
   font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
   text-transform: uppercase;
+  cursor: pointer;
   ${({ $state }) => stateStyles[$state]}
+
+  ${({ $state }) =>
+    $state === 'enabled'
+      ? css`
+          &:hover {
+            ${stateStyles.hover}
+          }
+
+          &:active {
+            ${stateStyles.active}
+          }
+        `
+      : null}
 `;
 
 const StatusMarkWrap = styled.span`
