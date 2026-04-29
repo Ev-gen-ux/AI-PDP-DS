@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { AirplaneTakeoff } from '@phosphor-icons/react';
+import { AirplaneTakeoffIcon } from '@phosphor-icons/react';
 import { ThemeProvider } from 'styled-components';
 import { describe, expect, it } from 'vitest';
 import { Icon } from './Icon';
@@ -9,7 +9,7 @@ describe('Icon', () => {
   it('renders phosphor icon', () => {
     render(
       <ThemeProvider theme={theme}>
-        <Icon icon={AirplaneTakeoff} aria-label="Plane icon" />
+        <Icon icon={AirplaneTakeoffIcon} aria-label="Plane icon" />
       </ThemeProvider>,
     );
 
@@ -19,7 +19,7 @@ describe('Icon', () => {
   it('renders with allowed size', () => {
     const { container } = render(
       <ThemeProvider theme={theme}>
-        <Icon icon={AirplaneTakeoff} size={16} aria-label="Small plane" />
+        <Icon icon={AirplaneTakeoffIcon} size={16} aria-label="Small plane" />
       </ThemeProvider>,
     );
 
