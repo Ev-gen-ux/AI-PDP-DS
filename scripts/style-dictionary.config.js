@@ -16,6 +16,9 @@ const getThemePath = (token) => {
   if (fileName === 'borderRadius.json') {
     return ['borderRadius', ...token.path];
   }
+  if (fileName === 'effects.json') {
+    return ['effects', ...token.path];
+  }
   if (fileName.startsWith('typography.')) {
     return ['typography', ...token.path];
   }
@@ -93,6 +96,7 @@ StyleDictionary.registerFormat({
         token.filePath.includes('/primitives/') ||
         token.filePath.endsWith('spacing.json') ||
         token.filePath.endsWith('borderRadius.json') ||
+        token.filePath.endsWith('effects.json') ||
         token.filePath.endsWith('colors.light-theme.json'),
     );
     const typographyXl = dictionary.allTokens.filter((token) =>
@@ -177,6 +181,7 @@ StyleDictionary.registerFormat({
       (token) =>
         token.filePath.endsWith('spacing.json') ||
         token.filePath.endsWith('borderRadius.json') ||
+        token.filePath.endsWith('effects.json') ||
         token.filePath.includes('/semantic/typography.') ||
         token.filePath.endsWith('colors.light-theme.json'),
     );
@@ -188,6 +193,7 @@ StyleDictionary.registerFormat({
         fileName.startsWith('colors.') ||
         fileName === 'spacing.json' ||
         fileName === 'borderRadius.json' ||
+        fileName === 'effects.json' ||
         fileName.startsWith('typography.')
       ) {
         path = getThemePath(token);

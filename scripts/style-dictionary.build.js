@@ -97,7 +97,11 @@ const appendTypographyOverrides = async () => {
 
 async function main() {
   const primitives = 'tokens/primitives/**/*.json';
-  const semanticBase = ['tokens/semantic/spacing.json', 'tokens/semantic/borderRadius.json'];
+  const semanticBase = [
+    'tokens/semantic/spacing.json',
+    'tokens/semantic/borderRadius.json',
+    'tokens/semantic/effects.json',
+  ];
 
   await runBuild(
     [

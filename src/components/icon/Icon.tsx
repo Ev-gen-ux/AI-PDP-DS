@@ -7,7 +7,9 @@ import {
   LinkIcon,
   MetaLogoIcon,
   SunIcon,
+  WarningCircleIcon,
   WarningIcon,
+  XIcon,
   XCircleIcon,
 } from '@phosphor-icons/react';
 import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
@@ -24,10 +26,12 @@ export const sunIconGlyph: GlyphComponent = SunIcon;
 export const statusSuccessIconGlyph: GlyphComponent = CheckCircleIcon;
 export const statusInformationIconGlyph: GlyphComponent = InfoIcon;
 export const statusAlertIconGlyph: GlyphComponent = WarningIcon;
+export const warningCircleIconGlyph: GlyphComponent = WarningCircleIcon;
 export const statusWaitIconGlyph: GlyphComponent = ClockIcon;
 export const statusErrorIconGlyph: GlyphComponent = XCircleIcon;
+export const xIconGlyph: GlyphComponent = XIcon;
 
-export interface IconProps extends Omit<PhosphorIconProps, 'size' | 'weight'> {
+export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;
   size?: IconSize;
 }
@@ -40,10 +44,16 @@ const Root = styled.span`
   color: inherit;
 `;
 
-export const Icon = ({ icon: Glyph, size = 24, color = 'currentColor', ...rest }: IconProps) => {
+export const Icon = ({
+  icon: Glyph,
+  size = 24,
+  color = 'currentColor',
+  weight = 'bold',
+  ...rest
+}: IconProps) => {
   return (
     <Root>
-      <Glyph size={size} weight="bold" color={color} {...rest} />
+      <Glyph size={size} weight={weight} color={color} {...rest} />
     </Root>
   );
 };

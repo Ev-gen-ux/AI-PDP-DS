@@ -3,6 +3,7 @@ export { fallbackIconGlyph } from './Icon';
 export { linkIconGlyph } from './Icon';
 export { metaIconGlyph } from './Icon';
 export { sunIconGlyph } from './Icon';
+export { warningCircleIconGlyph, xIconGlyph } from './Icon';
 export {
   statusAlertIconGlyph,
   statusErrorIconGlyph,
