@@ -8,6 +8,7 @@ import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
+import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
@@ -70,6 +71,9 @@ export const Showcase: Story = {
             />
             <InputText label="ReadOnly" defaultValue="Read-only value" readOnly />
             <InputText label="Disabled" placeholder="Placeholder" disabled />
+            <Radio label="Radio" helpMessage="Help message" />
+            <Radio label="Radio error" invalid errorMessage="Error message" checked />
+            <Radio label="Radio disabled" disabled />
           </Stack>
         </div>
       </div>

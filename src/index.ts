@@ -24,6 +24,8 @@ export type {
 } from './components/toggle-button';
 export { InputText } from './components/input-text';
 export type { InputTextProps } from './components/input-text';
+export { Radio } from './components/radio';
+export type { RadioProps, RadioState } from './components/radio';
 export { InlineMessage } from './components/inline-message';
 export type { InlineMessageProps, InlineMessageStatus } from './components/inline-message';
 export { Icon } from './components/icon';
