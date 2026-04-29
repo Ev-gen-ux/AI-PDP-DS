@@ -88,6 +88,9 @@
 
 1. **Master state parity check:** отдельно сверить `enabled/hover/active/focus/disabled/loading` по мастер-node Figma и зафиксировать результат в кратком чеклисте.
 2. **Interactive Default Story:** первая story компонента должна быть `Default` (один компонент, управляется controls). Групповые stories по `appearance` идут ниже как демонстрационные.
+   - В `Default` запрещено фиксировать демо-ось состояния (`state`, `status`, `interactionState` и аналоги) через controls/args, если это блокирует реальные `:hover`, `:active`, `:focus-visible`.
+   - Принудительные визуальные состояния (`hover`, `active`, `focus`, `disabled`) показываются только в демонстрационных stories ниже (`Primary`, `Secondary` и т.п.).
+   - Для компонентов, где текст и иконки имеют разные токены состояний, перед реализацией фиксируются две отдельные карты: `label state map` и `icon state map` (enabled/hover/active/focus/disabled), и обе проверяются в Storybook.
 3. **No ad-hoc public props:** запрещено добавлять новый публичный проп, если ему нет соответствующей оси/свойства в мастер-компоненте Figma (без явного согласования через Clarification Gate).
 4. **Icon semantic check:** до завершения компонента подтвердить 4 пункта — источник `@/components/icon`, fallback `meta`, корректный semantic icon, и явный `componentSize -> iconSize` map.
 5. **Code Connect check:** для компонентов с `.figma.tsx` выполнить проверку публикации (`npm run figma:publish` или эквивалентный CI-run) и убедиться, что нет ошибок сопоставления props/node.
