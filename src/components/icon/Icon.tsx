@@ -4,6 +4,7 @@ import {
   ClockIcon,
   CodeIcon,
   InfoIcon,
+  MetaLogoIcon,
   WarningIcon,
   XCircleIcon,
 } from '@phosphor-icons/react';
@@ -15,6 +16,7 @@ export type IconSize = 16 | 24;
 type GlyphComponent = ComponentType<PhosphorIconProps>;
 
 export const fallbackIconGlyph: GlyphComponent = CodeIcon;
+export const metaIconGlyph: GlyphComponent = MetaLogoIcon;
 export const statusSuccessIconGlyph: GlyphComponent = CheckCircleIcon;
 export const statusInformationIconGlyph: GlyphComponent = InfoIcon;
 export const statusAlertIconGlyph: GlyphComponent = WarningIcon;
