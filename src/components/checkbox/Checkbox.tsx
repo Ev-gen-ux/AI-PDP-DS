@@ -113,7 +113,9 @@ const CheckMark = styled.svg<{ $disabled: boolean }>`
   transform: translate(-1px, -1px);
   pointer-events: none;
   color: ${({ theme, $disabled }) =>
-    $disabled ? theme.colors.checkbox.controlMark.disabled : theme.colors.checkbox.controlMark.enabled};
+    $disabled
+      ? theme.colors.checkbox.controlMark.disabled
+      : theme.colors.checkbox.controlMark.enabled};
 `;
 
 const IndeterminateMark = styled.span<{ $disabled: boolean }>`
@@ -126,7 +128,9 @@ const IndeterminateMark = styled.span<{ $disabled: boolean }>`
   transform: translate(-50%, -50%);
   pointer-events: none;
   background-color: ${({ theme, $disabled }) =>
-    $disabled ? theme.colors.checkbox.controlMark.disabled : theme.colors.checkbox.controlMark.enabled};
+    $disabled
+      ? theme.colors.checkbox.controlMark.disabled
+      : theme.colors.checkbox.controlMark.enabled};
 `;
 
 const Content = styled.div`
