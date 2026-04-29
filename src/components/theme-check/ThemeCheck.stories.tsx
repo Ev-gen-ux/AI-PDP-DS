@@ -4,6 +4,7 @@ import { Avatar } from '@/components/avatar';
 import { Button } from '@/components/button';
 import { ButtonIcon } from '@/components/button-icon';
 import { ButtonLink } from '@/components/button-link';
+import { Checkbox } from '@/components/checkbox';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputText } from '@/components/input-text';
@@ -71,6 +72,9 @@ export const Showcase: Story = {
             />
             <InputText label="ReadOnly" defaultValue="Read-only value" readOnly />
             <InputText label="Disabled" placeholder="Placeholder" disabled />
+            <Checkbox label="Checkbox" helpMessage="Help message" />
+            <Checkbox label="Checkbox checked" checked />
+            <Checkbox label="Checkbox error" invalid errorMessage="Error message" />
             <Radio label="Radio" helpMessage="Help message" />
             <Radio label="Radio error" invalid errorMessage="Error message" checked />
             <Radio label="Radio disabled" disabled />
