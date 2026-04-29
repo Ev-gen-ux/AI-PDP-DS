@@ -777,9 +777,10 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 8. **Создать `.figma.tsx`** с маппингом всех вариантов и пропсов.
 9. **Проверить accessibility** по чеклисту раздела 9.
 10. **Запустить локально** — Storybook должен отрисовать без warnings в консоли.
-11. **Создать Changeset** (`npx changeset`) если меняется публичный API.
-12. **Открыть PR в `main`** с описанием по шаблону `.github/pull_request_template.md`.
-13. **Дождаться зелёного CI** (lint, typecheck, test, build, visual regression).
+11. **Обновить `Foundation/ThemeCheck`** по правилам ThemeCheck Sync Gate (раздел 14.7), чтобы новый/изменённый компонент был включён в сценарий проверки темы.
+12. **Создать Changeset** (`npx changeset`) если меняется публичный API.
+13. **Открыть PR в `main`** с описанием по шаблону `.github/pull_request_template.md`.
+14. **Дождаться зелёного CI** (lint, typecheck, test, build, visual regression).
 
 ### 14.1 Definition of Done (DoD) для компонента
 
@@ -788,6 +789,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - реализованы все требуемые состояния и варианты,
 - добавлены stories и документация пропсов,
 - полностью пройдены обязательные гейты из разделов 0.4, 0.5 и 0.2.4,
+- выполнен ThemeCheck Sync Gate (раздел 14.7),
 - пройден Versioning Gate (раздел 14.6),
 - при изменении публичного API добавлен changeset.
 
@@ -851,6 +853,16 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - нужен ли changeset,
 - какой тип bump выбрать,
 - какую формулировку добавить в PR.
+
+### 14.7 ThemeCheck Sync Gate (обязательный)
+
+При добавлении нового компонента или изменении существующего интерактивного поведения агент обязан синхронизировать `Foundation/ThemeCheck`:
+
+1. Добавить компонент в `src/components/theme-check/ThemeCheck.stories.tsx` (или обновить его блок), чтобы проверялись ключевые визуальные состояния в light/dark теме.
+2. Для компонента с `appearance` добавить минимум по одному примеру на каждый `appearance`.
+3. Для компонента с `selected/checked/toggled` (или аналогичной осью) добавить минимум selected/unselected примеры.
+4. Для компонента с `loading/disabled` добавить минимум один loading и один disabled пример (если применимо).
+5. Если компонент не добавлен в ThemeCheck, PR считается неполным.
 
 ## 15. Настройка GitHub-репозитория (требуется владельцу)
 
