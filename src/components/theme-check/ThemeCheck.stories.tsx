@@ -15,6 +15,13 @@ const meta = {
   parameters: {
     controls: { disable: true },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '24px 0 24px 24px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta;
 
 export default meta;
@@ -23,38 +30,48 @@ type Story = StoryObj<typeof meta>;
 export const Showcase: Story = {
   render: () => (
     <Stack gap="grouped">
-      <Stack gap="close">
-        <Label text="Theme Check" />
-        <InlineMessage message="Switch theme from the toolbar: Light / Dark" />
-      </Stack>
+      <div style={{ padding: '24px' }}>
+        <Stack gap="close">
+          <Label text="Theme Check" />
+          <InlineMessage message="Switch theme from the toolbar: Light / Dark" />
+        </Stack>
+      </div>
 
-      <Cluster gap="related">
-        <Button appearance="primary" text="Primary" iconBefore />
-        <Button appearance="outline" text="Outline" iconAfter />
-        <Button appearance="flat" text="Flat" />
-        <Button appearance="primary" text="Loading" loading />
-        <Button appearance="outline" text="Disabled" disabled />
-      </Cluster>
+      <div style={{ padding: '24px' }}>
+        <Cluster gap="related">
+          <Button appearance="primary" text="Primary" iconBefore />
+          <Button appearance="outline" text="Outline" iconAfter />
+          <Button appearance="flat" text="Flat" />
+          <Button appearance="primary" text="Loading" loading />
+          <Button appearance="outline" text="Disabled" disabled />
+        </Cluster>
+      </div>
 
-      <Stack gap="related">
-        <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
-        <InputText label="With value" defaultValue="Value" helpMessage="Help message" />
-        <InputText
-          label="Invalid"
-          defaultValue="Wrong value"
-          invalid
-          errorMessage="Error message"
-        />
-        <InputText label="ReadOnly" defaultValue="Read-only value" readOnly />
-        <InputText label="Disabled" placeholder="Placeholder" disabled />
-      </Stack>
+      <div style={{ padding: '24px' }}>
+        <div style={{ width: '320px' }}>
+          <Stack gap="related">
+            <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
+            <InputText label="With value" defaultValue="Value" helpMessage="Help message" />
+            <InputText
+              label="Invalid"
+              defaultValue="Wrong value"
+              invalid
+              errorMessage="Error message"
+            />
+            <InputText label="ReadOnly" defaultValue="Read-only value" readOnly />
+            <InputText label="Disabled" placeholder="Placeholder" disabled />
+          </Stack>
+        </div>
+      </div>
 
-      <Cluster gap="related">
-        <Icon icon={Code} size={16} />
-        <Icon icon={Code} size={24} />
-        <Spinner size={16} />
-        <Spinner size={24} />
-      </Cluster>
+      <div style={{ padding: '24px' }}>
+        <Cluster gap="related">
+          <Icon icon={Code} size={16} />
+          <Icon icon={Code} size={24} />
+          <Spinner size={16} />
+          <Spinner size={24} />
+        </Cluster>
+      </div>
     </Stack>
   ),
 };
