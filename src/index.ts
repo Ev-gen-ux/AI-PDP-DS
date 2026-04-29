@@ -8,6 +8,8 @@ export type { Theme } from './theme/tokens';
 // Components — atoms
 export { Button } from './components/button';
 export type { ButtonProps } from './components/button';
+export { ButtonIcon } from './components/button-icon';
+export type { ButtonIconAppearance, ButtonIconProps } from './components/button-icon';
 export { InputText } from './components/input-text';
 export type { InputTextProps } from './components/input-text';
 export { InlineMessage } from './components/inline-message';

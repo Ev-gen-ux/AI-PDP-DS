@@ -82,6 +82,16 @@
 7. Если ось размера в Figma задана строковыми вариантами (например, `Extra Extra Small 8px`), агент обязан сохранить её 1:1 в story/code-connect mapping и не упрощать до числового enum без явного согласования.
 8. Если токен по имени выглядит подходящим, но его фактическое значение не совпадает с Figma (например, `4xSmall` ≠ `8px`), использование такого токена запрещено до уточнения/корректировки через Clarification Gate (0.2.1).
 
+### 0.2.4 Component Fidelity Gate (обязательный)
+
+Для каждого нового/изменяемого компонента перед PR агент обязан пройти единый Fidelity Gate:
+
+1. **Master state parity check:** отдельно сверить `enabled/hover/active/focus/disabled/loading` по мастер-node Figma и зафиксировать результат в кратком чеклисте.
+2. **Interactive Default Story:** первая story компонента должна быть `Default` (один компонент, управляется controls). Групповые stories по `appearance` идут ниже как демонстрационные.
+3. **No ad-hoc public props:** запрещено добавлять новый публичный проп, если ему нет соответствующей оси/свойства в мастер-компоненте Figma (без явного согласования через Clarification Gate).
+4. **Icon semantic check:** до завершения компонента подтвердить 4 пункта — источник `@/components/icon`, fallback `meta`, корректный semantic icon, и явный `componentSize -> iconSize` map.
+5. **Code Connect check:** для компонентов с `.figma.tsx` выполнить проверку публикации (`npm run figma:publish` или эквивалентный CI-run) и убедиться, что нет ошибок сопоставления props/node.
+
 ### 0.3 Stop Condition
 
 Если хотя бы один обязательный пункт инструкции не может быть выполнен (нет токена, неясна спецификация, конфликт требований), агент обязан остановиться и явно сообщить блокер.
@@ -94,6 +104,7 @@
 - stories оформлены по разделу 10,
 - accessibility-пункты из разделов 9 и 14.4 выполнены,
 - пройдены проверки Type Safety Gate (раздел 0.5),
+- пройдены проверки Component Fidelity Gate (раздел 0.2.4),
 - перед commit обязательно выполнены `npm run format` и `npm run format:check`,
 - пройдены `typecheck`, `lint`, `test`, `format:check`.
 
@@ -574,25 +585,34 @@ decorators: [
 
 8. Не использовать фиксированную высоту `docs.story.height`, если это приводит к внутреннему скроллу в контейнере. Контейнер должен "обнимать" компонент по высоте.
 9. Матрица `AllVariants` не обязательна. По текущему стандарту предпочтительны отдельные истории по каждому варианту/состоянию.
-10. Для компонентов с осью `appearance` используется унифицированный паттерн stories:
-    - одна story на каждый `appearance` (`Primary`, `Secondary`, `Outline`, `Flat` и т.п.);
-    - внутри каждой такой story все ключевые состояния (например, разные `status`, `disabled`, `loading`) выводятся вертикальным списком в одном контейнере:
+10. Для компонентов с осью `appearance` используется унифицированный паттерн stories (см. также Component Fidelity Gate, раздел 0.2.4):
+    - первая story — `Default` (один экземпляр компонента, управляемый controls);
+    - далее отдельные stories по `appearance` (`Primary`, `Secondary`, `Outline`, `Flat` и т.п.);
+    - внутри appearance-story ключевые состояния (например, `disabled`, `loading`, `status`) выводятся вертикальным списком в одном контейнере:
+
       ```tsx
+      export const Default: Story = {
+        args: { appearance: 'primary', disabled: false, loading: false },
+      };
+
       export const Primary: Story = {
         render: () => (
           <div
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}
           >
-            <StatusLabel appearance="primary" status="success" text="Success" />
-            <StatusLabel appearance="primary" status="information" text="Information" />
+            <ButtonIcon appearance="primary" />
+            <ButtonIcon appearance="primary" disabled />
+            <ButtonIcon appearance="primary" loading />
             {/* ... */}
           </div>
         ),
       };
       ```
+
     - компонент в story не растягивается на всю ширину контейнера, а занимает ширину по контенту (`alignItems: 'flex-start'` либо фиксированная ширина только там, где это задумано дизайном — например, для инпутов);
     - текстовые заголовки над компонентами внутри контейнера не используются — состояние считывается из самого компонента (`text`/`label` и `status`);
     - размеры в stories соответствуют только тем размерам, которые заданы в мастер‑компоненте Figma для данного `appearance` (дополнительные размеры добавляются только после обновления Variant Matrix и макета).
+
 11. Навигация Storybook должна быть алфавитной и стабильной:
     - включается глобально через `.storybook/preview.tsx`:
       ```tsx
@@ -641,6 +661,8 @@ export const Disabled: Story = { args: { disabled: true, text: 'Button' } };
 ## 11. Code Connect (Figma ↔ React маппинг)
 
 Каждый компонент имеет `Component.figma.tsx`. Это связывает Figma-компонент с React-кодом и показывает корректный сниппет в Figma Dev Mode.
+
+Обязательная проверка публикации для новых/изменённых `.figma.tsx` описана в **Component Fidelity Gate (раздел 0.2.4, пункт 5)**.
 
 ```tsx
 // Button.figma.tsx
@@ -758,7 +780,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 
 - реализованы все требуемые состояния и варианты,
 - добавлены stories и документация пропсов,
-- полностью пройдены обязательные гейты из разделов 0.4 и 0.5,
+- полностью пройдены обязательные гейты из разделов 0.4, 0.5 и 0.2.4,
 - пройден Versioning Gate (раздел 14.6),
 - при изменении публичного API добавлен changeset.
 
