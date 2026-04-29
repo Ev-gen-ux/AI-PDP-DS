@@ -16,6 +16,12 @@ export type {
   ButtonLinkProps,
   ButtonLinkState,
 } from './components/button-link';
+export { ToggleButton } from './components/toggle-button';
+export type {
+  ToggleButtonAppearance,
+  ToggleButtonProps,
+  ToggleButtonState,
+} from './components/toggle-button';
 export { InputText } from './components/input-text';
 export type { InputTextProps } from './components/input-text';
 export { InlineMessage } from './components/inline-message';
