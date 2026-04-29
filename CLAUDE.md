@@ -660,6 +660,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - реализованы все требуемые состояния и варианты,
 - добавлены stories и документация пропсов,
 - полностью пройдены обязательные гейты из разделов 0.4 и 0.5,
+- пройден Versioning Gate (раздел 14.6),
 - при изменении публичного API добавлен changeset.
 
 ### 14.2 Token-first policy
@@ -699,6 +700,28 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - `Почему изменено`
 - `Как проверено` (команды + результат)
 - `Риски / обратная совместимость`
+
+### 14.6 Versioning Gate (обязательный)
+
+Перед открытием PR агент обязан явно определить сценарий версионирования:
+
+1. **Изменён публичный API компонента / добавлен новый компонент / изменено поведение для потребителя**
+   - changeset обязателен;
+   - обязательно указать тип bump (`patch` / `minor` / `major`) и причину выбора.
+2. **Только внутренняя правка без влияния на публичный API**
+   - changeset допускается не создавать;
+   - в PR явно зафиксировать: `No public API impact`.
+3. **Глобальный релиз библиотеки**
+   - все changeset в ветке должны быть актуальны и согласованы с фактическими изменениями.
+
+Если правило не выполнено, агент обязан остановиться и вывести:
+
+`VERSIONING VIOLATION: <что нарушено>`.
+
+Дальше обязательно указать, что исправить:
+- нужен ли changeset,
+- какой тип bump выбрать,
+- какую формулировку добавить в PR.
 
 ## 15. Настройка GitHub-репозитория (требуется владельцу)
 
@@ -791,6 +814,50 @@ Settings → Secrets and variables → Actions:
 - Storybook (локально): `npm run storybook`
 - Tokens build: `npm run tokens:build`
 - Code Connect publish: `npm run figma:publish`
+
+---
+
+## 18. Шаблон версионирования и release notes
+
+Используем единый подход: официальная версия поднимается у библиотеки, изменения компонентов фиксируются в changeset/changelog внутри версии библиотеки.
+
+### 18.1 Как выбрать тип bump (SemVer)
+
+- `patch` — багфикс или внутренняя правка без изменения публичного API компонента.
+- `minor` — новый компонент, новый проп, новое состояние или расширение API без breaking changes.
+- `major` — удаление/переименование пропа, изменение поведения по умолчанию, любое несовместимое изменение API.
+
+### 18.2 Шаблон changeset (копировать как есть)
+
+```md
+---
+"@ev-gen-ux/ai-pdp-ds": patch
+---
+
+Button: fix keyboard lock while loading by applying native disabled state.
+InputText: align clear button spacing and preserve readOnly copy behavior.
+```
+
+Замените `patch` на `minor` или `major`, если это соответствует реальному изменению.
+
+### 18.3 Шаблон component release note (для PR и changelog-стиля)
+
+```md
+## Component release notes
+
+- Component: <Button | InputText | ...>
+- Change type: <fix | feature | breaking>
+- User impact: <что изменилось для потребителя компонента>
+- Migration: <not required | required: ...>
+- Verification: <storybook + test/lint/typecheck>
+```
+
+### 18.4 Обязательные проверки перед релизом версии
+
+1. Создан changeset с корректным типом bump.
+2. Описание в changeset отражает изменения на уровне компонентов.
+3. Пройдены `npm run typecheck`, `npm run lint`, `npm run test`, `npm run format:check`.
+4. В PR есть блок `Component release notes` по шаблону выше.
 
 ---
 
