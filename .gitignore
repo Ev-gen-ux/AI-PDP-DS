@@ -31,3 +31,6 @@ yarn-error.log*
 # Misc
 .eslintcache
 .cache/
+
+# Local AI/QA metrics (do not commit)
+.local/
