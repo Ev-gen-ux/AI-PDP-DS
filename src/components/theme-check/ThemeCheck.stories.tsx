@@ -9,6 +9,7 @@ import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
+import { NotificationSnackbar } from '@/components/notification-snackbar';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
 import { StatusLabel } from '@/components/status-label';
@@ -97,6 +98,12 @@ export const Showcase: Story = {
           <ToggleButton appearance="primary" selected text="Toggle Button" />
           <ToggleButton appearance="secondary" selected={false} />
           <ToggleButton appearance="secondary" selected />
+          <NotificationSnackbar
+            appearance="success"
+            title="Label"
+            description="Description"
+            closable={false}
+          />
         </Cluster>
       </div>
 

@@ -32,6 +32,11 @@ export { InlineMessage } from './components/inline-message';
 export type { InlineMessageProps, InlineMessageStatus } from './components/inline-message';
 export { Icon } from './components/icon';
 export type { IconProps, IconSize } from './components/icon';
+export { NotificationSnackbar } from './components/notification-snackbar';
+export type {
+  NotificationSnackbarAppearance,
+  NotificationSnackbarProps,
+} from './components/notification-snackbar';
 export { Spinner } from './components/spinner';
 export type { SpinnerProps, SpinnerSize } from './components/spinner';
 export { Label } from './components/label';
