@@ -25,6 +25,8 @@ export type {
   StatusLabelSize,
   StatusLabelStatus,
 } from './components/status-label';
+export { StatusMark } from './components/status-mark';
+export type { StatusMarkProps, StatusMarkSize } from './components/status-mark';
 
 // Patterns — molecules
 // ...
