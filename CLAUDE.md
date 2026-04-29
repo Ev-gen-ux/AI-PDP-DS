@@ -549,7 +549,9 @@ decorators: [
 decorators: [
   (Story) => (
     <div style={{ padding: '24px 0 24px 24px' }}>
-      <div style={{ width: '320px' }}> {/* только для инпутов и полей */}
+      <div style={{ width: '320px' }}>
+        {' '}
+        {/* только для инпутов и полей */}
         <Story />
       </div>
     </div>
@@ -565,7 +567,9 @@ decorators: [
       ```tsx
       export const Primary: Story = {
         render: () => (
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}
+          >
             <StatusLabel appearance="primary" status="success" text="Success" />
             <StatusLabel appearance="primary" status="information" text="Information" />
             {/* ... */}

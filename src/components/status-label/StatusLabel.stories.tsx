@@ -80,12 +80,7 @@ export const Secondary: Story = {
         }}
       >
         <StatusLabel appearance="secondary" size="medium" status="success" text="Success" />
-        <StatusLabel
-          appearance="secondary"
-          size="medium"
-          status="information"
-          text="Information"
-        />
+        <StatusLabel appearance="secondary" size="medium" status="information" text="Information" />
         <StatusLabel appearance="secondary" size="medium" status="alert" text="Alert" />
         <StatusLabel appearance="secondary" size="medium" status="wait" text="Wait" />
         <StatusLabel appearance="secondary" size="medium" status="error" text="Error" />
