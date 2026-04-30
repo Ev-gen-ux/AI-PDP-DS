@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Code } from '@phosphor-icons/react';
+import { CodeIcon } from '@phosphor-icons/react';
 import { Avatar } from '@/components/avatar';
 import { BenefitCard } from '@/components/benefit-card';
 import { Button } from '@/components/button';
@@ -19,6 +19,7 @@ import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { Sidebar } from '@/components/sidebar';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
+import { TableCellEmptyState, TableCellTextContent } from '@/components/table-cell';
 import { ToggleButton } from '@/components/toggle-button';
 import { Cluster } from '@/layouts/cluster';
 import { Stack } from '@/layouts/stack';
@@ -123,13 +124,15 @@ export const Showcase: Story = {
           <SidebarNavigationItem state="active" />
           <Sidebar state="default" />
           <Sidebar state="collapse" />
+          <TableCellEmptyState />
+          <TableCellTextContent />
         </Cluster>
       </div>
 
       <div style={{ padding: '24px' }}>
         <Cluster gap="related">
-          <Icon icon={Code} size={16} />
-          <Icon icon={Code} size={24} />
+          <Icon icon={CodeIcon} size={16} />
+          <Icon icon={CodeIcon} size={24} />
           <Spinner size={16} />
           <Spinner size={24} />
         </Cluster>

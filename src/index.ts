@@ -58,6 +58,27 @@ export type {
 } from './components/sidebar-navigation-item';
 export { Sidebar } from './components/sidebar';
 export type { SidebarProps, SidebarState } from './components/sidebar';
+export {
+  TableCellEmptyState,
+  TableCellSingleChoice,
+  TableCellTextContent,
+  TableCellBadge,
+  TableCellSplitButton,
+  TableCellSlotCentered,
+  TableCellSlotLeftAligned,
+  TableCellInlineEdit,
+} from './components/table-cell';
+export type {
+  TableCellState,
+  TableCellEmptyStateProps,
+  TableCellSingleChoiceProps,
+  TableCellTextContentProps,
+  TableCellBadgeProps,
+  TableCellSplitButtonProps,
+  TableCellSlotCenteredProps,
+  TableCellSlotLeftAlignedProps,
+  TableCellInlineEditProps,
+} from './components/table-cell';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
 export { StatusLabel } from './components/status-label';
