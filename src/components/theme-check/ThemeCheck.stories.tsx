@@ -15,6 +15,7 @@ import { NotificationSnackbar } from '@/components/notification-snackbar';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
 import { SplitButton } from '@/components/split-button';
+import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
 import { ToggleButton } from '@/components/toggle-button';
@@ -117,6 +118,8 @@ export const Showcase: Story = {
         <Cluster gap="related">
           <BenefitCard appearance="primary" />
           <BenefitCard appearance="secondary" />
+          <SidebarNavigationItem state="enabled" />
+          <SidebarNavigationItem state="active" />
         </Cluster>
       </div>
 
