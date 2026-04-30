@@ -58,6 +58,7 @@ export type {
 } from './components/sidebar-navigation-item';
 export { Sidebar } from './components/sidebar';
 export type { SidebarProps, SidebarState } from './components/sidebar';
+export { TableColumn, TableRow } from './components/table';
 export {
   TableCellEmptyState,
   TableCellSingleChoice,

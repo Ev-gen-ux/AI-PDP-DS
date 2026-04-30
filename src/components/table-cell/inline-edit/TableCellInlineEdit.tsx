@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { TableCellFrame } from '../shared/TableCellFrame';
 import type { TableCellState } from '../shared/types';
 
@@ -54,6 +54,8 @@ const EditInput = styled.input`
 export interface TableCellInlineEditProps {
   state?: TableCellState;
   selected?: boolean;
+  width?: number;
+  stretch?: boolean;
   value?: string;
   defaultValue?: string;
   placeholder?: string;
@@ -67,6 +69,8 @@ export interface TableCellInlineEditProps {
 export const TableCellInlineEdit = ({
   state,
   selected = false,
+  width = 114,
+  stretch = false,
   value,
   defaultValue = 'textContent',
   placeholder = 'textContent',
@@ -76,6 +80,7 @@ export const TableCellInlineEdit = ({
   editing,
   onEditingChange,
 }: TableCellInlineEditProps) => {
+  const theme = useTheme();
   const inputRef = useRef<HTMLInputElement>(null);
   const isValueControlled = value !== undefined;
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
@@ -145,7 +150,14 @@ export const TableCellInlineEdit = ({
   }, [hovered, isEditing, pressed, selected, state]);
 
   return (
-    <TableCellFrame state={resolvedState} selected={selected} width={114} align="center">
+    <TableCellFrame
+      state={resolvedState}
+      selected={selected}
+      width={width}
+      stretch={stretch}
+      align="center"
+      {...(isEditing ? { borderBottomColor: theme.colors.tableCell.inlineEdit.border.focus } : {})}
+    >
       {isEditing ? (
         <EditInput
           ref={inputRef}

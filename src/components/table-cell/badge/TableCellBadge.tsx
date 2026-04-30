@@ -6,14 +6,18 @@ export interface TableCellBadgeProps {
   state?: TableCellState;
   selected?: boolean;
   text?: string;
+  width?: number;
+  stretch?: boolean;
 }
 
 export const TableCellBadge = ({
   state = 'enabled',
   selected = false,
   text = 'Status Label',
+  width = 119,
+  stretch = false,
 }: TableCellBadgeProps) => (
-  <TableCellFrame state={state} selected={selected} width={119} align="center">
+  <TableCellFrame state={state} selected={selected} width={width} stretch={stretch} align="center">
     <StatusLabel
       appearance="secondary"
       status="success"

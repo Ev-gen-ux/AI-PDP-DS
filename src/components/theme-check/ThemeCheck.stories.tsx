@@ -19,6 +19,7 @@ import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { Sidebar } from '@/components/sidebar';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
+import { TableColumn, TableRow } from '@/components/table';
 import { TableCellEmptyState, TableCellTextContent } from '@/components/table-cell';
 import { ToggleButton } from '@/components/toggle-button';
 import { Cluster } from '@/layouts/cluster';
@@ -127,6 +128,13 @@ export const Showcase: Story = {
           <TableCellEmptyState />
           <TableCellTextContent />
         </Cluster>
+      </div>
+
+      <div style={{ padding: '24px', overflowX: 'auto' }}>
+        <Stack gap="related">
+          <TableRow />
+          <TableColumn />
+        </Stack>
       </div>
 
       <div style={{ padding: '24px' }}>

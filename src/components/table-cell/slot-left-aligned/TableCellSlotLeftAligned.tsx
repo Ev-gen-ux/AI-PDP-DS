@@ -15,14 +15,18 @@ export interface TableCellSlotLeftAlignedProps {
   state?: TableCellState;
   selected?: boolean;
   childrenSlot?: ReactNode;
+  width?: number;
+  stretch?: boolean;
 }
 
 export const TableCellSlotLeftAligned = ({
   state = 'enabled',
   selected = false,
   childrenSlot,
+  width = 96,
+  stretch = false,
 }: TableCellSlotLeftAlignedProps) => (
-  <TableCellFrame state={state} selected={selected} width={96} paddingY={8}>
+  <TableCellFrame state={state} selected={selected} width={width} stretch={stretch} paddingY={8}>
     {childrenSlot ?? <Placeholder aria-hidden="true" />}
   </TableCellFrame>
 );

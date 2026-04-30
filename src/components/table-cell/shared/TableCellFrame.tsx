@@ -5,8 +5,10 @@ import type { TableCellState } from './types';
 type FrameProps = {
   $state: TableCellState;
   $width?: number;
+  $stretch?: boolean;
   $align?: 'left' | 'center';
   $paddingY?: number;
+  $borderBottomColor?: string;
 };
 
 const stateStyles = {
@@ -31,7 +33,7 @@ const stateStyles = {
 const Root = styled.div<FrameProps>`
   box-sizing: border-box;
   height: 48px;
-  width: ${({ $width }) => ($width ? `${$width}px` : 'auto')};
+  width: ${({ $stretch, $width }) => ($stretch ? '100%' : $width ? `${$width}px` : 'auto')};
   padding: ${({ $paddingY = 12 }) => `${$paddingY}px`} 12px;
   display: flex;
   align-items: center;
@@ -39,14 +41,18 @@ const Root = styled.div<FrameProps>`
   overflow: hidden;
   border-bottom: 1px solid;
   ${({ $state }) => stateStyles[$state]}
+  ${({ $borderBottomColor }) =>
+    $borderBottomColor ? `border-bottom-color: ${$borderBottomColor};` : ''}
 `;
 
 export interface TableCellFrameProps {
   state?: TableCellState;
   selected?: boolean;
   width?: number;
+  stretch?: boolean;
   align?: 'left' | 'center';
   paddingY?: number;
+  borderBottomColor?: string;
   children?: ReactNode;
 }
 
@@ -54,14 +60,18 @@ export const TableCellFrame = ({
   state = 'enabled',
   selected = false,
   width,
+  stretch = false,
   align = 'left',
   paddingY,
+  borderBottomColor,
   children,
 }: TableCellFrameProps) => {
   const resolvedState: TableCellState = selected ? 'selected' : state;
   const optionalProps = {
     ...(width !== undefined ? { $width: width } : {}),
+    ...(stretch ? { $stretch: true } : {}),
     ...(paddingY !== undefined ? { $paddingY: paddingY } : {}),
+    ...(borderBottomColor ? { $borderBottomColor: borderBottomColor } : {}),
   };
 
   return (
