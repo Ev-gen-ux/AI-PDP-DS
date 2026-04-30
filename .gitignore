@@ -34,3 +34,4 @@ yarn-error.log*
 
 # Local AI/QA metrics (do not commit)
 .local/
+component_list.md
