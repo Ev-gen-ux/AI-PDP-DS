@@ -12,6 +12,7 @@ import { Label } from '@/components/label';
 import { NotificationSnackbar } from '@/components/notification-snackbar';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
+import { SplitButton } from '@/components/split-button';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
 import { ToggleButton } from '@/components/toggle-button';
@@ -98,6 +99,8 @@ export const Showcase: Story = {
           <ToggleButton appearance="primary" selected text="Toggle Button" />
           <ToggleButton appearance="secondary" selected={false} />
           <ToggleButton appearance="secondary" selected />
+          <SplitButton appearance="primary" text="Button Label" />
+          <SplitButton appearance="secondary" text="Button Label" />
           <NotificationSnackbar
             appearance="success"
             title="Label"

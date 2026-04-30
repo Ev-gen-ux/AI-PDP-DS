@@ -1,5 +1,7 @@
 import type { ComponentType } from 'react';
 import {
+  CaretDownIcon,
+  CaretUpIcon,
   CheckCircleIcon,
   ClockIcon,
   CodeIcon,
@@ -30,6 +32,8 @@ export const warningCircleIconGlyph: GlyphComponent = WarningCircleIcon;
 export const statusWaitIconGlyph: GlyphComponent = ClockIcon;
 export const statusErrorIconGlyph: GlyphComponent = XCircleIcon;
 export const xIconGlyph: GlyphComponent = XIcon;
+export const caretDownIconGlyph: GlyphComponent = CaretDownIcon;
+export const caretUpIconGlyph: GlyphComponent = CaretUpIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;
