@@ -39,6 +39,12 @@ export type {
 } from './components/notification-snackbar';
 export { Spinner } from './components/spinner';
 export type { SpinnerProps, SpinnerSize } from './components/spinner';
+export { SplitButton } from './components/split-button';
+export type {
+  SplitButtonAppearance,
+  SplitButtonProps,
+  SplitButtonState,
+} from './components/split-button';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
 export { StatusLabel } from './components/status-label';

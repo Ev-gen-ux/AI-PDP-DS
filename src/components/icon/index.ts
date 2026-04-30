@@ -1,4 +1,5 @@
 export { Icon } from './Icon';
+export { caretDownIconGlyph, caretUpIconGlyph } from './Icon';
 export { fallbackIconGlyph } from './Icon';
 export { linkIconGlyph } from './Icon';
 export { metaIconGlyph } from './Icon';
