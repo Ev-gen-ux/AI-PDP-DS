@@ -64,6 +64,10 @@
       "$value": "{spacers.12}",
       "$type": "number"
     },
+    "compactSmall": {
+      "$value": "{spacers.10}",
+      "$type": "number"
+    },
     "default": {
       "$value": "{spacers.16}",
       "$type": "number"

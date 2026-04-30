@@ -9,7 +9,7 @@ import { fallbackIconGlyph, Icon } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 
 type ButtonAppearance = 'primary' | 'outline' | 'flat';
-type ButtonSize = 'large' | 'medium';
+type ButtonSize = 'large' | 'medium' | 'small';
 
 export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
   appearance?: ButtonAppearance;
@@ -97,11 +97,18 @@ const sizeStyles = {
     line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   `,
   medium: css`
-    gap: ${({ theme }) => theme.spacing.inner.grouped};
+    gap: ${({ theme }) => theme.spacing.paddings.compactSmall};
     min-height: ${({ theme }) => theme.spacing.height.base};
+    padding: 0 ${({ theme }) => theme.spacing.paddings.medium};
+    font-size: ${({ theme }) => theme.typography.fontSize.component.small};
+    line-height: ${({ theme }) => theme.typography.lineHeight.text.small};
+  `,
+  small: css`
+    gap: ${({ theme }) => theme.spacing.inner.related};
+    min-height: ${({ theme }) => theme.spacing.height.small};
     padding: 0 ${({ theme }) => theme.spacing.paddings.compactMedium};
     font-size: ${({ theme }) => theme.typography.fontSize.component.small};
-    line-height: ${({ theme }) => theme.typography.lineHeight.component.small};
+    line-height: ${({ theme }) => theme.typography.lineHeight.text.small};
   `,
 } as const;
 
