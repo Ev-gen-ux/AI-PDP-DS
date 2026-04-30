@@ -46,7 +46,7 @@ const preview: Preview = {
             data-theme={themeMode}
             style={{
               padding: 0,
-              backgroundColor: 'var(--colors-background-body-calm)',
+              backgroundColor: 'var(--colors-background-global-calm)',
               color: 'var(--colors-text-base)',
               colorScheme: themeMode,
               transition: 'background-color 150ms ease, color 150ms ease',
