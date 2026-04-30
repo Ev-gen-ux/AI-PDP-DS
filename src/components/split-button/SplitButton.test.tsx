@@ -27,6 +27,30 @@ describe('SplitButton', () => {
     expect(onMenuToggle).toHaveBeenCalledWith(true);
   });
 
+  it('toggles menu state via main button click', () => {
+    const onMenuToggle = vi.fn();
+    render(
+      <ThemeProvider theme={theme}>
+        <SplitButton menuOpen={false} onMenuToggle={onMenuToggle} />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: /Button Label/i }));
+    expect(onMenuToggle).toHaveBeenCalledWith(true);
+  });
+
+  it('opens dropdown in uncontrolled mode on click', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <SplitButton dropdownContent={<div data-testid="dropdown-content">Dropdown content</div>} />
+      </ThemeProvider>,
+    );
+
+    expect(screen.queryByTestId('dropdown-content')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: /Button Label/i }));
+    expect(screen.getByTestId('dropdown-content')).toBeInTheDocument();
+  });
+
   it('disables both buttons while loading', () => {
     render(
       <ThemeProvider theme={theme}>

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DropdownList } from '@/components/dropdown-list';
 import { SplitButton } from './SplitButton';
 
 const meta = {
@@ -69,24 +70,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    dropdownContent: (
-      <div
-        style={{
-          width: 180,
-          background: '#ffffff',
-          border: '1px solid #dee0e2',
-          borderRadius: 8,
-          padding: 12,
-          boxShadow: '0px 2px 4px rgba(18,20,22,0.16)',
-          marginTop: 4,
-          color: '#25282b',
-          fontSize: 14,
-          lineHeight: '20px',
-        }}
-      >
-        Dropdown foundation slot
-      </div>
-    ),
+    dropdownContent: <DropdownList />,
   },
   argTypes: {
     buttonState: {
