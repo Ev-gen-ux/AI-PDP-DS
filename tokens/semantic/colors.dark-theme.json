@@ -979,7 +979,7 @@
       },
       "icon": {
         "enabled": {
-          "$value": "{palette.neutral.50}",
+          "$value": "{palette.neutral.300}",
           "$type": "color"
         }
       }
@@ -1140,6 +1140,60 @@
       "selected": {
         "$value": "{palette.neutral.600}",
         "$type": "color"
+      }
+    }
+  },
+  "dropdownList": {
+    "background": {
+      "$value": "{palette.neutral.800}",
+      "$type": "color"
+    },
+    "border": {
+      "enabled": {
+        "$value": "{palette.neutral.600}",
+        "$type": "color"
+      }
+    },
+    "item": {
+      "background": {
+        "enabled": {
+          "$value": "{palette.neutral.800}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{palette.neutral.700}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{palette.neutral.600}",
+          "$type": "color"
+        },
+        "disabled": {
+          "$value": "{palette.neutral.800}",
+          "$type": "color"
+        }
+      },
+      "label": {
+        "disabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
+      },
+      "description": {
+        "disabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
+      },
+      "icon": {
+        "enabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        },
+        "disabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
       }
     }
   },

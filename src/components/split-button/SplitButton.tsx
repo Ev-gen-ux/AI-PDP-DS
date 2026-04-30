@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { type ButtonHTMLAttributes, type ReactNode, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Icon, caretDownIconGlyph, caretUpIconGlyph } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
@@ -312,17 +312,30 @@ export const SplitButton = ({
   disabled = false,
   buttonState = 'enabled',
   splitState = 'enabled',
-  menuOpen = false,
+  menuOpen,
   onButtonClick,
   onMenuToggle,
   dropdownContent,
   type = 'button',
   ...rest
 }: SplitButtonProps) => {
+  const [internalMenuOpen, setInternalMenuOpen] = useState(false);
+  const isMenuControlled = menuOpen !== undefined;
+  const isMenuOpen = isMenuControlled ? menuOpen : internalMenuOpen;
   const resolvedButtonState = resolveState(buttonState, loading, disabled);
   const resolvedSplitState = resolveState(splitState, loading, disabled);
   const isDisabledPair = resolvedButtonState === 'disabled' || resolvedButtonState === 'loading';
-  const showUpIcon = menuOpen || resolvedSplitState === 'active';
+  const showUpIcon = isMenuOpen || resolvedSplitState === 'active';
+  const toggleMenu = (nextOpen: boolean) => {
+    if (!isMenuControlled) {
+      setInternalMenuOpen(nextOpen);
+    }
+    onMenuToggle?.(nextOpen);
+  };
+  const handleMainButtonClick: ButtonHTMLAttributes<HTMLButtonElement>['onClick'] = (event) => {
+    onButtonClick?.(event);
+    toggleMenu(!isMenuOpen);
+  };
 
   return (
     <Root>
@@ -332,7 +345,7 @@ export const SplitButton = ({
           $appearance={appearance}
           $state={resolvedButtonState}
           disabled={isDisabledPair}
-          onClick={onButtonClick}
+          onClick={handleMainButtonClick}
           aria-busy={loading || undefined}
           aria-disabled={isDisabledPair || undefined}
           {...rest}
@@ -352,9 +365,9 @@ export const SplitButton = ({
           $appearance={appearance}
           $state={resolvedSplitState}
           disabled={isDisabledPair}
-          onClick={() => onMenuToggle?.(!menuOpen)}
+          onClick={() => toggleMenu(!isMenuOpen)}
           aria-haspopup="menu"
-          aria-expanded={menuOpen || undefined}
+          aria-expanded={isMenuOpen || undefined}
           aria-label="Toggle dropdown"
         >
           <Icon
@@ -365,7 +378,7 @@ export const SplitButton = ({
         </SplitTrigger>
       </ButtonsWrap>
 
-      {menuOpen && dropdownContent ? <DropdownWrap>{dropdownContent}</DropdownWrap> : null}
+      {isMenuOpen && dropdownContent ? <DropdownWrap>{dropdownContent}</DropdownWrap> : null}
     </Root>
   );
 };

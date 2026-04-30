@@ -5,6 +5,7 @@ import { Button } from '@/components/button';
 import { ButtonIcon } from '@/components/button-icon';
 import { ButtonLink } from '@/components/button-link';
 import { Checkbox } from '@/components/checkbox';
+import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputText } from '@/components/input-text';
@@ -101,6 +102,7 @@ export const Showcase: Story = {
           <ToggleButton appearance="secondary" selected />
           <SplitButton appearance="primary" text="Button Label" />
           <SplitButton appearance="secondary" text="Button Label" />
+          <DropdownList />
           <NotificationSnackbar
             appearance="success"
             title="Label"
