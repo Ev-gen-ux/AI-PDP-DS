@@ -8,6 +8,7 @@ import { Button } from '@/components/button';
 import { ButtonIcon } from '@/components/button-icon';
 import { ButtonLink } from '@/components/button-link';
 import { Checkbox } from '@/components/checkbox';
+import { Chips } from '@/components/chips';
 import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
@@ -66,6 +67,7 @@ export const Showcase: Story = {
         <Button appearance="outline" text="Disabled" disabled />
         <ButtonLink appearance="primary" text="Link Label" iconBefore iconAfter />
         <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
+        <Chips iconBefore closable />
         <Breadcrumbs />
         <ButtonIcon appearance="primary" />
         <ButtonIcon appearance="secondary" />

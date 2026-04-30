@@ -2,9 +2,9 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке).
 
-всего 54
-готово 33
-осталось 21
+всего 53
+готово 34
+осталось 19
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -13,9 +13,8 @@
 - ✅ `Button`
 - ✅ `ButtonIcon`
 - ✅ `ButtonLink`
-- 🛠️ `Card`
 - ✅ `Checkbox`
-- 🛠️ `Chips`
+- ✅ `Chips`
 - 🛠️ `Counter`
 - 🛠️ `DatePicker`
 - 🛠️ `Divider`

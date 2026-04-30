@@ -32,6 +32,8 @@ export type {
   BreadcrumbsNode,
   BreadcrumbsProps,
 } from './components/breadcrumbs';
+export { Chips } from './components/chips';
+export type { ChipsProps, ChipsSize, ChipsState } from './components/chips';
 export { ToggleButton } from './components/toggle-button';
 export type {
   ToggleButtonAppearance,
