@@ -51,6 +51,11 @@ export type {
   SplitButtonProps,
   SplitButtonState,
 } from './components/split-button';
+export { SidebarNavigationItem } from './components/sidebar-navigation-item';
+export type {
+  SidebarNavigationItemState,
+  SidebarNavigationItemProps,
+} from './components/sidebar-navigation-item';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
 export { StatusLabel } from './components/status-label';
