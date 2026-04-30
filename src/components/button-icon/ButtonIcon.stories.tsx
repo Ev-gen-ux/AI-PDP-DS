@@ -22,6 +22,7 @@ const meta = {
   ],
   args: {
     appearance: 'primary',
+    size: 'large',
     loading: false,
     disabled: false,
   },
@@ -30,6 +31,11 @@ const meta = {
       control: 'inline-radio',
       options: ['primary', 'secondary'],
       description: 'Визуальный вариант кнопки-иконки.',
+    },
+    size: {
+      control: 'inline-radio',
+      options: ['large', 'medium', 'small'],
+      description: 'Размер кнопки-иконки.',
     },
     loading: {
       control: 'boolean',
@@ -48,6 +54,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     appearance: 'primary',
+    size: 'large',
     loading: false,
     disabled: false,
   },
@@ -55,10 +62,12 @@ export const Default: Story = {
 
 export const Primary: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
-      <ButtonIcon appearance="primary" />
-      <ButtonIcon appearance="primary" disabled />
-      <ButtonIcon appearance="primary" loading />
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 16 }}>
+      <ButtonIcon appearance="primary" size="large" />
+      <ButtonIcon appearance="primary" size="medium" />
+      <ButtonIcon appearance="primary" size="small" />
+      <ButtonIcon appearance="primary" size="large" disabled />
+      <ButtonIcon appearance="primary" size="large" loading />
     </div>
   ),
   parameters: {
@@ -68,10 +77,12 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
-      <ButtonIcon appearance="secondary" />
-      <ButtonIcon appearance="secondary" disabled />
-      <ButtonIcon appearance="secondary" loading />
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 16 }}>
+      <ButtonIcon appearance="secondary" size="large" />
+      <ButtonIcon appearance="secondary" size="medium" />
+      <ButtonIcon appearance="secondary" size="small" />
+      <ButtonIcon appearance="secondary" size="large" disabled />
+      <ButtonIcon appearance="secondary" size="large" loading />
     </div>
   ),
   parameters: {
