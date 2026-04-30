@@ -2,15 +2,14 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке).
 
-всего 55
-готово 32
-осталось 23
+всего 54
+готово 33
+осталось 21
 
 - ✅ `Accordion`
 - ✅ `Avatar`
-- 🛠️ `Badge`
 - ✅ `BenefitCard`
-- 🛠️ `Breadcrumbs`
+- ✅ `Breadcrumbs`
 - ✅ `Button`
 - ✅ `ButtonIcon`
 - ✅ `ButtonLink`
