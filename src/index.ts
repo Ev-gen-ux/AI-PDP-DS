@@ -56,6 +56,8 @@ export type {
   SidebarNavigationItemState,
   SidebarNavigationItemProps,
 } from './components/sidebar-navigation-item';
+export { Sidebar } from './components/sidebar';
+export type { SidebarProps, SidebarState } from './components/sidebar';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
 export { StatusLabel } from './components/status-label';

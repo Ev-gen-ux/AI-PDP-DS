@@ -16,6 +16,7 @@ import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
 import { SplitButton } from '@/components/split-button';
 import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
+import { Sidebar } from '@/components/sidebar';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
 import { ToggleButton } from '@/components/toggle-button';
@@ -120,6 +121,8 @@ export const Showcase: Story = {
           <BenefitCard appearance="secondary" />
           <SidebarNavigationItem state="enabled" />
           <SidebarNavigationItem state="active" />
+          <Sidebar state="default" />
+          <Sidebar state="collapse" />
         </Cluster>
       </div>
 
