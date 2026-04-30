@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Code } from '@phosphor-icons/react';
 import { Avatar } from '@/components/avatar';
+import { BenefitCard } from '@/components/benefit-card';
 import { Button } from '@/components/button';
 import { ButtonIcon } from '@/components/button-icon';
 import { ButtonLink } from '@/components/button-link';
@@ -109,6 +110,13 @@ export const Showcase: Story = {
             description="Description"
             closable={false}
           />
+        </Cluster>
+      </div>
+
+      <div style={{ padding: '24px' }}>
+        <Cluster gap="related">
+          <BenefitCard appearance="primary" />
+          <BenefitCard appearance="secondary" />
         </Cluster>
       </div>
 

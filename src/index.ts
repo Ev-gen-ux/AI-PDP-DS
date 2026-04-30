@@ -26,6 +26,8 @@ export { InputText } from './components/input-text';
 export type { InputTextProps } from './components/input-text';
 export { Checkbox } from './components/checkbox';
 export type { CheckboxProps, CheckboxState } from './components/checkbox';
+export { BenefitCard } from './components/benefit-card';
+export type { BenefitCardAppearance, BenefitCardProps } from './components/benefit-card';
 export { DropdownItem } from './components/dropdown-item';
 export type { DropdownItemProps, DropdownItemState } from './components/dropdown-item';
 export { DropdownList } from './components/dropdown-list';
