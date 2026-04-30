@@ -23,6 +23,8 @@ export interface TableCellTextContentProps {
   selected?: boolean;
   text?: string;
   iconBefore?: ReactNode | boolean;
+  width?: number;
+  stretch?: boolean;
 }
 
 export const TableCellTextContent = ({
@@ -30,8 +32,10 @@ export const TableCellTextContent = ({
   selected = false,
   text = 'textContent',
   iconBefore = true,
+  width = 134,
+  stretch = false,
 }: TableCellTextContentProps) => (
-  <TableCellFrame state={state} selected={selected} width={134}>
+  <TableCellFrame state={state} selected={selected} width={width} stretch={stretch}>
     <Container>
       {iconBefore ? (
         typeof iconBefore === 'boolean' ? (

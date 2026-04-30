@@ -15,14 +15,25 @@ export interface TableCellSlotCenteredProps {
   state?: TableCellState;
   selected?: boolean;
   childrenSlot?: ReactNode;
+  width?: number;
+  stretch?: boolean;
 }
 
 export const TableCellSlotCentered = ({
   state = 'enabled',
   selected = false,
   childrenSlot,
+  width = 96,
+  stretch = false,
 }: TableCellSlotCenteredProps) => (
-  <TableCellFrame state={state} selected={selected} width={96} align="center" paddingY={8}>
+  <TableCellFrame
+    state={state}
+    selected={selected}
+    width={width}
+    stretch={stretch}
+    align="center"
+    paddingY={8}
+  >
     {childrenSlot ?? <Placeholder aria-hidden="true" />}
   </TableCellFrame>
 );

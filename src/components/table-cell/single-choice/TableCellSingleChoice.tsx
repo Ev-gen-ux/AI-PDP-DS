@@ -6,14 +6,16 @@ export interface TableCellSingleChoiceProps {
   state?: TableCellState;
   selected?: boolean;
   checked?: boolean;
+  width?: number;
 }
 
 export const TableCellSingleChoice = ({
   state = 'enabled',
   selected = false,
   checked = false,
+  width = 44,
 }: TableCellSingleChoiceProps) => (
-  <TableCellFrame state={state} selected={selected} width={44}>
+  <TableCellFrame state={state} selected={selected} width={width}>
     <Checkbox label="" checked={checked} />
   </TableCellFrame>
 );

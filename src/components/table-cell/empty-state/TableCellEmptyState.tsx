@@ -14,14 +14,18 @@ export interface TableCellEmptyStateProps {
   state?: TableCellState;
   selected?: boolean;
   text?: string;
+  width?: number;
+  stretch?: boolean;
 }
 
 export const TableCellEmptyState = ({
   state = 'enabled',
   selected = false,
   text = '---',
+  width = 180,
+  stretch = false,
 }: TableCellEmptyStateProps) => (
-  <TableCellFrame state={state} selected={selected} width={180}>
+  <TableCellFrame state={state} selected={selected} width={width} stretch={stretch}>
     <Value>{text}</Value>
   </TableCellFrame>
 );
