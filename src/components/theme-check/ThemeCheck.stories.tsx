@@ -3,6 +3,7 @@ import { CodeIcon } from '@phosphor-icons/react';
 import { Avatar } from '@/components/avatar';
 import { Accordion } from '@/components/accordion';
 import { BenefitCard } from '@/components/benefit-card';
+import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Button } from '@/components/button';
 import { ButtonIcon } from '@/components/button-icon';
 import { ButtonLink } from '@/components/button-link';
@@ -65,6 +66,7 @@ export const Showcase: Story = {
         <Button appearance="outline" text="Disabled" disabled />
         <ButtonLink appearance="primary" text="Link Label" iconBefore iconAfter />
         <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
+        <Breadcrumbs />
         <ButtonIcon appearance="primary" />
         <ButtonIcon appearance="secondary" />
         <Accordion open={false} />

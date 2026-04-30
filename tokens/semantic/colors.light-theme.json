@@ -1335,6 +1335,70 @@
       }
     }
   },
+  "breadcrumbs": {
+    "item": {
+      "background": {
+        "calm": {
+          "hover": {
+            "$value": "{palette.neutral.25}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{palette.neutral.50}",
+            "$type": "color"
+          }
+        }
+      },
+      "label": {
+        "loud": {
+          "enabled": {
+            "$value": "{palette.blue.400}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{palette.blue.500}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{palette.blue.600}",
+            "$type": "color"
+          },
+          "current": {
+            "$value": "{palette.neutral.700}",
+            "$type": "color"
+          }
+        }
+      },
+      "divider": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.neutral.400}",
+            "$type": "color"
+          }
+        }
+      }
+    },
+    "icon": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.400}",
+          "$type": "color"
+        }
+      }
+    },
+    "buttonMore": {
+      "calm": {
+        "hover": {
+          "$value": "{palette.neutral.25}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{palette.neutral.50}",
+          "$type": "color"
+        }
+      }
+    }
+  },
   "ink": {
     "background": {
       "calm": {

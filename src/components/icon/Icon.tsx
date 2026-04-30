@@ -5,6 +5,7 @@ import {
   CheckCircleIcon,
   ClockIcon,
   CodeIcon,
+  DotsThreeIcon,
   InfoIcon,
   LinkIcon,
   MetaLogoIcon,
@@ -34,6 +35,7 @@ export const statusErrorIconGlyph: GlyphComponent = XCircleIcon;
 export const xIconGlyph: GlyphComponent = XIcon;
 export const caretDownIconGlyph: GlyphComponent = CaretDownIcon;
 export const caretUpIconGlyph: GlyphComponent = CaretUpIcon;
+export const dotsThreeIconGlyph: GlyphComponent = DotsThreeIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;

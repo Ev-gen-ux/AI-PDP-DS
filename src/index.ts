@@ -23,6 +23,15 @@ export type {
   ButtonLinkProps,
   ButtonLinkState,
 } from './components/button-link';
+export { Breadcrumbs } from './components/breadcrumbs';
+export type {
+  BreadcrumbsItemNode,
+  BreadcrumbsItemState,
+  BreadcrumbsMoreNode,
+  BreadcrumbsMoreState,
+  BreadcrumbsNode,
+  BreadcrumbsProps,
+} from './components/breadcrumbs';
 export { ToggleButton } from './components/toggle-button';
 export type {
   ToggleButtonAppearance,
