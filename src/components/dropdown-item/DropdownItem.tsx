@@ -161,26 +161,12 @@ export const DropdownItem = ({
   ) => {
     if (iconProp === undefined || iconProp === null || iconProp === false) return null;
     if (iconProp === true) {
-      return (
-        <Icon
-          icon={metaIconGlyph}
-          size={ICON_SIZE}
-          color={iconColor}
-          aria-hidden="true"
-        />
-      );
+      return <Icon icon={metaIconGlyph} size={ICON_SIZE} color={iconColor} aria-hidden="true" />;
     }
     if (typeof iconProp === 'string' || typeof iconProp === 'number' || isValidElement(iconProp)) {
       return iconProp;
     }
-    return (
-      <Icon
-        icon={metaIconGlyph}
-        size={ICON_SIZE}
-        color={iconColor}
-        aria-hidden="true"
-      />
-    );
+    return <Icon icon={metaIconGlyph} size={ICON_SIZE} color={iconColor} aria-hidden="true" />;
   };
 
   const iconColor =
