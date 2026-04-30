@@ -8,7 +8,7 @@ export const figma = {
   nodeId: '3001:15051',
   props: {
     appearance: ['primary', 'outline', 'flat'],
-    size: ['large', 'medium'],
+    size: ['large', 'medium', 'small'],
     disabled: [true, false],
     loading: [true, false],
   } satisfies Record<

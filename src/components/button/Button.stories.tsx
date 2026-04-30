@@ -34,7 +34,7 @@ const meta = {
     },
     size: {
       control: 'inline-radio',
-      options: ['large', 'medium'],
+      options: ['large', 'medium', 'small'],
       description: 'Размер компонента.',
     },
     disabled: {
