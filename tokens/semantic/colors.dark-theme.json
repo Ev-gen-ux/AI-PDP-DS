@@ -1321,6 +1321,20 @@
       }
     }
   },
+  "accordion": {
+    "background": {
+      "enabled": {
+        "$value": "{palette.blue.800}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "enabled": {
+        "$value": "{palette.neutral.600}",
+        "$type": "color"
+      }
+    }
+  },
   "ink": {
     "background": {
       "calm": {

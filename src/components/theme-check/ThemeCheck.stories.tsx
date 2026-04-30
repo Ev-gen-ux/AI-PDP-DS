@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CodeIcon } from '@phosphor-icons/react';
 import { Avatar } from '@/components/avatar';
+import { Accordion } from '@/components/accordion';
 import { BenefitCard } from '@/components/benefit-card';
 import { Button } from '@/components/button';
 import { ButtonIcon } from '@/components/button-icon';
@@ -66,6 +67,8 @@ export const Showcase: Story = {
         <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
         <ButtonIcon appearance="primary" />
         <ButtonIcon appearance="secondary" />
+        <Accordion open={false} />
+        <Accordion open />
 
         <div style={{ width: '320px' }}>
           <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
