@@ -7,10 +7,7 @@ export type ButtonIconAppearance = 'primary' | 'secondary';
 export type ButtonIconSize = 'large' | 'medium' | 'small';
 export type ButtonIconGlyph = 'meta' | 'caret-down' | 'caret-up';
 
-export interface ButtonIconProps extends Omit<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  'children'
-> {
+export interface ButtonIconProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
   appearance?: ButtonIconAppearance;
   size?: ButtonIconSize;
   icon?: ButtonIconGlyph;
