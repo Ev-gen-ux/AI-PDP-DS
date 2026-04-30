@@ -9,7 +9,14 @@ export type { Theme } from './theme/tokens';
 export { Button } from './components/button';
 export type { ButtonProps } from './components/button';
 export { ButtonIcon } from './components/button-icon';
-export type { ButtonIconAppearance, ButtonIconProps } from './components/button-icon';
+export type {
+  ButtonIconAppearance,
+  ButtonIconGlyph,
+  ButtonIconProps,
+  ButtonIconSize,
+} from './components/button-icon';
+export { Accordion } from './components/accordion';
+export type { AccordionProps } from './components/accordion';
 export { ButtonLink } from './components/button-link';
 export type {
   ButtonLinkAppearance,

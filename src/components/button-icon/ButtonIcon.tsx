@@ -1,17 +1,19 @@
 import { type ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
-import { Icon, metaIconGlyph } from '@/components/icon';
+import { Icon, caretDownIconGlyph, caretUpIconGlyph, metaIconGlyph } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 
 export type ButtonIconAppearance = 'primary' | 'secondary';
 export type ButtonIconSize = 'large' | 'medium' | 'small';
+export type ButtonIconGlyph = 'meta' | 'caret-down' | 'caret-up';
 
 export interface ButtonIconProps extends Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
-  'children' | 'onClick'
+  'children'
 > {
   appearance?: ButtonIconAppearance;
   size?: ButtonIconSize;
+  icon?: ButtonIconGlyph;
   loading?: boolean;
 }
 
@@ -111,6 +113,7 @@ const Root = styled.button<StyledProps>`
 export const ButtonIcon = ({
   appearance = 'primary',
   size = 'large',
+  icon = 'meta',
   loading = false,
   disabled,
   type = 'button',
@@ -118,6 +121,11 @@ export const ButtonIcon = ({
 }: ButtonIconProps) => {
   const isDisabled = Boolean(disabled || loading);
   const iconSize = size === 'large' ? 24 : 16;
+  const iconMap = {
+    meta: metaIconGlyph,
+    'caret-down': caretDownIconGlyph,
+    'caret-up': caretUpIconGlyph,
+  } as const;
 
   return (
     <Root
@@ -133,7 +141,7 @@ export const ButtonIcon = ({
       {loading ? (
         <Spinner size={iconSize} />
       ) : (
-        <Icon icon={metaIconGlyph} size={iconSize} aria-hidden="true" />
+        <Icon icon={iconMap[icon]} size={iconSize} aria-hidden="true" />
       )}
     </Root>
   );
