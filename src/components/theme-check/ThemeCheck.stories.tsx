@@ -22,8 +22,6 @@ import { StatusMark } from '@/components/status-mark';
 import { TableColumn, TableRow } from '@/components/table';
 import { TableCellEmptyState, TableCellTextContent } from '@/components/table-cell';
 import { ToggleButton } from '@/components/toggle-button';
-import { Cluster } from '@/layouts/cluster';
-import { Stack } from '@/layouts/stack';
 
 const meta = {
   title: 'Foundation/ThemeCheck',
@@ -45,106 +43,97 @@ type Story = StoryObj<typeof meta>;
 
 export const Showcase: Story = {
   render: () => (
-    <Stack gap="grouped">
-      <div style={{ padding: '24px' }}>
-        <Stack gap="close">
-          <Label text="Theme Check" />
-          <InlineMessage message="Switch theme from the toolbar: Light / Dark" />
-        </Stack>
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <div
+        style={{
+          padding: '24px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: 16,
+          width: 'fit-content',
+        }}
+      >
+        <Label text="Theme Check" />
+        <InlineMessage message="Switch theme from the toolbar: Light / Dark" />
 
-      <div style={{ padding: '24px' }}>
-        <Cluster gap="related">
-          <Button appearance="primary" text="Primary" iconBefore />
-          <Button appearance="outline" text="Outline" iconAfter />
-          <Button appearance="flat" text="Flat" />
-          <Button appearance="primary" text="Loading" loading />
-          <Button appearance="outline" text="Disabled" disabled />
-          <ButtonLink appearance="primary" text="Link Label" iconBefore iconAfter />
-          <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
-          <ButtonIcon appearance="primary" />
-          <ButtonIcon appearance="secondary" />
-        </Cluster>
-      </div>
+        <Button appearance="primary" text="Primary" iconBefore />
+        <Button appearance="outline" text="Outline" iconAfter />
+        <Button appearance="flat" text="Flat" />
+        <Button appearance="primary" text="Loading" loading />
+        <Button appearance="outline" text="Disabled" disabled />
+        <ButtonLink appearance="primary" text="Link Label" iconBefore iconAfter />
+        <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
+        <ButtonIcon appearance="primary" />
+        <ButtonIcon appearance="secondary" />
 
-      <div style={{ padding: '24px' }}>
         <div style={{ width: '320px' }}>
-          <Stack gap="related">
-            <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
-            <InputText label="With value" defaultValue="Value" helpMessage="Help message" />
-            <InputText
-              label="Invalid"
-              defaultValue="Wrong value"
-              invalid
-              errorMessage="Error message"
-            />
-            <InputText label="ReadOnly" defaultValue="Read-only value" readOnly />
-            <InputText label="Disabled" placeholder="Placeholder" disabled />
-            <Checkbox label="Checkbox" helpMessage="Help message" />
-            <Checkbox label="Checkbox checked" checked />
-            <Checkbox label="Checkbox error" invalid errorMessage="Error message" />
-            <Radio label="Radio" helpMessage="Help message" />
-            <Radio label="Radio error" invalid errorMessage="Error message" checked />
-            <Radio label="Radio disabled" disabled />
-          </Stack>
+          <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
         </div>
-      </div>
-
-      <div style={{ padding: '24px' }}>
-        <Cluster gap="related">
-          <Avatar initials="ЕВ" state="enabled" />
-          <StatusMark size="Extra Small 12px" />
-          <StatusLabel appearance="primary" status="success" size="medium" text="Success" />
-          <StatusLabel
-            appearance="secondary"
-            status="information"
-            size="medium"
-            text="Information"
+        <div style={{ width: '320px' }}>
+          <InputText label="With value" defaultValue="Value" helpMessage="Help message" />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputText
+            label="Invalid"
+            defaultValue="Wrong value"
+            invalid
+            errorMessage="Error message"
           />
-          <ToggleButton appearance="primary" selected={false} text="Toggle Button" />
-          <ToggleButton appearance="primary" selected text="Toggle Button" />
-          <ToggleButton appearance="secondary" selected={false} />
-          <ToggleButton appearance="secondary" selected />
-          <SplitButton appearance="primary" text="Button Label" />
-          <SplitButton appearance="secondary" text="Button Label" />
-          <DropdownList />
-          <NotificationSnackbar
-            appearance="success"
-            title="Label"
-            description="Description"
-            closable={false}
-          />
-        </Cluster>
-      </div>
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputText label="ReadOnly" defaultValue="Read-only value" readOnly />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputText label="Disabled" placeholder="Placeholder" disabled />
+        </div>
 
-      <div style={{ padding: '24px' }}>
-        <Cluster gap="related">
-          <BenefitCard appearance="primary" />
-          <BenefitCard appearance="secondary" />
-          <SidebarNavigationItem state="enabled" />
-          <SidebarNavigationItem state="active" />
-          <Sidebar state="default" />
-          <Sidebar state="collapse" />
-          <TableCellEmptyState />
-          <TableCellTextContent />
-        </Cluster>
-      </div>
+        <Checkbox label="Checkbox" helpMessage="Help message" />
+        <Checkbox label="Checkbox checked" checked />
+        <Checkbox label="Checkbox error" invalid errorMessage="Error message" />
+        <Radio label="Radio" helpMessage="Help message" />
+        <Radio label="Radio error" invalid errorMessage="Error message" checked />
+        <Radio label="Radio disabled" disabled />
 
-      <div style={{ padding: '24px', overflowX: 'auto' }}>
-        <Stack gap="related">
+        <Avatar initials="ЕВ" state="enabled" />
+        <StatusMark size="Extra Small 12px" />
+        <StatusLabel appearance="primary" status="success" size="medium" text="Success" />
+        <StatusLabel appearance="secondary" status="information" size="medium" text="Information" />
+        <ToggleButton appearance="primary" selected={false} text="Toggle Button" />
+        <ToggleButton appearance="primary" selected text="Toggle Button" />
+        <ToggleButton appearance="secondary" selected={false} />
+        <ToggleButton appearance="secondary" selected />
+        <SplitButton appearance="primary" text="Button Label" />
+        <SplitButton appearance="secondary" text="Button Label" />
+        <DropdownList />
+        <NotificationSnackbar
+          appearance="success"
+          title="Label"
+          description="Description"
+          closable={false}
+        />
+
+        <BenefitCard appearance="primary" />
+        <BenefitCard appearance="secondary" />
+        <SidebarNavigationItem state="enabled" />
+        <SidebarNavigationItem state="active" />
+        <Sidebar state="default" />
+        <Sidebar state="collapse" />
+        <TableCellEmptyState />
+        <TableCellTextContent />
+
+        <div style={{ overflowX: 'auto' }}>
           <TableRow />
+        </div>
+        <div style={{ overflowX: 'auto' }}>
           <TableColumn />
-        </Stack>
-      </div>
+        </div>
 
-      <div style={{ padding: '24px' }}>
-        <Cluster gap="related">
-          <Icon icon={CodeIcon} size={16} />
-          <Icon icon={CodeIcon} size={24} />
-          <Spinner size={16} />
-          <Spinner size={24} />
-        </Cluster>
+        <Icon icon={CodeIcon} size={16} />
+        <Icon icon={CodeIcon} size={24} />
+        <Spinner size={16} />
+        <Spinner size={24} />
       </div>
-    </Stack>
+    </div>
   ),
 };
