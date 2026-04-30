@@ -102,7 +102,9 @@ const InteractiveCell = ({
 const RenderShowcase = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 24 }}>
     <Section title="tableCell / emptyState">
-      <InteractiveCell renderCell={(state, selected) => <TableCellEmptyState state={state} selected={selected} />} />
+      <InteractiveCell
+        renderCell={(state, selected) => <TableCellEmptyState state={state} selected={selected} />}
+      />
     </Section>
     <Section title="tableCell / singleChoice">
       <InteractiveCell
@@ -117,7 +119,9 @@ const RenderShowcase = () => (
       />
     </Section>
     <Section title="tableCell / badge">
-      <InteractiveCell renderCell={(state, selected) => <TableCellBadge state={state} selected={selected} />} />
+      <InteractiveCell
+        renderCell={(state, selected) => <TableCellBadge state={state} selected={selected} />}
+      />
     </Section>
     <Section title="tableCell / splitButton">
       <InteractiveCell
@@ -126,12 +130,16 @@ const RenderShowcase = () => (
     </Section>
     <Section title="tableCell / slotCentered">
       <InteractiveCell
-        renderCell={(state, selected) => <TableCellSlotCentered state={state} selected={selected} />}
+        renderCell={(state, selected) => (
+          <TableCellSlotCentered state={state} selected={selected} />
+        )}
       />
     </Section>
     <Section title="tableCell / slotLeftAligned">
       <InteractiveCell
-        renderCell={(state, selected) => <TableCellSlotLeftAligned state={state} selected={selected} />}
+        renderCell={(state, selected) => (
+          <TableCellSlotLeftAligned state={state} selected={selected} />
+        )}
       />
     </Section>
     <Section title="tableCell / inlineEdit">

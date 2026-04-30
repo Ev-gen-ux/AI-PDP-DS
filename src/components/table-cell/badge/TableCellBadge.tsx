@@ -14,6 +14,12 @@ export const TableCellBadge = ({
   text = 'Status Label',
 }: TableCellBadgeProps) => (
   <TableCellFrame state={state} selected={selected} width={119} align="center">
-    <StatusLabel appearance="secondary" status="success" size="small" withIcon={false} text={text} />
+    <StatusLabel
+      appearance="secondary"
+      status="success"
+      size="small"
+      withIcon={false}
+      text={text}
+    />
   </TableCellFrame>
 );
