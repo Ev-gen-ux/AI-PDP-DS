@@ -2,8 +2,8 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке).
 
-всего 53
-готово 34
+всего 54
+готово 35
 осталось 19
 
 - ✅ `Accordion`
@@ -34,6 +34,7 @@
 - 🛠️ `ProgressBar`
 - ✅ `Radio`
 - 🛠️ `Select/MultiSelect`
+- ✅ `SelectButton`
 - ✅ `Sidebar`
 - ✅ `SidebarNavigationItem`
 - 🛠️ `Skeleton`
