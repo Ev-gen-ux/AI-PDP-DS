@@ -8,7 +8,7 @@ describe('DropdownItem', () => {
   it('renders label and description', () => {
     render(
       <ThemeProvider theme={theme}>
-        <DropdownItem label="Label" description="Description" />
+        <DropdownItem label="Label" description descriptionText="Description" />
       </ThemeProvider>,
     );
 
@@ -20,7 +20,7 @@ describe('DropdownItem', () => {
     const onSelect = vi.fn();
     render(
       <ThemeProvider theme={theme}>
-        <DropdownItem label="Label" description="Description" onSelect={onSelect} />
+        <DropdownItem label="Label" description descriptionText="Description" onSelect={onSelect} />
       </ThemeProvider>,
     );
 

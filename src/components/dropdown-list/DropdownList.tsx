@@ -37,14 +37,17 @@ const defaultOptions: DropdownListOption[] = [
 ];
 
 export const DropdownList = ({ options = defaultOptions, onSelect }: DropdownListProps) => {
+  const resolvedOptions = Array.isArray(options) ? options : defaultOptions;
+
   return (
     <Root role="menu" aria-label="Dropdown list">
-      {options.map((option, index) => (
+      {resolvedOptions.map((option, index) => (
         <DropdownItem
           key={option.id}
           label={option.label}
           state={option.disabled ? 'disabled' : 'enabled'}
-          {...(option.description !== undefined ? { description: option.description } : {})}
+          description={option.description !== undefined}
+          {...(option.description !== undefined ? { descriptionText: option.description } : {})}
           {...(option.disabled !== undefined ? { disabled: option.disabled } : {})}
           {...(option.iconBefore !== undefined ? { iconBefore: option.iconBefore } : {})}
           onSelect={() => onSelect?.(option, index)}

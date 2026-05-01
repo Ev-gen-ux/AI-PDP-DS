@@ -14,12 +14,19 @@ const meta = {
   ],
   args: {
     label: 'Label',
-    description: 'Description',
+    description: true,
+    descriptionText: 'Description',
     state: 'enabled',
     disabled: false,
     iconBefore: false,
   },
   argTypes: {
+    description: {
+      control: 'boolean',
+    },
+    descriptionText: {
+      control: 'text',
+    },
     state: {
       control: 'inline-radio',
       options: ['enabled', 'hover', 'active', 'disabled'],
@@ -45,10 +52,16 @@ export const Default: Story = {
 export const States: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', width: 248 }}>
-      <DropdownItem state="enabled" label="Label" description="Description" />
-      <DropdownItem state="hover" label="Label" description="Description" />
-      <DropdownItem state="active" label="Label" description="Description" />
-      <DropdownItem state="disabled" label="Label" description="Description" disabled />
+      <DropdownItem state="enabled" label="Label" description descriptionText="Description" />
+      <DropdownItem state="hover" label="Label" description descriptionText="Description" />
+      <DropdownItem state="active" label="Label" description descriptionText="Description" />
+      <DropdownItem
+        state="disabled"
+        label="Label"
+        description
+        descriptionText="Description"
+        disabled
+      />
     </div>
   ),
   parameters: {

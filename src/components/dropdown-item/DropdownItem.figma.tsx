@@ -6,5 +6,9 @@ export const figma = {
     state: ['enabled', 'hover', 'active', 'disabled'],
     disabled: [true, false],
     iconBefore: [true, false],
-  } satisfies Record<keyof Pick<DropdownItemProps, 'state' | 'disabled' | 'iconBefore'>, unknown>,
+    description: [true, false],
+  } satisfies Record<
+    keyof Pick<DropdownItemProps, 'state' | 'disabled' | 'iconBefore' | 'description'>,
+    unknown
+  >,
 };
