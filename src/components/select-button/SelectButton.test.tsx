@@ -39,7 +39,11 @@ describe('SelectButton', () => {
     );
 
     await user.click(screen.getByRole('button', { name: 'Alpha' }));
-    await user.click(screen.getByRole('option', { name: 'Beta' }));
+    const betaOptionButton = screen
+      .getAllByRole('button', { name: 'Beta' })
+      .find((element) => element.getAttribute('aria-disabled') !== 'true');
+    if (!betaOptionButton) throw new Error('Expected Beta option button in dropdown list');
+    await user.click(betaOptionButton);
 
     expect(onValueChange).toHaveBeenCalledWith('b', { value: 'b', label: 'Beta' });
     expect(screen.getByRole('button', { name: 'Beta' })).toBeInTheDocument();

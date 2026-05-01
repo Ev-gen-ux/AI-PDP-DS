@@ -9,7 +9,8 @@ export interface DropdownItemProps extends Omit<
   'children' | 'onClick'
 > {
   label?: string;
-  description?: string;
+  description?: boolean;
+  descriptionText?: string;
   state?: DropdownItemState;
   disabled?: boolean;
   iconBefore?: ReactNode | boolean;
@@ -51,6 +52,7 @@ const Root = styled.button`
 
 const ItemShell = styled.div`
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding: ${({ theme }) => theme.spacing.paddings.xxsCompact}
@@ -144,7 +146,8 @@ const DROPDOWN_ITEM_ICON_DISABLED = 'var(--colors-dropdownList-item-icon-disable
 
 export const DropdownItem = ({
   label = 'Label',
-  description = 'Description',
+  description = true,
+  descriptionText = 'Description',
   state = 'enabled',
   disabled,
   iconBefore,
@@ -188,7 +191,9 @@ export const DropdownItem = ({
           ) : null}
           <Content>
             <Label $state={resolvedState}>{label}</Label>
-            <Description $state={resolvedState}>{description}</Description>
+            {description ? (
+              <Description $state={resolvedState}>{descriptionText}</Description>
+            ) : null}
           </Content>
         </Root>
       </Container>

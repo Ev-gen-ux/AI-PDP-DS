@@ -1,5 +1,6 @@
-import { type ButtonHTMLAttributes, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { type ButtonHTMLAttributes, useEffect, useMemo, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { DropdownList, type DropdownListOption } from '@/components/dropdown-list';
 import { Icon, caretDownIconGlyph, caretUpIconGlyph } from '@/components/icon';
 
 export type SelectButtonState = 'enabled' | 'hover' | 'active' | 'focus' | 'disabled';
@@ -133,52 +134,13 @@ const Caret = styled.span<{ $state: SelectButtonState }>`
       : theme.colors.dropdownButton.caret.calm.enabled};
 `;
 
-const Listbox = styled.ul`
-  width: 100%;
-  min-width: 180px;
-  margin: ${({ theme }) => theme.spacing.inner.close} 0 0;
-  padding: ${({ theme }) => theme.spacing.inner.closest} 0;
-  list-style: none;
+const DropdownLayer = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
+  margin-top: ${({ theme }) => theme.spacing.inner.close};
+  min-width: 100%;
   z-index: 10;
-  border-radius: ${({ theme }) => theme.borderRadius.componentBase};
-  border: 1px solid ${({ theme }) => theme.colors.dropdownList.border.enabled};
-  background-color: ${({ theme }) => theme.colors.dropdownList.background};
-  box-shadow: ${({ theme }) => theme.effects.surface.elevated};
-`;
-
-const OptionButton = styled.button<{ $selected: boolean }>`
-  width: 100%;
-  margin: 0;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  padding: ${({ theme }) => theme.spacing.paddings.xsCompact}
-    ${({ theme }) => theme.spacing.paddings.compact};
-  cursor: pointer;
-  font-family: ${({ theme }) => theme.typography.fontFamily.component};
-  font-size: ${({ theme }) => theme.typography.fontSize.component.small};
-  line-height: ${({ theme }) => theme.typography.lineHeight.text.small};
-  color: ${({ theme }) => theme.colors.text.base};
-
-  ${({ $selected, theme }) =>
-    $selected
-      ? css`
-          background-color: ${theme.colors.dropdownList.item.background.active};
-        `
-      : null}
-
-  &:hover:enabled {
-    background-color: ${({ theme }) => theme.colors.dropdownList.item.background.hover};
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    color: ${({ theme }) => theme.colors.dropdownList.item.label.disabled};
-    background-color: ${({ theme }) => theme.colors.dropdownList.item.background.disabled};
-  }
 `;
 
 const defaultOptions: SelectButtonOption[] = [
@@ -202,7 +164,6 @@ export const SelectButton = ({
   ...rest
 }: SelectButtonProps) => {
   const rootRef = useRef<HTMLDivElement>(null);
-  const listboxId = useId();
 
   const [isOpen, setIsOpen] = useState(false);
   const [uncontrolledValue, setUncontrolledValue] = useState<string | undefined>(
@@ -216,6 +177,15 @@ export const SelectButton = ({
   const selectedOption = useMemo(
     () => options.find((option) => option.value === selectedValue),
     [options, selectedValue],
+  );
+  const dropdownOptions = useMemo<DropdownListOption[]>(
+    () =>
+      options.map((option) => ({
+        id: option.value,
+        label: option.label,
+        ...(option.disabled !== undefined ? { disabled: option.disabled } : {}),
+      })),
+    [options],
   );
 
   const isListVisible = !isDisabled && (state === 'active' || (state === 'enabled' && isOpen));
@@ -262,7 +232,6 @@ export const SelectButton = ({
         disabled={isDisabled}
         aria-haspopup="listbox"
         aria-expanded={isListVisible}
-        aria-controls={isListVisible ? listboxId : undefined}
         onClick={toggleList}
         {...rest}
       >
@@ -277,25 +246,16 @@ export const SelectButton = ({
       </Trigger>
 
       {isListVisible ? (
-        <Listbox id={listboxId} role="listbox" aria-label="Select options">
-          {options.map((option) => {
-            const isSelected = option.value === selectedOption?.value;
-            return (
-              <li key={option.value} role="presentation">
-                <OptionButton
-                  type="button"
-                  role="option"
-                  aria-selected={isSelected}
-                  disabled={option.disabled}
-                  $selected={isSelected}
-                  onClick={() => handleSelect(option)}
-                >
-                  {option.label}
-                </OptionButton>
-              </li>
-            );
-          })}
-        </Listbox>
+        <DropdownLayer>
+          <DropdownList
+            options={dropdownOptions}
+            onSelect={(option) => {
+              const selected = options.find((item) => item.value === option.id);
+              if (!selected) return;
+              handleSelect(selected);
+            }}
+          />
+        </DropdownLayer>
       ) : null}
     </Root>
   );

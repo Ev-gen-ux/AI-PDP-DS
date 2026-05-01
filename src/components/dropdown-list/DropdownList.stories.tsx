@@ -20,6 +20,12 @@ const meta = {
       },
     },
   },
+  argTypes: {
+    options: {
+      control: false,
+      table: { disable: true },
+    },
+  },
 } satisfies Meta<typeof DropdownList>;
 
 export default meta;
