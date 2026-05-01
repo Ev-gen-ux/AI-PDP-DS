@@ -50,6 +50,13 @@ export { DropdownItem } from './components/dropdown-item';
 export type { DropdownItemProps, DropdownItemState } from './components/dropdown-item';
 export { DropdownList } from './components/dropdown-list';
 export type { DropdownListOption, DropdownListProps } from './components/dropdown-list';
+export { SelectButton } from './components/select-button';
+export type {
+  SelectButtonOption,
+  SelectButtonProps,
+  SelectButtonSize,
+  SelectButtonState,
+} from './components/select-button';
 export { Radio } from './components/radio';
 export type { RadioProps, RadioState } from './components/radio';
 export { InlineMessage } from './components/inline-message';

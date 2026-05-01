@@ -20,6 +20,7 @@ import { Spinner } from '@/components/spinner';
 import { SplitButton } from '@/components/split-button';
 import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { Sidebar } from '@/components/sidebar';
+import { SelectButton } from '@/components/select-button';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
 import { TableColumn, TableRow } from '@/components/table';
@@ -112,6 +113,7 @@ export const Showcase: Story = {
         <ToggleButton appearance="secondary" selected />
         <SplitButton appearance="primary" text="Button Label" />
         <SplitButton appearance="secondary" text="Button Label" />
+        <SelectButton />
         <DropdownList />
         <NotificationSnackbar
           appearance="success"
