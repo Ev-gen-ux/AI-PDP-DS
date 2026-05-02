@@ -2,16 +2,21 @@ import { useId, useState, type HTMLAttributes, type ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { ButtonIcon } from '@/components/button-icon';
 
+export type AccordionAppearance = 'default' | 'calm' | 'accent';
+
 export interface AccordionProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   title?: string;
   open?: boolean;
   defaultOpen?: boolean;
   childrenBody?: ReactNode;
   onOpenChange?: (nextOpen: boolean) => void;
+  /** Визуальный вариант оболочки (Figma: default / calm header / accent border). */
+  appearance?: AccordionAppearance;
 }
 
 type RootProps = {
   $open: boolean;
+  $appearance: AccordionAppearance;
 };
 
 type HeaderProps = {
@@ -22,15 +27,50 @@ type ToggleProps = {
   $open: boolean;
 };
 
+const appearanceShellStyles = {
+  default: css`
+    border: 1px solid ${({ theme }) => theme.colors.accordion.border.enabled};
+    background-color: ${({ theme }) => theme.colors.accordion.background.enabled};
+  `,
+  calm: css`
+    border: 1px solid ${({ theme }) => theme.colors.accordion.border.enabled};
+    background-color: ${({ theme }) => theme.colors.accordion.background.calm};
+  `,
+  accent: css`
+    border: 2px solid ${({ theme }) => theme.colors.accordion.border.accent};
+    background-color: ${({ theme }) => theme.colors.accordion.background.enabled};
+  `,
+} as const;
+
 const Root = styled.section<RootProps>`
-  width: 920px;
+  width: 100%;
+  max-width: 920px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border: 1px solid ${({ theme }) => theme.colors.accordion.border.enabled};
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
-  background-color: ${({ theme }) => theme.colors.accordion.background.enabled};
   overflow: hidden;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  ${({ $appearance }) => appearanceShellStyles[$appearance]}
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: ${({ theme, $appearance }) =>
+        $appearance === 'calm'
+          ? theme.colors.accordion.background.calmHover
+          : theme.colors.accordion.background.hover};
+    }
+  }
+
+  &:focus-within {
+    outline: none;
+    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.colors.focus.ring.default};
+  }
+
   ${({ $open }) =>
     $open
       ? css`
@@ -66,6 +106,9 @@ const Title = styled.h3`
   font-size: ${({ theme }) => theme.typography.fontSize.heading.h5};
   line-height: ${({ theme }) => theme.typography.lineHeight.heading.h5};
   color: ${({ theme }) => theme.colors.text.base};
+  font-feature-settings:
+    'lnum' 1,
+    'tnum' 1;
 `;
 
 const Toggle = styled(ButtonIcon)<ToggleProps>`
@@ -85,6 +128,8 @@ const Body = styled.div`
   display: flex;
   align-items: center;
   padding: ${({ theme }) => `${theme.spacing.paddings.medium} ${theme.spacing.paddings.relaxed}`};
+  border-radius: 0 0 ${({ theme }) => theme.borderRadius.containerBase}
+    ${({ theme }) => theme.borderRadius.containerBase};
 `;
 
 const BodySlot = styled.div`
@@ -100,6 +145,7 @@ export const Accordion = ({
   defaultOpen = false,
   childrenBody,
   onOpenChange,
+  appearance = 'default',
   id,
   ...rest
 }: AccordionProps) => {
@@ -121,7 +167,14 @@ export const Accordion = ({
   };
 
   return (
-    <Root $open={isOpen} id={id} role="region" aria-labelledby={headingId} {...rest}>
+    <Root
+      $open={isOpen}
+      $appearance={appearance}
+      id={id}
+      role="region"
+      aria-labelledby={headingId}
+      {...rest}
+    >
       <Header $open={isOpen}>
         <Title id={headingId}>{title}</Title>
         <Toggle

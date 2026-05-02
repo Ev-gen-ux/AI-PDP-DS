@@ -15,4 +15,14 @@ describe('StatusMark', () => {
     const mark = container.querySelector('span');
     expect(mark).toBeInTheDocument();
   });
+
+  it('renders non-success appearance', () => {
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <StatusMark appearance="error" size="Extra Small 12px" />
+      </ThemeProvider>,
+    );
+
+    expect(container.querySelector('span')).toBeInTheDocument();
+  });
 });

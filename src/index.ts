@@ -16,7 +16,7 @@ export type {
   ButtonIconSize,
 } from './components/button-icon';
 export { Accordion } from './components/accordion';
-export type { AccordionProps } from './components/accordion';
+export type { AccordionAppearance, AccordionProps } from './components/accordion';
 export { ButtonLink } from './components/button-link';
 export type {
   ButtonLinkAppearance,
@@ -121,7 +121,11 @@ export type {
   StatusLabelStatus,
 } from './components/status-label';
 export { StatusMark } from './components/status-mark';
-export type { StatusMarkProps, StatusMarkSize } from './components/status-mark';
+export type {
+  StatusMarkAppearance,
+  StatusMarkProps,
+  StatusMarkSize,
+} from './components/status-mark';
 export { Avatar } from './components/avatar';
 export type { AvatarProps, AvatarState } from './components/avatar';
 

@@ -1450,12 +1450,80 @@
       "enabled": {
         "$value": "{palette.blue.800}",
         "$type": "color"
+      },
+      "hover": {
+        "$value": "{palette.neutral.700}",
+        "$type": "color"
+      },
+      "calm": {
+        "$value": "{palette.neutral.800}",
+        "$type": "color"
+      },
+      "calmHover": {
+        "$value": "{palette.neutral.700}",
+        "$type": "color"
       }
     },
     "border": {
       "enabled": {
         "$value": "{palette.neutral.600}",
         "$type": "color"
+      },
+      "accent": {
+        "$value": "{palette.blue.300}",
+        "$type": "color"
+      }
+    }
+  },
+  "statusMark": {
+    "background": {
+      "success": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.green.400}",
+            "$type": "color"
+          }
+        }
+      },
+      "error": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.red.300}",
+            "$type": "color"
+          }
+        }
+      },
+      "alert": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.yellow.300}",
+            "$type": "color"
+          }
+        }
+      },
+      "information": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.blue.300}",
+            "$type": "color"
+          }
+        }
+      },
+      "wait": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.neutral.400}",
+            "$type": "color"
+          }
+        }
+      }
+    },
+    "border": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.base.white}",
+          "$type": "color"
+        }
       }
     }
   },
