@@ -12,6 +12,10 @@
       "$value": 2,
       "$type": "number"
     },
+    "3": {
+      "$value": 3,
+      "$type": "number"
+    },
     "4": {
       "$value": 4,
       "$type": "number"

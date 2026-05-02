@@ -2,9 +2,9 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке).
 
-всего 54
-готово 35
-осталось 19
+всего 55
+готово 37
+осталось 18
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -54,7 +54,8 @@
 - ✅ `TableCellTextContent`
 - ✅ `TableColumn`
 - ✅ `TableRow`
-- 🛠️ `Tabs`
+- ✅ `TabGroup`
+- ✅ `TabItem`
 - 🛠️ `Tag`
 - 🛠️ `Textarea`
 - 🛠️ `Tree`

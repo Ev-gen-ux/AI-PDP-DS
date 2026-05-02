@@ -25,6 +25,8 @@ import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
 import { TableColumn, TableRow } from '@/components/table';
 import { TableCellEmptyState, TableCellTextContent } from '@/components/table-cell';
+import { TabGroup } from '@/components/tab-group';
+import { TabItem } from '@/components/tab-item';
 import { ToggleButton } from '@/components/toggle-button';
 
 const meta = {
@@ -107,6 +109,11 @@ export const Showcase: Story = {
         <StatusMark size="Extra Small 12px" />
         <StatusLabel appearance="primary" status="success" size="medium" text="Success" />
         <StatusLabel appearance="secondary" status="information" size="medium" text="Information" />
+        <TabGroup defaultValue="first">
+          <TabItem value="first" text="Tab one" />
+          <TabItem value="second" text="Tab two" />
+          <TabItem value="third" text="Disabled" disabled />
+        </TabGroup>
         <ToggleButton appearance="primary" selected={false} text="Toggle Button" />
         <ToggleButton appearance="primary" selected text="Toggle Button" />
         <ToggleButton appearance="secondary" selected={false} />
