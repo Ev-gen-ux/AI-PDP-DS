@@ -5,8 +5,8 @@
 **Обновлено:** 2026-05-02.
 
 всего 56  
-готово 41  
-осталось 15
+готово 42  
+осталось 14
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -19,7 +19,7 @@
 - ✅ `Chips`
 - ✅ `Counter`
 - 🛠️ `DatePicker`
-- 🛠️ `Divider`
+- ✅ `Divider`
 - ✅ `DropdownItem`
 - ✅ `DropdownList`
 - 🛠️ `FileUpload`
