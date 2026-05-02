@@ -170,5 +170,41 @@
       "$value": "{spacers.720}",
       "$type": "number"
     }
+  },
+  "counter": {
+    "minWidth": {
+      "extraSmallSingle": {
+        "$value": "{spacers.16}",
+        "$type": "number"
+      },
+      "extraSmallDouble": {
+        "$value": "{spacers.20}",
+        "$type": "number"
+      },
+      "extraSmallOverflow99": {
+        "$value": "{spacers.28}",
+        "$type": "number"
+      },
+      "extraSmallOverflow999": {
+        "$value": "{spacers.38}",
+        "$type": "number"
+      },
+      "smallSingle": {
+        "$value": "{spacers.24}",
+        "$type": "number"
+      },
+      "smallDouble": {
+        "$value": "{spacers.28}",
+        "$type": "number"
+      },
+      "smallOverflow99": {
+        "$value": "{spacers.38}",
+        "$type": "number"
+      },
+      "smallOverflow999": {
+        "$value": "{spacers.50}",
+        "$type": "number"
+      }
+    }
   }
 }

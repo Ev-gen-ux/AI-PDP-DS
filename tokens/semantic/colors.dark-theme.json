@@ -1703,6 +1703,36 @@
       }
     }
   },
+  "counter": {
+    "background": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.500}",
+          "$type": "color"
+        }
+      },
+      "loud": {
+        "enabled": {
+          "$value": "{palette.neutral.600}",
+          "$type": "color"
+        }
+      }
+    },
+    "label": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.50}",
+          "$type": "color"
+        }
+      },
+      "loud": {
+        "enabled": {
+          "$value": "{palette.neutral.50}",
+          "$type": "color"
+        }
+      }
+    }
+  },
   "ink": {
     "background": {
       "calm": {

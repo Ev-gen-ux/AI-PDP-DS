@@ -9,6 +9,7 @@ import { ButtonIcon } from '@/components/button-icon';
 import { ButtonLink } from '@/components/button-link';
 import { Checkbox } from '@/components/checkbox';
 import { Chips } from '@/components/chips';
+import { Counter } from '@/components/counter';
 import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
@@ -76,6 +77,9 @@ export const Showcase: Story = {
         <ButtonLink appearance="primary" text="Link Label" iconBefore iconAfter />
         <ButtonLink appearance="secondary" text="Link Label" iconBefore iconAfter />
         <Chips iconBefore closable />
+        <Counter value={3} appearance="primary" size="extra small (16px)" />
+        <Counter value={150} appearance="primary" size="small (24px)" />
+        <Counter value={1200} appearance="secondary" size="small (24px)" />
         <Breadcrumbs />
         <ButtonIcon appearance="primary" />
         <ButtonIcon appearance="secondary" />
