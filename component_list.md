@@ -1,10 +1,12 @@
 # Component List
 
-Базовый набор компонентов библиотеки (в алфавитном порядке). Состояние сверено с `src/components/` (и экспортами в `src/index.ts` для публичного API).
+Базовый набор компонентов библиотеки (в алфавитном порядке). Сверено с верхним уровнем `src/components/` и публичными экспортами `src/index.ts`. Папка **`theme-check`** в компонентах не входит в продуктовый список (служебный сценарий Storybook).
+
+**Обновлено:** 2026-05-02.
 
 всего 56  
-готово 40  
-осталось 16
+готово 41  
+осталось 15
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -15,7 +17,7 @@
 - ✅ `ButtonLink`
 - ✅ `Checkbox`
 - ✅ `Chips`
-- 🛠️ `Counter`
+- ✅ `Counter`
 - 🛠️ `DatePicker`
 - 🛠️ `Divider`
 - ✅ `DropdownItem`
@@ -41,10 +43,12 @@
 - 🛠️ `Skeleton`
 - ✅ `Spinner`
 - ✅ `SplitButton`
-- 🛠️ `Switcher`
 - ✅ `StatusLabel`
 - ✅ `StatusMark`
 - 🛠️ `Stepper`
+- 🛠️ `Switcher`
+- ✅ `TabGroup`
+- ✅ `TabItem`
 - ✅ `TableCellBadge`
 - ✅ `TableCellEmptyState`
 - ✅ `TableCellInlineEdit`
@@ -55,20 +59,18 @@
 - ✅ `TableCellTextContent`
 - ✅ `TableColumn`
 - ✅ `TableRow`
-- ✅ `TabGroup`
-- ✅ `TabItem`
 - 🛠️ `Tag`
 - 🛠️ `Textarea`
-- 🛠️ `Tree`
 - ✅ `ToggleButton`
+- 🛠️ `Tree`
 - 🛠️ `Tooltip`
 
 ## Layout-примитивы (`src/layouts/`)
 
-Не входят в счётчик 56 выше; в репозитории уже есть:
+Не входят в счётчик 56 выше. В репозитории:
 
 - ✅ `Cluster`
 - ✅ `Grid`
 - ✅ `Stack`
 
-Остаются по дорожной карте CLAUDE (в коде пока нет): `Sidebar` (layout), `Container`, `Center`, `Switcher` — при необходимости уточнять с дублированием имени компонента `Sidebar` (молекула в `components` уже есть).
+По дорожной карте CLAUDE в **`src/layouts/`** ещё нет примитивов: **`Sidebar`** (двухколоночный layout), **`Container`**, **`Center`**, **`Switcher`**. Компонент **`Sidebar`** в `src/components/sidebar` — отдельная UI-молекула (область навигации), это не тот же примитив, что layout-`Sidebar` из списка выше.
