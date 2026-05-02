@@ -14,4 +14,15 @@ describe('Spinner', () => {
 
     expect(screen.getByRole('status', { name: 'Loading' })).toBeInTheDocument();
   });
+
+  it('renders svg indicator for large size', () => {
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Spinner size={40} />
+      </ThemeProvider>,
+    );
+
+    expect(container.querySelector('svg')).toBeInTheDocument();
+    expect(container.querySelector('circle')).toBeInTheDocument();
+  });
 });

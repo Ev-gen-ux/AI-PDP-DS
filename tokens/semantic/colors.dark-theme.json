@@ -579,6 +579,16 @@
       }
     }
   },
+  "spinner": {
+    "border": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
+      }
+    }
+  },
   "splitButton": {
     "primary": {
       "split": {
