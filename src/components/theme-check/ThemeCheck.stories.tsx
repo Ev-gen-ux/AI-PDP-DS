@@ -14,6 +14,7 @@ import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
+import { Modal, ModalFooterActions } from '@/components/modal';
 import { NotificationSnackbar } from '@/components/notification-snackbar';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
@@ -128,6 +129,22 @@ export const Showcase: Story = {
           description="Description"
           closable={false}
         />
+
+        <Modal
+          header="Modal"
+          moveFocusOnMount={false}
+          footer={
+            <ModalFooterActions>
+              <Button appearance="primary" size="small" text="Primary" />
+              <Button appearance="outline" size="small" text="Outline" />
+            </ModalFooterActions>
+          }
+        >
+          <div style={{ minHeight: 80 }}>Modal body</div>
+        </Modal>
+        <Modal header="No leading icon" iconBefore={false} moveFocusOnMount={false}>
+          <div style={{ minHeight: 48 }}>Content</div>
+        </Modal>
 
         <BenefitCard appearance="primary" />
         <BenefitCard appearance="secondary" />

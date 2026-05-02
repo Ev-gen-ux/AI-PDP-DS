@@ -152,5 +152,23 @@
         "$type": "number"
       }
     }
+  },
+  "modal": {
+    "minWidth": {
+      "$value": "{spacers.560}",
+      "$type": "number"
+    },
+    "minHeight": {
+      "$value": "{spacers.359}",
+      "$type": "number"
+    },
+    "maxWidth": {
+      "$value": "{spacers.560}",
+      "$type": "number"
+    },
+    "maxHeight": {
+      "$value": "{spacers.720}",
+      "$type": "number"
+    }
   }
 }
