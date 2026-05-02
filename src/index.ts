@@ -40,6 +40,8 @@ export type {
   ToggleButtonProps,
   ToggleButtonState,
 } from './components/toggle-button';
+export { InputDate } from './components/input-date';
+export type { InputDateProps } from './components/input-date';
 export { InputText } from './components/input-text';
 export type { InputTextProps } from './components/input-text';
 export { Checkbox } from './components/checkbox';

@@ -1,4 +1,5 @@
 export { Icon } from './Icon';
+export { calendarBlankIconGlyph } from './Icon';
 export { caretDownIconGlyph, caretUpIconGlyph } from './Icon';
 export { dotsThreeIconGlyph } from './Icon';
 export { fallbackIconGlyph } from './Icon';
