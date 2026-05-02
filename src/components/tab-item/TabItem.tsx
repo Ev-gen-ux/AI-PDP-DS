@@ -51,8 +51,7 @@ const Inner = styled.span<InnerProps>`
   align-items: center;
   justify-content: center;
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
-  padding: ${({ theme }) =>
-    `${theme.spacing.paddings.compact} ${theme.spacing.paddings.compactMedium}`};
+  padding: ${({ theme }) => theme.spacing.paddings.compact};
   font-family: ${({ theme }) => theme.typography.fontFamily.component};
   font-size: ${({ theme }) => theme.typography.fontSize.component.small};
   line-height: ${({ theme }) => theme.typography.lineHeight.text.small};
