@@ -86,6 +86,19 @@ const meta: Meta<ModalDialogStoryArgs> = {
         'Колбэк закрытия (в Default — `fn()` из Storybook). Без него затемнение не закрывает диалог.',
     },
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          boxSizing: 'border-box',
+          minHeight: '100vh',
+          width: '100%',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
