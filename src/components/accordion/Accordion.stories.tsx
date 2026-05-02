@@ -11,7 +11,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Accordion с переключаемым body-блоком. В header используется ButtonIcon, в открытом состоянии — caret-up и active background.',
+          'Accordion с переключаемым body-блоком. Варианты оболочки: default, calm (спокойный фон), accent (акцентная обводка). В header используется ButtonIcon.',
       },
     },
   },
@@ -25,6 +25,7 @@ const meta = {
   args: {
     title: 'Heading',
     open: false,
+    appearance: 'default',
   },
   argTypes: {
     title: {
@@ -34,6 +35,11 @@ const meta = {
     open: {
       control: 'boolean',
       description: 'Состояние раскрытия.',
+    },
+    appearance: {
+      control: 'inline-radio',
+      options: ['default', 'calm', 'accent'],
+      description: 'Визуальный вариант оболочки (Figma).',
     },
   },
 } satisfies Meta<typeof Accordion>;
@@ -57,16 +63,56 @@ export const Default: Story = {
   render: RenderDefault,
 };
 
-export const Closed: Story = {
-  args: {
-    title: 'Heading',
-    open: false,
-  },
+export const DefaultShell: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        gap: 12,
+        width: '100%',
+        maxWidth: 920,
+      }}
+    >
+      <Accordion title="Heading" appearance="default" open={false} />
+      <Accordion title="Heading" appearance="default" open />
+    </div>
+  ),
 };
 
-export const Open: Story = {
-  args: {
-    title: 'Heading',
-    open: true,
-  },
+export const CalmShell: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        gap: 12,
+        width: '100%',
+        maxWidth: 920,
+      }}
+    >
+      <Accordion title="Heading" appearance="calm" open={false} />
+      <Accordion title="Heading" appearance="calm" open />
+    </div>
+  ),
+};
+
+export const AccentShell: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        gap: 12,
+        width: '100%',
+        maxWidth: 920,
+      }}
+    >
+      <Accordion title="Heading" appearance="accent" open={false} />
+      <Accordion title="Heading" appearance="accent" open />
+    </div>
+  ),
 };

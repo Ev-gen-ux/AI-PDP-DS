@@ -1,10 +1,10 @@
 # Component List
 
-Базовый набор компонентов библиотеки (в алфавитном порядке).
+Базовый набор компонентов библиотеки (в алфавитном порядке). Состояние сверено с `src/components/` (и экспортами в `src/index.ts` для публичного API).
 
-всего 55
-готово 37
-осталось 18
+всего 55  
+готово 38  
+осталось 17
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -28,7 +28,7 @@
 - ✅ `InlineMessage`
 - ✅ `InputText`
 - ✅ `Label`
-- 🛠️ `Modal`
+- ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)
 - ✅ `NotificationSnackbar`
 - 🛠️ `Pagination`
 - 🛠️ `ProgressBar`
@@ -61,3 +61,13 @@
 - 🛠️ `Tree`
 - ✅ `ToggleButton`
 - 🛠️ `Tooltip`
+
+## Layout-примитивы (`src/layouts/`)
+
+Не входят в счётчик 55 выше; в репозитории уже есть:
+
+- ✅ `Cluster`
+- ✅ `Grid`
+- ✅ `Stack`
+
+Остаются по дорожной карте CLAUDE (в коде пока нет): `Sidebar` (layout), `Container`, `Center`, `Switcher` — при необходимости уточнять с дублированием имени компонента `Sidebar` (молекула в `components` уже есть).

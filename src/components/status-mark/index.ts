@@ -1,2 +1,2 @@
 export { StatusMark } from './StatusMark';
-export type { StatusMarkProps, StatusMarkSize } from './StatusMark';
+export type { StatusMarkAppearance, StatusMarkProps, StatusMarkSize } from './StatusMark';

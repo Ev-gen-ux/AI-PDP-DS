@@ -77,8 +77,12 @@ export const Showcase: Story = {
         <Breadcrumbs />
         <ButtonIcon appearance="primary" />
         <ButtonIcon appearance="secondary" />
-        <Accordion open={false} />
-        <Accordion open />
+        <Accordion open={false} appearance="default" />
+        <Accordion open appearance="default" />
+        <Accordion open={false} appearance="calm" />
+        <Accordion open appearance="calm" />
+        <Accordion open={false} appearance="accent" />
+        <Accordion open appearance="accent" />
 
         <div style={{ width: '320px' }}>
           <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
@@ -109,7 +113,13 @@ export const Showcase: Story = {
         <Radio label="Radio disabled" disabled />
 
         <Avatar initials="ЕВ" state="enabled" />
-        <StatusMark size="Extra Small 12px" />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center' }}>
+          <StatusMark appearance="success" size="Extra Small 12px" />
+          <StatusMark appearance="error" size="Extra Small 12px" />
+          <StatusMark appearance="alert" size="Extra Small 12px" />
+          <StatusMark appearance="information" size="Extra Small 12px" />
+          <StatusMark appearance="wait" size="Extra Small 12px" />
+        </div>
         <StatusLabel appearance="primary" status="success" size="medium" text="Success" />
         <StatusLabel appearance="secondary" status="information" size="medium" text="Information" />
         <TabGroup defaultValue="first">

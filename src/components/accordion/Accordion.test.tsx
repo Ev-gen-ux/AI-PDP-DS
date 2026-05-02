@@ -27,4 +27,14 @@ describe('Accordion', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Expand section' }));
     expect(screen.getByRole('button', { name: 'Collapse section' })).toBeInTheDocument();
   });
+
+  it('accepts calm appearance', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Accordion title="Heading" appearance="calm" />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByText('Heading')).toBeInTheDocument();
+  });
 });
