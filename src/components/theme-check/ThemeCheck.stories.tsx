@@ -12,6 +12,7 @@ import { Chips } from '@/components/chips';
 import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
+import { InputDate } from '@/components/input-date';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
 import { Modal, ModalFooterActions } from '@/components/modal';
@@ -84,6 +85,23 @@ export const Showcase: Story = {
         <Accordion open={false} appearance="accent" />
         <Accordion open appearance="accent" />
 
+        <div style={{ width: '320px' }}>
+          <InputDate label="Date default" helpMessage="Help message" />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputDate label="Date with value" defaultValue="2024-06-15" helpMessage="Help message" />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputDate
+            label="Date invalid"
+            defaultValue="2024-06-15"
+            invalid
+            errorMessage="Error message"
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputDate label="Date disabled" disabled />
+        </div>
         <div style={{ width: '320px' }}>
           <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
         </div>
