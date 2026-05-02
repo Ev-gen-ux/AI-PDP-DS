@@ -3,8 +3,8 @@
 Базовый набор компонентов библиотеки (в алфавитном порядке). Состояние сверено с `src/components/` (и экспортами в `src/index.ts` для публичного API).
 
 всего 55  
-готово 38  
-осталось 17
+готово 39  
+осталось 16
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -30,7 +30,7 @@
 - ✅ `Label`
 - ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)
 - ✅ `NotificationSnackbar`
-- 🛠️ `Pagination`
+- ✅ `Pagination`
 - 🛠️ `ProgressBar`
 - ✅ `Radio`
 - 🛠️ `Select/MultiSelect`

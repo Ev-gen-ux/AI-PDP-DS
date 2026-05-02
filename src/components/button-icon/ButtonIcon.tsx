@@ -1,11 +1,23 @@
 import { type ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
-import { Icon, caretDownIconGlyph, caretUpIconGlyph, metaIconGlyph } from '@/components/icon';
+import {
+  Icon,
+  caretDoubleLeftIconGlyph,
+  caretDoubleRightIconGlyph,
+  caretDownIconGlyph,
+  caretUpIconGlyph,
+  metaIconGlyph,
+} from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 
 export type ButtonIconAppearance = 'primary' | 'secondary';
 export type ButtonIconSize = 'large' | 'medium' | 'small';
-export type ButtonIconGlyph = 'meta' | 'caret-down' | 'caret-up';
+export type ButtonIconGlyph =
+  | 'meta'
+  | 'caret-down'
+  | 'caret-up'
+  | 'caret-double-left'
+  | 'caret-double-right';
 
 export interface ButtonIconProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
   appearance?: ButtonIconAppearance;
@@ -122,6 +134,8 @@ export const ButtonIcon = ({
     meta: metaIconGlyph,
     'caret-down': caretDownIconGlyph,
     'caret-up': caretUpIconGlyph,
+    'caret-double-left': caretDoubleLeftIconGlyph,
+    'caret-double-right': caretDoubleRightIconGlyph,
   } as const;
 
   return (

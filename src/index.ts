@@ -70,6 +70,8 @@ export type {
   NotificationSnackbarAppearance,
   NotificationSnackbarProps,
 } from './components/notification-snackbar';
+export { Pagination, buildPaginationItems } from './components/pagination';
+export type { PaginationItem, PaginationProps } from './components/pagination';
 export { Spinner } from './components/spinner';
 export type { SpinnerProps, SpinnerSize } from './components/spinner';
 export { SplitButton } from './components/split-button';
