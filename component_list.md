@@ -2,8 +2,8 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке). Состояние сверено с `src/components/` (и экспортами в `src/index.ts` для публичного API).
 
-всего 55  
-готово 39  
+всего 56  
+готово 40  
 осталось 16
 
 - ✅ `Accordion`
@@ -22,10 +22,11 @@
 - ✅ `DropdownList`
 - 🛠️ `FileUpload`
 - ✅ `Icon`
+- ✅ `InlineMessage`
+- ✅ `InputDate`
 - 🛠️ `InputEmail`
 - 🛠️ `InputSearch`
 - 🛠️ `InputTel`
-- ✅ `InlineMessage`
 - ✅ `InputText`
 - ✅ `Label`
 - ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)
@@ -64,7 +65,7 @@
 
 ## Layout-примитивы (`src/layouts/`)
 
-Не входят в счётчик 55 выше; в репозитории уже есть:
+Не входят в счётчик 56 выше; в репозитории уже есть:
 
 - ✅ `Cluster`
 - ✅ `Grid`
