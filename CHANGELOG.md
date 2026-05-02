@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.7.0
+
+### Minor Changes
+
+- 3a9605f: Add `Divider` with `appearance` (calm/loud), `orientation` (horizontal/vertical), and semantic tokens `divider.background.*` in light/dark themes.
+
 ## 0.6.0
 
 ### Minor Changes
