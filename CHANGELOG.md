@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.6.0
+
+### Minor Changes
+
+- 95440b6: Add `Counter` badge with Figma-aligned sizes and `counter` semantic colors/spacing. Extend primitives (`spacers` 28, 38, 50) and theme spacing `counter.minWidth.*`.
+
 ## 0.5.0
 
 ### Minor Changes
