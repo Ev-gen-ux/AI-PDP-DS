@@ -1733,6 +1733,22 @@
       }
     }
   },
+  "divider": {
+    "background": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.600}",
+          "$type": "color"
+        }
+      },
+      "loud": {
+        "enabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
+      }
+    }
+  },
   "ink": {
     "background": {
       "calm": {

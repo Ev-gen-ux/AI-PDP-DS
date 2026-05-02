@@ -41,6 +41,8 @@ export type {
   CounterProps,
   CounterSize,
 } from './components/counter';
+export { Divider } from './components/divider';
+export type { DividerAppearance, DividerOrientation, DividerProps } from './components/divider';
 export { ToggleButton } from './components/toggle-button';
 export type {
   ToggleButtonAppearance,
