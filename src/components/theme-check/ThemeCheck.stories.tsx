@@ -17,6 +17,7 @@ import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
 import { Modal, ModalFooterActions } from '@/components/modal';
 import { NotificationSnackbar } from '@/components/notification-snackbar';
+import { Pagination } from '@/components/pagination';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
 import { SplitButton } from '@/components/split-button';
@@ -78,6 +79,9 @@ export const Showcase: Story = {
         <Breadcrumbs />
         <ButtonIcon appearance="primary" />
         <ButtonIcon appearance="secondary" />
+        <Pagination page={2} pageCount={5} onPageChange={() => undefined} />
+        <Pagination page={5} pageCount={24} onPageChange={() => undefined} />
+        <Pagination page={1} pageCount={3} disabled onPageChange={() => undefined} />
         <Accordion open={false} appearance="default" />
         <Accordion open appearance="default" />
         <Accordion open={false} appearance="calm" />
