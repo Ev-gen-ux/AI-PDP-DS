@@ -140,5 +140,17 @@
       "$value": "{spacers.12}",
       "$type": "number"
     }
+  },
+  "tab": {
+    "item": {
+      "indicatorHeight": {
+        "$value": "{spacers.3}",
+        "$type": "number"
+      },
+      "indicatorInset": {
+        "$value": "{spacers.10}",
+        "$type": "number"
+      }
+    }
   }
 }

@@ -105,6 +105,10 @@ export type {
   TableCellSlotLeftAlignedProps,
   TableCellInlineEditProps,
 } from './components/table-cell';
+export { TabGroup, TabGroupContext, useTabGroupContext } from './components/tab-group';
+export type { TabGroupContextValue, TabGroupProps } from './components/tab-group';
+export { TabItem } from './components/tab-item';
+export type { TabItemProps, TabItemState } from './components/tab-item';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
 export { StatusLabel } from './components/status-label';

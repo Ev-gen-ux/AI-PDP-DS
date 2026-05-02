@@ -439,6 +439,64 @@
       }
     }
   },
+  "tab": {
+    "group": {
+      "border": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.neutral.200}",
+            "$type": "color"
+          }
+        }
+      }
+    },
+    "item": {
+      "background": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.base.white}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{palette.neutral.25}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{palette.neutral.50}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{palette.neutral.50}",
+            "$type": "color"
+          }
+        }
+      },
+      "label": {
+        "loud": {
+          "enabled": {
+            "$value": "{palette.neutral.400}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{palette.blue.400}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{palette.neutral.300}",
+            "$type": "color"
+          }
+        }
+      },
+      "selectIndicator": {
+        "calm": {
+          "enabled": {
+            "$value": "{palette.blue.400}",
+            "$type": "color"
+          }
+        }
+      }
+    }
+  },
   "toggleButton": {
     "primary": {
       "background": {
