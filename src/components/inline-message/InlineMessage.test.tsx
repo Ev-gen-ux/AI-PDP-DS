@@ -24,4 +24,14 @@ describe('InlineMessage', () => {
 
     expect(screen.getByText('Error message')).toBeInTheDocument();
   });
+
+  it('renders success variant', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <InlineMessage status="success" message="Success message" />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByText('Success message')).toBeInTheDocument();
+  });
 });

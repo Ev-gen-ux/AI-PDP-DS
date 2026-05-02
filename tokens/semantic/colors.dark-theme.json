@@ -926,6 +926,10 @@
       "error": {
         "$value": "{palette.red.300}",
         "$type": "color"
+      },
+      "success": {
+        "$value": "{palette.green.300}",
+        "$type": "color"
       }
     },
     "cursor": {

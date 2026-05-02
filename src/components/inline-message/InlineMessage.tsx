@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export type InlineMessageStatus = 'default' | 'error';
+export type InlineMessageStatus = 'default' | 'error' | 'success';
 
 export interface InlineMessageProps {
   id?: string;
@@ -15,6 +15,9 @@ const statusStyles = {
   error: css`
     color: ${({ theme }) => theme.colors.input.inlineMessage.error};
   `,
+  success: css`
+    color: ${({ theme }) => theme.colors.input.inlineMessage.success};
+  `,
 } as const;
 
 const Root = styled.div<{ $status: InlineMessageStatus }>`
@@ -25,6 +28,9 @@ const Root = styled.div<{ $status: InlineMessageStatus }>`
   font-size: ${({ theme }) => theme.typography.fontSize.component.base};
   line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
+  font-feature-settings:
+    'lnum' 1,
+    'tnum' 1;
   ${({ $status }) => statusStyles[$status]}
 `;
 

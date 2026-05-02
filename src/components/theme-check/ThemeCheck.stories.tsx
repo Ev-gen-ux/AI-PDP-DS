@@ -63,6 +63,8 @@ export const Showcase: Story = {
       >
         <Label text="Theme Check" />
         <InlineMessage message="Switch theme from the toolbar: Light / Dark" />
+        <InlineMessage status="error" message="Inline error message" />
+        <InlineMessage status="success" message="Inline success message" />
 
         <Button appearance="primary" text="Primary" iconBefore />
         <Button appearance="outline" text="Outline" iconAfter />

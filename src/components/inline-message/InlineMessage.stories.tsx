@@ -27,8 +27,8 @@ const meta = {
     message: { control: 'text', description: 'Текст сообщения.' },
     status: {
       control: 'inline-radio',
-      options: ['default', 'error'],
-      description: 'Тип сообщения: стандартное или ошибка.',
+      options: ['default', 'error', 'success'],
+      description: 'Тип сообщения: подсказка, ошибка или успех.',
     },
   },
 } satisfies Meta<typeof InlineMessage>;
@@ -52,6 +52,21 @@ export const Error: Story = {
     docs: {
       description: {
         story: 'Сообщение об ошибке для невалидного состояния поля.',
+      },
+    },
+  },
+};
+
+export const Success: Story = {
+  args: {
+    status: 'success',
+    message: 'Success message',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Сообщение об успешной валидации или положительном результате (Figma: InlineMessage / success).',
       },
     },
   },
