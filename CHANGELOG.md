@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.5.0
+
+### Minor Changes
+
+- 41f92e7: Add `Pagination` with `ButtonIcon` navigation (double caret), page cells from `button.icon.primary` tokens, and `buildPaginationItems` helper. Extend `ButtonIcon` with `caret-double-left` and `caret-double-right` icons.
+
 ## 0.4.0
 
 ### Minor Changes
