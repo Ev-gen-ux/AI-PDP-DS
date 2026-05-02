@@ -45,6 +45,8 @@ const preview: Preview = {
             key={themeMode}
             data-theme={themeMode}
             style={{
+              boxSizing: 'border-box',
+              minHeight: '100vh',
               padding: 0,
               backgroundColor: 'var(--colors-background-global-calm)',
               color: 'var(--colors-text-base)',

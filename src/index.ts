@@ -111,6 +111,8 @@ export { TabItem } from './components/tab-item';
 export type { TabItemProps, TabItemState } from './components/tab-item';
 export { Label } from './components/label';
 export type { LabelProps, LabelState } from './components/label';
+export { Modal, ModalButtonClose, ModalDialog, ModalFooterActions } from './components/modal';
+export type { ModalButtonCloseProps, ModalDialogProps, ModalProps } from './components/modal';
 export { StatusLabel } from './components/status-label';
 export type {
   StatusLabelAppearance,

@@ -1265,6 +1265,58 @@
       }
     }
   },
+  "modal": {
+    "background": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.800}",
+          "$type": "color"
+        }
+      }
+    },
+    "border": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.600}",
+          "$type": "color"
+        }
+      }
+    },
+    "icon": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
+      }
+    },
+    "buttonClose": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.25}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{palette.neutral.50}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{palette.neutral.100}",
+          "$type": "color"
+        },
+        "disabled": {
+          "$value": "{palette.neutral.500}",
+          "$type": "color"
+        }
+      }
+    },
+    "fade": {
+      "enabled": {
+        "$value": "#12141666",
+        "$type": "color"
+      }
+    }
+  },
   "notification": {
     "snackbar": {
       "background": {
