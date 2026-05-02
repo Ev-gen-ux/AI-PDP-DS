@@ -1,5 +1,14 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.4.0
+
+### Minor Changes
+
+- 314aee9: Add `InputDate` atom: native date field with calendar trigger, label, help/error messages, and `calendarBlankIconGlyph` on the icon layer.
+- bd9bcd2: StatusMark: add appearances `error`, `alert`, `information`, `wait` (plus existing `success`); tokens under `colors.statusMark`. Export `StatusMarkAppearance`.
+
+  Accordion: add `appearance` prop (`default` | `calm` | `accent`) with matching accordion tokens. Export `AccordionAppearance`.
+
 ## 0.3.0
 
 ### Minor Changes
