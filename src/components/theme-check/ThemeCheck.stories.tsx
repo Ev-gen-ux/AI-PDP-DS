@@ -142,6 +142,8 @@ export const Showcase: Story = {
         <Icon icon={CodeIcon} size={24} />
         <Spinner size={16} />
         <Spinner size={24} />
+        <Spinner size={32} />
+        <Spinner size={40} />
       </div>
     </div>
   ),
