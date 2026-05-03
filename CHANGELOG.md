@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.11.0
+
+### Minor Changes
+
+- fe6fe0a: Add `InputSearch` with semantic tokens `colors.inputSearch` (light/dark), leading magnifying-glass icon glyph, stories, tests, ThemeCheck, and public export.
+
 ## 0.10.0
 
 ### Minor Changes
