@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.9.1
+
+### Patch Changes
+
+- 8a562bf: Align light theme `input.background.disabled` with Figma (`neutral/50`, `#efeff0`); was `base.white`. Dark theme unchanged (`neutral/800`). Primitives unchanged — verified via Figma variables on node `128:18497`.
+
 ## 0.9.0
 
 ### Minor Changes
