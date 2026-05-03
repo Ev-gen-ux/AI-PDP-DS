@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.12.0
+
+### Minor Changes
+
+- 7f3f51e: Add `InputEmail` with semantic tokens `colors.inputEmail` (light/dark), leading envelope icon glyph `inputEmailLeadingIconGlyph`, stories, tests, ThemeCheck, and public export.
+
 ## 0.11.0
 
 ### Minor Changes
