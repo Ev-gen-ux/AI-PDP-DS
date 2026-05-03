@@ -2,11 +2,11 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке). Сверено с верхним уровнем `src/components/` и публичными экспортами `src/index.ts`. Папка **`theme-check`** в компонентах не входит в продуктовый список (служебный сценарий Storybook).
 
-**Обновлено:** 2026-05-06.
+**Обновлено:** 2026-05-02.
 
-всего 56  
-готово 49  
-осталось 7
+всего 57  
+готово 51  
+осталось 6
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -37,7 +37,8 @@
 - ✅ `Pagination`
 - ✅ `ProgressBar`
 - ✅ `Radio`
-- 🛠️ `Select/MultiSelect`
+- ✅ `Select`
+- ✅ `Multiselect`
 - ✅ `SelectButton`
 - ✅ `Sidebar`
 - ✅ `SidebarNavigationItem`

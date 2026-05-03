@@ -13,10 +13,13 @@ export interface DropdownListOption {
 export interface DropdownListProps {
   options?: DropdownListOption[];
   onSelect?: (option: DropdownListOption, index: number) => void;
+  /** Растянуть список на ширину триггера (Select / Multiselect). */
+  matchTriggerWidth?: boolean;
+  id?: string;
 }
 
-const Root = styled.div`
-  width: 248px;
+const Root = styled.div<{ $matchTriggerWidth?: boolean }>`
+  width: ${({ $matchTriggerWidth }) => ($matchTriggerWidth ? '100%' : '248px')};
   box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
@@ -36,11 +39,16 @@ const defaultOptions: DropdownListOption[] = [
   { id: '4', label: 'Label', description: 'Description' },
 ];
 
-export const DropdownList = ({ options = defaultOptions, onSelect }: DropdownListProps) => {
+export const DropdownList = ({
+  options = defaultOptions,
+  onSelect,
+  matchTriggerWidth = false,
+  id,
+}: DropdownListProps) => {
   const resolvedOptions = Array.isArray(options) ? options : defaultOptions;
 
   return (
-    <Root role="menu" aria-label="Dropdown list">
+    <Root id={id} role="menu" aria-label="Dropdown list" $matchTriggerWidth={matchTriggerWidth}>
       {resolvedOptions.map((option, index) => (
         <DropdownItem
           key={option.id}

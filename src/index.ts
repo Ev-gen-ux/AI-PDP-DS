@@ -80,6 +80,13 @@ export { DropdownItem } from './components/dropdown-item';
 export type { DropdownItemProps, DropdownItemState } from './components/dropdown-item';
 export { DropdownList } from './components/dropdown-list';
 export type { DropdownListOption, DropdownListProps } from './components/dropdown-list';
+export { Multiselect, Select } from './components/select';
+export type {
+  MultiselectOption,
+  MultiselectProps,
+  SelectOption,
+  SelectProps,
+} from './components/select';
 export { SelectButton } from './components/select-button';
 export type {
   SelectButtonOption,

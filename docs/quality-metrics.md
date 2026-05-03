@@ -4,6 +4,53 @@
 
 ---
 
+## Снимок: 2026-05-05
+
+**Область:** семантическая группа **`select`** (light/dark), компоненты **`Select`** и **`Multiselect`** (общий shell + **`SelectListPopoverPanel`**, портал в `document.body`, фиксированное позиционирование и `z-index` по аналогии с **InputDate**), хук **`useSelectListPopover`**, правки **`DropdownList`** (`matchTriggerWidth`, опциональный `id`); Storybook (декораторы без обрезки списка), тесты, Code Connect, **ThemeCheck**, **`component_list.md`**, **`src/index.ts`**, changeset **`minor`**.
+
+### Автоматические проверки
+
+| Проверка          | Команда                | Результат                 |
+| ----------------- | ---------------------- | ------------------------- |
+| TypeScript        | `npm run typecheck`    | OK                        |
+| ESLint            | `npm run lint`         | OK (0 warnings)           |
+| Тесты             | `npm run test`         | OK — 48 файлов, 163 теста |
+| Prettier          | `npm run format:check` | OK                        |
+| Сборка библиотеки | `npm run build`        | OK (tokens + tsc + vite)  |
+
+### Сводные метрики (gates)
+
+| Метрика             | Значение |
+| ------------------- | -------- |
+| `gates_passed`      | 5/5      |
+| `test_files_passed` | 48       |
+| `test_cases_passed` | 163      |
+| `eslint_warnings`   | 0        |
+
+**Интерпретация:** блокирующих ошибок по `tsc` / ESLint / Vitest / `build` / Prettier на момент снимка **не зафиксировано**.
+
+### Инциденты и пробелы: Select + Multiselect (2026-05-05)
+
+#### Ошибки и сбои разработки (симптом → причина → реакция)
+
+| Симптом                                                            | Причина                                                            | Реакция                                                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| В типах `Select` не хватало `required`                             | Проп не был отражён в интерфейсе при выравнивании с формой/лейблом | Добавлен опциональный `required?: boolean`                                                         |
+| ESLint: `React` is not defined                                     | Использование типов событий без импорта пространства имён `React`  | Импорт `ReactMouseEvent` / `ReactKeyboardEvent`; для нативных слушателей — `globalThis.MouseEvent` |
+| TS: несовместимость `MouseEvent` в `addEventListener('mousedown')` | Путаница типа React vs DOM                                         | Обработчики документа типизированы как `globalThis.MouseEvent`                                     |
+| `exactOptionalPropertyTypes`: передача `value={undefined}` в story | Явная передача `undefined` для опционального пропа                 | В stateful story — `useState('')` вместо `undefined`                                               |
+| RTL: не находился триггер по роли                                  | Доступное имя кнопки задаётся через `Label` + `htmlFor`            | В тестах: `getByRole('button', { name: label })`                                                   |
+| Список опций обрезался в Storybook                                 | Абсолютное позиционирование внутри canvas + overflow               | Портал + fixed panel; декораторы как у InputDate (отступы + ширина 320px)                          |
+
+#### Риски и технический долг (не gates)
+
+| Уровень | Зона                 | Наблюдение                                                                                                                                               |
+| ------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Средний | **a11y Multiselect** | `Label` с `htmlFor` указывает на фокусируемый **`div`** (`role="combobox"`). Имеет смысл позже сверить с паттерном `aria-labelledby` / нативной связкой. |
+| Низкий  | Визуальная fidelity  | Pre-Story ручная сверка всех состояний списка в light/dark с master-node Figma не автоматизирована.                                                      |
+
+---
+
 ## Снимок: 2026-05-04
 
 **Область:** семантическая группа **`inputText`** (light/dark), **`InputText`** на `colors.inputText.*`, **`Label`** — опциональный **`colorGroup`** (`'input' | 'inputText'`); **`InputTel`** — префикс **+7**, маска **(999) 999 99 99**, нормализация вставок, `value`/`onChange` только цифры, экспорт хелперов маски; токены **`inputTel.prefix`** в dark; **ThemeCheck**, **`component_list.md`**, **`src/index.ts`**.
