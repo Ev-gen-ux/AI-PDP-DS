@@ -24,4 +24,10 @@ export {
   statusSuccessIconGlyph,
   statusWaitIconGlyph,
 } from './Icon';
+export {
+  fileGlyphIconGlyph,
+  fileXlsIconGlyph,
+  trashSimpleIconGlyph,
+  uploadSimpleIconGlyph,
+} from './Icon';
 export type { IconProps, IconSize } from './Icon';

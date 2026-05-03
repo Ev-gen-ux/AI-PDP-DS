@@ -16,6 +16,7 @@ import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputDate } from '@/components/input-date';
+import { InputFile } from '@/components/input-file';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
 import { Modal, ModalFooterActions } from '@/components/modal';
@@ -176,6 +177,37 @@ export const Showcase: Story = {
         </div>
         <div style={{ width: '320px' }}>
           <InputText label="Disabled" placeholder="Placeholder" disabled />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputFile label="File default" helpMessage="Help message" />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputFile
+            label="File with items"
+            helpMessage="Help message"
+            items={[
+              { id: 't1', fileName: 'doc.pdf', fileSizeLabel: '12 (KB)', status: 'success' },
+              { id: 't2', fileName: 'data.zip', fileSizeLabel: '2 (MB)', status: 'uploading' },
+            ]}
+            onRemoveItem={() => undefined}
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputFile
+            label="File invalid"
+            invalid
+            errorMessage="Error message"
+            items={[
+              {
+                id: 't3',
+                fileName: 'bad.bin',
+                fileSizeLabel: '1 (KB)',
+                status: 'error',
+                errorMessage: 'Upload failed',
+              },
+            ]}
+            onRemoveItem={() => undefined}
+          />
         </div>
 
         <Checkbox label="Checkbox" helpMessage="Help message" />
