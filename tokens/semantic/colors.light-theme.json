@@ -1273,6 +1273,12 @@
         "$value": "{palette.neutral.200}",
         "$type": "color"
       }
+    },
+    "cursor": {
+      "enabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      }
     }
   },
   "checkbox": {

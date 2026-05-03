@@ -153,6 +153,7 @@ const NativeInput = styled.input<{ $hasValue: boolean; $disabled: boolean }>`
   font-size: ${({ theme }) => theme.typography.fontSize.component.base};
   line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
+  caret-color: ${({ theme }) => theme.colors.inputTel.cursor.enabled};
   color: ${({ theme, $hasValue }) =>
     $hasValue
       ? theme.colors.inputTel.textPlaceholderValue.enabled
@@ -181,7 +182,7 @@ const ClearButton = styled.button`
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.componentInner};
   background: transparent;
-  color: ${({ theme }) => theme.colors.input.icon.enabled};
+  color: ${({ theme }) => theme.colors.inputTel.icon.enabled};
   cursor: pointer;
 
   &:focus-visible {
@@ -309,7 +310,6 @@ export const InputTel = ({
         text={label}
         required={required}
         state={disabled ? 'disabled' : readOnly ? 'readOnly' : 'default'}
-        colorGroup="inputText"
       />
       <Field
         $state={state}
