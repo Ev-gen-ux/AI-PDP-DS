@@ -10,9 +10,14 @@
  * Архитектура:
  *  - Коллекции с префиксом '_' → primitives (raw values, без alias до других слоёв)
  *  - Коллекции без префикса     → semantic (могут ссылаться на primitives)
- *  - Коллекции с несколькими модами создают отдельный файл на каждый мод:
- *      colors (light theme, dark theme)  → colors.light-theme.json + colors.dark-theme.json
- *      typography (XL, MD, XS)           → typography.xl.json + typography.md.json + typography.xs.json
+ *  - Коллекции с несколькими модами → отдельный JSON на каждый мод.
+ *      Политика репозитория: один набор примитивов палитры — файл `tokens/primitives/palette.json`
+ *      (общие raw-значения для всех тем). Различия light/dark только в семантике
+ *      `colors.light-theme.json` / `colors.dark-theme.json` через алиасы `{palette.*}`.
+ *      Если в Figma у `_palette` две моды, скрипт выгрузит два файла — сведите их в одну `palette.json`
+ *      или настройте в Figma одну модель примитивов, чтобы не плодить дубли.
+ *      colors (light / dark) → colors.light-theme.json + colors.dark-theme.json
+ *      typography (XL, MD, XS) → typography.xl.json + typography.md.json + typography.xs.json
  *  - Алиасы маппятся через путь {collection.path.to.token}, например {palette.blue.500}
  *  - Префикс коллекции в alias-пути = имя коллекции без ведущего '_'.
  */

@@ -10,6 +10,7 @@ import { ButtonLink } from '@/components/button-link';
 import { Checkbox } from '@/components/checkbox';
 import { Chips } from '@/components/chips';
 import { Counter } from '@/components/counter';
+import { DatePicker, MonthPicker, YearPicker } from '@/components/date-picker';
 import { Divider } from '@/components/divider';
 import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
@@ -127,6 +128,35 @@ export const Showcase: Story = {
         <div style={{ width: '320px' }}>
           <InputDate label="Date disabled" disabled />
         </div>
+        <DatePicker
+          year={2025}
+          monthIndex={8}
+          selectedDate={new Date(2025, 8, 23)}
+          todayDate={new Date(2025, 8, 7)}
+          weekStartsOn={1}
+          locale="ru-RU"
+          onMonthPrev={() => undefined}
+          onMonthNext={() => undefined}
+          onSelectDate={() => undefined}
+        />
+        <YearPicker
+          rangeLabel="2001–2023"
+          leadYear={2023}
+          years={Array.from({ length: 12 }, (_, i) => 2012 + i)}
+          selectedYear={2023}
+          onPrevPage={() => undefined}
+          onNextPage={() => undefined}
+          onSelectYear={() => undefined}
+        />
+        <MonthPicker
+          year={2023}
+          rangeLabel="2001–2023"
+          selectedMonthIndex={5}
+          locale="ru-RU"
+          onPrevYear={() => undefined}
+          onNextYear={() => undefined}
+          onSelectMonth={() => undefined}
+        />
         <div style={{ width: '320px' }}>
           <InputText label="Default" placeholder="Placeholder" helpMessage="Help message" />
         </div>
