@@ -11,6 +11,7 @@ import {
   ClockIcon,
   CodeIcon,
   DotsThreeIcon,
+  EnvelopeSimpleIcon,
   FileIcon,
   InfoIcon,
   LinkIcon,
@@ -69,6 +70,8 @@ export const fileXlsIconGlyph: GlyphComponent = FileXlsIcon;
 export const trashSimpleIconGlyph: GlyphComponent = TrashIcon;
 /** InputSearch: лупа слева (Figma magnifying-glass) */
 export const inputSearchLeadingIconGlyph: GlyphComponent = MagnifyingGlassIcon;
+/** InputEmail: конверт слева (Figma envelope-simple) */
+export const inputEmailLeadingIconGlyph: GlyphComponent = EnvelopeSimpleIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;
