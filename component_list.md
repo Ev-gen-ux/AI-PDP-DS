@@ -5,8 +5,8 @@
 **Обновлено:** 2026-05-05.
 
 всего 56  
-готово 47  
-осталось 9
+готово 48  
+осталось 8
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -35,7 +35,7 @@
 - ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)
 - ✅ `NotificationSnackbar`
 - ✅ `Pagination`
-- 🛠️ `ProgressBar`
+- ✅ `ProgressBar`
 - ✅ `Radio`
 - 🛠️ `Select/MultiSelect`
 - ✅ `SelectButton`

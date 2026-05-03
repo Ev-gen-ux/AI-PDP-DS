@@ -91,6 +91,8 @@ export type {
 } from './components/notification-snackbar';
 export { Pagination, buildPaginationItems } from './components/pagination';
 export type { PaginationItem, PaginationProps } from './components/pagination';
+export { ProgressBar } from './components/progress-bar';
+export type { ProgressBarProps } from './components/progress-bar';
 export { Spinner } from './components/spinner';
 export type { SpinnerProps, SpinnerSize } from './components/spinner';
 export { SplitButton } from './components/split-button';

@@ -1583,6 +1583,18 @@
       }
     }
   },
+  "progressBar": {
+    "background": {
+      "enabled": {
+        "$value": "{palette.neutral.700}",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "{palette.blue.400}",
+        "$type": "color"
+      }
+    }
+  },
   "sidebarNavigationItem": {
     "background": {
       "enabled": {
