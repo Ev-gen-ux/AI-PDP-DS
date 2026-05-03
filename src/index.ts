@@ -111,6 +111,14 @@ export { ProgressBar } from './components/progress-bar';
 export type { ProgressBarProps } from './components/progress-bar';
 export { Spinner } from './components/spinner';
 export type { SpinnerProps, SpinnerSize } from './components/spinner';
+export { Stepper, StepperGroup } from './components/stepper';
+export type {
+  StepperGroupProps,
+  StepperGroupStep,
+  StepperItem,
+  StepperItemState,
+  StepperProps,
+} from './components/stepper';
 export { SplitButton } from './components/split-button';
 export type {
   SplitButtonAppearance,

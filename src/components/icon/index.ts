@@ -30,6 +30,7 @@ export {
   inputEmailLeadingIconGlyph,
   inputTelLeadingIconGlyph,
   inputSearchLeadingIconGlyph,
+  stepperMarkerCompleteIconGlyph,
   trashSimpleIconGlyph,
   uploadSimpleIconGlyph,
 } from './Icon';

@@ -250,13 +250,13 @@ npm run storybook          # запускает Storybook на :6006
 │   │   ├── tokens.ts       ← объект для ThemeProvider
 │   │   ├── variables.css   ← CSS Custom Properties (включая light/dark/responsive)
 │   │   └── styled.d.ts     ← типы темы для styled-components
-│   ├── components/         ← атомы: Button, Icon, Checkbox, Radio, InputText, Label, StatusLabel, Avatar, InlineMessage, Spinner
+│   ├── components/         ← атомы и часть молекул: Button, Icon, …, Stepper, Pagination, ProgressBar, …
 │   │   └── button/
 │   │       ├── Button.tsx
 │   │       ├── Button.stories.tsx
 │   │       ├── Button.figma.tsx
 │   │       └── index.ts
-│   ├── patterns/           ← молекулы: BenefitCard, NotificationSnackbar, SidebarNavigationItem, SplitButton, ToggleButton, Stepper, Accordion, TableCell
+│   ├── patterns/           ← молекулы: BenefitCard, NotificationSnackbar, SidebarNavigationItem, SplitButton, ToggleButton, Accordion, TableCell (часть молекул также в `components/`: Stepper, Pagination, ProgressBar, …)
 │   ├── layouts/            ← Stack, Cluster, Grid, Sidebar, Container, Center, Switcher
 │   └── templates/          ← каркасы экранов
 ├── docs/                   ← MDX-документация, спецификации, паттерны
@@ -784,7 +784,7 @@ figma.connect(Button, 'https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/?node
 - [ ] SplitButton
 - [ ] ToggleButton
 - [ ] TableCell
-- [ ] Stepper
+- [x] Stepper
 - [ ] Accordion
 
 **Layout-примитивы (`src/layouts/`):**

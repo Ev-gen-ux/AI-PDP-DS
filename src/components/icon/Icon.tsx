@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react';
 import {
   CalendarBlankIcon,
+  CheckIcon,
   CaretDoubleLeftIcon,
   CaretDoubleRightIcon,
   CaretDownIcon,
@@ -75,6 +76,8 @@ export const inputSearchLeadingIconGlyph: GlyphComponent = MagnifyingGlassIcon;
 export const inputEmailLeadingIconGlyph: GlyphComponent = EnvelopeSimpleIcon;
 /** InputTel: телефон слева (Figma InputTel, node 3392:29557) */
 export const inputTelLeadingIconGlyph: GlyphComponent = PhoneIcon;
+/** Stepper: галочка завершённого шага (Figma stepper marker, node 3415:30346) */
+export const stepperMarkerCompleteIconGlyph: GlyphComponent = CheckIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;

@@ -28,6 +28,7 @@ import { Pagination } from '@/components/pagination';
 import { ProgressBar } from '@/components/progress-bar';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
+import { Stepper, StepperGroup } from '@/components/stepper';
 import { SplitButton } from '@/components/split-button';
 import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { Sidebar } from '@/components/sidebar';
@@ -118,6 +119,110 @@ export const Showcase: Story = {
         </div>
         <div style={{ width: 280 }}>
           <ProgressBar indeterminate aria-label="Theme check indeterminate loading" />
+        </div>
+        <div style={{ width: 560 }}>
+          <Stepper
+            aria-label="Theme check stepper horizontal"
+            items={[
+              {
+                state: 'completed',
+                heading: 'Step 1',
+                description: 'Done',
+                body: false,
+                footer: false,
+              },
+              {
+                state: 'active',
+                heading: 'Step 2',
+                description: 'Current',
+                body: false,
+                footer: false,
+              },
+              {
+                state: 'invalid',
+                invalid: true,
+                heading: 'Step 3',
+                description: 'Error',
+                body: false,
+                footer: false,
+              },
+              {
+                state: 'disabled',
+                heading: 'Step 4',
+                description: 'Later',
+                body: false,
+                footer: false,
+              },
+            ]}
+          />
+        </div>
+        <div style={{ width: 400 }}>
+          <Stepper
+            orientation="vertical"
+            aria-label="Theme check stepper vertical"
+            items={[
+              {
+                state: 'completed',
+                heading: 'Step 1',
+                description: 'Done',
+                body: false,
+                footer: false,
+              },
+              {
+                state: 'active',
+                heading: 'Step 2',
+                description: 'Current',
+                body: false,
+                footer: false,
+              },
+              {
+                state: 'disabled',
+                heading: 'Step 3',
+                description: 'Later',
+                body: false,
+                footer: false,
+              },
+            ]}
+          />
+        </div>
+        <div style={{ width: 560 }}>
+          <StepperGroup
+            orientation="horizontal"
+            aria-label="Theme check stepper group horizontal"
+            steps={[
+              { state: 'completed', heading: 'Step 1', description: 'Done' },
+              { state: 'active', heading: 'Step 2', description: 'Current' },
+              { state: 'disabled', heading: 'Step 3', description: 'Later' },
+            ]}
+            footerContent={
+              <>
+                <Button appearance="flat" size="medium" text="Prev" type="button" />
+                <Button appearance="outline" size="medium" text="Next" type="button" />
+              </>
+            }
+          >
+            <span style={{ padding: 8, display: 'block' }}>Content</span>
+          </StepperGroup>
+        </div>
+        <div style={{ width: 400 }}>
+          <StepperGroup
+            orientation="vertical"
+            aria-label="Theme check stepper group vertical"
+            nestedContentStepIndex={0}
+            steps={[
+              { state: 'completed', heading: 'Step 1', description: 'Done' },
+              { state: 'active', heading: 'Step 2', description: 'Current' },
+              { state: 'disabled', heading: 'Step 3', description: 'Later' },
+            ]}
+            footerContent={
+              <>
+                <Button appearance="flat" size="medium" text="Prev" type="button" />
+                <Button appearance="outline" size="medium" text="Next" type="button" />
+              </>
+            }
+          >
+            <span style={{ padding: 8, display: 'block' }}>Content</span>
+          </StepperGroup>
         </div>
         <Accordion open={false} appearance="default" />
         <Accordion open appearance="default" />
