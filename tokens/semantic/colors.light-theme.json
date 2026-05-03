@@ -836,7 +836,7 @@
         "$type": "color"
       },
       "disabled": {
-        "$value": "{palette.base.white}",
+        "$value": "{palette.neutral.50}",
         "$type": "color"
       }
     },
