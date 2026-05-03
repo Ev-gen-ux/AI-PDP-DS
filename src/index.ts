@@ -125,6 +125,8 @@ export type {
   SplitButtonProps,
   SplitButtonState,
 } from './components/split-button';
+export { Toggle } from './components/toggle';
+export type { ToggleProps, ToggleState } from './components/toggle';
 export { SidebarNavigationItem } from './components/sidebar-navigation-item';
 export type {
   SidebarNavigationItemState,

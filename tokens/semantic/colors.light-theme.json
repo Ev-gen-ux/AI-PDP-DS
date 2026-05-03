@@ -1899,6 +1899,40 @@
       }
     }
   },
+  "toggle": {
+    "backgroundMark": {
+      "enabled": {
+        "$value": "{palette.neutral.100}",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "{palette.blue.100}",
+        "$type": "color"
+      }
+    },
+    "mark": {
+      "enabled": {
+        "$value": "{palette.base.white}",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "{palette.blue.400}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.100}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "loud": {
+        "disabled": {
+          "$value": "{palette.neutral.100}",
+          "$type": "color"
+        }
+      }
+    }
+  },
   "sidebarNavigationItem": {
     "background": {
       "enabled": {

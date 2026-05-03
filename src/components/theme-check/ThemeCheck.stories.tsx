@@ -29,6 +29,7 @@ import { ProgressBar } from '@/components/progress-bar';
 import { Radio } from '@/components/radio';
 import { Spinner } from '@/components/spinner';
 import { Stepper, StepperGroup } from '@/components/stepper';
+import { Toggle } from '@/components/toggle';
 import { SplitButton } from '@/components/split-button';
 import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { Sidebar } from '@/components/sidebar';
@@ -407,6 +408,9 @@ export const Showcase: Story = {
         <Checkbox label="Checkbox" helpMessage="Help message" />
         <Checkbox label="Checkbox checked" checked />
         <Checkbox label="Checkbox error" invalid errorMessage="Error message" />
+        <Toggle label="Toggle" helpMessage="Help message" />
+        <Toggle label="Toggle on" checked helpMessage="Help message" />
+        <Toggle label="Toggle error" invalid errorMessage="Error message" />
         <Radio label="Radio" helpMessage="Help message" />
         <Radio label="Radio error" invalid errorMessage="Error message" checked />
         <Radio label="Radio disabled" disabled />

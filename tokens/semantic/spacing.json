@@ -228,5 +228,11 @@
       "$value": "{spacers.50}",
       "$type": "number"
     }
+  },
+  "toggle": {
+    "trackWidth": {
+      "$value": "{spacers.35}",
+      "$type": "number"
+    }
   }
 }

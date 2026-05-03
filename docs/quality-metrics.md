@@ -51,6 +51,60 @@
 
 ---
 
+## Снимок: 2026-05-03 · Toggle (rename `Switcher`, маркер)
+
+**Область:** переименование UI-переключателя **`Switcher` → `Toggle`**, токены **`colors.switcher` / `spacing.switcher` → `toggle`**, папка **`src/components/toggle`**, экспорт из **`src/index.ts`**, ThemeCheck, **`component_list.md`**, changeset; правка вертикали **mark (thumb)** — отступ снизу **`inner.closest`** (2px); **`npm run tokens:build`**, затем **`typecheck` / `lint` / `test` / `format:check`** (на момент записи: **51** файлов тестов, **175** кейсов).
+
+### Автоматические проверки
+
+| Проверка   | Команда                | Результат (по сессии) |
+| ---------- | ---------------------- | --------------------- |
+| TypeScript | `npm run typecheck`    | OK                    |
+| ESLint     | `npm run lint`         | OK (0 warnings)       |
+| Тесты      | `npm run test`         | OK — 51 / 175         |
+| Prettier   | `npm run format:check` | OK                    |
+
+### Сводные метрики (gates)
+
+| Метрика             | Значение |
+| ------------------- | -------- |
+| `gates_passed`      | 4/4†     |
+| `test_files_passed` | 51       |
+| `test_cases_passed` | 175      |
+| `eslint_warnings`   | 0        |
+
+† `npm run build` в этой записи явно не прогонялся после финальных правок маркера; рекомендуется перед PR.
+
+### Инциденты и пробелы: Toggle (2026-05-03)
+
+#### Ошибки и сбои разработки (симптом → причина → реакция)
+
+| Симптом                                                                    | Причина                                                                                                                                                                                                              | Реакция                                                                                                                                                                                    |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Маркер визуально прижат к низу трека, нет зазора **`inner.closest`** снизу | У **Thumb** была только **`top`** + фиксированная **`height`**; высота **padding-box** трека оказалась на **2px меньше** расчёта из‑за **`border: 1px solid transparent`** на **Track** без учёта в **`min-height`** | **`bottom: theme.spacing.inner.closest`**, убрана фиксированная высота; в **`min-height`** трека добавлено **`+ 2 × theme.spacing.inner.xsClosest`** (1px граница сверху/снизу по токенам) |
+| Обрыв сессии до конца переименования                                       | Handoff по grep/плану без завершённого diff в одном чате                                                                                                                                                             | Доведено: токены, компонент, экспорты, ThemeCheck, changeset, **`component_list.md`**                                                                                                      |
+| Риск путаницы **layout `Switcher`** vs **`Toggle`**                        | В **CLAUDE.md** примитив компоновки всё ещё называется **Switcher**                                                                                                                                                  | В коде UI-контроль — только **`Toggle`** в `src/components/toggle/`; layout из дорожной карты не переименовывался                                                                          |
+
+#### Чего не хватало (процесс / продукт)
+
+| Пробел                                                                | Рекомендация                                                                                                                                                                 |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Единый Component Spec** по §0.2.5 для Toggle после rename из Figma  | Завести `docs/toggle-component-spec.md` (или объединить с существующим черновиком): Variant/Numeric/State matrix, **`mark`** inset снизу/сверху из master-node, Verification |
+| **Числовая фиксация отступа маркера** в задаче                        | Вместо только скриншота — явная строка в спеке: «снизу **`inner.closest`** (resolved px)» + сверка с Variables; ускоряет разбор без догадок по `padding` + `border`          |
+| **Подтверждённый `npm run figma:publish`** для **`Toggle.figma.tsx`** | После стабилизации **`nodeId`** и пропсов — прогон публикации Code Connect (§0.2.4 п.5 CLAUDE)                                                                               |
+| **Версионирование:** changeset с **`major`** из‑за rename `Switcher`  | Если **`Switcher`** ни разу не публиковался в npm — можно обсудить **`minor`**; если уже был в релизе — **`major`** корректен                                                |
+
+#### Что было непонятно или двусмысленно
+
+| Зона                                | Неоднозначность                                                                                                                   | Как снять                                                                                                                                                |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Трек: `padding` + абсолют thumb** | Неочевидно, что **`top`** на thumb считается от **padding-box**, и параллельно **`padding`** трека задаёт тот же визуальный зазор | В спеке одна схема: либо отступы только у thumb (**`top`/`bottom`/`left`/`right`**), либо явная модель «padding трека + inset thumb» с одной таблицей px |
+| **Почему не хватало 2px снизу**     | Симптом выглядел как «ошибка **`bottom`**», фактически съедал **`border-box`** vs **`min-height`**                                | При любом **не-нулевом `border`** на треке включать толщину в **`min-height`** или убрать border из влияния на высоту (outline / внутренний слой)        |
+
+**Интерпретация:** блокирующих падений **`tsc` / ESLint / Vitest / Prettier`** после доведения задачи не зафиксировано; основная потеря времени — **визуальная геометрия маркера** без явной numeric-строки в спеке и без учёта **1px** границы в **`min-height`**. Урок: для pill-трека с **`border`** проверять **padding-box height** и маркер с **`top` + `bottom`** из одного токена **`inner.closest`**.
+
+---
+
 ## Снимок: 2026-05-05
 
 **Область:** семантическая группа **`select`** (light/dark), компоненты **`Select`** и **`Multiselect`** (общий shell + **`SelectListPopoverPanel`**, портал в `document.body`, фиксированное позиционирование и `z-index` по аналогии с **InputDate**), хук **`useSelectListPopover`**, правки **`DropdownList`** (`matchTriggerWidth`, опциональный `id`); Storybook (декораторы без обрезки списка), тесты, Code Connect, **ThemeCheck**, **`component_list.md`**, **`src/index.ts`**, changeset **`minor`**.
@@ -508,16 +562,17 @@
 
 ### История снимков
 
-| Дата       | gates | Кратко                                                                                                                                                                                                                            |
-| ---------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2026-05-02 | 5/5   | typecheck, lint, test, format, build — зелёные; замечания по Accordion sizes/transition.                                                                                                                                          |
-| 2026-05-02 | 5/5   | +InputDate: инциденты Storybook/Icon export, пробелы токенов disabled для input value/icon; тесты 32 файла / 93 кейса; см. таблицу выше.                                                                                          |
-| 2026-05-02 | 5/5   | +Pagination: ошибки `tsc` в stories и типизации теста (см. таблицу инцидентов), исправлены; 33 файла / 99 тестов; ThemeCheck дополнен.                                                                                            |
-| 2026-05-02 | —     | +Counter: см. «Инциденты и пробелы: Counter» — дрейф dark-токенов vs Figma, двусмысленность padding в спеке, ожидание круга для single-digit.                                                                                     |
-| 2026-05-02 | —     | +Divider: вертикаль в Storybook невидима (height 0 без `min-height`/flex-контекста); см. «Инциденты и пробелы: Divider» — спека, visual parity, stories.                                                                          |
-| 2026-05-03 | —     | +DatePicker / Year-Month picker: двусмысленность «примитивы dark» vs семантика; двойной `gap`+`padding` у шапки; единая политика одной `palette.json`; см. раздел выше.                                                           |
-| 2026-05-03 | 5/5   | +InputDate: обрезание попапа в Storybook, портал + `fixed`, клик снаружи с `popoverRef`, типы DatePicker, тест без `showPicker`, `selectedMonthIndex`, ESLint/`format`; 39 файлов / 122 теста.                                    |
-| 2026-05-03 | 5/5   | +InputDate: плейсхолдер при фокусе/частичном вводе (`inputFocused`, цвет текста, тест focus/blur); 39 файлов / **123** теста.                                                                                                     |
-| 2026-05-03 | —     | +InputFile/FileUpload: IDE не резолвила `@/components/file-upload` при зелёном `tsc` → импорт `../file-upload`; FileXls из Figma (3392:28752) как `FileXlsIcon`/`fileXlsIconGlyph`, без MCP URL.                                  |
-| 2026-05-03 | —     | +InputSearch: нет единого Component Spec / visual parity / подтверждённого `figma:publish`; см. «Инциденты и пробелы: InputSearch» — `input` vs `inputSearch` для border, литералы transition/border-width, controlled `onClear`. |
-| 2026-05-05 | —     | +InputEmail: см. «Инциденты и пробелы: InputEmail» — спека/Code Connect, `success` vs пустое значение, hover перекрывает success, clear через `input.icon`, фон error, нативная валидация `type="email"`.                         |
+| Дата       | gates | Кратко                                                                                                                                                                                                                             |
+| ---------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-05-02 | 5/5   | typecheck, lint, test, format, build — зелёные; замечания по Accordion sizes/transition.                                                                                                                                           |
+| 2026-05-02 | 5/5   | +InputDate: инциденты Storybook/Icon export, пробелы токенов disabled для input value/icon; тесты 32 файла / 93 кейса; см. таблицу выше.                                                                                           |
+| 2026-05-02 | 5/5   | +Pagination: ошибки `tsc` в stories и типизации теста (см. таблицу инцидентов), исправлены; 33 файла / 99 тестов; ThemeCheck дополнен.                                                                                             |
+| 2026-05-02 | —     | +Counter: см. «Инциденты и пробелы: Counter» — дрейф dark-токенов vs Figma, двусмысленность padding в спеке, ожидание круга для single-digit.                                                                                      |
+| 2026-05-02 | —     | +Divider: вертикаль в Storybook невидима (height 0 без `min-height`/flex-контекста); см. «Инциденты и пробелы: Divider» — спека, visual parity, stories.                                                                           |
+| 2026-05-03 | —     | +DatePicker / Year-Month picker: двусмысленность «примитивы dark» vs семантика; двойной `gap`+`padding` у шапки; единая политика одной `palette.json`; см. раздел выше.                                                            |
+| 2026-05-03 | 5/5   | +InputDate: обрезание попапа в Storybook, портал + `fixed`, клик снаружи с `popoverRef`, типы DatePicker, тест без `showPicker`, `selectedMonthIndex`, ESLint/`format`; 39 файлов / 122 теста.                                     |
+| 2026-05-03 | 5/5   | +InputDate: плейсхолдер при фокусе/частичном вводе (`inputFocused`, цвет текста, тест focus/blur); 39 файлов / **123** теста.                                                                                                      |
+| 2026-05-03 | —     | +InputFile/FileUpload: IDE не резолвила `@/components/file-upload` при зелёном `tsc` → импорт `../file-upload`; FileXls из Figma (3392:28752) как `FileXlsIcon`/`fileXlsIconGlyph`, без MCP URL.                                   |
+| 2026-05-03 | —     | +InputSearch: нет единого Component Spec / visual parity / подтверждённого `figma:publish`; см. «Инциденты и пробелы: InputSearch» — `input` vs `inputSearch` для border, литералы transition/border-width, controlled `onClear`.  |
+| 2026-05-05 | —     | +InputEmail: см. «Инциденты и пробелы: InputEmail» — спека/Code Connect, `success` vs пустое значение, hover перекрывает success, clear через `input.icon`, фон error, нативная валидация `type="email"`.                          |
+| 2026-05-03 | 4/4†  | +Toggle: rename `Switcher`/токены `toggle`, маркер — `top`+`bottom`=`inner.closest`, **`min-height`** +`2×inner.xsClosest` под **1px** border трека; см. «Снимок: 2026-05-03 · Toggle» — спека, `figma:publish`, `build` перед PR. |
