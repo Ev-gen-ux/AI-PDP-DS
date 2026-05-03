@@ -2,10 +2,10 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке). Сверено с верхним уровнем `src/components/` и публичными экспортами `src/index.ts`. Папка **`theme-check`** в компонентах не входит в продуктовый список (служебный сценарий Storybook).
 
-**Обновлено:** 2026-05-05.
+**Обновлено:** 2026-05-03.
 
-всего 57  
-готово 52  
+всего 58  
+готово 53  
 осталось 5
 
 - ✅ `Accordion`
@@ -33,12 +33,12 @@
 - ✅ `InputText`
 - ✅ `Label`
 - ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)
+- ✅ `Multiselect`
 - ✅ `NotificationSnackbar`
 - ✅ `Pagination`
 - ✅ `ProgressBar`
 - ✅ `Radio`
 - ✅ `Select`
-- ✅ `Multiselect`
 - ✅ `SelectButton`
 - ✅ `Sidebar`
 - ✅ `SidebarNavigationItem`
@@ -64,12 +64,12 @@
 - ✅ `TableRow`
 - 🛠️ `Textarea`
 - ✅ `ToggleButton`
-- 🛠️ `Tree`
 - 🛠️ `Tooltip`
+- 🛠️ `Tree`
 
 ## Layout-примитивы (`src/layouts/`)
 
-Не входят в счётчик 56 выше. В репозитории:
+Не входят в счётчик **58** выше. В репозитории:
 
 - ✅ `Cluster`
 - ✅ `Grid`

@@ -5,7 +5,7 @@
 - **Component:** `Stepper`
 - **Figma node/source:** [stepper · 3415:30346](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3415-30346)
 - **Stories:** `Default`, `HorizontalStates`, `SlotsToggles`, `VerticalFlow`
-- **Разметка (мастер):** трек маркера + линии; `<hgroup/>` — заголовок и описание; слот body (`children`); подвал (`footerContent`, кнопки primary/outline `medium`).
+- **Разметка (мастер):** трек маркера + линии; `<hgroup/>` — заголовок и описание; слот body (`children`); подвал (`footerContent`, кнопки flat/outline `small`, 32px).
 - **A11y:** `nav` + `aria-label`; шаги в `ol` / `li`; `aria-current="step"` на `active` и `invalid`; `aria-invalid` при `state === 'invalid'` или `active` + `invalid === true`; маркер `aria-hidden`
 - **Done criteria:** токены `colors.stepper.*`, `spacing.stepper.*`; без литералов цветов в компоненте; экспорт, ThemeCheck, тесты, `.figma.tsx`
 

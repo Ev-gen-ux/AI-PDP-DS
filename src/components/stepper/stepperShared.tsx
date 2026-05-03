@@ -35,7 +35,7 @@ export interface StepperItem {
    * Показывать подвал с действиями (`<footer> actions`). По умолчанию `true` (как в макете).
    */
   footer?: boolean;
-  /** Содержимое подвала (мастер Figma: `Button` flat «Prev» + outline «Next», обычно `size="medium"`). */
+  /** Содержимое подвала (мастер Figma: `Button` flat «Prev» + outline «Next», обычно `size="small"` — 32px). */
   footerContent?: ReactNode;
   /** Номер в маркере для незавершённых шагов; по умолчанию индекс + 1 */
   markerIndex?: number;
