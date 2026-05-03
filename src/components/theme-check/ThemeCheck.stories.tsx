@@ -31,6 +31,7 @@ import { Spinner } from '@/components/spinner';
 import { SplitButton } from '@/components/split-button';
 import { SidebarNavigationItem } from '@/components/sidebar-navigation-item';
 import { Sidebar } from '@/components/sidebar';
+import { Multiselect, Select } from '@/components/select';
 import { SelectButton } from '@/components/select-button';
 import { StatusLabel } from '@/components/status-label';
 import { StatusMark } from '@/components/status-mark';
@@ -208,6 +209,45 @@ export const Showcase: Story = {
         </div>
         <div style={{ width: '320px' }}>
           <InputSearch label="Search disabled" placeholder="Placeholder" disabled />
+        </div>
+        <div style={{ width: '320px' }}>
+          <Select
+            label="Select default"
+            placeholder="Select value"
+            options={[
+              { value: '1', label: 'One' },
+              { value: '2', label: 'Two' },
+            ]}
+            helpMessage="Help message"
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <Select
+            label="Select disabled"
+            placeholder="Select value"
+            options={[{ value: '1', label: 'One' }]}
+            disabled
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <Multiselect
+            label="Multiselect default"
+            placeholder="Multiselect"
+            options={[
+              { value: 'a', label: 'Alpha' },
+              { value: 'b', label: 'Beta' },
+            ]}
+            defaultValue={['a']}
+            helpMessage="Help message"
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <Multiselect
+            label="Multiselect disabled"
+            placeholder="Multiselect"
+            options={[{ value: 'a', label: 'Alpha' }]}
+            disabled
+          />
         </div>
         <div style={{ width: '320px' }}>
           <InputEmail label="Email default" helpMessage="Help message" />
