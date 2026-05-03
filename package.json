@@ -1,6 +1,6 @@
 {
   "name": "@ev-gen-ux/ai-pdp-ds",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "AI-PDP-DS — design system library: React + TypeScript + styled-components, synced with Figma via Code Connect and Variables REST API.",
   "license": "MIT",
   "author": "Ev-gen-ux",

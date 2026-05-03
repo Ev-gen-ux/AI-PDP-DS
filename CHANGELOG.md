@@ -1,5 +1,18 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.14.0
+
+### Minor Changes
+
+- 3a32db7: Add `InputTel` with `colors.inputTel` tokens (light/dark), stories, tests, ThemeCheck, and Code Connect placeholder for Figma node 3392:29557.
+- e5476ce: **InputTel:** fixed **+7** prefix with `colors.inputTel.prefix`, national mask **(999) 999 99 99**, auto-spacing, max 10 national digits; `value` / `onChange` use digits only. Export mask helpers. Dark theme: `inputTel.prefix` tokens.
+
+  **InputText / tokens / Label:** semantic color group `inputText` (light/dark) aligned with Figma `inputtext/*`; `InputText` uses `colors.inputText` for the field; `Label` supports optional `colorGroup="inputText"` for label/required tokens.
+
+### Patch Changes
+
+- 14b8823: InputTel: add `inputTel.cursor` tokens (light/dark), `caret-color` and clear control use `inputTel` colors; default Label group `input`; tokens aligned with Figma `inputtel/*` on node 3392:29557.
+
 ## 0.13.0
 
 ### Minor Changes
