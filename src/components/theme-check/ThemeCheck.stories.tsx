@@ -16,6 +16,7 @@ import { DropdownList } from '@/components/dropdown-list';
 import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputDate } from '@/components/input-date';
+import { InputEmail } from '@/components/input-email';
 import { InputFile } from '@/components/input-file';
 import { InputSearch } from '@/components/input-search';
 import { InputText } from '@/components/input-text';
@@ -196,6 +197,15 @@ export const Showcase: Story = {
         </div>
         <div style={{ width: '320px' }}>
           <InputSearch label="Search disabled" placeholder="Placeholder" disabled />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputEmail label="Email default" helpMessage="Help message" />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputEmail label="Email invalid" defaultValue="x" invalid errorMessage="Error message" />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputEmail label="Email disabled" placeholder="email@example.com" disabled />
         </div>
         <div style={{ width: '320px' }}>
           <InputFile label="File default" helpMessage="Help message" />

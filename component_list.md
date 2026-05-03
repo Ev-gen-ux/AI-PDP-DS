@@ -5,8 +5,8 @@
 **Обновлено:** 2026-05-05.
 
 всего 56  
-готово 46  
-осталось 10
+готово 47  
+осталось 9
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -27,7 +27,7 @@
 - ✅ `InlineMessage`
 - ✅ `InputDate`
 - ✅ `InputFile`
-- 🛠️ `InputEmail`
+- ✅ `InputEmail`
 - ✅ `InputSearch`
 - 🛠️ `InputTel`
 - ✅ `InputText`

@@ -53,6 +53,8 @@ export type {
 } from './components/toggle-button';
 export { InputDate } from './components/input-date';
 export type { InputDateProps } from './components/input-date';
+export { InputEmail } from './components/input-email';
+export type { InputEmailProps } from './components/input-email';
 export { FileUpload } from './components/file-upload';
 export type { FileUploadProps, FileUploadStatus } from './components/file-upload';
 export { InputFile } from './components/input-file';
