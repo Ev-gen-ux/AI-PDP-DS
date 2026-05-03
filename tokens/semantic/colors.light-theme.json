@@ -1733,6 +1733,80 @@
       }
     }
   },
+  "datePicker": {
+    "background": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.base.white}",
+          "$type": "color"
+        }
+      }
+    },
+    "border": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.100}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{palette.blue.400}",
+          "$type": "color"
+        }
+      }
+    },
+    "label": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.700}",
+          "$type": "color"
+        },
+        "secondary": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        },
+        "inverted": {
+          "$value": "{palette.neutral.25}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{palette.blue.400}",
+          "$type": "color"
+        },
+        "red": {
+          "$value": "{palette.red.400}",
+          "$type": "color"
+        }
+      }
+    },
+    "buttonDay": {
+      "background": {
+        "enabled": {
+          "$value": "{palette.base.white}",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "{palette.blue.50}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{palette.blue.400}",
+          "$type": "color"
+        }
+      }
+    },
+    "caret": {
+      "calm": {
+        "enabled": {
+          "$value": "{palette.neutral.700}",
+          "$type": "color"
+        },
+        "disabled": {
+          "$value": "{palette.neutral.300}",
+          "$type": "color"
+        }
+      }
+    }
+  },
   "divider": {
     "background": {
       "calm": {

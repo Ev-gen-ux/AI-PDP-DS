@@ -4,6 +4,8 @@ import {
   CaretDoubleLeftIcon,
   CaretDoubleRightIcon,
   CaretDownIcon,
+  CaretLeftIcon,
+  CaretRightIcon,
   CaretUpIcon,
   CheckCircleIcon,
   ClockIcon,
@@ -37,11 +39,20 @@ export const statusWaitIconGlyph: GlyphComponent = ClockIcon;
 export const statusErrorIconGlyph: GlyphComponent = XCircleIcon;
 export const xIconGlyph: GlyphComponent = XIcon;
 export const caretDownIconGlyph: GlyphComponent = CaretDownIcon;
+export const caretLeftIconGlyph: GlyphComponent = CaretLeftIcon;
+export const caretRightIconGlyph: GlyphComponent = CaretRightIcon;
 export const caretUpIconGlyph: GlyphComponent = CaretUpIcon;
 export const dotsThreeIconGlyph: GlyphComponent = DotsThreeIcon;
 export const calendarBlankIconGlyph: GlyphComponent = CalendarBlankIcon;
 export const caretDoubleLeftIconGlyph: GlyphComponent = CaretDoubleLeftIcon;
 export const caretDoubleRightIconGlyph: GlyphComponent = CaretDoubleRightIcon;
+
+/** DatePicker: раскрытие месяца/года (Figma caret-down) */
+export const datePickerMonthSelectIconGlyph: GlyphComponent = CaretDownIcon;
+/** DatePicker: предыдущий месяц */
+export const datePickerPrevMonthIconGlyph: GlyphComponent = CaretLeftIcon;
+/** DatePicker: следующий месяц */
+export const datePickerNextMonthIconGlyph: GlyphComponent = CaretRightIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;

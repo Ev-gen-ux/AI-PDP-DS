@@ -96,6 +96,7 @@ const appendTypographyOverrides = async () => {
 };
 
 async function main() {
+  /** Единый слой примитивов (`tokens/primitives/**`); light/dark — только в `colors.*-theme.json`. */
   const primitives = 'tokens/primitives/**/*.json';
   const semanticBase = [
     'tokens/semantic/spacing.json',

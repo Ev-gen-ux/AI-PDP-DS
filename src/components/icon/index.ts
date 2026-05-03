@@ -4,7 +4,12 @@ export {
   caretDoubleLeftIconGlyph,
   caretDoubleRightIconGlyph,
   caretDownIconGlyph,
+  caretLeftIconGlyph,
+  caretRightIconGlyph,
   caretUpIconGlyph,
+  datePickerMonthSelectIconGlyph,
+  datePickerNextMonthIconGlyph,
+  datePickerPrevMonthIconGlyph,
 } from './Icon';
 export { dotsThreeIconGlyph } from './Icon';
 export { fallbackIconGlyph } from './Icon';
