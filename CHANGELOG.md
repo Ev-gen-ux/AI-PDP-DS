@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.9.0
+
+### Minor Changes
+
+- 3b7a738: InputDate: custom calendar popover with DatePicker, MonthPicker, and YearPicker; portal + fixed positioning; placeholder hidden while the input is focused; DatePicker month-year header props for the view menu.
+
 ## 0.8.0
 
 ### Minor Changes
