@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { INPUT_TEL_MASK_PLACEHOLDER } from './inputTelMask';
 import { InputTel } from './InputTel';
 
 const meta = {
@@ -9,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Поле телефона с иконкой, семантикой `colors.inputTel` ([Figma InputTel](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3392-29557)). Рамка success — при `success={true}`.',
+          'Телефон RU: фиксированный префикс **+7** (`colors.inputTel.prefix`), маска национальной части **(999) 999 99 99** из [макета](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3392-29557), до **10 цифр** после +7; в `value` / `onChange` — только национальные цифры.',
       },
     },
   },
@@ -24,7 +25,7 @@ const meta = {
   ],
   args: {
     label: 'Label',
-    placeholder: '+1 (555) 000-0000',
+    placeholder: INPUT_TEL_MASK_PLACEHOLDER,
     defaultValue: '',
     required: false,
     disabled: false,
@@ -36,10 +37,13 @@ const meta = {
   },
   argTypes: {
     label: { control: 'text', description: 'Текст метки поля.' },
-    placeholder: { control: 'text', description: 'Плейсхолдер.' },
+    placeholder: {
+      control: 'text',
+      description: 'Плейсхолдер маски национальной части (по умолчанию из макета).',
+    },
     defaultValue: {
       control: 'text',
-      description: 'Начальное значение в неконтролируемом режиме.',
+      description: 'Начальные цифры (0–10), без +7 и без скобок.',
     },
     required: { control: 'boolean' },
     disabled: { control: 'boolean' },
@@ -88,7 +92,7 @@ export const Focus: Story = {
 
 export const WithValueSuccess: Story = {
   args: {
-    defaultValue: '+1 (555) 123-4567',
+    defaultValue: '9123456789',
     success: true,
   },
   parameters: {
@@ -127,7 +131,7 @@ export const Disabled: Story = {
 export const ReadOnly: Story = {
   args: {
     label: 'Read only',
-    defaultValue: '+1 (555) 123-4567',
+    defaultValue: '9123456789',
     readOnly: true,
   },
   parameters: {

@@ -55,7 +55,14 @@ export { InputDate } from './components/input-date';
 export type { InputDateProps } from './components/input-date';
 export { InputEmail } from './components/input-email';
 export type { InputEmailProps } from './components/input-email';
-export { InputTel } from './components/input-tel';
+export {
+  InputTel,
+  INPUT_TEL_COUNTRY_PREFIX,
+  INPUT_TEL_MASK_PLACEHOLDER,
+  INPUT_TEL_NATIONAL_DIGIT_COUNT,
+  formatNationalTelMask,
+  parseNationalTelDigits,
+} from './components/input-tel';
 export type { InputTelProps } from './components/input-tel';
 export { FileUpload } from './components/file-upload';
 export type { FileUploadProps, FileUploadStatus } from './components/file-upload';

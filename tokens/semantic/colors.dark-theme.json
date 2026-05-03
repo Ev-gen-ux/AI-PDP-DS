@@ -939,6 +939,86 @@
       }
     }
   },
+  "inputText": {
+    "label": {
+      "enabled": {
+        "$value": "{palette.neutral.300}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      },
+      "readOnly": {
+        "$value": "{palette.neutral.200}",
+        "$type": "color"
+      }
+    },
+    "required": {
+      "enabled": {
+        "$value": "{palette.red.300}",
+        "$type": "color"
+      }
+    },
+    "background": {
+      "enabled": {
+        "$value": "{palette.neutral.800}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.800}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "enabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      },
+      "hover": {
+        "$value": "{palette.blue.400}",
+        "$type": "color"
+      },
+      "focus": {
+        "$value": "{palette.blue.300}",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "{palette.green.300}",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "{palette.red.300}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.600}",
+        "$type": "color"
+      }
+    },
+    "icon": {
+      "enabled": {
+        "$value": "{palette.neutral.300}",
+        "$type": "color"
+      }
+    },
+    "textPlaceholder": {
+      "enabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      }
+    },
+    "textPlaceholderValue": {
+      "enabled": {
+        "$value": "{palette.neutral.100}",
+        "$type": "color"
+      }
+    }
+  },
   "inputFile": {
     "background": {
       "enabled": {
@@ -1177,6 +1257,16 @@
     "icon": {
       "enabled": {
         "$value": "{palette.neutral.300}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      }
+    },
+    "prefix": {
+      "enabled": {
+        "$value": "{palette.neutral.100}",
         "$type": "color"
       },
       "disabled": {

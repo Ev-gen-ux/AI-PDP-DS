@@ -225,7 +225,7 @@ export const Showcase: Story = {
           <InputTel label="Phone invalid" defaultValue="x" invalid errorMessage="Error message" />
         </div>
         <div style={{ width: '320px' }}>
-          <InputTel label="Phone disabled" placeholder="+1 (555) 000-0000" disabled />
+          <InputTel label="Phone disabled" disabled />
         </div>
         <div style={{ width: '320px' }}>
           <InputFile label="File default" helpMessage="Help message" />

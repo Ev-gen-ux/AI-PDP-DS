@@ -4,6 +4,7 @@ import {
   type ComponentType,
   type InputHTMLAttributes,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -13,15 +14,23 @@ import styled, { css } from 'styled-components';
 import { Icon, inputTelLeadingIconGlyph, xIconGlyph } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { Label } from '@/components/label';
+import {
+  INPUT_TEL_COUNTRY_PREFIX,
+  INPUT_TEL_MASK_PLACEHOLDER,
+  formatNationalTelMask,
+  parseNationalTelDigits,
+} from './inputTelMask';
 
 type GlyphComponent = ComponentType<PhosphorIconProps>;
 
 export interface InputTelProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'size' | 'type' | 'value' | 'defaultValue' | 'onChange'
+  'size' | 'type' | 'value' | 'defaultValue' | 'onChange' | 'inputMode' | 'maxLength'
 > {
   label?: string;
+  /** 0–10 национальных цифр (без +7). В `onChange` в `event.target.value` — только цифры. */
   value?: string;
+  /** Начальные цифры (0–10), не отформатированная строка. */
   defaultValue?: string;
   invalid?: boolean;
   /** Валидное заполненное поле — рамка `inputTel.border.success` (макет InputTel). */
@@ -32,6 +41,11 @@ export interface InputTelProps extends Omit<
   onClear?: () => void;
   /** Иконка слева; по умолчанию телефон из макета InputTel */
   leadingIcon?: GlyphComponent;
+  /**
+   * Плейсхолдер маски национальной части; по умолчанию `(999) 999 99 99` из
+   * [макета](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3392-29557).
+   */
+  placeholder?: string;
 }
 
 type FieldState = 'enabled' | 'hover' | 'focus' | 'readOnly' | 'disabled' | 'error' | 'success';
@@ -110,6 +124,24 @@ const LeadIconWrap = styled.span<{ $disabled: boolean }>`
     $disabled ? theme.colors.inputTel.icon.disabled : theme.colors.inputTel.icon.enabled};
 `;
 
+const NationalBlock = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.inner.related};
+  min-width: 0;
+`;
+
+const CountryPrefix = styled.span<{ $disabled: boolean }>`
+  flex-shrink: 0;
+  font-family: ${({ theme }) => theme.typography.fontFamily.component};
+  font-size: ${({ theme }) => theme.typography.fontSize.component.base};
+  line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
+  color: ${({ theme, $disabled }) =>
+    $disabled ? theme.colors.inputTel.prefix.disabled : theme.colors.inputTel.prefix.enabled};
+`;
+
 const NativeInput = styled.input<{ $hasValue: boolean; $disabled: boolean }>`
   flex: 1;
   min-width: 0;
@@ -176,13 +208,26 @@ const resolveState = (params: {
   return 'enabled';
 };
 
+const patchChangeNationalDigits = (
+  event: ChangeEvent<HTMLInputElement>,
+  nationalDigits: string,
+): ChangeEvent<HTMLInputElement> => {
+  const t = event.target;
+  const nextTarget = { ...t, value: nationalDigits } as EventTarget & HTMLInputElement;
+  return {
+    ...event,
+    target: nextTarget,
+    currentTarget: nextTarget,
+  } as ChangeEvent<HTMLInputElement>;
+};
+
 export const InputTel = ({
   id,
   name,
   label = 'Label',
   value,
   defaultValue = '',
-  placeholder = '+1 (555) 000-0000',
+  placeholder = INPUT_TEL_MASK_PLACEHOLDER,
   required = false,
   disabled = false,
   readOnly = false,
@@ -198,13 +243,23 @@ export const InputTel = ({
   const reactId = useId();
   const inputId = id ?? `input-tel-${reactId}`;
   const inputRef = useRef<HTMLInputElement>(null);
-  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [uncontrolledDigits, setUncontrolledDigits] = useState(() =>
+    parseNationalTelDigits(defaultValue),
+  );
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
 
   const isControlled = value !== undefined;
-  const currentValue = isControlled ? value : uncontrolledValue;
-  const hasValue = currentValue.length > 0;
+  const currentDigits = isControlled ? parseNationalTelDigits(value) : uncontrolledDigits;
+  const displayValue = useMemo(() => formatNationalTelMask(currentDigits), [currentDigits]);
+  const hasValue = currentDigits.length > 0;
+
+  useLayoutEffect(() => {
+    const el = inputRef.current;
+    if (!el || document.activeElement !== el) return;
+    const len = displayValue.length;
+    el.setSelectionRange(len, len);
+  }, [displayValue]);
 
   const state = useMemo(
     () =>
@@ -225,18 +280,24 @@ export const InputTel = ({
   const describedBy = hasErrorMessage || hasHelpMessage ? messageId : undefined;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const digits = parseNationalTelDigits(event.target.value);
     if (!isControlled) {
-      setUncontrolledValue(event.target.value);
+      setUncontrolledDigits(digits);
     }
-    onChange?.(event);
+    onChange?.(patchChangeNationalDigits(event, digits));
   };
 
   const handleClear = () => {
     if (!isControlled) {
-      setUncontrolledValue('');
+      setUncontrolledDigits('');
     }
     onClear?.();
-    inputRef.current?.focus();
+    const el = inputRef.current;
+    if (onChange && el) {
+      const base = { target: el, currentTarget: el } as ChangeEvent<HTMLInputElement>;
+      onChange(patchChangeNationalDigits(base, ''));
+    }
+    el?.focus();
   };
 
   const Glyph = leadingIcon ?? inputTelLeadingIconGlyph;
@@ -248,6 +309,7 @@ export const InputTel = ({
         text={label}
         required={required}
         state={disabled ? 'disabled' : readOnly ? 'readOnly' : 'default'}
+        colorGroup="inputText"
       />
       <Field
         $state={state}
@@ -259,25 +321,31 @@ export const InputTel = ({
         <LeadIconWrap $disabled={disabled} aria-hidden>
           <Icon icon={Glyph} size={24} />
         </LeadIconWrap>
-        <NativeInput
-          {...rest}
-          id={inputId}
-          name={name}
-          ref={inputRef}
-          type="tel"
-          placeholder={placeholder}
-          disabled={disabled}
-          readOnly={readOnly}
-          required={required}
-          value={currentValue}
-          onChange={handleChange}
-          autoComplete="tel"
-          aria-invalid={invalid || undefined}
-          aria-readonly={readOnly || undefined}
-          aria-describedby={describedBy}
-          $hasValue={hasValue}
-          $disabled={disabled}
-        />
+        <NationalBlock>
+          <CountryPrefix $disabled={disabled} aria-hidden="true">
+            {INPUT_TEL_COUNTRY_PREFIX}
+          </CountryPrefix>
+          <NativeInput
+            {...rest}
+            id={inputId}
+            name={name}
+            ref={inputRef}
+            type="tel"
+            inputMode="numeric"
+            autoComplete="tel-national"
+            placeholder={placeholder}
+            disabled={disabled}
+            readOnly={readOnly}
+            required={required}
+            value={displayValue}
+            onChange={handleChange}
+            aria-invalid={invalid || undefined}
+            aria-readonly={readOnly || undefined}
+            aria-describedby={describedBy}
+            $hasValue={hasValue}
+            $disabled={disabled}
+          />
+        </NationalBlock>
         {!disabled && !readOnly && hasValue ? (
           <ClearButton type="button" aria-label="Clear phone number" onClick={handleClear}>
             <Icon icon={xIconGlyph} size={16} />

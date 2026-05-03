@@ -1,22 +1,24 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { describe, expect, it, vi } from 'vitest';
+import { INPUT_TEL_COUNTRY_PREFIX, INPUT_TEL_MASK_PLACEHOLDER } from './inputTelMask';
 import { InputTel } from './InputTel';
 import { theme } from '@/theme/tokens';
 
 describe('InputTel', () => {
-  it('renders tel input and label', () => {
+  it('renders fixed country prefix and mask placeholder', () => {
     render(
       <ThemeProvider theme={theme}>
-        <InputTel label="Phone" placeholder="+1 555 000 0000" />
+        <InputTel label="Phone" />
       </ThemeProvider>,
     );
 
-    expect(screen.getByLabelText('Phone')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('+1 555 000 0000')).toHaveAttribute('type', 'tel');
+    expect(screen.getByText(INPUT_TEL_COUNTRY_PREFIX)).toBeInTheDocument();
+    expect(screen.getByLabelText('Phone')).toHaveAttribute('type', 'tel');
+    expect(screen.getByPlaceholderText(INPUT_TEL_MASK_PLACEHOLDER)).toBeInTheDocument();
   });
 
-  it('shows clear button when value is non-empty', () => {
+  it('shows clear button when national digits are non-empty', () => {
     const { rerender } = render(
       <ThemeProvider theme={theme}>
         <InputTel label="P" defaultValue="" />
@@ -26,17 +28,32 @@ describe('InputTel', () => {
 
     rerender(
       <ThemeProvider theme={theme}>
-        <InputTel label="P" value="+15550001" onChange={() => undefined} />
+        <InputTel label="P" value="9123456789" onChange={() => undefined} />
       </ThemeProvider>,
     );
     expect(screen.getByRole('button', { name: 'Clear phone number' })).toBeInTheDocument();
+    expect(screen.getByLabelText('P')).toHaveValue('(912) 345 67 89');
+  });
+
+  it('onChange receives at most 10 national digits', () => {
+    const onChange = vi.fn();
+    render(
+      <ThemeProvider theme={theme}>
+        <InputTel label="P" onChange={onChange} />
+      </ThemeProvider>,
+    );
+    const input = screen.getByLabelText('P');
+    fireEvent.change(input, { target: { value: '(912) 345-67-89-00-11' } });
+    expect(onChange).toHaveBeenCalled();
+    const first = onChange.mock.calls[0]?.[0];
+    expect(first?.target.value).toBe('9123456789');
   });
 
   it('calls onClear when clear is clicked', () => {
     const onClear = vi.fn();
     render(
       <ThemeProvider theme={theme}>
-        <InputTel label="P" defaultValue="+1" onClear={onClear} />
+        <InputTel label="P" defaultValue="9" onClear={onClear} />
       </ThemeProvider>,
     );
     fireEvent.click(screen.getByRole('button', { name: 'Clear phone number' }));

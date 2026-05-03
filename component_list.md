@@ -29,7 +29,7 @@
 - ✅ `InputEmail`
 - ✅ `InputFile`
 - ✅ `InputSearch`
-- ✅ `InputTel` ([Figma](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3392-29557))
+- ✅ `InputTel`
 - ✅ `InputText`
 - ✅ `Label`
 - ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)
