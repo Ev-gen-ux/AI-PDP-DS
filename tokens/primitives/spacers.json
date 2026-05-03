@@ -52,6 +52,10 @@
       "$value": 20,
       "$type": "number"
     },
+    "22": {
+      "$value": 22,
+      "$type": "number"
+    },
     "24": {
       "$value": 24,
       "$type": "number"
