@@ -17,6 +17,7 @@ import { Icon } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { InputDate } from '@/components/input-date';
 import { InputFile } from '@/components/input-file';
+import { InputSearch } from '@/components/input-search';
 import { InputText } from '@/components/input-text';
 import { Label } from '@/components/label';
 import { Modal, ModalFooterActions } from '@/components/modal';
@@ -177,6 +178,24 @@ export const Showcase: Story = {
         </div>
         <div style={{ width: '320px' }}>
           <InputText label="Disabled" placeholder="Placeholder" disabled />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputSearch
+            label="Search default"
+            placeholder="Placeholder"
+            helpMessage="Help message"
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputSearch
+            label="Search invalid"
+            defaultValue="x"
+            invalid
+            errorMessage="Error message"
+          />
+        </div>
+        <div style={{ width: '320px' }}>
+          <InputSearch label="Search disabled" placeholder="Placeholder" disabled />
         </div>
         <div style={{ width: '320px' }}>
           <InputFile label="File default" helpMessage="Help message" />

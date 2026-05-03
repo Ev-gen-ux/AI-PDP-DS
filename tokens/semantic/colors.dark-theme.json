@@ -1013,6 +1013,50 @@
       }
     }
   },
+  "inputSearch": {
+    "background": {
+      "enabled": {
+        "$value": "{palette.neutral.800}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.800}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "disabled": {
+        "$value": "{palette.neutral.600}",
+        "$type": "color"
+      }
+    },
+    "textPlaceholder": {
+      "enabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      }
+    },
+    "textPlaceholderValue": {
+      "enabled": {
+        "$value": "{palette.neutral.100}",
+        "$type": "color"
+      }
+    },
+    "icon": {
+      "enabled": {
+        "$value": "{palette.neutral.300}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.400}",
+        "$type": "color"
+      }
+    }
+  },
   "checkbox": {
     "background": {
       "enabled": {

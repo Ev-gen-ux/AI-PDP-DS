@@ -59,6 +59,8 @@ export { InputFile } from './components/input-file';
 export type { InputFileItem, InputFileProps } from './components/input-file';
 export { InputText } from './components/input-text';
 export type { InputTextProps } from './components/input-text';
+export { InputSearch } from './components/input-search';
+export type { InputSearchProps } from './components/input-search';
 export { Checkbox } from './components/checkbox';
 export type { CheckboxProps, CheckboxState } from './components/checkbox';
 export { BenefitCard } from './components/benefit-card';

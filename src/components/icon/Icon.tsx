@@ -14,6 +14,7 @@ import {
   FileIcon,
   InfoIcon,
   LinkIcon,
+  MagnifyingGlassIcon,
   MetaLogoIcon,
   SunIcon,
   TrashIcon,
@@ -66,6 +67,8 @@ export const fileGlyphIconGlyph: GlyphComponent = FileIcon;
 export const fileXlsIconGlyph: GlyphComponent = FileXlsIcon;
 /** FileUpload: удалить файл */
 export const trashSimpleIconGlyph: GlyphComponent = TrashIcon;
+/** InputSearch: лупа слева (Figma magnifying-glass) */
+export const inputSearchLeadingIconGlyph: GlyphComponent = MagnifyingGlassIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;

@@ -27,6 +27,7 @@ export {
 export {
   fileGlyphIconGlyph,
   fileXlsIconGlyph,
+  inputSearchLeadingIconGlyph,
   trashSimpleIconGlyph,
   uploadSimpleIconGlyph,
 } from './Icon';
