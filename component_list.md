@@ -2,11 +2,11 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке). Сверено с верхним уровнем `src/components/` и публичными экспортами `src/index.ts`. Папка **`theme-check`** в компонентах не входит в продуктовый список (служебный сценарий Storybook).
 
-**Обновлено:** 2026-05-02.
+**Обновлено:** 2026-05-04.
 
-всего 56  
-готово 42  
-осталось 14
+всего 55  
+готово 43  
+осталось 12
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -18,7 +18,7 @@
 - ✅ `Checkbox`
 - ✅ `Chips`
 - ✅ `Counter`
-- 🛠️ `DatePicker`
+- ✅ `DatePicker` (вкл. `MonthPicker`, `YearPicker`)
 - ✅ `Divider`
 - ✅ `DropdownItem`
 - ✅ `DropdownList`
@@ -59,7 +59,6 @@
 - ✅ `TableCellTextContent`
 - ✅ `TableColumn`
 - ✅ `TableRow`
-- 🛠️ `Tag`
 - 🛠️ `Textarea`
 - ✅ `ToggleButton`
 - 🛠️ `Tree`
@@ -67,7 +66,7 @@
 
 ## Layout-примитивы (`src/layouts/`)
 
-Не входят в счётчик 56 выше. В репозитории:
+Не входят в счётчик 55 выше. В репозитории:
 
 - ✅ `Cluster`
 - ✅ `Grid`
