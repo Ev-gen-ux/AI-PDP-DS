@@ -25,8 +25,8 @@ const groupSteps = [
 
 const footer = (
   <>
-    <Button appearance="flat" size="medium" text="Prev" type="button" />
-    <Button appearance="outline" size="medium" text="Next" type="button" />
+    <Button appearance="flat" size="small" text="Prev" type="button" />
+    <Button appearance="outline" size="small" text="Next" type="button" />
   </>
 );
 

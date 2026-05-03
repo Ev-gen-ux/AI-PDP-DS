@@ -20,8 +20,8 @@ const sampleItems = [
     footer: true,
     footerContent: (
       <>
-        <Button appearance="flat" size="medium" text="Prev" type="button" />
-        <Button appearance="outline" size="medium" text="Next" type="button" />
+        <Button appearance="flat" size="small" text="Prev" type="button" />
+        <Button appearance="outline" size="small" text="Next" type="button" />
       </>
     ),
   },
@@ -43,7 +43,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Пошаговый индикатор ([мастер Figma · stepper](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3415-30346)): на корне `orientation`; у шага `state` (`completed` | `active` | `disabled` | `invalid`), `invalid` (`true` | `false`), `body` / `footer` — видимость слотов (по умолчанию `true` в макете), `heading`, `paragraph`, `description`, `children`, `footerContent` (в макете: `Button` **flat** «Prev» + **outline** «Next», `size="medium"`).',
+          'Пошаговый индикатор ([мастер Figma · stepper](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS?node-id=3415-30346)): на корне `orientation`; у шага `state` (`completed` | `active` | `disabled` | `invalid`), `invalid` (`true` | `false`), `body` / `footer` — видимость слотов (по умолчанию `true` в макете), `heading`, `paragraph`, `description`, `children`, `footerContent` (в макете: `Button` **flat** «Prev» + **outline** «Next», `size="small"` — 32px).',
       },
     },
   },
@@ -150,8 +150,8 @@ export const SlotsToggles: Story = {
           footer: true,
           footerContent: (
             <>
-              <Button appearance="flat" size="medium" text="Prev" type="button" />
-              <Button appearance="outline" size="medium" text="Next" type="button" />
+              <Button appearance="flat" size="small" text="Prev" type="button" />
+              <Button appearance="outline" size="small" text="Next" type="button" />
             </>
           ),
         },
