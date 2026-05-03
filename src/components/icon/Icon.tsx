@@ -17,6 +17,7 @@ import {
   LinkIcon,
   MagnifyingGlassIcon,
   MetaLogoIcon,
+  PhoneIcon,
   SunIcon,
   TrashIcon,
   UploadSimpleIcon,
@@ -72,6 +73,8 @@ export const trashSimpleIconGlyph: GlyphComponent = TrashIcon;
 export const inputSearchLeadingIconGlyph: GlyphComponent = MagnifyingGlassIcon;
 /** InputEmail: конверт слева (Figma envelope-simple) */
 export const inputEmailLeadingIconGlyph: GlyphComponent = EnvelopeSimpleIcon;
+/** InputTel: телефон слева (Figma InputTel, node 3392:29557) */
+export const inputTelLeadingIconGlyph: GlyphComponent = PhoneIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;

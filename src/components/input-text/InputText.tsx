@@ -43,13 +43,13 @@ const Root = styled.div`
 
 const stateStyles = {
   enabled: css`
-    border-color: ${({ theme }) => theme.colors.input.border.enabled};
+    border-color: ${({ theme }) => theme.colors.inputText.border.enabled};
   `,
   hover: css`
-    border-color: ${({ theme }) => theme.colors.input.border.hover};
+    border-color: ${({ theme }) => theme.colors.inputText.border.hover};
   `,
   focus: css`
-    border-color: ${({ theme }) => theme.colors.input.border.focus};
+    border-color: ${({ theme }) => theme.colors.inputText.border.focus};
     box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.colors.focus.ring.default};
   `,
   readOnly: css`
@@ -59,13 +59,13 @@ const stateStyles = {
     min-height: auto;
   `,
   disabled: css`
-    border-color: ${({ theme }) => theme.colors.input.border.disabled};
+    border-color: ${({ theme }) => theme.colors.inputText.border.disabled};
   `,
   error: css`
-    border-color: ${({ theme }) => theme.colors.input.border.error};
+    border-color: ${({ theme }) => theme.colors.inputText.border.error};
   `,
   success: css`
-    border-color: ${({ theme }) => theme.colors.input.border.success};
+    border-color: ${({ theme }) => theme.colors.inputText.border.success};
   `,
 } as const;
 
@@ -77,11 +77,11 @@ const Field = styled.div<FieldProps>`
   border-width: 1px;
   border-style: solid;
   border-radius: ${({ theme }) => theme.borderRadius.componentBase};
-  padding: 0 16px;
+  padding: 0 ${({ theme }) => theme.spacing.paddings.default};
   background-color: ${({ theme, $state }) =>
     $state === 'disabled'
-      ? theme.colors.input.background.disabled
-      : theme.colors.input.background.enabled};
+      ? theme.colors.inputText.background.disabled
+      : theme.colors.inputText.background.enabled};
   transition:
     border-color 0.15s ease,
     background-color 0.15s ease;
@@ -101,14 +101,14 @@ const NativeInput = styled.input<{ $hasValue: boolean; $disabled: boolean }>`
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
   color: ${({ theme, $hasValue }) =>
     $hasValue
-      ? theme.colors.input.textPlaceholderValue.enabled
-      : theme.colors.input.textPlaceholder.enabled};
+      ? theme.colors.inputText.textPlaceholderValue.enabled
+      : theme.colors.inputText.textPlaceholder.enabled};
 
   &::placeholder {
     color: ${({ theme, $disabled }) =>
       $disabled
-        ? theme.colors.input.textPlaceholder.disabled
-        : theme.colors.input.textPlaceholder.enabled};
+        ? theme.colors.inputText.textPlaceholder.disabled
+        : theme.colors.inputText.textPlaceholder.enabled};
   }
 
   &:read-only {
@@ -127,13 +127,13 @@ const ClearButton = styled.button`
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.componentInner};
   background: transparent;
-  color: ${({ theme }) => theme.colors.input.icon.enabled};
+  color: ${({ theme }) => theme.colors.inputText.icon.enabled};
   font-size: ${({ theme }) => theme.typography.fontSize.component.base};
   line-height: 1;
   cursor: pointer;
 
   &:focus-visible {
-    outline: 1px solid ${({ theme }) => theme.colors.input.border.focus};
+    outline: 1px solid ${({ theme }) => theme.colors.inputText.border.focus};
     outline-offset: 1px;
   }
 `;
@@ -225,6 +225,7 @@ export const InputText = ({
         text={label}
         required={required}
         state={disabled ? 'disabled' : readOnly ? 'readOnly' : 'default'}
+        colorGroup="inputText"
       />
       <Field
         $state={state}

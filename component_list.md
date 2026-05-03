@@ -2,11 +2,11 @@
 
 Базовый набор компонентов библиотеки (в алфавитном порядке). Сверено с верхним уровнем `src/components/` и публичными экспортами `src/index.ts`. Папка **`theme-check`** в компонентах не входит в продуктовый список (служебный сценарий Storybook).
 
-**Обновлено:** 2026-05-05.
+**Обновлено:** 2026-05-06.
 
 всего 56  
-готово 48  
-осталось 8
+готово 49  
+осталось 7
 
 - ✅ `Accordion`
 - ✅ `Avatar`
@@ -26,10 +26,10 @@
 - ✅ `Icon`
 - ✅ `InlineMessage`
 - ✅ `InputDate`
-- ✅ `InputFile`
 - ✅ `InputEmail`
+- ✅ `InputFile`
 - ✅ `InputSearch`
-- 🛠️ `InputTel`
+- ✅ `InputTel`
 - ✅ `InputText`
 - ✅ `Label`
 - ✅ `Modal` (вкл. `ModalDialog`, `ModalFooterActions`, `ModalButtonClose`)

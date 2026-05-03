@@ -7,9 +7,16 @@ export interface LabelProps {
   text?: string;
   required?: boolean;
   state?: LabelState;
+  /**
+   * Семантика цветов лейбла: общая `input` или `inputText` (Figma `inputtext/label`, `inputtext/required`).
+   * По умолчанию `input` — для полей Date, Search и др.
+   */
+  colorGroup?: 'input' | 'inputText';
 }
 
-const Root = styled.label<{ $state: LabelState }>`
+type LabelStyledProps = { $state: LabelState; $colorGroup: 'input' | 'inputText' };
+
+const Root = styled.label<LabelStyledProps>`
   display: inline-flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.inner.closest};
@@ -17,15 +24,20 @@ const Root = styled.label<{ $state: LabelState }>`
   font-size: ${({ theme }) => theme.typography.fontSize.component.base};
   line-height: ${({ theme }) => theme.typography.lineHeight.component.base};
   font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
-  color: ${({ theme, $state }) => {
-    if ($state === 'disabled') return theme.colors.input.label.disabled;
-    if ($state === 'readOnly') return theme.colors.input.label.readOnly;
-    return theme.colors.input.label.enabled;
+  color: ${({ theme, $state, $colorGroup }) => {
+    const labelTokens =
+      $colorGroup === 'inputText' ? theme.colors.inputText.label : theme.colors.input.label;
+    if ($state === 'disabled') return labelTokens.disabled;
+    if ($state === 'readOnly') return labelTokens.readOnly;
+    return labelTokens.enabled;
   }};
 `;
 
-const RequiredMark = styled.span`
-  color: ${({ theme }) => theme.colors.input.required.enabled};
+const RequiredMark = styled.span<{ $colorGroup: 'input' | 'inputText' }>`
+  color: ${({ theme, $colorGroup }) =>
+    $colorGroup === 'inputText'
+      ? theme.colors.inputText.required.enabled
+      : theme.colors.input.required.enabled};
 `;
 
 export const Label = ({
@@ -33,11 +45,16 @@ export const Label = ({
   text = 'Label',
   required = false,
   state = 'default',
+  colorGroup = 'input',
 }: LabelProps) => {
   return (
-    <Root htmlFor={htmlFor} $state={state}>
+    <Root htmlFor={htmlFor} $state={state} $colorGroup={colorGroup}>
       {text}
-      {required ? <RequiredMark aria-hidden="true">*</RequiredMark> : null}
+      {required ? (
+        <RequiredMark aria-hidden="true" $colorGroup={colorGroup}>
+          *
+        </RequiredMark>
+      ) : null}
     </Root>
   );
 };
