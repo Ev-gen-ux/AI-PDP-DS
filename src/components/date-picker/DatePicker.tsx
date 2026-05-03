@@ -9,6 +9,7 @@ import {
 import {
   buildMonthGrid,
   formatMonthAbbrev,
+  formatMonthYearTitle,
   isInMonth,
   isSameCalendarDay,
   isWeekend,
@@ -30,6 +31,10 @@ export interface DatePickerProps extends Omit<HTMLAttributes<HTMLDivElement>, 'o
   onMonthPrev?: () => void;
   onMonthNext?: () => void;
   onSelectDate?: (date: Date) => void;
+  /** Клик по блоку «месяц + год» в шапке (например, открытие меню вида календаря). */
+  onMonthYearHeaderClick?: () => void;
+  /** Состояние раскрытия меню для `aria-expanded` у кнопки шапки. */
+  monthYearHeaderMenuOpen?: boolean;
 }
 
 type DayButtonStyledProps = {
@@ -59,13 +64,39 @@ const Header = styled.div`
   gap: ${({ theme }) => theme.spacing.inner.related};
 `;
 
-const MonthBlock = styled.div`
+const monthBlockVisual = css`
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
   gap: ${({ theme }) => theme.spacing.inner.related};
   min-width: 0;
   color: ${({ theme }) => theme.colors.datePicker.caret.calm.enabled};
+`;
+
+const MonthBlock = styled.div`
+  ${monthBlockVisual}
+`;
+
+const MonthBlockButton = styled.button`
+  ${monthBlockVisual}
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius.componentBase};
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.colors.focus.ring.default};
+  }
+
+  &:disabled {
+    cursor: default;
+    color: ${({ theme }) => theme.colors.datePicker.caret.calm.disabled};
+  }
 `;
 
 const MonthTitle = styled.span`
@@ -253,14 +284,6 @@ const DayButton = styled.button<DayButtonStyledProps>`
   ${({ $today, $selected }) => !$selected && $today && dayButtonStyles.today}
 `;
 
-function formatMonthYear(year: number, monthIndex: number, locale: string): string {
-  const d = new Date(year, monthIndex, 1);
-  const raw = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(d);
-  if (!raw) return raw;
-  /* «сентябрь 2025 г.» → «Сентябрь 2025 г.» */
-  return raw.charAt(0).toLocaleUpperCase(locale) + raw.slice(1);
-}
-
 function formatDayAriaLabel(date: Date, locale: string): string {
   return new Intl.DateTimeFormat(locale, {
     weekday: 'short',
@@ -286,6 +309,8 @@ export const DatePicker = ({
   onMonthPrev,
   onMonthNext,
   onSelectDate,
+  onMonthYearHeaderClick,
+  monthYearHeaderMenuOpen,
   className,
   ...rest
 }: DatePickerProps) => {
@@ -296,21 +321,37 @@ export const DatePicker = ({
     weeks.push(grid.slice(i, i + 7));
   }
 
-  const monthTitle = formatMonthYear(year, monthIndex, locale);
+  const monthTitle = formatMonthYearTitle(year, monthIndex, locale);
+
+  const monthControl = (
+    <>
+      <MonthTitle aria-live="polite">{monthTitle}</MonthTitle>
+      <Icon
+        icon={datePickerMonthSelectIconGlyph}
+        size={16}
+        weight="bold"
+        color="currentColor"
+        aria-hidden
+      />
+    </>
+  );
 
   return (
     <Panel className={className} role="application" aria-label="Календарь" {...rest}>
       <Header>
-        <MonthBlock>
-          <MonthTitle aria-live="polite">{monthTitle}</MonthTitle>
-          <Icon
-            icon={datePickerMonthSelectIconGlyph}
-            size={16}
-            weight="bold"
-            color="currentColor"
-            aria-hidden
-          />
-        </MonthBlock>
+        {onMonthYearHeaderClick ? (
+          <MonthBlockButton
+            type="button"
+            onClick={onMonthYearHeaderClick}
+            aria-haspopup="listbox"
+            aria-expanded={monthYearHeaderMenuOpen ?? false}
+            aria-label={`${monthTitle}. Выбор вида календаря`}
+          >
+            {monthControl}
+          </MonthBlockButton>
+        ) : (
+          <MonthBlock>{monthControl}</MonthBlock>
+        )}
         <NavGroup>
           <NavButton
             type="button"

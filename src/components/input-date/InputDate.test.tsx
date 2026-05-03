@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { InputDate } from './InputDate';
 import { theme } from '@/theme/tokens';
 
@@ -38,18 +38,28 @@ describe('InputDate', () => {
     expect(screen.queryByText('Help message')).not.toBeInTheDocument();
   });
 
-  it('calls showPicker when calendar button is clicked', () => {
-    const showPicker = vi.fn();
+  it('hides custom placeholder while the date input is focused', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <InputDate label="Start" placeholder="дд.мм.гггг" defaultValue="" />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByText('дд.мм.гггг')).toBeInTheDocument();
+    fireEvent.focus(screen.getByLabelText('Start'));
+    expect(screen.queryByText('дд.мм.гггг')).not.toBeInTheDocument();
+    fireEvent.blur(screen.getByLabelText('Start'));
+    expect(screen.getByText('дд.мм.гггг')).toBeInTheDocument();
+  });
+
+  it('opens custom calendar popover when calendar button is clicked', () => {
     render(
       <ThemeProvider theme={theme}>
         <InputDate label="Start" defaultValue="" />
       </ThemeProvider>,
     );
 
-    const input = screen.getByLabelText('Start') as HTMLInputElement;
-    input.showPicker = showPicker;
-
     fireEvent.click(screen.getByRole('button', { name: 'Open date picker' }));
-    expect(showPicker).toHaveBeenCalledTimes(1);
+    expect(screen.getByRole('application', { name: 'Календарь' })).toBeInTheDocument();
   });
 });

@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Поле выбора даты на базе нативного input type="date" с иконкой календаря и сообщениями под полем.',
+          'Поле выбора даты: нативный input type="date" (значение YYYY-MM-DD) и кастомный календарь в попапе — сетка дней (DatePicker), выбор месяца (MonthPicker) и года (YearPicker). Переключение вида — выпадающий список по клику на месяц/год в шапке календаря или на подпись диапазона в MonthPicker/YearPicker.',
       },
     },
   },
@@ -49,6 +49,15 @@ const meta = {
     errorMessage: {
       control: 'text',
       description: 'Текст ошибки; показывается при invalid=true.',
+    },
+    locale: {
+      control: 'text',
+      description: 'Локаль Intl для подписей в календаре (месяцы, дни недели).',
+    },
+    weekStartsOn: {
+      control: 'select',
+      options: [0, 1],
+      description: '0 — неделя с вс, 1 — с пн.',
     },
   },
 } satisfies Meta<typeof InputDate>;

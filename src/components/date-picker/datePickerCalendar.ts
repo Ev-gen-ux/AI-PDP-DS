@@ -54,6 +54,14 @@ export function weekdayLabels(weekStartsOn: 0 | 1, locale: string): string[] {
  * Короткая подпись месяца для первой ячейки сетки (макет: «Сен» под строкой дней недели).
  * Для ru укорачиваем «сент.» → «Сен»; для en оставляем «Sep» и т.п.
  */
+/** «сентябрь 2025 г.» → «Сентябрь 2025 г.» — заголовок месяца в шапке календаря. */
+export function formatMonthYearTitle(year: number, monthIndex: number, locale: string): string {
+  const d = new Date(year, monthIndex, 1);
+  const raw = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(d);
+  if (!raw) return raw;
+  return raw.charAt(0).toLocaleUpperCase(locale) + raw.slice(1);
+}
+
 export function formatMonthAbbrev(year: number, monthIndex: number, locale: string): string {
   const d = new Date(year, monthIndex, 1);
   const raw = new Intl.DateTimeFormat(locale, { month: 'short' }).format(d);
