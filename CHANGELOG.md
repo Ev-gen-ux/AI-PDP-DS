@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 0.15.0
+
+### Minor Changes
+
+- 2826e8f: Add `Select` and `Multiselect` field components with shared `colors.select` tokens, `DropdownList` integration, and optional `matchTriggerWidth` on `DropdownList`.
+
 ## 0.14.0
 
 ### Minor Changes
