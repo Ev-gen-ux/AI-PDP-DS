@@ -1121,6 +1121,70 @@
       }
     }
   },
+  "inputTel": {
+    "background": {
+      "enabled": {
+        "$value": "{palette.neutral.25}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.50}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "enabled": {
+        "$value": "{palette.neutral.300}",
+        "$type": "color"
+      },
+      "hover": {
+        "$value": "{palette.blue.400}",
+        "$type": "color"
+      },
+      "focus": {
+        "$value": "{palette.blue.500}",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "{palette.green.500}",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "{palette.red.500}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.100}",
+        "$type": "color"
+      }
+    },
+    "textPlaceholder": {
+      "enabled": {
+        "$value": "{palette.neutral.300}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.200}",
+        "$type": "color"
+      }
+    },
+    "textPlaceholderValue": {
+      "enabled": {
+        "$value": "{palette.neutral.800}",
+        "$type": "color"
+      }
+    },
+    "icon": {
+      "enabled": {
+        "$value": "{palette.neutral.300}",
+        "$type": "color"
+      },
+      "disabled": {
+        "$value": "{palette.neutral.200}",
+        "$type": "color"
+      }
+    }
+  },
   "checkbox": {
     "background": {
       "enabled": {

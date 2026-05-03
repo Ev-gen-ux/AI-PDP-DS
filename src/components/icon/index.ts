@@ -28,6 +28,7 @@ export {
   fileGlyphIconGlyph,
   fileXlsIconGlyph,
   inputEmailLeadingIconGlyph,
+  inputTelLeadingIconGlyph,
   inputSearchLeadingIconGlyph,
   trashSimpleIconGlyph,
   uploadSimpleIconGlyph,

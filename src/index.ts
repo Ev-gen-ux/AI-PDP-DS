@@ -55,6 +55,8 @@ export { InputDate } from './components/input-date';
 export type { InputDateProps } from './components/input-date';
 export { InputEmail } from './components/input-email';
 export type { InputEmailProps } from './components/input-email';
+export { InputTel } from './components/input-tel';
+export type { InputTelProps } from './components/input-tel';
 export { FileUpload } from './components/file-upload';
 export type { FileUploadProps, FileUploadStatus } from './components/file-upload';
 export { InputFile } from './components/input-file';
