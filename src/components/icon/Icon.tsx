@@ -11,10 +11,13 @@ import {
   ClockIcon,
   CodeIcon,
   DotsThreeIcon,
+  FileIcon,
   InfoIcon,
   LinkIcon,
   MetaLogoIcon,
   SunIcon,
+  TrashIcon,
+  UploadSimpleIcon,
   WarningCircleIcon,
   WarningIcon,
   XIcon,
@@ -22,6 +25,7 @@ import {
 } from '@phosphor-icons/react';
 import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
 import styled from 'styled-components';
+import { FileXlsIcon } from './FileXlsIcon';
 
 export type IconSize = 16 | 24;
 
@@ -53,6 +57,15 @@ export const datePickerMonthSelectIconGlyph: GlyphComponent = CaretDownIcon;
 export const datePickerPrevMonthIconGlyph: GlyphComponent = CaretLeftIcon;
 /** DatePicker: следующий месяц */
 export const datePickerNextMonthIconGlyph: GlyphComponent = CaretRightIcon;
+
+/** InputFile: иконка загрузки (Figma upload-simple) */
+export const uploadSimpleIconGlyph: GlyphComponent = UploadSimpleIcon;
+/** Общий файл (Phosphor); для дефолта FileUpload см. {@link fileXlsIconGlyph} */
+export const fileGlyphIconGlyph: GlyphComponent = FileIcon;
+/** FileUpload: иконка файла из Figma FileXls (node 3392:28752) */
+export const fileXlsIconGlyph: GlyphComponent = FileXlsIcon;
+/** FileUpload: удалить файл */
+export const trashSimpleIconGlyph: GlyphComponent = TrashIcon;
 
 export interface IconProps extends Omit<PhosphorIconProps, 'size'> {
   icon: GlyphComponent;
