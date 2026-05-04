@@ -1,0 +1,44 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="AI-PDP-DS/Introduction" />
+
+# AI-PDP-DS
+
+Дизайн-система на **React**, **TypeScript** и **styled-components** с синхронизацией токенов и компонентов с **Figma** (Code Connect, Variables API).
+
+## Стек
+
+- React 18/19 · TypeScript 5 · Vite
+- styled-components 6
+- Storybook 8 · токены через Style Dictionary (W3C DTCG JSON → CSS + TS)
+- Changesets для версионирования пакета
+
+## Быстрый старт
+
+```bash
+git clone https://github.com/Ev-gen-ux/AI-PDP-DS.git
+cd AI-PDP-DS
+npm install
+npm run tokens:build
+npm run storybook
+```
+
+Storybook по умолчанию: **http://localhost:6006**. В панели инструментов можно переключать **светлую и тёмную** тему (глобальный переключатель **Theme**).
+
+## Навигация
+
+- **Components** — атомы и молекулы с интерактивными сториз и autodocs.
+- **Layouts** — примитивы раскладки.
+- **Foundation/ThemeCheck** — сводная проверка ключевых состояний в light/dark.
+
+Спецификации отдельных компонентов и метрики качества лежат в репозитории в каталоге [`docs/`](https://github.com/Ev-gen-ux/AI-PDP-DS/tree/main/docs). Контракт разработки и гейты качества — в [`CLAUDE.md`](https://github.com/Ev-gen-ux/AI-PDP-DS/blob/main/CLAUDE.md).
+
+## Полезные команды
+
+| Команда                 | Назначение                                   |
+| ----------------------- | -------------------------------------------- |
+| `npm run tokens:build`  | Сборка темы из `/tokens`                     |
+| `npm run typecheck`     | Проверка TypeScript                          |
+| `npm run lint`          | ESLint                                       |
+| `npm run test`          | Vitest                                       |
+| `npm run figma:publish` | Публикация Code Connect (при наличии токена) |
