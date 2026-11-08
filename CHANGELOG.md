@@ -1,5 +1,11 @@
 # @ev-gen-ux/ai-pdp-ds
 
+## 1.0.1
+
+### Patch Changes
+
+- 8f6f42a: Fix theme exports and ship theme CSS with bundled fonts. Use named styled-components imports for ESM/CommonJS compatibility and repair responsive typography variables in both themes. Add checks for the installed package, Figma sync planning and automated quality reporting.
+
 ## 1.0.0
 
 ### Major Changes
