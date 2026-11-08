@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { theme } from '../../src/theme/tokens';
 import catalog from 'virtual:foundation-catalog';
 import type { TokenRecord } from '../../scripts/foundations-catalog';
+import { Button } from '../../src/components/button';
 
 const Root = styled.main`
   box-sizing: border-box;
@@ -304,6 +305,7 @@ export function Catalog({ page }: { page: Page }) {
 function CatalogPage({ page }: { page: Page }) {
   const [search, setSearch] = useState('');
   const [includeCandidates, setIncludeCandidates] = useState(false);
+  const [pageNumber, setPageNumber] = useState(0);
   const byId = new Map(catalog.tokens.map((token) => [token.id, token]));
   const selected = catalog.tokens.filter((token) => {
     const dependencyUsed = token.dependencies.some((id) => {
@@ -327,6 +329,32 @@ function CatalogPage({ page }: { page: Page }) {
       .toLowerCase()
       .includes(search.toLowerCase()),
   );
+  const pageSize = 24;
+  const pageCount = Math.max(1, Math.ceil(shown.length / pageSize));
+  const currentPage = Math.min(pageNumber, pageCount - 1);
+  const visible = shown.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+  const navigation = (label: string) =>
+    pageCount > 1 && (
+      <nav aria-label={label}>
+        <Toolbar>
+          <Button
+            appearance="outline"
+            text="Предыдущая"
+            disabled={currentPage === 0}
+            onClick={() => setPageNumber(currentPage - 1)}
+          />
+          <span>
+            Страница {currentPage + 1} из {pageCount}
+          </span>
+          <Button
+            appearance="outline"
+            text="Следующая"
+            disabled={currentPage === pageCount - 1}
+            onClick={() => setPageNumber(currentPage + 1)}
+          />
+        </Toolbar>
+      </nav>
+    );
   return (
     <Root>
       <small>AI-PDP-DS / Foundation</small>
@@ -387,7 +415,10 @@ function CatalogPage({ page }: { page: Page }) {
               <input
                 type="search"
                 value={search}
-                onChange={(event) => setSearch(event.target.value)}
+                onChange={(event) => {
+                  setSearch(event.target.value);
+                  setPageNumber(0);
+                }}
                 placeholder="Имя, переменная или значение"
               />
             </label>
@@ -395,14 +426,17 @@ function CatalogPage({ page }: { page: Page }) {
               <input
                 type="checkbox"
                 checked={includeCandidates}
-                onChange={(event) => setIncludeCandidates(event.target.checked)}
+                onChange={(event) => {
+                  setIncludeCandidates(event.target.checked);
+                  setPageNumber(0);
+                }}
               />
               Включать динамические ссылки
             </label>
           </Toolbar>
           <p role="status">
-            Показано {shown.length} из {selected.length}. Образцы — текущая тема и viewport;
-            значения рядом — исходные режимы.
+            Найдено {shown.length} из {selected.length}, на странице {visible.length}. Образцы —
+            текущая тема и viewport; значения рядом — исходные режимы.
           </p>
           {includeCandidates && (
             <p>
@@ -412,11 +446,13 @@ function CatalogPage({ page }: { page: Page }) {
               </small>
             </p>
           )}
+          {navigation('Страницы каталога сверху')}
           <Grid>
-            {shown.map((token) => (
+            {visible.map((token) => (
               <TokenCard key={token.id} token={token} />
             ))}
           </Grid>
+          {navigation('Страницы каталога снизу')}
           {!shown.length && <p>Нет токенов по выбранным условиям.</p>}
         </>
       )}
