@@ -40,6 +40,7 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "foundations:audit": "node scripts/foundations-catalog.js && prettier --write docs/foundations-audit.md",
     "tokens:build": "node ./scripts/style-dictionary.build.js",
     "tokens:pull": "node ./scripts/figma-tokens-pull.js",
     "tokens:push": "node scripts/figma-tokens-push.js",
