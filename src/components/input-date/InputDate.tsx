@@ -11,7 +11,7 @@ import {
   useState,
 } from 'react';
 import { createPortal } from 'react-dom';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { DatePicker } from '@/components/date-picker/DatePicker';
 import { MonthPicker } from '@/components/date-picker/MonthPicker';
 import { YearPicker } from '@/components/date-picker/YearPicker';

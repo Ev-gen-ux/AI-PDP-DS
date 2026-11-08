@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { Icon, xIconGlyph } from '@/components/icon';
 
 /** Figma `icon / X` in modal header (`modal/buttonClose/*`) — 24×24. */

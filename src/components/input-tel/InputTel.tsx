@@ -10,7 +10,7 @@ import {
   useState,
 } from 'react';
 import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, inputTelLeadingIconGlyph, xIconGlyph } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
 import { Label } from '@/components/label';

@@ -28,7 +28,7 @@ import {
   XCircleIcon,
 } from '@phosphor-icons/react';
 import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { FileXlsIcon } from './FileXlsIcon';
 
 export type IconSize = 16 | 24;

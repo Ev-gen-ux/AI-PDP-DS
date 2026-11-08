@@ -1,5 +1,5 @@
 import { useId, useState, type HTMLAttributes, type ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { ButtonIcon } from '@/components/button-icon';
 
 export type AccordionAppearance = 'default' | 'calm' | 'accent';

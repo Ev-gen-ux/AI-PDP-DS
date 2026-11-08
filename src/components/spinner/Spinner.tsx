@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import styled, { css, keyframes, useTheme } from 'styled-components';
+import { styled, css, keyframes, useTheme } from 'styled-components';
 import type { DefaultTheme } from 'styled-components';
 
 export type SpinnerSize = 16 | 24 | 32 | 40;

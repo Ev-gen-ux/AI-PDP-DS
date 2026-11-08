@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary';
 import { readFile, writeFile } from 'node:fs/promises';
-import baseConfig from './style-dictionary.config.js';
+import baseConfig, { normalizeCssValue } from './style-dictionary.config.js';
 
 const runBuild = async (source, platformName) => {
   const sd = new StyleDictionary({
@@ -45,8 +45,8 @@ const collectCssVars = (tree, context, path = [], output = []) => {
     if (value && typeof value === 'object' && '$value' in value) {
       const resolved = resolveTokenValue(value.$value, context);
       output.push({
-        name: `--${nextPath.join('-')}`,
-        value: resolved,
+        name: `--typography-${nextPath.join('-')}`,
+        value: normalizeCssValue(['typography', ...nextPath], resolved),
       });
       continue;
     }
@@ -77,7 +77,7 @@ const appendTypographyOverrides = async () => {
   const formatLines = (vars, indent) => vars.map((item) => `${indent}${item.name}: ${item.value};`);
   const blockMd = [
     '@media (max-width: 1279px) {',
-    '  :root, [data-theme="light"] {',
+    '  :root, [data-theme="light"], [data-theme="dark"] {',
     ...formatLines(mdVars, '    '),
     '  }',
     '}',
@@ -85,7 +85,7 @@ const appendTypographyOverrides = async () => {
   ].join('\n');
   const blockXs = [
     '@media (max-width: 767px) {',
-    '  :root, [data-theme="light"] {',
+    '  :root, [data-theme="light"], [data-theme="dark"] {',
     ...formatLines(xsVars, '    '),
     '  }',
     '}',

@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from 'react';
 import type { ComponentType } from 'react';
 import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import {
   Icon,
   statusErrorIconGlyph,

@@ -1,49 +1,46 @@
 name: Sync Tokens to Figma
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tokens/**'
-      - 'scripts/style-dictionary.config.js'
-      - 'scripts/figma-tokens-push.js'
-  workflow_dispatch: # позволяет запустить руками
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply the generated plan to Figma (false previews only)
+        type: boolean
+        default: false
 
 concurrency:
   group: tokens-sync
-  cancel-in-progress: false # не отменяем — каждое изменение должно дойти
+  cancel-in-progress: false
 
 permissions:
   contents: read
 
 jobs:
   sync-to-figma:
-    name: Push tokens to Figma
-    if: ${{ secrets.FIGMA_ACCESS_TOKEN != '' && secrets.FIGMA_FILE_KEY != '' }}
+    name: Plan and optionally push tokens to Figma
     runs-on: ubuntu-latest
-    environment: figma-sync # требует одобрения если настроено в Settings
+    environment: figma-sync
     steps:
       - uses: actions/checkout@v5
-
       - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
           cache: npm
-
       - run: npm ci --prefer-offline --no-audit
-
-      - name: Build tokens
-        run: npm run tokens:build
-
-      - name: Push to Figma Variables API
+      - name: Preview or apply
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
           FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
-        run: npm run tokens:push
-
-      - name: Upload Figma tokens artifact
-        uses: actions/upload-artifact@v4
+          APPLY: ${{ inputs.apply }}
+        run: |
+          if [ "$APPLY" = true ]; then
+            npm run tokens:push:apply
+          else
+            npm run tokens:push
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: figma-tokens
-          path: dist/figma.tokens.json
-          retention-days: 30
+          name: figma-sync-plan
+          path: .local/figma/sync-plan.json
+          include-hidden-files: true

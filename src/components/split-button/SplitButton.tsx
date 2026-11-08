@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type ReactNode, useState } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, caretDownIconGlyph, caretUpIconGlyph } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 

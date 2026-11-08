@@ -19,6 +19,9 @@ export default [
         console: 'readonly',
         process: 'readonly',
         fetch: 'readonly',
+        Buffer: 'readonly',
+        AbortSignal: 'readonly',
+        structuredClone: 'readonly',
       },
     },
     rules: {
@@ -94,6 +97,7 @@ export default [
       'dist',
       'storybook-static',
       'coverage',
+      '.local',
       'node_modules',
       'src/theme/tokens.ts',
       'src/theme/variables.css',

@@ -1,5 +1,5 @@
 {
-  "name": "@ev-gen-ux/ai-pdp-ds",
+  "name": "@evgeni_design_84/ai-pdp-ds",
   "version": "1.0.0",
   "description": "AI-PDP-DS — design system library: React + TypeScript + styled-components, synced with Figma via Code Connect and Variables REST API.",
   "license": "MIT",
@@ -42,10 +42,10 @@
   "scripts": {
     "tokens:build": "node ./scripts/style-dictionary.build.js",
     "tokens:pull": "node ./scripts/figma-tokens-pull.js",
-    "tokens:push": "node ./scripts/figma-tokens-push.js",
+    "tokens:push": "node scripts/figma-tokens-push.js",
     "tokens:watch": "style-dictionary build --config ./scripts/style-dictionary.config.js --watch",
     "dev": "vite",
-    "build": "npm run tokens:build && tsc -p tsconfig.build.json && vite build",
+    "build": "npm run tokens:build && tsc -p tsconfig.build.json && vite build && node scripts/copy-theme-types.js",
     "build:lib": "vite build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
@@ -54,7 +54,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md,css}\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage",
+    "test:coverage": "vitest run --coverage --reporter=default --reporter=json --outputFile=coverage/test-results.json",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build -o storybook-static",
     "chromatic": "chromatic --exit-zero-on-changes",
@@ -65,7 +65,13 @@
     "changeset:version": "changeset version",
     "changeset:publish": "npm run build && changeset publish",
     "prepare": "husky",
-    "preinstall": "npx only-allow npm"
+    "preinstall": "npx only-allow npm",
+    "package:check": "node scripts/check-package.js",
+    "quality:report": "node scripts/quality-report.js",
+    "figma:check": "node scripts/check-code-connect.js",
+    "prepack": "npm run build",
+    "test:tooling": "node --test scripts/tests/*.test.js",
+    "tokens:push:apply": "node scripts/figma-tokens-push.js --apply"
   },
   "peerDependencies": {
     "react": "^18.2.0 || ^19.0.0",
