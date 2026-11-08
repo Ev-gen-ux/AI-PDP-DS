@@ -22,7 +22,7 @@ export default defineConfig({
     }),
     dts({
       include: ['src'],
-      exclude: ['**/*.stories.tsx', '**/*.figma.tsx', '**/*.test.tsx'],
+      exclude: ['**/*.stories.tsx', '**/*.figma.tsx', '**/*.figma.ts', '**/*.test.tsx'],
       insertTypesEntry: true,
       rollupTypes: false,
     }),
@@ -34,10 +34,15 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        'theme/index': resolve(__dirname, 'src/theme/index.ts'),
+        'theme/styles': resolve(__dirname, 'src/theme/styles.ts'),
+      },
+      cssFileName: 'theme/variables',
       name: 'AiPdpDs',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format === 'es' ? 'js' : 'cjs'}`,
+      fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'js' : 'cjs'}`,
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', 'styled-components'],

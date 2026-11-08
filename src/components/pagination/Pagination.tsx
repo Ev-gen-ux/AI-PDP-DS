@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { ButtonIcon } from '@/components/button-icon';
 import { buildPaginationItems } from './paginationItems';
 

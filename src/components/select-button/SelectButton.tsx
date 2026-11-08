@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, useEffect, useMemo, useRef, useState } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { DropdownList, type DropdownListOption } from '@/components/dropdown-list';
 import { Icon, caretDownIconGlyph, caretUpIconGlyph } from '@/components/icon';
 

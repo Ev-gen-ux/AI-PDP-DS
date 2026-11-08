@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { TableCellFrame } from '../shared/TableCellFrame';
 import type { TableCellState } from '../shared/types';
 

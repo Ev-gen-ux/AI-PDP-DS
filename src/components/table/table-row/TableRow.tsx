@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { TableCellBadge } from '@/components/table-cell/badge';
 import { TableCellEmptyState } from '@/components/table-cell/empty-state';
 import { TableCellInlineEdit } from '@/components/table-cell/inline-edit';

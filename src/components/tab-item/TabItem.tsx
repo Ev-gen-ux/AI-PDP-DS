@@ -10,7 +10,7 @@ import {
   useEffect,
   useMemo,
 } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { TabGroupContext } from '@/components/tab-group/tab-group-context';
 
 function assignRef<T>(ref: Ref<T> | undefined, node: T | null): void {

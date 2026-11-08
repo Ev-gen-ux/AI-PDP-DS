@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { Icon, metaIconGlyph } from '@/components/icon';
 import { TableCellFrame } from '../shared/TableCellFrame';
 import type { TableCellState } from '../shared/types';

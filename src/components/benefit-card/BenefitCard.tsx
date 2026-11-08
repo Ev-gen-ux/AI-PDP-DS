@@ -1,5 +1,5 @@
 import { isValidElement, type ReactNode, useId } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Button } from '@/components/button';
 import { Icon, metaIconGlyph } from '@/components/icon';
 import { StatusLabel } from '@/components/status-label';

@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import styled, { css, type RuleSet } from 'styled-components';
+import { styled, css, type RuleSet } from 'styled-components';
 
 export type CounterAppearance = 'primary' | 'secondary';
 /** Имена размеров совпадают с вариантами Size в Figma master. */

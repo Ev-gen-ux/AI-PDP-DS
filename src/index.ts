@@ -2,8 +2,8 @@
 // Импортируйте компоненты из корня пакета: import { Button } from '@ev-gen-ux/ai-pdp-ds';
 
 // Theme
-export { theme } from './theme/tokens';
-export type { Theme } from './theme/tokens';
+export { theme } from './theme';
+export type { Theme } from './theme';
 
 // Components — atoms
 export { Button } from './components/button';

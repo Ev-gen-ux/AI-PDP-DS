@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import { styled, css, keyframes } from 'styled-components';
 
 export interface ProgressBarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'role'> {
   /** Неизвестный прогресс: сегмент движется по дорожке слева направо (имитация загрузки). */

@@ -1,6 +1,6 @@
 import { type IconProps as PhosphorIconProps } from '@phosphor-icons/react';
 import type { ComponentType } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import {
   Icon,
   statusAlertIconGlyph,

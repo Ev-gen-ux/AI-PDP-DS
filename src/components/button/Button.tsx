@@ -4,7 +4,7 @@ import {
   type MouseEventHandler,
   type ReactNode,
 } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { fallbackIconGlyph, Icon } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 

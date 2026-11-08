@@ -15,6 +15,7 @@
     "**/*.stories.tsx",
     "**/*.figma.tsx",
     "**/*.test.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "**/*.figma.ts"
   ]
 }

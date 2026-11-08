@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, metaIconGlyph } from '@/components/icon';
 
 export type SidebarNavigationItemState = 'enabled' | 'hover' | 'active';

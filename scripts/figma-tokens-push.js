@@ -1,72 +1,69 @@
-/**
- * figma-tokens-push.js
- *
- * Берёт собранные DTCG-токены и пушит их в Figma Variables через REST API.
- *
- * Запуск:  npm run tokens:push
- * Env:     FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY
- *
- * ВНИМАНИЕ: Variables API позволяет создавать/обновлять/удалять переменные
- *           через POST /v1/files/:key/variables. Финальная схема зависит от
- *           конвенции имён и должна быть согласована с figma-tokens-pull.js.
- *           Этот файл — стартовый каркас.
- */
-
-import { readFile } from 'node:fs/promises';
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import dotenv from 'dotenv';
+import { createSyncPlan, readTokenSources } from './figma-sync-plan.js';
 
 dotenv.config({ path: '.env.local' });
 dotenv.config();
 
-const FIGMA_API = 'https://api.figma.com/v1';
-const { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } = process.env;
-
-if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
-  console.error('FIGMA_ACCESS_TOKEN and FIGMA_FILE_KEY are required');
-  process.exit(1);
-}
-
-// eslint-disable-next-line no-unused-vars
-async function _pushVariables(payload) {
-  const res = await fetch(`${FIGMA_API}/files/${FIGMA_FILE_KEY}/variables`, {
-    method: 'POST',
-    headers: {
-      'X-Figma-Token': FIGMA_ACCESS_TOKEN,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) {
-    throw new Error(`Figma API ${res.status}: ${await res.text()}`);
-  }
-  return res.json();
-}
-
 async function main() {
-  console.log('Reading dist/figma.tokens.json...');
-  const raw = await readFile('dist/figma.tokens.json', 'utf8');
-  const tokens = JSON.parse(raw);
-
-  // TODO: трансформация tokens → формат POST /v1/files/:key/variables
-  // {
-  //   variableCollections: [{ action: 'CREATE'|'UPDATE'|'DELETE', ... }],
-  //   variableModes:       [{ action: 'CREATE'|'UPDATE'|'DELETE', ... }],
-  //   variables:           [{ action: 'CREATE'|'UPDATE'|'DELETE', ... }],
-  //   variableModeValues:  [{ variableId, modeId, value }],
-  // }
-  //
-  // Реализуется одновременно с figma-tokens-pull.js — обе стороны
-  // должны использовать одинаковый mapping имён.
-
-  console.log('NOTE: push не реализован — это стартовый каркас.');
-  console.log(`Будет залито в файл: ${FIGMA_FILE_KEY}`);
-  console.log(`Корневых ключей: ${Object.keys(tokens).length}`);
-
-  // const result = await pushVariables(payload);
-  // console.log('Pushed:', result);
+  const args = process.argv.slice(2);
+  let snapshotPath;
+  let apply = false;
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--apply') apply = true;
+    else if (args[i] === '--snapshot' && args[i + 1] && !args[i + 1].startsWith('--'))
+      snapshotPath = args[++i];
+    else throw new Error('Usage: tokens:push [--snapshot file.json] [--apply]');
+  }
+  if (apply && snapshotPath) throw new Error('--apply requires a fresh snapshot from Figma.');
+  const { FIGMA_ACCESS_TOKEN: token, FIGMA_FILE_KEY: key } = process.env;
+  const endpoint = `https://api.figma.com/v1/files/${encodeURIComponent(key ?? '')}/variables`;
+  const request = async (url, options = {}) => {
+    const response = await fetch(url, {
+      ...options,
+      headers: { 'X-Figma-Token': token, 'Content-Type': 'application/json' },
+      signal: AbortSignal.timeout(30000),
+    });
+    if (!response.ok)
+      throw new Error(
+        `Figma HTTP ${response.status}. Check Enterprise access, file access and file_variables read/write scopes.`,
+      );
+    const data = await response.json();
+    if (data.error) throw new Error('Figma returned an API error; no successful sync confirmed.');
+    return data;
+  };
+  if (!snapshotPath && (!token || !key))
+    throw new Error(
+      'Set FIGMA_ACCESS_TOKEN and FIGMA_FILE_KEY in .env.local, or pass --snapshot for offline planning.',
+    );
+  const snapshot = snapshotPath
+    ? JSON.parse(await readFile(snapshotPath, 'utf8'))
+    : await request(`${endpoint}/local`);
+  if (!(snapshot.meta ?? snapshot).variables || !(snapshot.meta ?? snapshot).variableCollections)
+    throw new Error('Invalid Variables API snapshot.');
+  const plan = createSyncPlan(await readTokenSources(), snapshot.meta ?? snapshot);
+  await mkdir('.local/figma', { recursive: true });
+  await writeFile('.local/figma/sync-plan.json', JSON.stringify(plan, null, 2));
+  for (const warning of plan.warnings) console.warn(warning);
+  const counts = Object.fromEntries(
+    Object.entries(plan.payload).map(([name, items]) => [name, items.length]),
+  );
+  console.log('Plan:', JSON.stringify(counts), 'Saved to .local/figma/sync-plan.json');
+  if (Buffer.byteLength(JSON.stringify(plan.payload)) > 4 * 1024 * 1024)
+    throw new Error('Plan exceeds the Figma API payload limit.');
+  if (!apply) {
+    console.log('Dry run: no changes sent. Review the plan, then use tokens:push:apply.');
+    return;
+  }
+  if (Object.values(counts).every((n) => n === 0)) {
+    console.log('Already in sync.');
+    return;
+  }
+  await request(endpoint, { method: 'POST', body: JSON.stringify(plan.payload) });
+  console.log('Figma confirmed token synchronization. No variables or collections were deleted.');
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
+main().catch((error) => {
+  console.error(error.message);
+  process.exitCode = 1;
 });
