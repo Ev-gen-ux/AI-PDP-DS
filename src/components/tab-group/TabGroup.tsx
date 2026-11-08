@@ -9,7 +9,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { TabGroupContext, type TabGroupContextValue } from './tab-group-context';
 
 export interface TabGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {

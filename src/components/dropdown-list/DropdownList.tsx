@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { DropdownItem } from '@/components/dropdown-item/DropdownItem';
 
 export interface DropdownListOption {

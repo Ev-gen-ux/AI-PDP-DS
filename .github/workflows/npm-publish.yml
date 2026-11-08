@@ -1,0 +1,52 @@
+name: Publish npm package
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact version expected in package.json
+        required: true
+        type: string
+      publish:
+        description: Publish the verified package (false builds and verifies only)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm-release
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - name: Verify branch and version
+        env:
+          EXPECTED_VERSION: ${{ inputs.version }}
+        run: |
+          test "$GITHUB_REF" = refs/heads/main
+          node --input-type=module -e "import fs from 'node:fs'; if (JSON.parse(fs.readFileSync('package.json')).version !== process.env.EXPECTED_VERSION) process.exit(1)"
+      - run: npm ci --prefer-offline --no-audit
+      - run: npm run quality:report
+      - name: Publish with trusted publishing or configured npm token
+        if: inputs.publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: npm-release-quality
+          path: .local/quality/
+          include-hidden-files: true

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { StatusMark } from '@/components/status-mark';
 
 export type AvatarState = 'enabled' | 'hover' | 'active';

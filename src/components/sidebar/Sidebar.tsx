@@ -1,5 +1,5 @@
 import { isValidElement, type ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 
 export type SidebarState = 'default' | 'collapse';
 

@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, sunIconGlyph } from '@/components/icon';
 import { Spinner } from '@/components/spinner';
 

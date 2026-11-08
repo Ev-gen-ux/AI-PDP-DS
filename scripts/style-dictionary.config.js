@@ -26,7 +26,7 @@ const getThemePath = (token) => {
   return token.path;
 };
 
-const normalizeCssValue = (path, value) => {
+export const normalizeCssValue = (path, value) => {
   const last = path[path.length - 1];
   const pathString = path.join('.');
   const isNumericString = typeof value === 'string' && /^-?\d+(\.\d+)?$/.test(value);

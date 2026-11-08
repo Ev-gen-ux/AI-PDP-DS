@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react';
 import { createPortal } from 'react-dom';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Chips } from '@/components/chips';
 import { DropdownList, type DropdownListOption } from '@/components/dropdown-list';
 import { Icon, caretDownIconGlyph, caretUpIconGlyph, xIconGlyph } from '@/components/icon';

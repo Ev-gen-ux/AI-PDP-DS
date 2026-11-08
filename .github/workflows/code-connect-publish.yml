@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/**/*.figma.tsx'
+      - 'src/**/*.figma.ts'
       - 'figma.config.json'
   workflow_dispatch:
 
@@ -32,6 +33,8 @@ jobs:
 
       - name: Generate theme files (needed for typecheck)
         run: npm run tokens:build
+
+      - run: npm run figma:check
 
       - name: Publish Code Connect
         env:

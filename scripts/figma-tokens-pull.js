@@ -24,7 +24,10 @@
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+dotenv.config();
 
 const FIGMA_API = 'https://api.figma.com/v1';
 const { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } = process.env;

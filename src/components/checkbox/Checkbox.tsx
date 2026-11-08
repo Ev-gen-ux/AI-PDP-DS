@@ -8,7 +8,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { InlineMessage } from '@/components/inline-message';
 import { Label } from '@/components/label';
 

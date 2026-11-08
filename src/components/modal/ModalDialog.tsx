@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, type MouseEvent } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Modal, type ModalProps } from './Modal';
 
 /**

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import type { DefaultTheme } from 'styled-components';
 import { Icon, stepperMarkerCompleteIconGlyph } from '@/components/icon';
 

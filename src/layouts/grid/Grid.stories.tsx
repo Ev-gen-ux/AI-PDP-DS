@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { Grid } from './Grid';
 
 const Tile = styled.div`

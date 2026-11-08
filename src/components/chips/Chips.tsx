@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, metaIconGlyph, xIconGlyph } from '@/components/icon';
 
 export type ChipsState = 'enabled' | 'hover' | 'active' | 'focus' | 'disabled';

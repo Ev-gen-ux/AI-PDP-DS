@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { FileUpload, type FileUploadStatus } from '../file-upload';
 import { Icon, uploadSimpleIconGlyph } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';

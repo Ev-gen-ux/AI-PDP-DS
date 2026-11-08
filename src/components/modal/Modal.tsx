@@ -9,7 +9,7 @@ import {
   useId,
   useRef,
 } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, metaIconGlyph } from '@/components/icon';
 import { ModalButtonClose } from './ModalButtonClose';
 

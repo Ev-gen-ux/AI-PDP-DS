@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type MouseEvent } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { Icon, dotsThreeIconGlyph } from '@/components/icon';
 
 export type BreadcrumbsItemState = 'enabled' | 'hover' | 'active' | 'current';

@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 
 /** Соответствует вариантам линии в Figma (`calm` / `loud`). */
 export type DividerAppearance = 'calm' | 'loud';

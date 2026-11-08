@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 import { createPortal } from 'react-dom';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import { DropdownList, type DropdownListOption } from '@/components/dropdown-list';
 import { Icon, caretDownIconGlyph, caretUpIconGlyph, xIconGlyph } from '@/components/icon';
 import { InlineMessage } from '@/components/inline-message';
