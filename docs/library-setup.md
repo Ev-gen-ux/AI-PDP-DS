@@ -25,21 +25,21 @@ npm run quality:report
 
 ## Установка из архива
 
-Пока пакет не опубликован в npm, его можно передать как архив:
+Подтверждённое имя пакета: `@evgeni_design_84/ai-pdp-ds`. До публикации в npm его можно передать как архив:
 
 ```bash
 npm pack
 # В приложении-потребителе:
-npm install /путь/к/ev-gen-ux-ai-pdp-ds-1.0.0.tgz react react-dom styled-components
+npm install /путь/к/evgeni_design_84-ai-pdp-ds-1.0.0.tgz react react-dom styled-components
 ```
 
 Имя архива соответствует текущей версии `package.json`. `npm pack` запускает `prepack` и собирает свежую библиотеку.
 
 ```tsx
 import { ThemeProvider } from 'styled-components';
-import { Button } from '@ev-gen-ux/ai-pdp-ds';
-import { theme } from '@ev-gen-ux/ai-pdp-ds/theme';
-import '@ev-gen-ux/ai-pdp-ds/theme/variables.css';
+import { Button } from '@evgeni_design_84/ai-pdp-ds';
+import { theme } from '@evgeni_design_84/ai-pdp-ds/theme';
+import '@evgeni_design_84/ai-pdp-ds/theme/variables.css';
 
 export function App() {
   return (
@@ -58,7 +58,7 @@ CSS содержит обе темы, адаптивную типографик�
 
 Workflow **Publish npm package** запускается вручную из `main`. Нужно указать точную версию `package.json`; по умолчанию выполняется только проверка. Для публикации включите input `publish`.
 
-Перед настоящим выпуском нужны доступ к npm scope `@ev-gen-ux`, доступное имя и версия пакета, а также аутентификация: настроенный trusted publisher для этого репозитория и файла `npm-publish.yml` либо секрет `NPM_TOKEN` с правами публикации. Environment workflow — `npm-release`. В своём fork замените имя пакета и метаданные на собственные.
+Перед настоящим выпуском нужны доступ к npm scope `@evgeni_design_84`, доступное имя и версия пакета, а также аутентификация: настроенный trusted publisher для этого репозитория и файла `npm-publish.yml` либо секрет `NPM_TOKEN` с правами публикации. Environment workflow — `npm-release`. В своём fork замените имя пакета и метаданные на собственные.
 
 Trusted publishing требует подходящих версий npm и Node; отдельный workflow использует Node 24. Подробнее: [npm trusted publishers](https://docs.npmjs.com/trusted-publishers/). Для первого выпуска может потребоваться настройка со стороны владельца npm-аккаунта. Создание workflow само по себе не публикует пакет.
 

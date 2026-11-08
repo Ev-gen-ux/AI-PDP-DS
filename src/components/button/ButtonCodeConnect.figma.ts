@@ -34,7 +34,7 @@ if (after && after.type === 'INSTANCE') afterCode = after.executeTemplate().exam
 
 export default {
   id: 'ai-pdp-button',
-  imports: ['import { Button } from "@ev-gen-ux/ai-pdp-ds"'],
+  imports: ['import { Button } from "@evgeni_design_84/ai-pdp-ds"'],
   example: figma.code`<Button
   appearance="${appearance}"
   size="${size}"

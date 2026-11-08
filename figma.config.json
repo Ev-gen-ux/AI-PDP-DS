@@ -4,9 +4,9 @@
     "exclude": ["node_modules/**", "dist/**", "storybook-static/**"],
     "parser": "react",
     "importPaths": {
-      "src/components/*": "@ev-gen-ux/ai-pdp-ds",
-      "src/patterns/*": "@ev-gen-ux/ai-pdp-ds",
-      "src/layouts/*": "@ev-gen-ux/ai-pdp-ds"
+      "src/components/*": "@evgeni_design_84/ai-pdp-ds",
+      "src/patterns/*": "@evgeni_design_84/ai-pdp-ds",
+      "src/layouts/*": "@evgeni_design_84/ai-pdp-ds"
     },
     "label": "React"
   }

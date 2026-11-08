@@ -1,5 +1,5 @@
 // AI-PDP-DS — public API entry point
-// Импортируйте компоненты из корня пакета: import { Button } from '@ev-gen-ux/ai-pdp-ds';
+// Импортируйте компоненты из корня пакета: import { Button } from '@evgeni_design_84/ai-pdp-ds';
 
 // Theme
 export { theme } from './theme';
