@@ -24,13 +24,12 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@/theme": ["src/theme"],
-      "@/components/*": ["src/components/*"],
-      "@/patterns/*": ["src/patterns/*"],
-      "@/layouts/*": ["src/layouts/*"]
+      "@/*": ["./src/*"],
+      "@/theme": ["./src/theme"],
+      "@/components/*": ["./src/components/*"],
+      "@/patterns/*": ["./src/patterns/*"],
+      "@/layouts/*": ["./src/layouts/*"]
     },
     "types": ["node", "@figma/code-connect/figma-types"]
   },
