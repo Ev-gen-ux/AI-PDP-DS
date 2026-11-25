@@ -51,8 +51,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "format": "prettier --write \"**/*.{ts,tsx,js,json,md,css}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md,css}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md,css}\" \".agents/skills/**/SKILL.md\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md,css}\" \".agents/skills/**/SKILL.md\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage --reporter=default --reporter=json --outputFile=coverage/test-results.json",
@@ -73,7 +73,9 @@
     "prepack": "npm run build",
     "test:tooling": "node --test scripts/tests/*.test.js",
     "tokens:push:apply": "node scripts/figma-tokens-push.js --apply",
-    "env:task": "node scripts/environment/task-state.js"
+    "env:task": "node scripts/environment/task-state.js",
+    "env:check": "node scripts/environment/check.js",
+    "env:route": "node scripts/environment/route.js"
   },
   "peerDependencies": {
     "react": "^18.2.0 || ^19.0.0",

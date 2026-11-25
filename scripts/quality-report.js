@@ -6,6 +6,7 @@ mkdirSync('.local/quality', { recursive: true });
 for (const file of ['coverage/test-results.json', 'coverage/coverage-summary.json'])
   rmSync(file, { force: true });
 const checks = [
+  'env:check',
   'tokens:build',
   'typecheck',
   'lint',
@@ -21,15 +22,29 @@ const results = [];
 for (const name of checks) {
   console.log(`Checking ${name}...`);
   const start = Date.now();
-  const result = spawnSync('npm', ['run', name], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+  const result = spawnSync('npm', ['run', ...(name === 'env:check' ? ['--silent'] : []), name], {
+    encoding: 'utf8',
+    maxBuffer: 16 * 1024 * 1024,
+  });
   const log = `${result.stdout ?? ''}\n${result.stderr ?? ''}\n${result.error?.message ?? ''}`;
   writeFileSync(`.local/quality/${name.replaceAll(':', '-')}.log`, log);
+  let passed = result.status === 0;
+  if (name === 'env:check') {
+    let environment;
+    try {
+      environment = JSON.parse(result.stdout);
+    } catch {
+      environment = { passed: false, error: 'No structured environment output; see env-check.log' };
+    }
+    passed = passed && environment?.passed === true && Array.isArray(environment.checks);
+    writeFileSync('.local/quality/environment.json', JSON.stringify(environment, null, 2) + '\n');
+  }
   results.push({
     name,
-    passed: result.status === 0,
+    passed,
     seconds: Math.round((Date.now() - start) / 100) / 10,
     exitCode: result.status,
-    problem: result.status === 0 ? undefined : stripVTControlCharacters(log).slice(-1800),
+    problem: passed ? undefined : stripVTControlCharacters(log).slice(-1800),
   });
 }
 const revision = spawnSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).stdout?.trim();

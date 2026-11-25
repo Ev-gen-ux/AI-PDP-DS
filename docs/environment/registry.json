@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "entrypoints": ["AGENTS.md", "CLAUDE.md", "cursor_instruction.md"],
+  "standards": [
+    {
+      "id": "accessibility",
+      "path": "docs/environment/standards/accessibility.md"
+    },
+    {
+      "id": "components",
+      "path": "docs/environment/standards/components.md"
+    },
+    {
+      "id": "documentation",
+      "path": "docs/environment/standards/documentation.md"
+    },
+    {
+      "id": "figma",
+      "path": "docs/environment/standards/figma.md"
+    },
+    {
+      "id": "governance",
+      "path": "docs/environment/standards/governance.md"
+    },
+    {
+      "id": "icons",
+      "path": "docs/environment/standards/icons.md"
+    },
+    {
+      "id": "quality",
+      "path": "docs/environment/standards/quality.md"
+    },
+    {
+      "id": "releases",
+      "path": "docs/environment/standards/releases.md"
+    },
+    {
+      "id": "tasks",
+      "path": "docs/environment/standards/tasks.md"
+    },
+    {
+      "id": "tokens",
+      "path": "docs/environment/standards/tokens.md"
+    }
+  ],
+  "domains": [
+    {
+      "id": "charts",
+      "path": "docs/environment/domains/charts.md",
+      "standards": [
+        "tasks",
+        "quality",
+        "components",
+        "tokens",
+        "accessibility",
+        "documentation",
+        "figma",
+        "releases"
+      ]
+    },
+    {
+      "id": "components",
+      "path": "docs/environment/domains/components.md",
+      "standards": [
+        "tasks",
+        "quality",
+        "components",
+        "tokens",
+        "accessibility",
+        "documentation",
+        "figma",
+        "releases"
+      ]
+    },
+    {
+      "id": "documentation",
+      "path": "docs/environment/domains/documentation.md",
+      "standards": ["tasks", "quality", "documentation", "releases"]
+    },
+    {
+      "id": "figma",
+      "path": "docs/environment/domains/figma.md",
+      "standards": [
+        "tasks",
+        "quality",
+        "figma",
+        "tokens",
+        "components",
+        "documentation",
+        "governance"
+      ]
+    },
+    {
+      "id": "icons",
+      "path": "docs/environment/domains/icons.md",
+      "standards": ["tasks", "quality", "icons", "tokens", "components", "figma", "releases"]
+    },
+    {
+      "id": "quality",
+      "path": "docs/environment/domains/quality.md",
+      "standards": ["tasks", "quality", "releases", "governance"]
+    },
+    {
+      "id": "tokens",
+      "path": "docs/environment/domains/tokens.md",
+      "standards": ["tasks", "quality", "tokens", "documentation", "releases"]
+    }
+  ],
+  "workflows": [
+    "docs/environment/workflows/component.md",
+    "docs/environment/workflows/documentation.md",
+    "docs/environment/workflows/environment-checks.md",
+    "docs/environment/workflows/figma-parity.md",
+    "docs/environment/workflows/intake.md",
+    "docs/environment/workflows/quality-audit.md",
+    "docs/environment/workflows/release.md",
+    "docs/environment/workflows/research-design.md",
+    "docs/environment/workflows/task-start.md",
+    "docs/environment/workflows/task-state.md",
+    "docs/environment/workflows/tokens-themes.md",
+    "docs/environment/workflows/verify-deliver.md"
+  ],
+  "skills": [
+    {
+      "id": "ds-component-create",
+      "path": ".agents/skills/ds-component-create/SKILL.md",
+      "workflow": "docs/environment/workflows/component.md",
+      "mode": "work",
+      "actions": ["create"],
+      "objects": ["component"]
+    },
+    {
+      "id": "ds-component-repair",
+      "path": ".agents/skills/ds-component-repair/SKILL.md",
+      "workflow": "docs/environment/workflows/component.md",
+      "mode": "work",
+      "actions": ["refine", "repair"],
+      "objects": ["component"]
+    },
+    {
+      "id": "ds-documentation",
+      "path": ".agents/skills/ds-documentation/SKILL.md",
+      "workflow": "docs/environment/workflows/documentation.md",
+      "mode": "work",
+      "actions": ["create", "refine", "repair", "document"],
+      "objects": ["component", "tokens", "icons", "chart", "documentation", "environment"]
+    },
+    {
+      "id": "ds-figma-parity",
+      "path": ".agents/skills/ds-figma-parity/SKILL.md",
+      "workflow": "docs/environment/workflows/figma-parity.md",
+      "mode": "parity",
+      "actions": ["audit", "refine", "repair"],
+      "objects": ["component", "tokens", "icons", "chart"]
+    },
+    {
+      "id": "ds-intake",
+      "path": ".agents/skills/ds-intake/SKILL.md",
+      "workflow": "docs/environment/workflows/intake.md",
+      "mode": "intake",
+      "actions": ["create", "refine", "repair", "audit", "document", "release"],
+      "objects": ["component", "tokens", "icons", "chart", "documentation", "environment"]
+    },
+    {
+      "id": "ds-quality-audit",
+      "path": ".agents/skills/ds-quality-audit/SKILL.md",
+      "workflow": "docs/environment/workflows/quality-audit.md",
+      "mode": "work",
+      "actions": ["audit"],
+      "objects": ["component", "tokens", "icons", "chart", "documentation", "environment"]
+    },
+    {
+      "id": "ds-release",
+      "path": ".agents/skills/ds-release/SKILL.md",
+      "workflow": "docs/environment/workflows/release.md",
+      "mode": "work",
+      "actions": ["release"],
+      "objects": ["component", "tokens", "icons", "chart", "documentation", "environment"]
+    },
+    {
+      "id": "ds-research-design",
+      "path": ".agents/skills/ds-research-design/SKILL.md",
+      "workflow": "docs/environment/workflows/research-design.md",
+      "mode": "research",
+      "actions": ["create", "refine", "repair", "audit"],
+      "objects": ["component", "tokens", "icons", "chart", "documentation", "environment"]
+    },
+    {
+      "id": "ds-tokens-themes",
+      "path": ".agents/skills/ds-tokens-themes/SKILL.md",
+      "workflow": "docs/environment/workflows/tokens-themes.md",
+      "mode": "work",
+      "actions": ["create", "refine", "repair"],
+      "objects": ["tokens"]
+    }
+  ],
+  "targets": [
+    {
+      "object": "component",
+      "domain": "components",
+      "createSkill": "ds-component-create",
+      "modifySkill": "ds-component-repair"
+    },
+    {
+      "object": "tokens",
+      "domain": "tokens",
+      "createSkill": "ds-tokens-themes",
+      "modifySkill": "ds-tokens-themes"
+    },
+    {
+      "object": "icons",
+      "domain": "icons",
+      "createSkill": null,
+      "modifySkill": null
+    },
+    {
+      "object": "chart",
+      "domain": "charts",
+      "createSkill": null,
+      "modifySkill": null
+    },
+    {
+      "object": "documentation",
+      "domain": "documentation",
+      "createSkill": "ds-documentation",
+      "modifySkill": "ds-documentation"
+    },
+    {
+      "object": "environment",
+      "domain": "quality",
+      "createSkill": null,
+      "modifySkill": null
+    }
+  ],
+  "actionSkills": {
+    "audit": "ds-quality-audit",
+    "document": "ds-documentation",
+    "release": "ds-release"
+  },
+  "migration": {
+    "sourceMap": "docs/environment-rule-map.json",
+    "sourceMapSha256": "75292cd27559ae99b79465e14b841effcb9e0608f53ae12e26d2e3b888261291",
+    "ledger": "docs/environment/migration-ledger.json",
+    "archiveData": "docs/environment/references/legacy-sources.json",
+    "archives": [
+      {
+        "source": "CLAUDE.md",
+        "path": "docs/environment/references/legacy-claude.md",
+        "sha256": "68ef7bf45ea9de31ca91f46e0fb736310887dfc7afbf51b30025580d4f85befd"
+      },
+      {
+        "source": "cursor_instruction.md",
+        "path": "docs/environment/references/legacy-cursor.md",
+        "sha256": "e9903155aa36d27b28e9f70d77153a3d47dd26f3aadb259b2b9337791c275a44"
+      },
+      {
+        "source": ".github/pull_request_template.md",
+        "path": "docs/environment/references/legacy-pr-template.md",
+        "sha256": "9ce88f3c655434581fcbc2d9f9fa98364a4b56163dd4f3c080f2df5bf504e727"
+      },
+      {
+        "source": "docs/templates/component-spec.md",
+        "path": "docs/environment/references/legacy-component-spec.md",
+        "sha256": "86505df12bd77e0b4127828f3a80c60c9e905d63041de9332f1a4d6b91232a31"
+      }
+    ]
+  },
+  "taskSchema": "docs/environment/schemas/task-state.schema.json"
+}

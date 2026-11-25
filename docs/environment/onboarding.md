@@ -25,3 +25,7 @@ Figma MCP подключается через клиент с поддержан
 ## Состояние длительной задачи
 
 `npm run env:task -- --help` и [процедура состояния](workflows/task-state.md) описывают локальный init/resume/check/update/refresh/ref. Новая сессия сначала читает resume и проверяет stale/problems; чтение само не исправляет состояние.
+
+## Проверка среды
+
+`npm run env:check` проверяет структуру инструкций; `npm run --silent env:route -- --action repair --object component` выдаёт нужные источники. [Процедура](workflows/environment-checks.md) описывает режимы и диагностику отдельной локальной задачи. Ссылки, metadata и миграция проверяются в существующих CI/quality:report; клиентская совместимость остаётся отдельным результатом.
