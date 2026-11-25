@@ -153,7 +153,20 @@
     "questions": {
       "type": "array",
       "items": {
-        "type": "string",
+        "type": ["object", "string"],
+        "additionalProperties": false,
+        "required": ["text", "blocking"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000,
+            "pattern": "\\S"
+          },
+          "blocking": {
+            "type": "boolean"
+          }
+        },
         "minLength": 1,
         "maxLength": 4000,
         "pattern": "\\S"

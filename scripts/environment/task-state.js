@@ -52,7 +52,9 @@ function schemaContract(s) {
     fail('Only closed object schemas are supported');
   if (
     s.type &&
-    ![].concat(s.type).every((t) => ['string', 'integer', 'object', 'array', 'null'].includes(t))
+    ![]
+      .concat(s.type)
+      .every((t) => ['string', 'integer', 'object', 'array', 'null', 'boolean'].includes(t))
   )
     fail('Unsupported schema type');
   for (const child of Object.values(s.properties ?? {})) schemaContract(child);
@@ -203,6 +205,10 @@ function patchFields(patch, root) {
   if (typeof result.spec === 'string') result.spec = fileReference(root, result.spec);
   if (Array.isArray(result.inputs))
     result.inputs = result.inputs.map((x) => (typeof x === 'string' ? fileReference(root, x) : x));
+  if (Array.isArray(result.questions))
+    result.questions = result.questions.map((q) =>
+      typeof q === 'string' ? { text: q, blocking: true } : q,
+    );
   return result;
 }
 export function staleReferences(root, state) {
@@ -253,7 +259,8 @@ function validateState(root, state, id) {
       Object.values(state.route).some((x) => x === null)
     )
       fail('Task route, scope, title and next step must be known');
-    if (state.questions.length) fail('Resolve questions before proceeding');
+    if (state.questions.some((q) => typeof q === 'string' || q.blocking))
+      fail('Resolve blocking questions before proceeding');
     if (
       ['component', 'chart'].includes(state.route.object) &&
       state.route.action !== 'audit' &&

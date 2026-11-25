@@ -121,7 +121,7 @@ test('a new session recovers decisions, questions, scope and next step without w
   const result = cli(root, ['resume', 'task'], join(root, 'nested'));
   assert.equal(result.status, 0, result.stderr);
   const restored = JSON.parse(result.stdout);
-  assert.deepEqual(restored.state.questions, ['Confirm the error state']);
+  assert.deepEqual(restored.state.questions, [{ text: 'Confirm the error state', blocking: true }]);
   assert.equal(restored.state.nextStep, seed.nextStep);
   assert.equal(restored.state.scope.summary, seed.scope.summary);
   assert.equal(restored.state.decisions[0], 'Preserve the existing API');
@@ -169,7 +169,7 @@ test('ready requires known route, resolved questions and canonical component Spe
   let state = initTask(root, 'task');
   assert.throws(() => advance(root, state, 'ready'), /must be known/);
   state = updateTask(root, 'task', state.token, { ...seed, questions: ['Unresolved'] });
-  assert.throws(() => advance(root, state, 'ready'), /Resolve questions/);
+  assert.throws(() => advance(root, state, 'ready'), /Resolve blocking questions/);
   assert.throws(
     () => advance(root, state, 'ready', { questions: [], spec: null }),
     /canonical Spec/,
@@ -428,4 +428,35 @@ test('ref returns the content-bound reference without creating task storage', (t
   assert.deepEqual(JSON.parse(result.stdout), fileReference(root, 'spec.md'));
   assert.equal(existsSync(join(root, '.local')), false);
   assert.equal(cli(root, ['ref', '../outside']).status, 1);
+});
+
+test('nonblocking questions remain visible while independent work proceeds', (t) => {
+  const root = fixture(t);
+  let state = initTask(root, 'task', {
+    ...seed,
+    questions: [{ text: 'Future unrelated enhancement', blocking: false }],
+  });
+  state = advance(root, state, 'ready');
+  state = advance(root, state, 'implementation');
+  assert.equal(state.state.questions[0].blocking, false);
+  assert.equal(state.state.status, 'implementation');
+  assert.throws(
+    () =>
+      updateTask(root, 'task', state.token, {
+        questions: [{ text: 'Unclear dependency', blocking: null }],
+      }),
+    /invalid type/,
+  );
+});
+
+test('legacy string questions remain readable and blocking without an automatic rewrite', (t) => {
+  const root = fixture(t);
+  const initial = initTask(root, 'task', seed);
+  const legacy = { ...initial.state, questions: ['Legacy unresolved question'] };
+  const raw = JSON.stringify(legacy);
+  writeFileSync(statePath(root), raw);
+  const loaded = loadTask(root, 'task');
+  assert.deepEqual(loaded.state.questions, ['Legacy unresolved question']);
+  assert.equal(readFileSync(statePath(root), 'utf8'), raw);
+  assert.throws(() => advance(root, loaded, 'ready'), /blocking questions/);
 });

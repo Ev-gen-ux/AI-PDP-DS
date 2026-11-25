@@ -1,7 +1,7 @@
 {
-  "revision": "54324fb643d311603195328be3486601727da0ad",
+  "revision": "e25ce07106aec15e590adc1483999f2880fd5149",
   "workingTreeDirty": true,
-  "generatedAt": "2026-11-25T13:46:11.111Z",
+  "generatedAt": "2026-11-25T13:53:58.955Z",
   "node": "v22.17.0",
   "passed": true,
   "results": [
@@ -14,13 +14,13 @@
     {
       "name": "typecheck",
       "passed": true,
-      "seconds": 8.1,
+      "seconds": 8,
       "exitCode": 0
     },
     {
       "name": "lint",
       "passed": true,
-      "seconds": 4.3,
+      "seconds": 4.4,
       "exitCode": 0
     },
     {
@@ -38,31 +38,31 @@
     {
       "name": "test:tooling",
       "passed": true,
-      "seconds": 8.3,
+      "seconds": 8.5,
       "exitCode": 0
     },
     {
       "name": "build",
       "passed": true,
-      "seconds": 20.1,
+      "seconds": 16.1,
       "exitCode": 0
     },
     {
       "name": "package:check",
       "passed": true,
-      "seconds": 6.8,
+      "seconds": 6,
       "exitCode": 0
     },
     {
       "name": "storybook:build",
       "passed": true,
-      "seconds": 25.5,
+      "seconds": 22,
       "exitCode": 0
     },
     {
       "name": "figma:check",
       "passed": true,
-      "seconds": 2,
+      "seconds": 1.7,
       "exitCode": 0
     }
   ]
