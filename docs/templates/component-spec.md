@@ -1,6 +1,6 @@
 # Component Spec Document Template
 
-Use this template as the single required artifact for each component task.
+Use one canonical Spec per component. For a new or visually changed component, complete all applicable sections. For a local repair, update the affected sections of the existing Spec; mark unrelated sections as not applicable with a reason. Documentation-only tasks and audits use their scoped report, as defined in docs/environment/standards/tasks.md.
 
 ---
 
@@ -31,7 +31,7 @@ List all relevant axes and values (appearance, size, state/status, selected, loa
 
 ## 3) Numeric Map
 
-For each critical variant, capture exact numeric values from master Figma.
+For each critical variant in Figma-first work, capture exact numeric values from master Figma. For explicitly approved code-first work, record the accepted source and values instead; do not invent missing measurements.
 
 | Variant | Padding (T/R/B/L) | Gap | Radius | Font size | Line height |
 | ------- | ----------------- | --- | ------ | --------- | ----------- |

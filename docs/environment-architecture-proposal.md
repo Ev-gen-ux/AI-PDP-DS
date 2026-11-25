@@ -1,6 +1,6 @@
 # Проект архитектуры среды AI-PDP-DS
 
-Статус: проект P0.2 для рассмотрения владельцем. Активным контрактом остаётся `CLAUDE.md`. Создание этого документа не подключает новые инструкции.
+Статус: проект P0.2 согласован владельцем. Принятие и область реализации — [решение 001](environment/decisions/001-environment-architecture.md). После P0.3 активный контракт — AGENTS.md; таблицы ниже сохраняют проектную трассировку, фактический перенос — в migration-ledger.json.
 
 Основания: [roadmap](../ENVIRONMENT_ROADMAP.md), [план](environment-rebuild-plan.md), [исследование](environment-research-2026-11-20.md), [deep research](environment-deep-research-2026-11-20.md), [подготовка и возврат](environment-preparation.md). Исходная ревизия этапа: `65e5a94e50880296579d61a5dc11c95db1f35b1e`.
 

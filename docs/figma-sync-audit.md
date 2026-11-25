@@ -1,5 +1,7 @@
 # Аудит синхронизации Figma ↔ код (AI-PDP-DS)
 
+> Исторический аудит: упоминания разделов CLAUDE.md относятся к контракту до P0.3. Его [архив](environment/references/legacy-claude.md) сохранён; действующий вход — [AGENTS.md](../AGENTS.md). Наблюдения и статусы ниже требуют актуальной проверки.
+
 **Дата:** 2026-05-02 (обновлено: уточнение Tab / TabGroup node id)  
 **Файл Figma:** [AI-PDP-DS](https://www.figma.com/design/i7T3ru2M0SyXgJeTda8f43/AI-PDP-DS) (`i7T3ru2M0SyXgJeTda8f43`)  
 **Исключено из обзора:** страница `_allComponents for Claude` (по запросу; узлы этой страницы в отчёт не включались).
