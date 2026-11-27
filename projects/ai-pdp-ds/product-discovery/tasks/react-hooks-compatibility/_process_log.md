@@ -1,0 +1,46 @@
+# Task: react-hooks-compatibility
+
+<!-- prettier-ignore-start -->
+
+<!-- STATE:START -->
+## STATE
+
+- version: 2
+- id: "react-hooks-compatibility"
+- system: "ai-pdp-ds"
+- title: "React Hooks upgrade compatibility"
+- action: "repair"
+- object: "system"
+- status: "review"
+- revision: 6
+- updatedAt: "2026-11-27T12:05:56.067Z"
+- scope: "PR119 compatibility repair without component contract changes."
+- brief: {"path":"product-discovery/tasks/react-hooks-compatibility/brief.md","sha256":"7232812dd333e0402fc2fd04e22372407d34cd9c5ebf11a168f3abde4d732f80"}
+- spec: null
+- nextStep: "Review preserved edit behavior; final current-base CI before merge. Owner acceptance remains separate."
+- questions: []
+- decisions: ["Owner authorized reviewing and integrating PRs sequentially; clear repair preserves existing API."]
+- inputs: [{"path":"package.json","sha256":"b1dc2fdff9530eb8ffb414dccecfee88ffc85861144b5beea6ece86a036ba550"},{"path":"package-lock.json","sha256":"68d948fa8ad7e9051b05f47e848a77fc9591a8e0252fbb169eeb912544cb9557"},{"path":"src/components/table-cell/inline-edit/TableCellInlineEdit.tsx","sha256":"592aa11040514bdf228c719b847dacfde949d3574b75acb3bfc078f70c107829"},{"path":"src/components/table-cell/TableCell.test.tsx","sha256":"1c8a8e39cbd0c7b98c84542524a0dbd51ca34cd9a14e3b6e3bd2181cbc8aa487"},{"path":"product-discovery/tasks/react-hooks-compatibility/verification.md","sha256":"bec1a892400eae43abb9669be3cd0e5fec4d58cea1c3666adc7c36a00ab931df"}]
+- evidence: []
+- exceptions: []
+- specApproval: null
+- acceptance: null
+- blockedReason: null
+- returnStatus: null
+<!-- STATE:END -->
+
+<!-- prettier-ignore-end -->
+
+## Journal
+
+- 2026-11-27T11:56:46.395Z: task created; unknown requirements remain open.
+
+- 2026-11-27T11:56:46.400Z: discovery → discovery; revision 2.
+
+- 2026-11-27T11:56:46.409Z: discovery → ready; revision 3.
+
+- 2026-11-27T11:56:46.417Z: ready → implementation; revision 4.
+
+- 2026-11-27T12:05:56.052Z: implementation → implementation; revision 5.
+
+- 2026-11-27T12:05:56.069Z: implementation → review; revision 6.
