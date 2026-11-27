@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+storybook-static/
+coverage/
+
+# Generated theme files (regenerated from /tokens)
+src/theme/tokens.ts
+src/theme/variables.light.css
+src/theme/variables.dark.css
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Misc
+.eslintcache
+.cache/
+
+# Local AI/QA metrics (do not commit)
+.local/
+component_list.md
+
+# Retained task evidence belongs to this system
+!component-specs/**/history/**/*.log
+!product-discovery/history/**/*.log

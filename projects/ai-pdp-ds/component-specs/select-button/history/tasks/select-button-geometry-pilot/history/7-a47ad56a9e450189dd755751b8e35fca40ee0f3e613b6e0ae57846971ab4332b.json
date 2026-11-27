@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "select-button-geometry-pilot",
+  "revision": 7,
+  "updatedAt": "2026-11-26T14:02:18.181Z",
+  "title": "SelectButton: принятый пилот геометрии по архитектуре Figma",
+  "status": "review",
+  "route": {
+    "action": "repair",
+    "object": "component",
+    "platform": "web-react",
+    "delivery": [
+      "code",
+      "report"
+    ]
+  },
+  "scope": {
+    "summary": "Master 3274:14562: small HUG 32px, XS FIXED 24px; исключить INSIDE stroke из layout.",
+    "preserve": [
+      "Публичный API, токены, padding/gap/radius и typography",
+      "Optional iconBefore вне scope",
+      "Никаких commit/push/PR/публикации без отдельного поручения"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/select-button-component-spec.md",
+    "sha256": "8d4ead0e43884e54b409a3adac5bb2a5bcd145d66e05c77150d01aa0901ebe2b"
+  },
+  "inputs": [
+    {
+      "path": "src/components/select-button/SelectButton.tsx",
+      "sha256": "b7d94466d91475d61e09c0bcdc5a8025dac39d0a0867074f16bda53d62d61a0e"
+    },
+    {
+      "path": "src/components/select-button/SelectButton.stories.tsx",
+      "sha256": "269002196288b0b9935dd03591f741ddc01206cb0d4b60b5aa91920b788521a9"
+    },
+    {
+      "path": ".changeset/fix-select-button-layout.md",
+      "sha256": "2fe6ea8990e3318bd7ec297e7b21d3d4e8c85eefc73e8bd226af4628b0433c8c"
+    },
+    {
+      "path": "tokens/semantic/spacing.json",
+      "sha256": "4e5010b70eac7f317a0d99028ccd2fc7a48e009c240c42843742417f528cda54"
+    },
+    {
+      "path": "tokens/semantic/borderRadius.json",
+      "sha256": "120cf206864ed1e140affcba78369fbeaa6ea46eb5aed0a439f0ab9ca41590bf"
+    },
+    {
+      "path": "tokens/semantic/typography.xl.json",
+      "sha256": "51c73f2f33a7db38b6a768ca64d33e12fde1379d00fe577675df2750fb6c4f09"
+    },
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "e6dab711bfdbe39c411fc74812b4415174496bfd7e071407d4c5c33a8524e50a"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "d35c9d64347b5297474d0c029b4f45d478b4f5ea0d8cb13e639c7183bf4f16cd"
+    },
+    {
+      "path": "tokens/primitives/palette.json",
+      "sha256": "ed8ca25e8540d7db9de5bb8b17f3649840a688b17405b635c3931e3e50026484"
+    },
+    {
+      "path": "tokens/primitives/spacers.json",
+      "sha256": "2ba676042d35410376ed49bea22709528b9600c87342463a2ba3e4a90bdc5542"
+    },
+    {
+      "path": "tokens/primitives/typographyBase.json",
+      "sha256": "bc0acbf4a46b462ed290c37a87a1d8e08706586d489edf70fda9bc31190fe32d"
+    },
+    {
+      "path": "src/components/dropdown-list/DropdownList.tsx",
+      "sha256": "90e64eb1357c05dc2d8606bf80cc01aab68921cb244bf471e2ea66eedeb86282"
+    },
+    {
+      "path": "src/components/dropdown-item/DropdownItem.tsx",
+      "sha256": "7507e3688815546393b1deb38cf1ebe3d7983759e9b3ff6dcdb87fe4f13b6579"
+    },
+    {
+      "path": "src/components/icon/Icon.tsx",
+      "sha256": "d0605c920e80bda6fbfbeba4b7bb1fc5a560c054e5a2a0fe0c2caad86d4aeaff"
+    },
+    {
+      "path": "src/components/icon/index.ts",
+      "sha256": "c11b27703fa2dc5602e50d3cb0de0a1f5decb409942928dc545b69672239dcc8"
+    },
+    {
+      "path": "tokens/semantic/effects.json",
+      "sha256": "27f56a2d4c4ccc2eb98414d7c930294919dfc29a1fec9c16eaeb6f93d8af095a"
+    },
+    {
+      "path": "tokens/semantic/typography.md.json",
+      "sha256": "83d6489f32c2fd69cdabf7be2626f79d28548e7daa94a3290450948e8e3a59d1"
+    },
+    {
+      "path": "tokens/semantic/typography.xs.json",
+      "sha256": "bd41d1536d4a3c305030d75420eb4239599650fb46c99227570ec563f9bf2c72"
+    },
+    {
+      "path": "src/theme/fonts.css",
+      "sha256": "4d1f540d6adf8d377f128b804f7746991840ee554044c518bce5eaa160ef2ad8"
+    },
+    {
+      "path": "src/theme/tokens.ts",
+      "sha256": "1be2fdc476eb1f07be9b233e2d62d9ebfebb6852772ba3f9ae570a6d6946a84a"
+    },
+    {
+      "path": "src/theme/variables.light.css",
+      "sha256": "c0df8b1dd0b62ec33b052964f7d33f4723125f9d491bf2e38ce644cddb628647"
+    },
+    {
+      "path": "src/theme/variables.dark.css",
+      "sha256": "427cd916945bf024708e1a79f92d0bade8d31cba87c8897dbec686ab56d9bba7"
+    }
+  ],
+  "decisions": [
+    "Ретроспективная фиксация завершённого пилота из процесс-лога/evidence. Время создания этой state/history не является реальной хронологией реализации.",
+    "Архитектура и результаты хранятся в едином Spec; локальное evidence: .local/select-button-repair-evidence.json.",
+    "Владелец согласовал пилот сообщением «Согласовано, что дальше.»; хеши принятых файлов совпадают с сохранённым evidence."
+  ],
+  "questions": [
+    {
+      "text": "Нужна ли optional leading icon и дальнейшие этапы среды? Это отдельные задачи вне принятого пилота.",
+      "blocking": false
+    }
+  ],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Record scoped applicability audit; do not rerun repair or claim new browser results."
+}

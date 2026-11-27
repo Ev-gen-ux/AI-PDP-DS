@@ -1,0 +1,68 @@
+[
+  {
+    "source": ".local/ambiguous-request-combobox-acceptance.json",
+    "target": "product-discovery/history/evidence/ambiguous-request-combobox-acceptance.json",
+    "sha256": "54360ed49455508e253d0417f444bbb970558eb113a1058b8758e76c15887011",
+    "historical": true
+  },
+  {
+    "source": ".local/core-acceptance.json",
+    "target": "product-discovery/history/evidence/core-acceptance.json",
+    "sha256": "69a8771ace9066785a50088f96fbaf33f3da792f8144f43e16ac5f8c54407998",
+    "historical": true
+  },
+  {
+    "source": ".local/core-acceptance-manifest.json",
+    "target": "product-discovery/history/evidence/core-acceptance-manifest.json",
+    "sha256": "32ec98c090c1bcc57dadf9b87dc3eef7a85b1770a5f8768aa21ffb1e5a25f747",
+    "historical": true
+  },
+  {
+    "source": ".local/core-acceptance-doc-links.json",
+    "target": "product-discovery/history/evidence/core-acceptance-doc-links.json",
+    "sha256": "048c8dc0fa6bb38120d0637b24675a0d72bbda1d14575f8286adf7d17385c037",
+    "historical": true
+  },
+  {
+    "source": ".local/core-acceptance-doc-format.log",
+    "target": "product-discovery/history/evidence/core-acceptance-doc-format.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+    "historical": true
+  },
+  {
+    "source": ".local/core-scenarios-review-2026-11-26.json",
+    "target": "product-discovery/history/evidence/core-scenarios-review-2026-11-26.json",
+    "sha256": "10daa0c92e6da7cdac95b5b22203778342def2d1ecb724229934700b7c08035d",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/core-codex-react-acceptance/state.json",
+    "target": "product-discovery/history/tasks/core-codex-react-acceptance/state.json",
+    "sha256": "80dc66fc171d7ab3a76dd4a04201393eefeff7e50f6fb6d7396c92a6f5661139",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/core-codex-react-acceptance/history/3-28a6d9ff4d24068b28bc0892631fe0420285c75d6bc3f9c5e4ec205cfdb9b5a6.json",
+    "target": "product-discovery/history/tasks/core-codex-react-acceptance/history/3-28a6d9ff4d24068b28bc0892631fe0420285c75d6bc3f9c5e4ec205cfdb9b5a6.json",
+    "sha256": "28a6d9ff4d24068b28bc0892631fe0420285c75d6bc3f9c5e4ec205cfdb9b5a6",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/core-codex-react-acceptance/history/2-5f22325d86d243d215e982d48c5ba8fa4f66dfdf3a9bd0fa5d21bfe3a35aa58e.json",
+    "target": "product-discovery/history/tasks/core-codex-react-acceptance/history/2-5f22325d86d243d215e982d48c5ba8fa4f66dfdf3a9bd0fa5d21bfe3a35aa58e.json",
+    "sha256": "5f22325d86d243d215e982d48c5ba8fa4f66dfdf3a9bd0fa5d21bfe3a35aa58e",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/core-codex-react-acceptance/history/1-25f958cc35bc0ff00d5f42955dc0ee2c136ace96c005e68440672ce4eff8356a.json",
+    "target": "product-discovery/history/tasks/core-codex-react-acceptance/history/1-25f958cc35bc0ff00d5f42955dc0ee2c136ace96c005e68440672ce4eff8356a.json",
+    "sha256": "25f958cc35bc0ff00d5f42955dc0ee2c136ace96c005e68440672ce4eff8356a",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/core-codex-react-acceptance/history/4-bad2bdc1e691f43b6cafecbe20e7eab50e326e83dce7969b11a9123b42d187d5.json",
+    "target": "product-discovery/history/tasks/core-codex-react-acceptance/history/4-bad2bdc1e691f43b6cafecbe20e7eab50e326e83dce7969b11a9123b42d187d5.json",
+    "sha256": "bad2bdc1e691f43b6cafecbe20e7eab50e326e83dce7969b11a9123b42d187d5",
+    "historical": true
+  }
+]

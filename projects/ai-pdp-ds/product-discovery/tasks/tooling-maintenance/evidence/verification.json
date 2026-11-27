@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "node": "v22.23.5",
+  "toolingVersion": "1.3.1",
+  "checks": [
+    {
+      "name": "env:check",
+      "passed": true
+    },
+    {
+      "name": "tokens:build",
+      "passed": true
+    },
+    {
+      "name": "typecheck",
+      "passed": true
+    },
+    {
+      "name": "lint",
+      "passed": true
+    },
+    {
+      "name": "format:check",
+      "passed": true
+    },
+    {
+      "name": "test:coverage",
+      "passed": true
+    },
+    {
+      "name": "test:tooling",
+      "passed": true
+    },
+    {
+      "name": "build",
+      "passed": true
+    },
+    {
+      "name": "package:check",
+      "passed": true
+    },
+    {
+      "name": "storybook:build",
+      "passed": true
+    },
+    {
+      "name": "figma:check",
+      "passed": true
+    }
+  ],
+  "tests": {
+    "components": 181,
+    "tooling": 28
+  },
+  "protectedProductSourceFiles": 456,
+  "productSourceChanges": [],
+  "isolatedInstall": true,
+  "standaloneConsumerVerified": true,
+  "publicApiImpact": false,
+  "manualBrowserReview": "not-run; no component visual changes",
+  "externalPublication": false
+}

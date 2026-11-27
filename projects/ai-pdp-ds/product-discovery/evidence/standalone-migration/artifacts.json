@@ -1,0 +1,100 @@
+{
+  "files": [
+    {
+      "path": "product-discovery/evidence/standalone-migration/after-hooks-format-check.log",
+      "sha256": "3596408411726b0c87b117c602b7f1ad83e255c8e21cbecea53e48de258a2b3a"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/after-hooks-lint.log",
+      "sha256": "e7894c04b0a4d1a347461b85a70e2f55fcee36be5f4800b50bf64b5b40ae8221"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/after-hooks-test-tooling.log",
+      "sha256": "aeb56e936360407d1e42b4cb7033c1713bc967ebe028053c8ac2ad6d71b6b326"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/after-hooks.json",
+      "sha256": "001c64ea816dc12e2bbc846518ae2500d3fb5b4f6a41e0a9ec747979245ea44f"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/build.log",
+      "sha256": "16b7b5ab48bb2f944247f7a136a80373bdcf7b60691ab6569dc840338c6a22be"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/env-check.log",
+      "sha256": "22dd0dbb695f859a422928a6ba3a5cb9f719b2870e7097381315b2929e9a0603"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/figma-check.log",
+      "sha256": "140b2f32dbc7609990a67bf4e8793ef8c118a9d12d30d8541b5cc869ea48b518"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/final-system-env-check.log",
+      "sha256": "1fb509f59e344815fc42f827266a7d9e831d654b8428dd23e4af9f660c2e401c"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/final-system-format-check.log",
+      "sha256": "3596408411726b0c87b117c602b7f1ad83e255c8e21cbecea53e48de258a2b3a"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/format-check.log",
+      "sha256": "b3242bc0de8944f766aded178a6fe4b71cf4e8119f9eb66f0225eb56c2fa8387"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/install.log",
+      "sha256": "d5b3b654d6d52ca81c067192657cb4c6c1ee63a39a94d6dd108e16e6c7d22856"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/isolated-result.json",
+      "sha256": "f24e8c9f9a5da4095a5f42bb8a0c68c5c4dfe13896d4016dc57bcd065191fccc"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/lint.log",
+      "sha256": "138e0f1e30038d87a509d0ab00a15f308ace78996c80bf9aa8d0f7f3e230b79d"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/package-check-retry.log",
+      "sha256": "38105c04616e6d22ade94d493539b648f7f80d43e0b887d8cf3c674e78c9fd37"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/package-check-stdout-failure.log",
+      "sha256": "b7bd161e8b9e1053163ecf255595b63e5d7fae3041f243655a1f4b7b41af5fbd"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/package-check.log",
+      "sha256": "c25d4b1e47272b4801239cf610f93a71471cb07a5126ef68f8725c5f2642802b"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/package-retry-first-failure.json",
+      "sha256": "78c92912a35999573fa416770d0c5b9c14a7c36f6d79eaeb0993ecad3e44bb1c"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/package-retry.json",
+      "sha256": "97f2d8591188d8cee5963b2e5f7791e763e75891eb91f41237d0c2b6328e125e"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/storybook-build.log",
+      "sha256": "4b8912c204a79740bc76c5297908da5bcf685b91ea66b065404f4aff181c109a"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/test-coverage.log",
+      "sha256": "950a00fada5fc00d6297b50740b046438a1be0edb6176650e51831a0155951f7"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/test-tooling.log",
+      "sha256": "618e1bad7067cfc3ee82d7246edfb5aaf4a6b1e4bc84b107bbf63c63f3d0171b"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/tokens-build.log",
+      "sha256": "3fbcee7f2c3010b4688e2562377eda53b13d67e6b181d14acdf5c095a582ca3a"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/typecheck.log",
+      "sha256": "ad6636ea4a9fd4cf83e343543574acb388c57a4a5f60574495eb835452884330"
+    },
+    {
+      "path": "product-discovery/evidence/standalone-migration/verification.json",
+      "sha256": "799231ec770b4327bc138aec70a998151ee22258767daa107bbd44ba02bfe143"
+    }
+  ]
+}

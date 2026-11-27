@@ -1,0 +1,198 @@
+{
+  "checked": 48,
+  "result": "pass",
+  "links": [
+    {
+      "source": "docs/environment/core-acceptance.md",
+      "target": "../select-button-component-spec.md"
+    },
+    {
+      "source": "docs/environment/core-acceptance.md",
+      "target": "../input-password-component-spec.md"
+    },
+    {
+      "source": "docs/environment/core-acceptance.md",
+      "target": "onboarding.md"
+    },
+    {
+      "source": "docs/environment/core-acceptance.md",
+      "target": "compatibility.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/P04-status.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/P05-status.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/P11-status.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment-preparation.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment-preparation.md#61-точка-продолжения-по-итогам-обсуждения-25-ноября-2026-года"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment-architecture-proposal.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment-rule-map.json"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/decisions/001-environment-architecture.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "../ENVIRONMENT_ROADMAP.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment-research-2026-11-20.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/core-acceptance.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "select-button-component-spec.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/compatibility.md"
+    },
+    {
+      "source": "docs/environment-rebuild-plan.md",
+      "target": "environment/onboarding.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../../AGENTS.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "core-acceptance.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "standards/quality.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "compatibility.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "skills.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../environment-preparation.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "workflows/task-state.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "workflows/environment-checks.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../../AGENTS.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "skills.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "standards/quality.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "compatibility.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "workflows/task-state.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../environment-rebuild-plan.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../environment-preparation.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "decisions/001-environment-architecture.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../environment-architecture-proposal.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../environment-research-2026-11-20.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../environment-deep-research-2026-11-20.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "incident-review.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "../quality-metrics.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "P03-status.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "P04-status.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "P05-status.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "P11-status.md"
+    },
+    {
+      "source": "docs/environment/onboarding.md",
+      "target": "references/README.md"
+    },
+    {
+      "source": "docs/environment/compatibility.md",
+      "target": "../../AGENTS.md"
+    },
+    {
+      "source": "docs/environment/compatibility.md",
+      "target": "skills.md"
+    },
+    {
+      "source": "docs/environment/compatibility.md",
+      "target": "core-acceptance.md"
+    },
+    {
+      "source": "docs/environment/compatibility.md",
+      "target": "workflows/task-state.md#восстановление-после-перерыва"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "input-password-colors",
+  "revision": 4,
+  "updatedAt": "2026-11-26T13:41:58.095Z",
+  "title": "InputPassword own component color semantics",
+  "status": "implementation",
+  "route": {
+    "action": "repair",
+    "object": "tokens",
+    "platform": "web-react",
+    "delivery": [
+      "code",
+      "figma"
+    ]
+  },
+  "scope": {
+    "summary": "Create inputPassword color group in Figma, bind existing component colors, synchronize local sources and consumer",
+    "preserve": [
+      "Existing palette values and other component semantics",
+      "InputPassword geometry and interaction",
+      "Previous local edits outside this task",
+      "No commit/push/PR/publication"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/input-password-component-spec.md",
+    "sha256": "c9afdbb5c606d8069f9e0cce06fa4b8086ddd20188d211b974a289b71d6505f6"
+  },
+  "inputs": [
+    {
+      "path": ".changeset/add-input-password.md",
+      "sha256": "89e5031e457b4cd89a3fabbea8294e093f164c91cc28dbd9221b147dbe5ac40e"
+    },
+    {
+      "path": "src/components/inline-message/InlineMessage.tsx",
+      "sha256": "b9854bc8ef87de2e3f52112e0b73ec4ba88ca77b67b0b070c2407eab85f3848a"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.stories.tsx",
+      "sha256": "73f5287339205b3a98c2822d1607ed46aa20b080dcc1e8296032ea09119ec633"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.test.tsx",
+      "sha256": "d456341b49a9408185068815a6c223e3f5136205a3c5b57c078bc5d580a5289a"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.tsx",
+      "sha256": "d75087d413d5fc49048210dda43db6c8cdcae0c5f3d3bcffed66b550e5012173"
+    },
+    {
+      "path": "src/components/label/Label.tsx",
+      "sha256": "fc4a050126fc50cecb2028bc377cce5d36ac38ce63b99478ca254dd7378f6938"
+    },
+    {
+      "path": "src/theme/tokens.ts",
+      "sha256": "c511a2c28b51b8effcd9f48a6d16c504ec6c01e8455a5b1cff921a5f0c048c93"
+    },
+    {
+      "path": "src/theme/variables.dark.css",
+      "sha256": "ea4a4b792cbd749267f8f84cdafc43a1f60eec661a016b505b6b85af343dadd1"
+    },
+    {
+      "path": "src/theme/variables.light.css",
+      "sha256": "cb3acb372f77301a2ea82ecaf396ea025e5ebbbc6fc114e5d93e0d207463b0d7"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "65588e1b744e947c5ef5eeb102aa832d150faf22d9db5436bfd54d49bc196cf7"
+    },
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "a680a9e9f7d55ba5a37ca25cf7d53122d066b74f0bde0a8823037b64f377b18b"
+    }
+  ],
+  "decisions": [
+    "Owner authorized own component color semantics in Figma and code.",
+    "22 inputPassword roles with direct palette aliases in two modes.",
+    "Label/InlineMessage additive colorGroup; defaults unchanged.",
+    "Password disabled icon dark follows Figma neutral.500, correcting earlier local neutral.400.",
+    "Browser limitation remains; Figma screenshot and alias audits are not browser tests."
+  ],
+  "questions": [],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Record token correction checks and hand off for review"
+}

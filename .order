@@ -1,0 +1,61 @@
+# Process order in the ordinary VS Code Explorer (ExplorerSorter).
+# Exact paths support opening this developer folder directly.
+# Scoped globs support opening it inside a parent workspace.
+agents
+**/design-system-developer/agents
+skills
+**/design-system-developer/skills
+docs
+**/design-system-developer/docs
+directives
+**/design-system-developer/directives
+config
+**/design-system-developer/config
+templates
+**/design-system-developer/templates
+scripts
+**/design-system-developer/scripts
+.github
+**/design-system-developer/.github
+.husky
+**/design-system-developer/.husky
+.local
+**/design-system-developer/.local
+node_modules
+**/design-system-developer/node_modules
+projects
+**/design-system-developer/projects
+
+# Root files: entry, instructions, architecture, process and current work.
+README.md
+**/design-system-developer/README.md
+AGENTS.md
+**/design-system-developer/AGENTS.md
+ARCHITECTURE.md
+**/design-system-developer/ARCHITECTURE.md
+PROCESS.md
+**/design-system-developer/PROCESS.md
+BACKLOG.md
+**/design-system-developer/BACKLOG.md
+
+# Runtime, dependencies and quality tools.
+.nvmrc
+**/design-system-developer/.nvmrc
+package.json
+**/design-system-developer/package.json
+package-lock.json
+**/design-system-developer/package-lock.json
+eslint.config.js
+**/design-system-developer/eslint.config.js
+.prettierrc.json
+**/design-system-developer/.prettierrc.json
+.prettierignore
+**/design-system-developer/.prettierignore
+
+# Repository exclusions, navigation and license.
+.gitignore
+**/design-system-developer/.gitignore
+.order
+**/design-system-developer/.order
+LICENSE
+**/design-system-developer/LICENSE

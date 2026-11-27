@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, copyFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath, URL } from 'node:url';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { prepareHooks } from '../prepare-hooks.js';
+
+test('preparing a nested or detached library leaves parent Git hooks untouched', (t) => {
+  const parent = mkdtempSync(join(tmpdir(), 'ds-parent-git-'));
+  t.after(() => rmSync(parent, { recursive: true, force: true }));
+  mkdirSync(join(parent, '.git'));
+  const config = join(parent, '.git/config');
+  writeFileSync(config, '[core]\n\thooksPath = original-hooks\n');
+  const child = join(parent, 'system');
+  mkdirSync(child);
+  const before = readFileSync(config);
+  assert.equal(prepareHooks(child).installed, false);
+  assert.deepEqual(readFileSync(config), before);
+  mkdirSync(join(child, 'scripts'));
+  writeFileSync(join(child, 'package.json'), JSON.stringify({ type: 'module' }));
+  const script = join(child, 'scripts/prepare-hooks.js');
+  copyFileSync(fileURLToPath(new URL('../prepare-hooks.js', import.meta.url)), script);
+  const cli = spawnSync(process.execPath, [script], { encoding: 'utf8' });
+  assert.equal(cli.status, 0, cli.stderr);
+  assert.equal(cli.stdout, '', 'prepare must not contaminate npm pack --json output');
+  assert.deepEqual(readFileSync(config), before);
+  rmSync(join(parent, '.git'), { recursive: true });
+  assert.equal(prepareHooks(child).installed, false);
+});

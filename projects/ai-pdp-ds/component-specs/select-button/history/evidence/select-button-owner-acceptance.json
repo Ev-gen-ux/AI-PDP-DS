@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-11-26",
+  "source": "Сообщение владельца в текущем чате после результата пилота",
+  "quote": "Согласовано, что дальше.",
+  "scope": "Принят только пилот геометрии SelectButton: small 32px, XS 24px, INSIDE stroke; не вся среда, не optional iconBefore, не релиз.",
+  "acceptedFiles": {
+    ".changeset/fix-select-button-layout.md": "2fe6ea8990e3318bd7ec297e7b21d3d4e8c85eefc73e8bd226af4628b0433c8c",
+    "docs/select-button-component-spec.md": "8d4ead0e43884e54b409a3adac5bb2a5bcd145d66e05c77150d01aa0901ebe2b",
+    "src/components/select-button/SelectButton.tsx": "b7d94466d91475d61e09c0bcdc5a8025dac39d0a0867074f16bda53d62d61a0e"
+  },
+  "note": "Ретроспективная запись уже полученного согласования; время фактической приёмки не выдумывается."
+}

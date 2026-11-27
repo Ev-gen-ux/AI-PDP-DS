@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "input-password-composition",
+  "revision": 2,
+  "updatedAt": "2026-11-26T13:50:32.290Z",
+  "title": "Restore native Label/InlineMessage composition ownership",
+  "status": "ready",
+  "route": {
+    "action": "repair",
+    "object": "component",
+    "platform": "web-react",
+    "delivery": [
+      "code",
+      "figma"
+    ]
+  },
+  "scope": {
+    "summary": "Restore native nested DS instances and pre-migration common source files; keep own color variables only in password body",
+    "preserve": [
+      "Shared Figma masters",
+      "InputPassword geometry and interaction",
+      "Other component semantics and previous local edits",
+      "No publishing/commit/push/PR"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/input-password-component-spec.md",
+    "sha256": "1f413af6639b54873e995332776bb744188afe1baa6fdd4ef662cebd04c1b384"
+  },
+  "inputs": [
+    {
+      "path": "src/components/label/Label.tsx",
+      "sha256": "41c05f45cd52c5e8ce5e0c53277f5eea7f2b387425e011f1b9c7ed09ef8ecffa"
+    },
+    {
+      "path": "src/components/inline-message/InlineMessage.tsx",
+      "sha256": "414e40afff4cf33a775bef302e8613e3832da3bc336150af0238feb8ad217f6f"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.tsx",
+      "sha256": "94b73b9135a0927142fb6a464f700939242646720d227622df1995278e43f84f"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "d35c9d64347b5297474d0c029b4f45d478b4f5ea0d8cb13e639c7183bf4f16cd"
+    },
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "e6dab711bfdbe39c411fc74812b4415174496bfd7e071407d4c5c33a8524e50a"
+    },
+    {
+      "path": ".changeset/add-input-password.md",
+      "sha256": "4cef424151ceab16b8399ecd6379b7f9bef272e030fde6b02d9b8c45be310a3c"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.test.tsx",
+      "sha256": "4a6628dab2247c91bddd758fad8223fc60e3253c4616adbe390e1fd2c298fe71"
+    },
+    {
+      "path": "src/theme/variables.light.css",
+      "sha256": "c0df8b1dd0b62ec33b052964f7d33f4723125f9d491bf2e38ce644cddb628647"
+    },
+    {
+      "path": "src/theme/variables.dark.css",
+      "sha256": "427cd916945bf024708e1a79f92d0bade8d31cba87c8897dbec686ab56d9bba7"
+    },
+    {
+      "path": "src/theme/tokens.ts",
+      "sha256": "1be2fdc476eb1f07be9b233e2d62d9ebfebb6852772ba3f9ae570a6d6946a84a"
+    }
+  ],
+  "decisions": [
+    "Owner explicitly corrected the boundary: Label/InlineMessage keep their own colors and properties; Password owns only its body.",
+    "Same native Figma masters from supplied pages retained; no recoloring of nested instances.",
+    "Seven erroneous unused roles removed; 15 password body roles retained."
+  ],
+  "questions": [],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Record completed scoped repair and verification"
+}

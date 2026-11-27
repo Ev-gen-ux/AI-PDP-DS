@@ -1,0 +1,11 @@
+
+ RUN  v2.1.9 /Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds
+
+ ✓ src/components/dropdown-item/DropdownItem.test.tsx (3 tests) 57ms
+ ✓ src/components/dropdown-list/DropdownList.test.tsx (2 tests) 62ms
+
+ Test Files  2 passed (2)
+      Tests  5 passed (5)
+   Start at  16:58:34
+   Duration  2.75s (transform 89ms, setup 185ms, collect 4.03s, tests 120ms, environment 723ms, prepare 102ms)
+

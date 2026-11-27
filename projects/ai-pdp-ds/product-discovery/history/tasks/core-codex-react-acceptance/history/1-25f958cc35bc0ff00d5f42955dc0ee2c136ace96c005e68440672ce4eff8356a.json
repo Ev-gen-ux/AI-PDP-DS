@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "core-codex-react-acceptance",
+  "revision": 1,
+  "updatedAt": "2026-11-26T14:07:12.963Z",
+  "title": null,
+  "status": "discovery",
+  "route": {
+    "action": null,
+    "object": null,
+    "platform": null,
+    "delivery": null
+  },
+  "scope": {
+    "summary": null,
+    "preserve": []
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": null,
+  "inputs": [],
+  "decisions": [],
+  "questions": [],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": null
+}

@@ -1,8 +1,3 @@
 node_modules/
-dist/
-storybook-static/
-coverage/
 .local/
-src/theme/tokens.ts
-src/theme/variables.light.css
-src/theme/variables.dark.css
+projects/

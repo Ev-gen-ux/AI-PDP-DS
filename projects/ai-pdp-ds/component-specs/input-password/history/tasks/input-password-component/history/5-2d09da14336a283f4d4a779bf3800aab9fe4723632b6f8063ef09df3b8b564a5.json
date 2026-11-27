@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "input-password-component",
+  "revision": 5,
+  "updatedAt": "2026-11-26T13:24:34.777Z",
+  "title": "InputPassword from accepted Figma",
+  "status": "review",
+  "route": {
+    "action": "create",
+    "object": "component",
+    "platform": "web-react",
+    "delivery": [
+      "code"
+    ]
+  },
+  "scope": {
+    "summary": "One InputPassword: code, Spec, stories, local mapping, ThemeCheck, exports and checks; synchronize existing Figma disabled icon role",
+    "preserve": [
+      "All previous local edits",
+      "Other component behavior and APIs",
+      "Existing token values and dependency versions",
+      "No commit/push/PR/publishing"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/input-password-component-spec.md",
+    "sha256": "49cad8e13e44bd60688aab42867abf9bdfe824e86aa9d2862f9331f5f50000cd"
+  },
+  "inputs": [
+    {
+      "path": "src/components/input-password/InputPassword.tsx",
+      "sha256": "4fbbb3001640c2e8759949adebd509b36aa2737b932938f5bad835888ea775f0"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.figma.ts",
+      "sha256": "3948a31cfe4d0cf77cc28f5b466f72b89e058c31c0a8b319a367578bb8eac96a"
+    },
+    {
+      "path": "src/components/input-password/index.ts",
+      "sha256": "869d59a41601f75997ad8bea0ec180f587cd2f74dfc3d588e7c2c92c5f6ef6f8"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.stories.tsx",
+      "sha256": "400af2fdc6c0978c03d944c2014891edf5e857048d8c04fffd1f32d314f77b4f"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.test.tsx",
+      "sha256": "d716fd5e0add92ca0a4a10aa0fbba21d80f831ce5145051e4c42f73400e53a32"
+    },
+    {
+      "path": "src/components/icon/Icon.tsx",
+      "sha256": "d0605c920e80bda6fbfbeba4b7bb1fc5a560c054e5a2a0fe0c2caad86d4aeaff"
+    },
+    {
+      "path": "src/components/icon/index.ts",
+      "sha256": "c11b27703fa2dc5602e50d3cb0de0a1f5decb409942928dc545b69672239dcc8"
+    },
+    {
+      "path": "src/components/label/Label.tsx",
+      "sha256": "41c05f45cd52c5e8ce5e0c53277f5eea7f2b387425e011f1b9c7ed09ef8ecffa"
+    },
+    {
+      "path": "src/components/inline-message/InlineMessage.tsx",
+      "sha256": "414e40afff4cf33a775bef302e8613e3832da3bc336150af0238feb8ad217f6f"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "2fc2f346092911fdaeb8fe84c888ae1ed9bcf58be3ac2401a8ab2dbb57220359"
+    },
+    {
+      "path": "src/components/theme-check/ThemeCheck.stories.tsx",
+      "sha256": "5630100020d4be7b7e1aa58c1e34df6a49ce4e981e10fae11a45de1773956a6f"
+    },
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "6a0c500c57e978e9bae4f3fddca653066aad7badabd44128bcffd97ba1382367"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "7932c16a3b81f4043d993f451901bfb6c5cdabcfd8e350b2a41b0d28e8f73477"
+    },
+    {
+      "path": "src/theme/tokens.ts",
+      "sha256": "c884960283cf65f4bc86d305845c4e947e0ae338943026a919b6cc705c0aa8bd"
+    },
+    {
+      "path": "src/theme/variables.light.css",
+      "sha256": "ed948d1a864823e9737f918b665a9444e90812070008c7e87b98134d622c5c88"
+    },
+    {
+      "path": "src/theme/variables.dark.css",
+      "sha256": "67f2993be9e9be984f1f61e7270db7f57649f7f8eaa943ba652ef1f18a6aae7f"
+    },
+    {
+      "path": ".changeset/add-input-password.md",
+      "sha256": "862b982d15ccbbb2a1efe7d8eb8ba17a52e307b5120624e3d485783ac54caf9c"
+    }
+  ],
+  "decisions": [
+    "Accepted Figma master 3628:364; code acceptance is separate.",
+    "Single component only. Reuse Label, InlineMessage and Icon.",
+    "Add missing inputText/icon/disabled source role from accepted Figma and regenerate normally.",
+    "Browser verification not run: browser host unavailable and Google Chrome access not approved."
+  ],
+  "questions": [
+    {
+      "text": "Owner deferred a minor Figma caveat to a later discussion; implement the currently accepted master.",
+      "blocking": false
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "automated",
+      "method": "Node22 component quality logic, Icon/InputText regressions, responsive theme, build, package check, installed InputPassword SSR, Storybook build and Code Connect parse",
+      "result": "pass",
+      "fingerprint": "7f85e4986b022d565d56ba4644d9c589a6ae54cec0b28438e0a52b01ba3bc1a7",
+      "artifacts": [
+        {
+          "path": ".local/quality/components/input-password/logic/report.json",
+          "sha256": "ad3aff2ee34a927a4603a5e4bcce867d42c71ebddd5791abb82d1ff3687c1baa"
+        },
+        {
+          "path": ".local/input-password-result.json",
+          "sha256": "d486c9b4aea0d88e661276de977a3d08b4b8d224d515573aaca5ed8dd6b236aa"
+        },
+        {
+          "path": ".local/input-password-build.log",
+          "sha256": "1baeff239186b2788922fa8c23a98c8c4ee678b5c961c9b5c4f431a1340d9475"
+        },
+        {
+          "path": ".local/input-password-package.log",
+          "sha256": "ae76365d399fe8d1cd852743361334ab9824a37d8b7df07ab30e1ae92adc25eb"
+        },
+        {
+          "path": ".local/input-password-installed.log",
+          "sha256": "5a8869ec60b43a730abe2d911505635332fed3ad3fcf82c953f5271e1b1b6a81"
+        },
+        {
+          "path": ".local/input-password-storybook.log",
+          "sha256": "0abd8196c4d373771f9354f990a61bfecb8df8d27c9567d8f7ea843406c29aae"
+        },
+        {
+          "path": ".local/input-password-regression.log",
+          "sha256": "01dadb2494a1e27936b0e4ce5646542e2f60028628328da478c109004e3bdf8a"
+        },
+        {
+          "path": ".local/input-password-theme.log",
+          "sha256": "fe77a81979b4c16422619bf86bca66f954dcea0ac55c827b5147c6addbded1ef"
+        }
+      ]
+    },
+    {
+      "kind": "manual",
+      "method": "Rendered browser parity, real browser interactions/geometry and assistive technology: not run; Chrome access not approved",
+      "result": "not-run",
+      "fingerprint": "7f85e4986b022d565d56ba4644d9c589a6ae54cec0b28438e0a52b01ba3bc1a7",
+      "artifacts": []
+    }
+  ],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Owner review of InputPassword; browser verification remains outstanding. Do not start another scenario."
+}

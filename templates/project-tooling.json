@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "version": "1.4.0",
+  "files": [
+    {
+      "source": "scripts/environment/journal.js",
+      "target": "scripts/environment/journal.js"
+    },
+    {
+      "source": "scripts/environment/project.js",
+      "target": "scripts/environment/project.js"
+    },
+    {
+      "source": "scripts/environment/links.js",
+      "target": "scripts/environment/links.js"
+    },
+    {
+      "source": "scripts/environment/check-project.js",
+      "target": "scripts/environment/check-project.js"
+    },
+    {
+      "source": "templates/project/scripts/component-quality.js",
+      "target": "scripts/component-quality.js"
+    },
+    {
+      "source": "templates/project/scripts/component-test.js",
+      "target": "scripts/component-test.js"
+    },
+    {
+      "source": "templates/project/scripts/quality-report.js",
+      "target": "scripts/quality-report.js"
+    },
+    {
+      "source": "templates/brief.md",
+      "target": "templates/brief.md"
+    },
+    {
+      "source": "templates/component-spec.md",
+      "target": "templates/component-spec.md"
+    },
+    {
+      "source": "templates/project-AGENTS.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "source": "templates/project-development.md",
+      "target": "docs/development.md"
+    },
+    {
+      "source": "scripts/environment/primitives.js",
+      "target": "scripts/environment/primitives.js"
+    },
+    {
+      "source": "templates/primitive-request.json",
+      "target": "templates/primitive-request.json"
+    },
+    {
+      "source": "templates/primitive-matrix.md",
+      "target": "templates/primitive-matrix.md"
+    }
+  ],
+  "scripts": {
+    "env:task": "node scripts/environment/journal.js",
+    "env:check": "node scripts/environment/check-project.js",
+    "quality:report": "node scripts/quality-report.js",
+    "env:primitives": "node scripts/environment/primitives.js"
+  }
+}

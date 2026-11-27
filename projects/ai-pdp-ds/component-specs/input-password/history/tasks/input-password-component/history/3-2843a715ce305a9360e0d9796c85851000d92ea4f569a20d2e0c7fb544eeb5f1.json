@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "input-password-component",
+  "revision": 3,
+  "updatedAt": "2026-11-26T13:13:07.031Z",
+  "title": "InputPassword from accepted Figma",
+  "status": "implementation",
+  "route": {
+    "action": "create",
+    "object": "component",
+    "platform": "web-react",
+    "delivery": [
+      "code"
+    ]
+  },
+  "scope": {
+    "summary": "One InputPassword: Spec, stories, mapping, ThemeCheck, exports and checks",
+    "preserve": [
+      "Previous local changes",
+      "Other component APIs",
+      "Tokens and dependencies",
+      "No commit/push/PR/publishing"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/input-password-component-spec.md",
+    "sha256": "ab986b2ff19a4741b96da85c24d41efa83aec86c33842d65d36223c739b48632"
+  },
+  "inputs": [
+    {
+      "path": "src/components/input-email/InputEmail.tsx",
+      "sha256": "aa5d3e2befe009245cf5147b649c307e41f7e0171dfd220b94c8d29c3b019e35"
+    },
+    {
+      "path": "src/components/input-text/InputText.tsx",
+      "sha256": "93e21b4d1a6e7fd9c6e7777126fd758a9baadc16342c52695d03e2847480cc5b"
+    },
+    {
+      "path": "src/components/label/Label.tsx",
+      "sha256": "41c05f45cd52c5e8ce5e0c53277f5eea7f2b387425e011f1b9c7ed09ef8ecffa"
+    },
+    {
+      "path": "src/components/inline-message/InlineMessage.tsx",
+      "sha256": "414e40afff4cf33a775bef302e8613e3832da3bc336150af0238feb8ad217f6f"
+    }
+  ],
+  "decisions": [],
+  "questions": [
+    {
+      "text": "Owner deferred a minor Figma caveat to a later discussion; implement the currently accepted master.",
+      "blocking": false
+    }
+  ],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Implement and verify InputPassword"
+}

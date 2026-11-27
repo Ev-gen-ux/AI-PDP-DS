@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-26",
+  "revision": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "scope": "Read-only SelectButton Figma / Spec / source comparison",
+  "figma": {
+    "fileKey": "i7T3ru2M0SyXgJeTda8f43",
+    "nodeId": "3274:14562",
+    "sessionId": "968a552a-4e45-44bd-aed8-0907f5173820",
+    "methods": [
+      "get_design_context including screenshot",
+      "get_metadata"
+    ],
+    "fileVersion": "Not returned by these calls; observation date only",
+    "variants": {
+      "small enabled": "3274:14563, 123x32",
+      "extra small enabled": "3274:14567, 111x24",
+      "states": [
+        "enabled",
+        "hover",
+        "active",
+        "focus",
+        "disabled"
+      ]
+    }
+  },
+  "sources": [
+    "docs/select-button-component-spec.md",
+    "src/components/select-button/SelectButton.tsx",
+    "src/components/select-button/SelectButton.stories.tsx",
+    "src/components/select-button/SelectButton.test.tsx",
+    "src/components/select-button/SelectButton.figma.tsx",
+    "tokens/semantic/spacing.json",
+    "tokens/semantic/colors.light-theme.json",
+    "tokens/semantic/typography.xl.json"
+  ],
+  "matched": [
+    "Two named sizes, five states, radius 8 and caret 16",
+    "Padding 8/12 or 4/8, gap 8 or 4; XL text 12/16",
+    "Light enabled/hover/active fill and enabled label roles; focus color #9dc3ea"
+  ],
+  "findings": [
+    {
+      "id": "S1",
+      "kind": "source-level geometry discrepancy; browser measurement pending",
+      "detail": "Figma small bounds are 32px high. Code has no explicit small height and adds 1px border on both sides to line/caret 16px + vertical padding 8px each. Expected CSS outer height from these rules is 34px. Do not describe as measured browser result. Extra-small has explicit border-box height 24; it is not claimed to have the same height defect.",
+      "next": "Measure current small trigger in browser and then repair only agreed geometry; preserve tokens and API."
+    },
+    {
+      "id": "S2",
+      "kind": "confirmed contract coverage gap",
+      "detail": "Current Figma context exposes optional iconBefore and VALiconBefore instance swap; SelectButtonProps and local Spec have no corresponding leading icon axis. This is not permission to extend public API.",
+      "next": "Keep separate from small geometry repair; clarify whether this variant is required for the current component."
+    },
+    {
+      "id": "S3",
+      "kind": "confirmed evidence limitation",
+      "detail": "Local .figma.tsx is metadata scaffold, not active Code Connect template; historical Spec state-parity checkmark is not proof of current master parity.",
+      "next": "Do not claim publication or complete visual acceptance."
+    }
+  ],
+  "command": "npm run --silent quality:report -- --component SelectButton --change visual --plan",
+  "checksRun": "Read-only token resolution and plan only; no test, build, browser comparison or code edits.",
+  "limits": [
+    "Dark master not inspected",
+    "No browser geometry measurement or screenshot comparison of implementation",
+    "No icon SVG equivalence or complete accessibility certification",
+    "No Figma/code publication"
+  ],
+  "nextPendingAgreement": "Choose small-size geometry as a narrow pilot; first measure current browser height, then implement within agreed scope. Leading icon remains separate."
+}

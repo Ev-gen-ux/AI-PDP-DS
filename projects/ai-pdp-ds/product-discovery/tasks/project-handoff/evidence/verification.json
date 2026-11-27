@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "method": "Portable checkout wording, local documentation links and formatting; no component runtime test rerun.",
+  "projectLinks": {
+    "passed": true,
+    "checks": [
+      {
+        "code": "project",
+        "passed": true
+      },
+      {
+        "code": "local-tooling",
+        "passed": true
+      },
+      {
+        "code": "documentation-links",
+        "passed": true
+      }
+    ],
+    "findings": [],
+    "scope": "project-tooling-and-document-links",
+    "limitations": [
+      "No source build, dependency installation, browser review or handoff proof",
+      "History revisions and task contents are not automatically validated"
+    ]
+  },
+  "format": "Checking formatting...\nAll matched files use Prettier code style!\n",
+  "previousBaselineStale": [
+    "README.md"
+  ]
+}

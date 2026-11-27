@@ -1,0 +1,12 @@
+{
+  "task": "standalone-library-baseline",
+  "status": "accepted",
+  "acceptance": {
+    "by": "owner",
+    "note": "Owner accepted the delivered relocation and requested final cleanup/rename: Принято, давай дальше.",
+    "fingerprint": "9295d52419439fcb80413d1929c2375904c1de595756b662b6132571ac889ba9"
+  },
+  "fingerprint": "9295d52419439fcb80413d1929c2375904c1de595756b662b6132571ac889ba9",
+  "sourceSha256": "6a33aab27a23be0d95afbbc6a2c625224a20c3c35114370a53bf77abcbfca7cd",
+  "note": "Historical accepted implementation baseline; a new documentation task changes README only. No old checks or owner receipts are rebound."
+}

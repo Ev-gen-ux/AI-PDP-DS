@@ -1,0 +1,200 @@
+{
+  "passed": true,
+  "checkedOn": "2026-11-27",
+  "node": "v22.23.5",
+  "isolatedCopy": "/private/tmp/ai-pdp-ds-handoff-1qEfJZ/ai-pdp-ds",
+  "noParentGit": true,
+  "noCredentialsFile": true,
+  "dependenciesInstalledLocally": true,
+  "checks": [
+    {
+      "name": "install",
+      "args": [
+        "ci",
+        "--offline",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "exitCode": 0,
+      "seconds": 7.4,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "env-check",
+      "args": [
+        "run",
+        "env:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.2,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "tokens-build",
+      "args": [
+        "run",
+        "tokens:build"
+      ],
+      "exitCode": 0,
+      "seconds": 0.4,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "typecheck",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "seconds": 8.2,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "lint",
+      "args": [
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "seconds": 5,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "format-check",
+      "args": [
+        "run",
+        "format:check"
+      ],
+      "exitCode": 0,
+      "seconds": 2.4,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "test-coverage",
+      "args": [
+        "run",
+        "test:coverage"
+      ],
+      "exitCode": 0,
+      "seconds": 16.7,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "test-tooling",
+      "args": [
+        "run",
+        "test:tooling"
+      ],
+      "exitCode": 0,
+      "seconds": 1,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "build",
+      "args": [
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 16.4,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "package-check",
+      "args": [
+        "run",
+        "package:check"
+      ],
+      "exitCode": 1,
+      "seconds": 1.1,
+      "finalResult": "pass",
+      "retry": "package-retry.json",
+      "initialPassed": false
+    },
+    {
+      "name": "storybook-build",
+      "args": [
+        "run",
+        "storybook:build"
+      ],
+      "exitCode": 0,
+      "seconds": 27.1,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    },
+    {
+      "name": "figma-check",
+      "args": [
+        "run",
+        "figma:check"
+      ],
+      "exitCode": 0,
+      "seconds": 1.8,
+      "finalResult": "pass",
+      "retry": null,
+      "initialPassed": true
+    }
+  ],
+  "packageCheckRetry": {
+    "passed": true,
+    "exitCode": 0,
+    "directory": "/private/tmp/ai-pdp-ds-handoff-1qEfJZ/ai-pdp-ds",
+    "reason": "Original npm pack failed with sandbox EPERM in global npm cache; this is an explicit escalated retry."
+  },
+  "afterHookCorrection": {
+    "passed": true,
+    "results": [
+      {
+        "name": "lint",
+        "passed": true,
+        "exitCode": 0
+      },
+      {
+        "name": "format:check",
+        "passed": true,
+        "exitCode": 0
+      },
+      {
+        "name": "test:tooling",
+        "passed": true,
+        "exitCode": 0
+      }
+    ]
+  },
+  "componentTests": 181,
+  "toolingTests": 28,
+  "preservation": {
+    "protectedFiles": 334,
+    "changed": [],
+    "publicMetadataChanged": [],
+    "lockfileUnchanged": true,
+    "historicalFiles": 127,
+    "historyChanged": [],
+    "gitHistoryPreserved": true,
+    "parentHooksPathPreserved": true
+  },
+  "limitations": [
+    "No browser visual/geometry/manual accessibility review; prior InputPassword owner waiver remains in force",
+    "No native client skill/role discovery, rename, external publication or remote CI execution"
+  ],
+  "provenance": "Original isolated-result.json retains the initial npm cache failure; package-retry.json and the final package-check-retry.log record the successful explicitly escalated retry after fixing prepare stdout."
+}

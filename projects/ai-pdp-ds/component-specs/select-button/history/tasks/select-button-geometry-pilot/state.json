@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "id": "select-button-geometry-pilot",
+  "revision": 8,
+  "updatedAt": "2026-11-26T14:02:18.413Z",
+  "title": "SelectButton: принятый пилот геометрии по архитектуре Figma",
+  "status": "accepted",
+  "route": {
+    "action": "repair",
+    "object": "component",
+    "platform": "web-react",
+    "delivery": [
+      "code",
+      "report"
+    ]
+  },
+  "scope": {
+    "summary": "Master 3274:14562: small HUG 32px, XS FIXED 24px; исключить INSIDE stroke из layout.",
+    "preserve": [
+      "Публичный API, токены, padding/gap/radius и typography",
+      "Optional iconBefore вне scope",
+      "Никаких commit/push/PR/публикации без отдельного поручения"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/select-button-component-spec.md",
+    "sha256": "8d4ead0e43884e54b409a3adac5bb2a5bcd145d66e05c77150d01aa0901ebe2b"
+  },
+  "inputs": [
+    {
+      "path": "src/components/select-button/SelectButton.tsx",
+      "sha256": "b7d94466d91475d61e09c0bcdc5a8025dac39d0a0867074f16bda53d62d61a0e"
+    },
+    {
+      "path": "src/components/select-button/SelectButton.stories.tsx",
+      "sha256": "269002196288b0b9935dd03591f741ddc01206cb0d4b60b5aa91920b788521a9"
+    },
+    {
+      "path": ".changeset/fix-select-button-layout.md",
+      "sha256": "2fe6ea8990e3318bd7ec297e7b21d3d4e8c85eefc73e8bd226af4628b0433c8c"
+    },
+    {
+      "path": "tokens/semantic/spacing.json",
+      "sha256": "4e5010b70eac7f317a0d99028ccd2fc7a48e009c240c42843742417f528cda54"
+    },
+    {
+      "path": "tokens/semantic/borderRadius.json",
+      "sha256": "120cf206864ed1e140affcba78369fbeaa6ea46eb5aed0a439f0ab9ca41590bf"
+    },
+    {
+      "path": "tokens/semantic/typography.xl.json",
+      "sha256": "51c73f2f33a7db38b6a768ca64d33e12fde1379d00fe577675df2750fb6c4f09"
+    },
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "e6dab711bfdbe39c411fc74812b4415174496bfd7e071407d4c5c33a8524e50a"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "d35c9d64347b5297474d0c029b4f45d478b4f5ea0d8cb13e639c7183bf4f16cd"
+    },
+    {
+      "path": "tokens/primitives/palette.json",
+      "sha256": "ed8ca25e8540d7db9de5bb8b17f3649840a688b17405b635c3931e3e50026484"
+    },
+    {
+      "path": "tokens/primitives/spacers.json",
+      "sha256": "2ba676042d35410376ed49bea22709528b9600c87342463a2ba3e4a90bdc5542"
+    },
+    {
+      "path": "tokens/primitives/typographyBase.json",
+      "sha256": "bc0acbf4a46b462ed290c37a87a1d8e08706586d489edf70fda9bc31190fe32d"
+    },
+    {
+      "path": "src/components/dropdown-list/DropdownList.tsx",
+      "sha256": "90e64eb1357c05dc2d8606bf80cc01aab68921cb244bf471e2ea66eedeb86282"
+    },
+    {
+      "path": "src/components/dropdown-item/DropdownItem.tsx",
+      "sha256": "7507e3688815546393b1deb38cf1ebe3d7983759e9b3ff6dcdb87fe4f13b6579"
+    },
+    {
+      "path": "src/components/icon/Icon.tsx",
+      "sha256": "d0605c920e80bda6fbfbeba4b7bb1fc5a560c054e5a2a0fe0c2caad86d4aeaff"
+    },
+    {
+      "path": "src/components/icon/index.ts",
+      "sha256": "c11b27703fa2dc5602e50d3cb0de0a1f5decb409942928dc545b69672239dcc8"
+    },
+    {
+      "path": "tokens/semantic/effects.json",
+      "sha256": "27f56a2d4c4ccc2eb98414d7c930294919dfc29a1fec9c16eaeb6f93d8af095a"
+    },
+    {
+      "path": "tokens/semantic/typography.md.json",
+      "sha256": "83d6489f32c2fd69cdabf7be2626f79d28548e7daa94a3290450948e8e3a59d1"
+    },
+    {
+      "path": "tokens/semantic/typography.xs.json",
+      "sha256": "bd41d1536d4a3c305030d75420eb4239599650fb46c99227570ec563f9bf2c72"
+    },
+    {
+      "path": "src/theme/fonts.css",
+      "sha256": "4d1f540d6adf8d377f128b804f7746991840ee554044c518bce5eaa160ef2ad8"
+    },
+    {
+      "path": "src/theme/tokens.ts",
+      "sha256": "1be2fdc476eb1f07be9b233e2d62d9ebfebb6852772ba3f9ae570a6d6946a84a"
+    },
+    {
+      "path": "src/theme/variables.light.css",
+      "sha256": "c0df8b1dd0b62ec33b052964f7d33f4723125f9d491bf2e38ce644cddb628647"
+    },
+    {
+      "path": "src/theme/variables.dark.css",
+      "sha256": "427cd916945bf024708e1a79f92d0bade8d31cba87c8897dbec686ab56d9bba7"
+    }
+  ],
+  "decisions": [
+    "Ретроспективная фиксация завершённого пилота из процесс-лога/evidence. Время создания этой state/history не является реальной хронологией реализации.",
+    "Архитектура и результаты хранятся в едином Spec; локальное evidence: .local/select-button-repair-evidence.json.",
+    "Владелец согласовал пилот сообщением «Согласовано, что дальше.»; хеши принятых файлов совпадают с сохранённым evidence."
+  ],
+  "questions": [
+    {
+      "text": "Нужна ли optional leading icon и дальнейшие этапы среды? Это отдельные задачи вне принятого пилота.",
+      "blocking": false
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "automated",
+      "method": "Current Node22 component logic quality + 5 dropdown-related tests; applicability audit: old color roles unchanged, 42 relevant CSS roles and 20 saved browser rows compatible, geometry/font/layout sources unchanged. Light CSS byte-diff limitation documented.",
+      "result": "pass",
+      "fingerprint": "6803090f6554a1d02f91ac24b3d9fe54dbdd40928b6a0ba989c4941f53573fd4",
+      "artifacts": [
+        {
+          "path": ".local/select-button-revalidation-result.json",
+          "sha256": "50112e4c7e8f399061459c9a25e7da35f342f6efd311d796809bdebc7f737cac"
+        },
+        {
+          "path": ".local/select-button-color-diff.json",
+          "sha256": "f31be5a48f080f7f62730651a70132784055989e3c9475056fc8462c7e21918a"
+        },
+        {
+          "path": ".local/quality/components/select-button/logic/report.json",
+          "sha256": "63505a24b56b37dad55cf7533721122c75faa5dab39ba070a223702e8254b7d1"
+        },
+        {
+          "path": ".local/select-button-revalidation-related.log",
+          "sha256": "ee6e718db2ad577493d5a7a4c13800855d850949d6201bf8567a48dfb03d9f2e"
+        }
+      ]
+    },
+    {
+      "kind": "manual",
+      "method": "Historical Figma/Chrome narrow pilot evidence reused after current applicability audit; unchanged component/relevant values. No new browser/Figma run. Historical fingerprint 5e377d2d49d4fc2e61e79eea354570feb5a5678e0abd7e40b0b597037ab72f55",
+      "result": "pass",
+      "fingerprint": "6803090f6554a1d02f91ac24b3d9fe54dbdd40928b6a0ba989c4941f53573fd4",
+      "artifacts": [
+        {
+          "path": ".local/select-button-figma-geometry.json",
+          "sha256": "f87ecb46ccba756fba3910fc2386b8a73a4eb486eb05be13fc1899a956b5d5ca"
+        },
+        {
+          "path": ".local/select-button-before-geometry.json",
+          "sha256": "6a08f0bb25c1dadf4c94ad28a046ff9dfe23458aaaac5a560df9e0265691630a"
+        },
+        {
+          "path": ".local/select-button-after-geometry.json",
+          "sha256": "cb33e28601f588f4ce6460da6aa7841f32f4be3493a2a562dfbe0123090041a0"
+        },
+        {
+          "path": ".local/select-button-browser-interaction.json",
+          "sha256": "bd305f6472c831e4446cf6a65b34321d210582c0a6567e1953258ffe02beb9ea"
+        },
+        {
+          "path": ".local/select-button-repair-evidence.json",
+          "sha256": "d4c34f106717a56d80fe6dea947e33e8f0c501d4107400940a3c743d6a2d3935"
+        },
+        {
+          "path": ".local/select-button-owner-acceptance.json",
+          "sha256": "a857703f5e9d151d62c7f0700dd3574134c1aef5dffef6a4691d516bd6182f8f"
+        }
+      ]
+    }
+  ],
+  "acceptance": {
+    "by": "Владелец проекта — сообщение в текущем чате",
+    "note": "Carry forward original explicit owner acceptance for unchanged narrow geometry pilot after current source/value equivalence audit. This is not new owner approval, new browser measurement, broad visual/a11y certification or environment acceptance. Original record preserved in history and revalidation-original-state.json.",
+    "fingerprint": "6803090f6554a1d02f91ac24b3d9fe54dbdd40928b6a0ba989c4941f53573fd4"
+  },
+  "blockedReason": null,
+  "nextStep": "Narrow SelectButton pilot remains accepted and current. Icon/chart development excluded until a new explicit owner instruction."
+}

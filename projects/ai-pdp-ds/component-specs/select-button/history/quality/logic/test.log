@@ -1,0 +1,12 @@
+
+ RUN  v2.1.9 /Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds
+
+ ✓ src/components/select-button/SelectButton.test.tsx (2 tests) 102ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  16:58:12
+   Duration  2.89s (transform 81ms, setup 84ms, collect 2.20s, tests 102ms, environment 327ms, prepare 42ms)
+
+
+

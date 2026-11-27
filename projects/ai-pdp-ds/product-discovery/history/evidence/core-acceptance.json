@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-26",
+  "by": "owner",
+  "decision": "Принято давай",
+  "context": "Owner accepted proposal to take first core version for Codex + React, exclude Claude/Cursor pending separate testing, and record final acceptance.",
+  "status": "accepted within explicit local scope",
+  "profile": {
+    "agent": "Codex",
+    "platform": "current React web library",
+    "developmentNode": "22",
+    "verifiedNode": "22.23.5"
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "manifest": {
+    "path": ".local/core-acceptance-manifest.json",
+    "sha256": "32ec98c090c1bcc57dadf9b87dc3eef7a85b1770a5f8768aa21ffb1e5a25f747",
+    "fileCount": 469
+  },
+  "acceptedScope": [
+    "Local DS environment/contract/skills/workflows/task-state",
+    "Accepted SelectButton narrow pilot with current applicability audit",
+    "Accepted InputPassword including native Label/InlineMessage composition and body token semantics",
+    "Accepted ambiguous-request clarification/cancellation scenario",
+    "Local audits and appropriate existing checks"
+  ],
+  "excluded": [
+    "Claude/Cursor supported-model certification",
+    "Icon/chart development until new explicit owner instruction",
+    "Combobox implementation cancelled",
+    "External publication/release/new commit/push/PR"
+  ],
+  "explicitOwnerLimits": {
+    "InputPasswordBrowserVerification": "Owner declined; not-run, not PASS, not acceptance blocker",
+    "fullFreshCheckoutAndFinalCI": "Not run for final dirty local version; no release certification",
+    "allModelScenarios": "Not claimed; fresh-context/external-edit end-to-end coverage remains limited"
+  },
+  "documentationChecks": {
+    "prettier": "pass",
+    "localFileLinks": "pass",
+    "envCheck": "pass",
+    "gitDiffCheck": "pass",
+    "preExistingCodeAndTokenHashesUnchanged": true
+  },
+  "evidence": [
+    {
+      "path": ".local/select-button-revalidation-result.json",
+      "sha256": "50112e4c7e8f399061459c9a25e7da35f342f6efd311d796809bdebc7f737cac"
+    },
+    {
+      "path": ".local/input-password-composition-result.json",
+      "sha256": "135810e586a5c301ef16620992f6cf0fb858f8c256c7c755f8cb811cb44d38f5"
+    },
+    {
+      "path": ".local/input-password-final-owner-acceptance.json",
+      "sha256": "86e9e2ddd04c38f5862963755e1ca5700d78f7c1cb8060339286f8745a6c477f"
+    },
+    {
+      "path": ".local/ambiguous-request-combobox-acceptance.json",
+      "sha256": "54360ed49455508e253d0417f444bbb970558eb113a1058b8758e76c15887011"
+    },
+    {
+      "path": ".local/core-scenarios-review-2026-11-26.json",
+      "sha256": "10daa0c92e6da7cdac95b5b22203778342def2d1ecb724229934700b7c08035d"
+    },
+    {
+      "path": ".local/node22-result.json",
+      "sha256": "daf32c1528781bf81dfbdf3992bc32857a7c2817f1078cb5be671342348d4c4c"
+    },
+    {
+      "path": ".local/core-acceptance-env-check.log",
+      "sha256": "c63a9720521dfcabf990e1c5aa515066e5b027239cbf8ce19687a641e5e0f7bd"
+    },
+    {
+      "path": ".local/core-acceptance-doc-format.log",
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    {
+      "path": ".local/core-acceptance-doc-links.json",
+      "sha256": "048c8dc0fa6bb38120d0637b24675a0d72bbda1d14575f8286adf7d17385c037"
+    },
+    {
+      "path": ".local/core-acceptance-manifest.json",
+      "sha256": "32ec98c090c1bcc57dadf9b87dc3eef7a85b1770a5f8768aa21ffb1e5a25f747"
+    }
+  ]
+}

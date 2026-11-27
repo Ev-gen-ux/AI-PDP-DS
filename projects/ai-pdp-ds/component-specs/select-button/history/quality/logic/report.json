@@ -1,0 +1,325 @@
+{
+  "mode": "component",
+  "component": "SelectButton",
+  "change": "logic",
+  "resources": {
+    "source": "src/components/select-button/SelectButton.tsx",
+    "spec": "docs/select-button-component-spec.md",
+    "stories": [
+      "src/components/select-button/SelectButton.stories.tsx"
+    ],
+    "tests": [
+      "src/components/select-button/SelectButton.test.tsx"
+    ],
+    "mappings": [
+      "src/components/select-button/SelectButton.figma.tsx"
+    ],
+    "exports": [
+      "src/components/select-button/index.ts",
+      "src/index.ts"
+    ]
+  },
+  "checks": [
+    {
+      "name": "format",
+      "command": "/Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds/.local/toolchains/node-v22.23.5-darwin-arm64/bin/node",
+      "args": [
+        "node_modules/prettier/bin/prettier.cjs",
+        "--check",
+        "src/components/select-button/SelectButton.tsx",
+        "src/components/select-button/SelectButton.stories.tsx",
+        "src/components/select-button/SelectButton.test.tsx",
+        "src/components/select-button/index.ts",
+        "docs/select-button-component-spec.md"
+      ],
+      "reason": "Component implementation, examples, tests and Spec"
+    },
+    {
+      "name": "typecheck",
+      "command": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "reason": "Project-wide types: the current typecheck is not file-scoped"
+    },
+    {
+      "name": "lint",
+      "command": "/Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds/.local/toolchains/node-v22.23.5-darwin-arm64/bin/node",
+      "args": [
+        "node_modules/eslint/bin/eslint.js",
+        "src/components/select-button/SelectButton.tsx",
+        "src/components/select-button/SelectButton.stories.tsx",
+        "src/components/select-button/SelectButton.test.tsx",
+        "src/components/select-button/index.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "reason": "Lint the discovered component files without autofix"
+    },
+    {
+      "name": "test",
+      "command": "/Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds/.local/toolchains/node-v22.23.5-darwin-arm64/bin/node",
+      "args": [
+        "scripts/component-test.js",
+        "src/components/select-button/SelectButton.test.tsx"
+      ],
+      "reason": "Run only the explicitly discovered existing unit files; no coverage"
+    },
+    {
+      "name": "links",
+      "command": null,
+      "args": [],
+      "reason": "Check local file links in the canonical Spec; anchors and remote URLs are not verified"
+    }
+  ],
+  "manual": [
+    {
+      "name": "Source and scope review",
+      "status": "not-run",
+      "reason": "Compare Spec/API/stories and the actual diff; declared change type does not detect dependencies automatically"
+    },
+    {
+      "name": "Behavior and accessibility",
+      "status": "not-run",
+      "reason": "Review affected scenarios from Spec; unit PASS is not browser or accessibility acceptance"
+    }
+  ],
+  "notRun": [
+    "Full coverage/tooling/build/package/Storybook/Code Connect pipeline and publication"
+  ],
+  "limitations": [
+    "Explicit scope only; no automatic import/token impact graph",
+    "Tests in shared folders may exercise more than the named component; no new tests are created",
+    "Shared tokens, dependencies, exports or build changes require broader checks",
+    "Technical checks are not component acceptance or release readiness"
+  ],
+  "revision": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "workingTreeDirty": true,
+  "generatedAt": "2026-11-26T13:58:15.460Z",
+  "node": "v22.23.5",
+  "inputs": {
+    "revision": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+    "workingTreeDirty": true,
+    "trackedDiffSha256": "32d8a5406e9f0adb0782782cd9ef1b1deb20c209151120336feb3673be7a3a65",
+    "files": [
+      {
+        "file": "docs/select-button-component-spec.md",
+        "sha256": "8d4ead0e43884e54b409a3adac5bb2a5bcd145d66e05c77150d01aa0901ebe2b"
+      },
+      {
+        "file": "eslint.config.js",
+        "sha256": "d264928e81175cf3830d60e2afbcbbd924407e3b925422bcb6ed05133fdd65b0"
+      },
+      {
+        "file": "package-lock.json",
+        "sha256": "6e4e1dbf1e881b59ddf81b5d3548dc3dd7c2bb481c62fa33649899322b85cfcf"
+      },
+      {
+        "file": "package.json",
+        "sha256": "7989032ee2ee2da208548e3f1ca1e0173f22e821f2cdc0d1e0e0fd4a33e7059a"
+      },
+      {
+        "file": "scripts/component-quality.js",
+        "sha256": "9aaaceada928cb5797d3642813ddd16359411ed1492849969b02dfb777b86493"
+      },
+      {
+        "file": "scripts/component-test.js",
+        "sha256": "a2133e3effc9f52eb2ac510fff9ba0d5e7328639cbca3f140b5a91cdd5557f1b"
+      },
+      {
+        "file": "scripts/quality-report.js",
+        "sha256": "3fae78a8691d19aabc3433ffe55a6f0ee84a33892d4f28cf6de3594f3b925767"
+      },
+      {
+        "file": "src/components/select-button/SelectButton.figma.tsx",
+        "sha256": "d74357bdc9103bf5c67ef7a0c18ccfe272fd40eff883c303dd2819dbb36bf725"
+      },
+      {
+        "file": "src/components/select-button/SelectButton.stories.tsx",
+        "sha256": "269002196288b0b9935dd03591f741ddc01206cb0d4b60b5aa91920b788521a9"
+      },
+      {
+        "file": "src/components/select-button/SelectButton.test.tsx",
+        "sha256": "d31416a189ff3cce45d65619bdb76c4c95dce6cec25f17a4e7cd90a92e00ea3d"
+      },
+      {
+        "file": "src/components/select-button/SelectButton.tsx",
+        "sha256": "b7d94466d91475d61e09c0bcdc5a8025dac39d0a0867074f16bda53d62d61a0e"
+      },
+      {
+        "file": "src/components/select-button/index.ts",
+        "sha256": "e430ce5d7a9d0bef55ab0a527e83f92dd6f95a27ccaec605f845eb4e02e8a00e"
+      },
+      {
+        "file": "src/index.ts",
+        "sha256": "2fc2f346092911fdaeb8fe84c888ae1ed9bcf58be3ac2401a8ab2dbb57220359"
+      },
+      {
+        "file": "src/theme/fonts.css",
+        "sha256": "4d1f540d6adf8d377f128b804f7746991840ee554044c518bce5eaa160ef2ad8"
+      },
+      {
+        "file": "src/theme/index.ts",
+        "sha256": "6058dbc413e83cb11b368b4ef10591f077621ef5ab7dae7d644e3effed568d00"
+      },
+      {
+        "file": "src/theme/styled.d.ts",
+        "sha256": "7487b126b32135dfc9528534a8d24933507471d413c307bc201e1ffa86504143"
+      },
+      {
+        "file": "src/theme/styles.ts",
+        "sha256": "fd88b19fb2e9b29a366cce23cc80fbb40660ae5d887156ad0f5f261d074f8ff4"
+      },
+      {
+        "file": "src/theme/tokens.ts",
+        "sha256": "1be2fdc476eb1f07be9b233e2d62d9ebfebb6852772ba3f9ae570a6d6946a84a"
+      },
+      {
+        "file": "src/theme/variables.dark.css",
+        "sha256": "427cd916945bf024708e1a79f92d0bade8d31cba87c8897dbec686ab56d9bba7"
+      },
+      {
+        "file": "src/theme/variables.light.css",
+        "sha256": "c0df8b1dd0b62ec33b052964f7d33f4723125f9d491bf2e38ce644cddb628647"
+      },
+      {
+        "file": "tokens/.DS_Store",
+        "sha256": "9def692b5f9585fb4821b4024913264ed2060f9dca9ce21f13a0f55a00493391"
+      },
+      {
+        "file": "tokens/primitives/palette.json",
+        "sha256": "ed8ca25e8540d7db9de5bb8b17f3649840a688b17405b635c3931e3e50026484"
+      },
+      {
+        "file": "tokens/primitives/spacers.json",
+        "sha256": "2ba676042d35410376ed49bea22709528b9600c87342463a2ba3e4a90bdc5542"
+      },
+      {
+        "file": "tokens/primitives/typographyBase.json",
+        "sha256": "bc0acbf4a46b462ed290c37a87a1d8e08706586d489edf70fda9bc31190fe32d"
+      },
+      {
+        "file": "tokens/semantic/borderRadius.json",
+        "sha256": "120cf206864ed1e140affcba78369fbeaa6ea46eb5aed0a439f0ab9ca41590bf"
+      },
+      {
+        "file": "tokens/semantic/colors.dark-theme.json",
+        "sha256": "d35c9d64347b5297474d0c029b4f45d478b4f5ea0d8cb13e639c7183bf4f16cd"
+      },
+      {
+        "file": "tokens/semantic/colors.light-theme.json",
+        "sha256": "e6dab711bfdbe39c411fc74812b4415174496bfd7e071407d4c5c33a8524e50a"
+      },
+      {
+        "file": "tokens/semantic/effects.json",
+        "sha256": "27f56a2d4c4ccc2eb98414d7c930294919dfc29a1fec9c16eaeb6f93d8af095a"
+      },
+      {
+        "file": "tokens/semantic/spacing.json",
+        "sha256": "4e5010b70eac7f317a0d99028ccd2fc7a48e009c240c42843742417f528cda54"
+      },
+      {
+        "file": "tokens/semantic/typography.md.json",
+        "sha256": "83d6489f32c2fd69cdabf7be2626f79d28548e7daa94a3290450948e8e3a59d1"
+      },
+      {
+        "file": "tokens/semantic/typography.xl.json",
+        "sha256": "51c73f2f33a7db38b6a768ca64d33e12fde1379d00fe577675df2750fb6c4f09"
+      },
+      {
+        "file": "tokens/semantic/typography.xs.json",
+        "sha256": "bd41d1536d4a3c305030d75420eb4239599650fb46c99227570ec563f9bf2c72"
+      },
+      {
+        "file": "tsconfig.json",
+        "sha256": "3d9b604257054c42218b5a54242c0361a02b457c1f5af238e9f575584967b3eb"
+      },
+      {
+        "file": "vitest.config.ts",
+        "sha256": "36ac5b10f98ce8ff3e6618586289d8d6f9734a29c0fc4b31c2bdb29cf1d0df7b"
+      }
+    ],
+    "fingerprint": "3b298e0b2c6ea77d6b7564920c8330c829edaf45396d67bbbc36a8f68f192caf",
+    "limitations": [
+      "Fingerprint covers discovered resources, token/theme sources and listed configs; it is not a full dependency/environment hash"
+    ]
+  },
+  "inputsUnchanged": true,
+  "passed": true,
+  "acceptance": "not-reviewed",
+  "results": [
+    {
+      "name": "format",
+      "command": "/Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds/.local/toolchains/node-v22.23.5-darwin-arm64/bin/node",
+      "args": [
+        "node_modules/prettier/bin/prettier.cjs",
+        "--check",
+        "src/components/select-button/SelectButton.tsx",
+        "src/components/select-button/SelectButton.stories.tsx",
+        "src/components/select-button/SelectButton.test.tsx",
+        "src/components/select-button/index.ts",
+        "docs/select-button-component-spec.md"
+      ],
+      "reason": "Component implementation, examples, tests and Spec",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0.2,
+      "output": "Checking formatting...\nAll matched files use Prettier code style!\n\n\n"
+    },
+    {
+      "name": "typecheck",
+      "command": "npm",
+      "args": [
+        "run",
+        "typecheck"
+      ],
+      "reason": "Project-wide types: the current typecheck is not file-scoped",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 8.5,
+      "output": "\n> @evgeni_design_84/ai-pdp-ds@1.0.1 typecheck\n> tsc -p tsconfig.json --noEmit\n\n\n\n"
+    },
+    {
+      "name": "lint",
+      "command": "/Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds/.local/toolchains/node-v22.23.5-darwin-arm64/bin/node",
+      "args": [
+        "node_modules/eslint/bin/eslint.js",
+        "src/components/select-button/SelectButton.tsx",
+        "src/components/select-button/SelectButton.stories.tsx",
+        "src/components/select-button/SelectButton.test.tsx",
+        "src/components/select-button/index.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "reason": "Lint the discovered component files without autofix",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 2.9,
+      "output": "\n\n"
+    },
+    {
+      "name": "test",
+      "command": "/Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds/.local/toolchains/node-v22.23.5-darwin-arm64/bin/node",
+      "args": [
+        "scripts/component-test.js",
+        "src/components/select-button/SelectButton.test.tsx"
+      ],
+      "reason": "Run only the explicitly discovered existing unit files; no coverage",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 3.2,
+      "output": "\n RUN  v2.1.9 /Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds\n\n ✓ src/components/select-button/SelectButton.test.tsx (2 tests) 102ms\n\n Test Files  1 passed (1)\n      Tests  2 passed (2)\n   Start at  16:58:12\n   Duration  2.89s (transform 81ms, setup 84ms, collect 2.20s, tests 102ms, environment 327ms, prepare 42ms)\n\n\n\n"
+    },
+    {
+      "name": "links",
+      "command": null,
+      "args": [],
+      "reason": "Check local file links in the canonical Spec; anchors and remote URLs are not verified",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 0,
+      "output": "Local file links passed; anchors and external URLs not checked\n\n"
+    }
+  ]
+}

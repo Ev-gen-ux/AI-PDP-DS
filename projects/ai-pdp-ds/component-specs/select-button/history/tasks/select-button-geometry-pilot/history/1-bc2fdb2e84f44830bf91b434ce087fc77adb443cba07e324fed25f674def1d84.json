@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "select-button-geometry-pilot",
+  "revision": 1,
+  "updatedAt": "2026-11-26T12:16:58.736Z",
+  "title": "SelectButton: принятый пилот геометрии по архитектуре Figma",
+  "status": "discovery",
+  "route": {
+    "action": "repair",
+    "object": "component",
+    "platform": "web-react",
+    "delivery": [
+      "code",
+      "report"
+    ]
+  },
+  "scope": {
+    "summary": "Master 3274:14562: small HUG 32px, XS FIXED 24px; исключить INSIDE stroke из layout.",
+    "preserve": [
+      "Публичный API, токены, padding/gap/radius и typography",
+      "Optional iconBefore вне scope",
+      "Никаких commit/push/PR/публикации без отдельного поручения"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/select-button-component-spec.md",
+    "sha256": "8d4ead0e43884e54b409a3adac5bb2a5bcd145d66e05c77150d01aa0901ebe2b"
+  },
+  "inputs": [
+    {
+      "path": "src/components/select-button/SelectButton.tsx",
+      "sha256": "b7d94466d91475d61e09c0bcdc5a8025dac39d0a0867074f16bda53d62d61a0e"
+    },
+    {
+      "path": "src/components/select-button/SelectButton.stories.tsx",
+      "sha256": "269002196288b0b9935dd03591f741ddc01206cb0d4b60b5aa91920b788521a9"
+    },
+    {
+      "path": ".changeset/fix-select-button-layout.md",
+      "sha256": "2fe6ea8990e3318bd7ec297e7b21d3d4e8c85eefc73e8bd226af4628b0433c8c"
+    },
+    {
+      "path": "tokens/semantic/spacing.json",
+      "sha256": "4e5010b70eac7f317a0d99028ccd2fc7a48e009c240c42843742417f528cda54"
+    },
+    {
+      "path": "tokens/semantic/borderRadius.json",
+      "sha256": "120cf206864ed1e140affcba78369fbeaa6ea46eb5aed0a439f0ab9ca41590bf"
+    },
+    {
+      "path": "tokens/semantic/typography.xl.json",
+      "sha256": "51c73f2f33a7db38b6a768ca64d33e12fde1379d00fe577675df2750fb6c4f09"
+    },
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "406a8ab692b0c19a78eaec8cc23b26fcbd7abbf73d65aa07ca408fff306e8b31"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "9642b7a8016102c479b9caa16e68beb681106333a8cd92218ef66656a6727181"
+    },
+    {
+      "path": "tokens/primitives/palette.json",
+      "sha256": "ed8ca25e8540d7db9de5bb8b17f3649840a688b17405b635c3931e3e50026484"
+    },
+    {
+      "path": "tokens/primitives/spacers.json",
+      "sha256": "2ba676042d35410376ed49bea22709528b9600c87342463a2ba3e4a90bdc5542"
+    },
+    {
+      "path": "tokens/primitives/typographyBase.json",
+      "sha256": "bc0acbf4a46b462ed290c37a87a1d8e08706586d489edf70fda9bc31190fe32d"
+    }
+  ],
+  "decisions": [
+    "Ретроспективная фиксация завершённого пилота из процесс-лога/evidence. Время создания этой state/history не является реальной хронологией реализации.",
+    "Архитектура и результаты хранятся в едином Spec; локальное evidence: .local/select-button-repair-evidence.json.",
+    "Владелец согласовал пилот сообщением «Согласовано, что дальше.»; хеши принятых файлов совпадают с сохранённым evidence."
+  ],
+  "questions": [
+    {
+      "text": "Нужна ли optional leading icon и дальнейшие этапы среды? Это отдельные задачи вне принятого пилота.",
+      "blocking": false
+    }
+  ],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Пилот закрыт. Отдельно поручена проверка восстановления состояния; затем остановиться на review. Не начинать iconBefore, новые этапы или публикацию без согласования."
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "ai-pdp-ds",
+  "displayName": "AI-PDP-DS",
+  "platform": "web-react",
+  "paths": {
+    "source": "src",
+    "tokens": "tokens",
+    "specs": "component-specs",
+    "discovery": "product-discovery",
+    "storybook": ".storybook"
+  },
+  "tooling": {
+    "version": "1.3.1",
+    "files": {
+      "scripts/environment/journal.js": "04f9f2fba79d53cbb0c31a35f8701f5b15f195c586b3266c5ff16111cc128e79",
+      "scripts/environment/project.js": "199f06bd78d03cdddbbea0dc39cdd3d21be495061121cbf64f3ece868912938a",
+      "scripts/environment/links.js": "90f57727cde4cb10c1c781dcf6ec288dbee5fe7249a8d7898d0981ac0b17e9f7",
+      "scripts/environment/check-project.js": "a4bea13d9f453760e72be2fcfb686461853ed5a7d335c7ae15e103d98a612403",
+      "scripts/component-quality.js": "fbe3c63c7bfe1c6c1b6fc47d63463844de2f501a69e17fd3fe40cb69281250d2",
+      "scripts/component-test.js": "a2133e3effc9f52eb2ac510fff9ba0d5e7328639cbca3f140b5a91cdd5557f1b",
+      "scripts/quality-report.js": "2bba511120329e1b2322599b7c6db2469cdddd2d2d394ea363d530660f00d294",
+      "templates/brief.md": "c0b11903b3b78666239d3000dbc689f98c9dfc0de85269405c26e3f011e17b96",
+      "templates/component-spec.md": "e9c9b0862321b01c9fa8c3c84cde51a5a4a2e0795320df3ad833275a3957b959",
+      "AGENTS.md": "b9e87c9c6b1c23ebc001842b6eb788aa511da97ce4c15b70ad9ea15a481fded8",
+      "docs/development.md": "b99eef48256fb8c5cba41702b596dfd0c8d7f064a87d6839ed17c4497b9e85ec"
+    },
+    "scripts": {
+      "env:task": "node scripts/environment/journal.js",
+      "env:check": "node scripts/environment/check-project.js",
+      "quality:report": "node scripts/quality-report.js"
+    }
+  }
+}

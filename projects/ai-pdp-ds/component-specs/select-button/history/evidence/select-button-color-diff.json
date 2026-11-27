@@ -1,0 +1,48 @@
+{
+  "tokens/semantic/colors.light-theme.json": {
+    "changed": {},
+    "removed": [],
+    "added": [
+      "inputPassword.background.disabled",
+      "inputPassword.background.enabled",
+      "inputPassword.border.disabled",
+      "inputPassword.border.enabled",
+      "inputPassword.border.error",
+      "inputPassword.border.focus",
+      "inputPassword.border.hover",
+      "inputPassword.border.success",
+      "inputPassword.cursor.enabled",
+      "inputPassword.focus.ring",
+      "inputPassword.icon.disabled",
+      "inputPassword.icon.enabled",
+      "inputPassword.textPlaceholder.disabled",
+      "inputPassword.textPlaceholder.enabled",
+      "inputPassword.textPlaceholderValue.enabled",
+      "inputText.icon.disabled"
+    ],
+    "originalLeafCount": 440
+  },
+  "tokens/semantic/colors.dark-theme.json": {
+    "changed": {},
+    "removed": [],
+    "added": [
+      "inputPassword.background.disabled",
+      "inputPassword.background.enabled",
+      "inputPassword.border.disabled",
+      "inputPassword.border.enabled",
+      "inputPassword.border.error",
+      "inputPassword.border.focus",
+      "inputPassword.border.hover",
+      "inputPassword.border.success",
+      "inputPassword.cursor.enabled",
+      "inputPassword.focus.ring",
+      "inputPassword.icon.disabled",
+      "inputPassword.icon.enabled",
+      "inputPassword.textPlaceholder.disabled",
+      "inputPassword.textPlaceholder.enabled",
+      "inputPassword.textPlaceholderValue.enabled",
+      "inputText.icon.disabled"
+    ],
+    "originalLeafCount": 440
+  }
+}

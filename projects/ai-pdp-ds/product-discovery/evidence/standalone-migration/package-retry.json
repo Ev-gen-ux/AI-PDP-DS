@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "exitCode": 0,
+  "directory": "/private/tmp/ai-pdp-ds-handoff-1qEfJZ/ai-pdp-ds",
+  "reason": "Original npm pack failed with sandbox EPERM in global npm cache; this is an explicit escalated retry."
+}

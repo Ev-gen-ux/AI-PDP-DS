@@ -1,0 +1,283 @@
+{
+  "date": "2026-11-26",
+  "colorDiff": {
+    "tokens/semantic/colors.light-theme.json": {
+      "changed": {},
+      "removed": [],
+      "added": [
+        "inputPassword.background.disabled",
+        "inputPassword.background.enabled",
+        "inputPassword.border.disabled",
+        "inputPassword.border.enabled",
+        "inputPassword.border.error",
+        "inputPassword.border.focus",
+        "inputPassword.border.hover",
+        "inputPassword.border.success",
+        "inputPassword.cursor.enabled",
+        "inputPassword.focus.ring",
+        "inputPassword.icon.disabled",
+        "inputPassword.icon.enabled",
+        "inputPassword.textPlaceholder.disabled",
+        "inputPassword.textPlaceholder.enabled",
+        "inputPassword.textPlaceholderValue.enabled",
+        "inputText.icon.disabled"
+      ],
+      "originalLeafCount": 440
+    },
+    "tokens/semantic/colors.dark-theme.json": {
+      "changed": {},
+      "removed": [],
+      "added": [
+        "inputPassword.background.disabled",
+        "inputPassword.background.enabled",
+        "inputPassword.border.disabled",
+        "inputPassword.border.enabled",
+        "inputPassword.border.error",
+        "inputPassword.border.focus",
+        "inputPassword.border.hover",
+        "inputPassword.border.success",
+        "inputPassword.cursor.enabled",
+        "inputPassword.focus.ring",
+        "inputPassword.icon.disabled",
+        "inputPassword.icon.enabled",
+        "inputPassword.textPlaceholder.disabled",
+        "inputPassword.textPlaceholder.enabled",
+        "inputPassword.textPlaceholderValue.enabled",
+        "inputText.icon.disabled"
+      ],
+      "originalLeafCount": 440
+    }
+  },
+  "generatedRelevantCss": [
+    {
+      "theme": "light",
+      "role": "dropdownButton.background.calm.enabled",
+      "css": "#efeff0"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.background.calm.hover",
+      "css": "#dee0e2"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.background.calm.active",
+      "css": "#bec1c4"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.label.calm.enabled",
+      "css": "#25282b"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.label.calm.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.caret.calm.enabled",
+      "css": "#25282b"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.caret.calm.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownButton.border.calm.disabled",
+      "css": "#dee0e2"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.background",
+      "css": "#ffffff"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.border.enabled",
+      "css": "#bec1c4"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.background.enabled",
+      "css": "#ffffff"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.background.hover",
+      "css": "#f7f8f8"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.background.active",
+      "css": "#efeff0"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.background.disabled",
+      "css": "#dee0e2"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.label.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.description.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.icon.enabled",
+      "css": "#5c646c"
+    },
+    {
+      "theme": "light",
+      "role": "dropdownList.item.icon.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "light",
+      "role": "focus.ring.default",
+      "css": "#9dc3ea"
+    },
+    {
+      "theme": "light",
+      "role": "text.base",
+      "css": "#25282b"
+    },
+    {
+      "theme": "light",
+      "role": "text.secondary",
+      "css": "#5c646c"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.background.calm.enabled",
+      "css": "#25282b"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.background.calm.hover",
+      "css": "#373c41"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.background.calm.active",
+      "css": "#4a5056"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.label.calm.enabled",
+      "css": "#dee0e2"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.label.calm.disabled",
+      "css": "#5c646c"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.caret.calm.enabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.caret.calm.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownButton.border.calm.disabled",
+      "css": "#4a5056"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.background",
+      "css": "#121416"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.border.enabled",
+      "css": "#373c41"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.background.enabled",
+      "css": "#121416"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.background.hover",
+      "css": "#25282b"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.background.active",
+      "css": "#373c41"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.background.disabled",
+      "css": "#121416"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.label.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.description.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.icon.enabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "dark",
+      "role": "dropdownList.item.icon.disabled",
+      "css": "#9da2a7"
+    },
+    {
+      "theme": "dark",
+      "role": "focus.ring.default",
+      "css": "#9dc3ea"
+    },
+    {
+      "theme": "dark",
+      "role": "text.base",
+      "css": "#efeff0"
+    },
+    {
+      "theme": "dark",
+      "role": "text.secondary",
+      "css": "#bec1c4"
+    }
+  ],
+  "historicBrowserRowsCompared": 20,
+  "historicMeasurementsCompatible": true,
+  "geometryTypographyPaletteEffectsFontsUnchanged": true,
+  "historicalArtifactsIntact": true,
+  "changedBroadReportInputs": [
+    "package-lock.json",
+    "package.json",
+    "src/index.ts",
+    "src/theme/tokens.ts",
+    "src/theme/variables.dark.css",
+    "src/theme/variables.light.css",
+    "tokens/semantic/colors.dark-theme.json",
+    "tokens/semantic/colors.light-theme.json"
+  ],
+  "lightCssNote": "Dark CSS equals historical bytes after excluding 16 added roles. Light CSS had already changed during accepted Node22 regeneration; exact historical bytes unavailable for full diff. All current CSS values consumed by trigger/list/text/focus match unchanged accepted source roles, and saved browser background/ring observations match them. No fresh browser geometry measurement claimed.",
+  "outOfScope": [
+    "Icon development",
+    "Chart development"
+  ],
+  "scopeDecision": "Owner explicitly excludes icon/chart development until a new explicit instruction."
+}

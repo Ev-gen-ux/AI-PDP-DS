@@ -1,0 +1,12 @@
+
+ RUN  v2.1.9 /Users/evgeniyakovenko/Desktop/work_environment/projects/ai_pdp_ds
+
+ ✓ src/components/input-password/InputPassword.test.tsx (6 tests) 163ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  16:48:01
+   Duration  2.72s (transform 77ms, setup 88ms, collect 1.97s, tests 163ms, environment 313ms, prepare 38ms)
+
+
+

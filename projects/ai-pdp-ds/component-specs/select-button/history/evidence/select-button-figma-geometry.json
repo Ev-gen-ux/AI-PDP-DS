@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-11-26",
+  "fileKey": "i7T3ru2M0SyXgJeTda8f43",
+  "sessionId": "968a552a-4e45-44bd-aed8-0907f5173820",
+  "componentSet": "3274:14562",
+  "method": "Read-only use_figma inspection of all ten child variants",
+  "small": {
+    "size": [
+      123,
+      32
+    ],
+    "sizing": [
+      "HUG",
+      "HUG"
+    ],
+    "padding": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "gap": 8,
+    "label": [
+      75,
+      16
+    ],
+    "caret": [
+      16,
+      16
+    ]
+  },
+  "extraSmall": {
+    "size": [
+      111,
+      24
+    ],
+    "sizing": [
+      "HUG",
+      "FIXED"
+    ],
+    "padding": [
+      4,
+      8,
+      4,
+      8
+    ],
+    "gap": 4,
+    "label": [
+      75,
+      16
+    ],
+    "caret": [
+      16,
+      16
+    ]
+  },
+  "stroke": {
+    "align": "INSIDE",
+    "includedInLayout": false,
+    "enabledStrokes": [],
+    "disabledWidth": 1
+  },
+  "bindings": {
+    "paddingVerticalSmall": "VariableID:266:10855",
+    "paddingHorizontalSmall": "VariableID:383:14685",
+    "gapSmall": "VariableID:266:10847",
+    "gapExtraSmall": "VariableID:266:10846",
+    "radius": "VariableID:261:9866",
+    "disabledBorder": "VariableID:3274:14672"
+  }
+}

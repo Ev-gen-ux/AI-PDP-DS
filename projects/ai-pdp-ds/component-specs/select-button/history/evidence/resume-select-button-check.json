@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-26",
+  "taskId": "select-button-geometry-pilot",
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "status": "accepted",
+  "fingerprint": "5e377d2d49d4fc2e61e79eea354570feb5a5678e0abd7e40b0b597037ab72f55",
+  "rootAndSubdirectoryResumeAgree": true,
+  "readDidNotChangeStateOrHistory": true,
+  "stateAndHistoryHashes": {
+    ".local/tasks/select-button-geometry-pilot/state.json": "f4ed967e0904a5c9a1041adb4a617a99d76a43ea0a3116f7b9da264f939f6ddd",
+    ".local/tasks/select-button-geometry-pilot/history/1-bc2fdb2e84f44830bf91b434ce087fc77adb443cba07e324fed25f674def1d84.json": "bc2fdb2e84f44830bf91b434ce087fc77adb443cba07e324fed25f674def1d84",
+    ".local/tasks/select-button-geometry-pilot/history/2-fcd6059c5ef695aac25d711e96fb6c5eb9e26f554c75006ccdeea939a48644f4.json": "fcd6059c5ef695aac25d711e96fb6c5eb9e26f554c75006ccdeea939a48644f4",
+    ".local/tasks/select-button-geometry-pilot/history/3-a97cd0132132f6e965196d1b5d438c6d53000f52c4c66dafd9a6af53465e54c9.json": "a97cd0132132f6e965196d1b5d438c6d53000f52c4c66dafd9a6af53465e54c9",
+    ".local/tasks/select-button-geometry-pilot/history/4-ba1d1ae33f37ee5ae313daea65e131ddd62207309380422a0467e2bd37176199.json": "ba1d1ae33f37ee5ae313daea65e131ddd62207309380422a0467e2bd37176199"
+  },
+  "detectedChangedInput": [
+    "inputs[0]",
+    "evidence[0]: different input",
+    "evidence[1]: different input",
+    "acceptance: different input"
+  ],
+  "detectedChangedArtifact": [
+    "evidence[0].artifacts[0]"
+  ],
+  "checks": "Fresh CLI processes and in-memory stale probes; no component/unit/full tooling suites executed",
+  "restored": {
+    "request": "Master 3274:14562: small HUG 32px, XS FIXED 24px; исключить INSIDE stroke из layout.",
+    "implementation": {
+      "path": "docs/select-button-component-spec.md",
+      "sha256": "8d4ead0e43884e54b409a3adac5bb2a5bcd145d66e05c77150d01aa0901ebe2b"
+    },
+    "evidence": [
+      {
+        "kind": "automated",
+        "method": "Сохранённый visual quality:report (format/typecheck/lint/links); текущие хеши принятого компонента/Spec/changeset сверены, повторного прогона здесь нет.",
+        "result": "pass",
+        "fingerprint": "5e377d2d49d4fc2e61e79eea354570feb5a5678e0abd7e40b0b597037ab72f55",
+        "artifacts": [
+          {
+            "path": ".local/quality/components/select-button/visual/report.json",
+            "sha256": "3ec69291bbee1d51e6c12f78271af5820db8df1e20f1f619088ad2cf120f7a5d"
+          }
+        ]
+      },
+      {
+        "kind": "manual",
+        "method": "Сохранённая инспекция Figma, реальные Chrome geometry и Tab/hover/open/select: узкий scope; не полная visual/a11y сертификация. Источник приёмки записан отдельно.",
+        "result": "pass",
+        "fingerprint": "5e377d2d49d4fc2e61e79eea354570feb5a5678e0abd7e40b0b597037ab72f55",
+        "artifacts": [
+          {
+            "path": ".local/select-button-figma-geometry.json",
+            "sha256": "f87ecb46ccba756fba3910fc2386b8a73a4eb486eb05be13fc1899a956b5d5ca"
+          },
+          {
+            "path": ".local/select-button-before-geometry.json",
+            "sha256": "6a08f0bb25c1dadf4c94ad28a046ff9dfe23458aaaac5a560df9e0265691630a"
+          },
+          {
+            "path": ".local/select-button-after-geometry.json",
+            "sha256": "cb33e28601f588f4ce6460da6aa7841f32f4be3493a2a562dfbe0123090041a0"
+          },
+          {
+            "path": ".local/select-button-browser-interaction.json",
+            "sha256": "bd305f6472c831e4446cf6a65b34321d210582c0a6567e1953258ffe02beb9ea"
+          },
+          {
+            "path": ".local/select-button-repair-evidence.json",
+            "sha256": "d4c34f106717a56d80fe6dea947e33e8f0c501d4107400940a3c743d6a2d3935"
+          },
+          {
+            "path": ".local/select-button-owner-acceptance.json",
+            "sha256": "a857703f5e9d151d62c7f0700dd3574134c1aef5dffef6a4691d516bd6182f8f"
+          }
+        ]
+      }
+    ],
+    "acceptance": {
+      "by": "Владелец проекта — сообщение в текущем чате",
+      "note": "«Согласовано, что дальше.» после результата геометрического пилота; текущие принятые файлы неизменны. Не является приёмкой всей среды или optional iconBefore.",
+      "fingerprint": "5e377d2d49d4fc2e61e79eea354570feb5a5678e0abd7e40b0b597037ab72f55"
+    },
+    "outOfScope": [
+      {
+        "text": "Нужна ли optional leading icon и дальнейшие этапы среды? Это отдельные задачи вне принятого пилота.",
+        "blocking": false
+      }
+    ],
+    "nextStep": "Пилот закрыт. Отдельно поручена проверка восстановления состояния; затем остановиться на review. Не начинать iconBefore, новые этапы или публикацию без согласования."
+  },
+  "limits": [
+    "Schema consistency for declared inputs, not an independent proof of human identity or complete dependencies",
+    "No evaluation of an LLM with erased chat context; verified persistence and fresh-process retrieval only"
+  ]
+}

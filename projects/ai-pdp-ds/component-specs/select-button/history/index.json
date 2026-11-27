@@ -1,0 +1,260 @@
+[
+  {
+    "source": ".local/select-button-browser.json",
+    "target": "component-specs/select-button/history/evidence/select-button-browser.json",
+    "sha256": "d8f94e0664e811dec1040dea2568eda4dcdd854b8a7b14f498784e60f1afa0cf",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-browser-interaction.json",
+    "target": "component-specs/select-button/history/evidence/select-button-browser-interaction.json",
+    "sha256": "bd305f6472c831e4446cf6a65b34321d210582c0a6567e1953258ffe02beb9ea",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-patch.json",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-patch.json",
+    "sha256": "4ea36829cd94bbb229a47ad269123ffd3f4a157e7f2c38fbfa6f06ca0427a609",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-original-state.json",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-original-state.json",
+    "sha256": "65ffc77fddd300c75d7f5354fe5c42781b4e161375b9d310d8cee462411df05b",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-repair-evidence.json",
+    "target": "component-specs/select-button/history/evidence/select-button-repair-evidence.json",
+    "sha256": "d4c34f106717a56d80fe6dea947e33e8f0c501d4107400940a3c743d6a2d3935",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-owner-acceptance.json",
+    "target": "component-specs/select-button/history/evidence/select-button-owner-acceptance.json",
+    "sha256": "a857703f5e9d151d62c7f0700dd3574134c1aef5dffef6a4691d516bd6182f8f",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-interaction.mjs",
+    "target": "component-specs/select-button/history/evidence/select-button-interaction.mjs",
+    "sha256": "06da07bd4b1b18f8fb1500d3752c1831ac38bd2db585ad249bea7e9b65af95e1",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-before-geometry.json",
+    "target": "component-specs/select-button/history/evidence/select-button-before-geometry.json",
+    "sha256": "6a08f0bb25c1dadf4c94ad28a046ff9dfe23458aaaac5a560df9e0265691630a",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-after-geometry.json",
+    "target": "component-specs/select-button/history/evidence/select-button-after-geometry.json",
+    "sha256": "cb33e28601f588f4ce6460da6aa7841f32f4be3493a2a562dfbe0123090041a0",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-after.png",
+    "target": "component-specs/select-button/history/evidence/select-button-after.png",
+    "sha256": "233387f84b244fab1ad791fbfc20a7d9d719a1c146e80e8d9e8db5370ecb43c5",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-task-check.json",
+    "target": "component-specs/select-button/history/evidence/select-button-task-check.json",
+    "sha256": "e39c6c7c26a7e35d772dc4e6a1322f7defe57c858e57e61ebd9d3a4e44e57700",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-measure.mjs",
+    "target": "component-specs/select-button/history/evidence/select-button-measure.mjs",
+    "sha256": "f12a92660669cb2ffd7498b253145a79e13461f80c0cf57736da761fb934158c",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-figma-geometry.json",
+    "target": "component-specs/select-button/history/evidence/select-button-figma-geometry.json",
+    "sha256": "f87ecb46ccba756fba3910fc2386b8a73a4eb486eb05be13fc1899a956b5d5ca",
+    "historical": true
+  },
+  {
+    "source": ".local/resume-select-button-check.json",
+    "target": "component-specs/select-button/history/evidence/resume-select-button-check.json",
+    "sha256": "40ec98377f22ea2d786dce571e2ced82ea1fabc3cd3893e70a9807c214317922",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-before.json",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-before.json",
+    "sha256": "0390db416e447527373cf26ffd0631728ff8510be9e28a0e8a4b6f1f697ea7c4",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-result.json",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-result.json",
+    "sha256": "50112e4c7e8f399061459c9a25e7da35f342f6efd311d796809bdebc7f737cac",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-repair-before.json",
+    "target": "component-specs/select-button/history/evidence/select-button-repair-before.json",
+    "sha256": "c5bdd5e9c5f1794a306ce2a336fea670571a7d636d3b902e755dc567708ef270",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-figma-audit.json",
+    "target": "component-specs/select-button/history/evidence/select-button-figma-audit.json",
+    "sha256": "7e2c99b82ad43118b472e2f8de589c4713f6f63facbd6b89f6ffcf2eb06cdb58",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-quality.log",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-quality.log",
+    "sha256": "309b18f16dbf718207a112a968b29e1852c8f9beefe4a0c02f65266364e7d210",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-color-diff.json",
+    "target": "component-specs/select-button/history/evidence/select-button-color-diff.json",
+    "sha256": "f31be5a48f080f7f62730651a70132784055989e3c9475056fc8462c7e21918a",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-related.log",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-related.log",
+    "sha256": "ee6e718db2ad577493d5a7a4c13800855d850949d6201bf8567a48dfb03d9f2e",
+    "historical": true
+  },
+  {
+    "source": ".local/select-button-revalidation-analysis.json",
+    "target": "component-specs/select-button/history/evidence/select-button-revalidation-analysis.json",
+    "sha256": "5da926cfdb04a01983a24a1b61c5d76a3a5a35cf7c972e2174fd8300d7f0846e",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/state.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/state.json",
+    "sha256": "4714cc698bd9183eda35ae2973a1a0af87b43e3926758081ba3e8834237f5c73",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/4-ba1d1ae33f37ee5ae313daea65e131ddd62207309380422a0467e2bd37176199.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/4-ba1d1ae33f37ee5ae313daea65e131ddd62207309380422a0467e2bd37176199.json",
+    "sha256": "ba1d1ae33f37ee5ae313daea65e131ddd62207309380422a0467e2bd37176199",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/6-8bc6be825eb308d50a699a182d59a06248a1beb1f7c747bb87b17de1182b3cc3.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/6-8bc6be825eb308d50a699a182d59a06248a1beb1f7c747bb87b17de1182b3cc3.json",
+    "sha256": "8bc6be825eb308d50a699a182d59a06248a1beb1f7c747bb87b17de1182b3cc3",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/3-a97cd0132132f6e965196d1b5d438c6d53000f52c4c66dafd9a6af53465e54c9.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/3-a97cd0132132f6e965196d1b5d438c6d53000f52c4c66dafd9a6af53465e54c9.json",
+    "sha256": "a97cd0132132f6e965196d1b5d438c6d53000f52c4c66dafd9a6af53465e54c9",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/5-f4ed967e0904a5c9a1041adb4a617a99d76a43ea0a3116f7b9da264f939f6ddd.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/5-f4ed967e0904a5c9a1041adb4a617a99d76a43ea0a3116f7b9da264f939f6ddd.json",
+    "sha256": "f4ed967e0904a5c9a1041adb4a617a99d76a43ea0a3116f7b9da264f939f6ddd",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/1-bc2fdb2e84f44830bf91b434ce087fc77adb443cba07e324fed25f674def1d84.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/1-bc2fdb2e84f44830bf91b434ce087fc77adb443cba07e324fed25f674def1d84.json",
+    "sha256": "bc2fdb2e84f44830bf91b434ce087fc77adb443cba07e324fed25f674def1d84",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/2-fcd6059c5ef695aac25d711e96fb6c5eb9e26f554c75006ccdeea939a48644f4.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/2-fcd6059c5ef695aac25d711e96fb6c5eb9e26f554c75006ccdeea939a48644f4.json",
+    "sha256": "fcd6059c5ef695aac25d711e96fb6c5eb9e26f554c75006ccdeea939a48644f4",
+    "historical": true
+  },
+  {
+    "source": ".local/tasks/select-button-geometry-pilot/history/7-a47ad56a9e450189dd755751b8e35fca40ee0f3e613b6e0ae57846971ab4332b.json",
+    "target": "component-specs/select-button/history/tasks/select-button-geometry-pilot/history/7-a47ad56a9e450189dd755751b8e35fca40ee0f3e613b6e0ae57846971ab4332b.json",
+    "sha256": "a47ad56a9e450189dd755751b8e35fca40ee0f3e613b6e0ae57846971ab4332b",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/links.log",
+    "target": "component-specs/select-button/history/quality/logic/links.log",
+    "sha256": "7a4c49ee1fa3549aa8927f0b5a26a1c4a4bedfa8898f61235bc16050ea527a8e",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/report.json",
+    "target": "component-specs/select-button/history/quality/logic/report.json",
+    "sha256": "63505a24b56b37dad55cf7533721122c75faa5dab39ba070a223702e8254b7d1",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/format.log",
+    "target": "component-specs/select-button/history/quality/logic/format.log",
+    "sha256": "ae1bc8e72d419ac794371a519f43244366b22b06c71c823281ad2843adddb4b9",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/lint.log",
+    "target": "component-specs/select-button/history/quality/logic/lint.log",
+    "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/report.md",
+    "target": "component-specs/select-button/history/quality/logic/report.md",
+    "sha256": "afb3b146c1758afa854cf79863a3816f74fc1b559dda2ae6d5fbcbe68ef37d6d",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/test.log",
+    "target": "component-specs/select-button/history/quality/logic/test.log",
+    "sha256": "534bf5a49fcd863a6cd29e24f5ea7abe1d7120e72757f430b787aa3be7ebbe71",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/logic/typecheck.log",
+    "target": "component-specs/select-button/history/quality/logic/typecheck.log",
+    "sha256": "8d6e09f8ddf319c044cc58f603008c3fb0c2f1a75b41edf0a0270cfdfabe3380",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/visual/links.log",
+    "target": "component-specs/select-button/history/quality/visual/links.log",
+    "sha256": "7a4c49ee1fa3549aa8927f0b5a26a1c4a4bedfa8898f61235bc16050ea527a8e",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/visual/report.json",
+    "target": "component-specs/select-button/history/quality/visual/report.json",
+    "sha256": "3ec69291bbee1d51e6c12f78271af5820db8df1e20f1f619088ad2cf120f7a5d",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/visual/format.log",
+    "target": "component-specs/select-button/history/quality/visual/format.log",
+    "sha256": "ae1bc8e72d419ac794371a519f43244366b22b06c71c823281ad2843adddb4b9",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/visual/lint.log",
+    "target": "component-specs/select-button/history/quality/visual/lint.log",
+    "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/visual/report.md",
+    "target": "component-specs/select-button/history/quality/visual/report.md",
+    "sha256": "a71677c6903a7056f0268de0258402df048d79d9e2918f79ade81ce08bc8cef8",
+    "historical": true
+  },
+  {
+    "source": ".local/quality/components/select-button/visual/typecheck.log",
+    "target": "component-specs/select-button/history/quality/visual/typecheck.log",
+    "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+    "historical": true
+  }
+]

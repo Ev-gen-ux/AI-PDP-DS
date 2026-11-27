@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "lint",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "format:check",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "name": "test:tooling",
+      "passed": true,
+      "exitCode": 0
+    }
+  ]
+}

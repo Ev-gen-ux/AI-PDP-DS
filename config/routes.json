@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "entrypoints": ["AGENTS.md", "README.md", "PROCESS.md", "ARCHITECTURE.md"],
+  "standards": [
+    {
+      "id": "components",
+      "path": "docs/standards/components.md"
+    },
+    {
+      "id": "tokens",
+      "path": "docs/standards/tokens.md"
+    },
+    {
+      "id": "accessibility",
+      "path": "docs/standards/accessibility.md"
+    },
+    {
+      "id": "documentation",
+      "path": "docs/standards/documentation.md"
+    },
+    {
+      "id": "figma",
+      "path": "docs/standards/figma.md"
+    },
+    {
+      "id": "quality",
+      "path": "docs/standards/quality.md"
+    },
+    {
+      "id": "governance",
+      "path": "docs/standards/governance.md"
+    },
+    {
+      "id": "releases",
+      "path": "docs/standards/releases.md"
+    }
+  ],
+  "commonDirectives": [
+    "directives/intake.md",
+    "directives/coordination.md",
+    "directives/briefing.md",
+    "directives/task-state.md",
+    "directives/verify-deliver.md"
+  ],
+  "directives": [
+    "directives/intake.md",
+    "directives/briefing.md",
+    "directives/system.md",
+    "directives/component.md",
+    "directives/tokens-themes.md",
+    "directives/research-design.md",
+    "directives/figma-parity.md",
+    "directives/quality-audit.md",
+    "directives/documentation.md",
+    "directives/release.md",
+    "directives/task-state.md",
+    "directives/verify-deliver.md",
+    "directives/environment-checks.md",
+    "directives/coordination.md",
+    "directives/project-export.md",
+    "directives/primitive-values.md",
+    "directives/project-setup.md",
+    "directives/code-delivery.md",
+    "directives/figma-delivery.md"
+  ],
+  "skills": [
+    {
+      "id": "ds-intake",
+      "path": "skills/ds-intake/SKILL.md",
+      "workflow": "directives/intake.md",
+      "actions": ["create", "refine", "repair", "audit", "research", "document", "release"],
+      "objects": ["system", "component", "tokens", "documentation", "environment"],
+      "agents": []
+    },
+    {
+      "id": "ds-system",
+      "path": "skills/ds-system/SKILL.md",
+      "workflow": "directives/system.md",
+      "actions": ["create", "refine", "repair"],
+      "objects": ["system"],
+      "agents": ["ds-library-reader", "ds-researcher", "ds-reviewer"]
+    },
+    {
+      "id": "ds-component",
+      "path": "skills/ds-component/SKILL.md",
+      "workflow": "directives/component.md",
+      "actions": ["create", "refine", "repair"],
+      "objects": ["component"],
+      "agents": ["ds-library-reader", "ds-reviewer"]
+    },
+    {
+      "id": "ds-tokens-themes",
+      "path": "skills/ds-tokens-themes/SKILL.md",
+      "workflow": "directives/tokens-themes.md",
+      "actions": ["create", "refine", "repair"],
+      "objects": ["tokens"],
+      "agents": ["ds-library-reader", "ds-reviewer"]
+    },
+    {
+      "id": "ds-research-design",
+      "path": "skills/ds-research-design/SKILL.md",
+      "workflow": "directives/research-design.md",
+      "actions": ["create", "refine", "repair", "audit", "research"],
+      "objects": ["system", "component", "tokens", "documentation", "environment"],
+      "agents": ["ds-researcher", "ds-library-reader"]
+    },
+    {
+      "id": "ds-figma-parity",
+      "path": "skills/ds-figma-parity/SKILL.md",
+      "workflow": "directives/figma-parity.md",
+      "actions": ["create", "refine", "repair", "audit"],
+      "objects": ["system", "component", "tokens"],
+      "agents": ["ds-library-reader", "ds-reviewer"]
+    },
+    {
+      "id": "ds-quality-audit",
+      "path": "skills/ds-quality-audit/SKILL.md",
+      "workflow": "directives/quality-audit.md",
+      "actions": ["audit"],
+      "objects": ["system", "component", "tokens", "documentation", "environment"],
+      "agents": ["ds-reviewer"]
+    },
+    {
+      "id": "ds-documentation",
+      "path": "skills/ds-documentation/SKILL.md",
+      "workflow": "directives/documentation.md",
+      "actions": ["create", "refine", "repair", "document"],
+      "objects": ["documentation", "environment", "system", "component", "tokens"],
+      "agents": ["ds-library-reader"]
+    },
+    {
+      "id": "ds-release",
+      "path": "skills/ds-release/SKILL.md",
+      "workflow": "directives/release.md",
+      "actions": ["release"],
+      "objects": ["system", "component", "tokens", "documentation", "environment"],
+      "agents": ["ds-reviewer"]
+    }
+  ],
+  "targets": [
+    {
+      "object": "system",
+      "skill": "ds-system",
+      "standards": ["components", "tokens", "accessibility", "documentation", "figma"]
+    },
+    {
+      "object": "component",
+      "skill": "ds-component",
+      "standards": ["components", "tokens", "accessibility", "documentation", "figma"]
+    },
+    {
+      "object": "tokens",
+      "skill": "ds-tokens-themes",
+      "standards": ["tokens", "figma"]
+    },
+    {
+      "object": "documentation",
+      "skill": "ds-documentation",
+      "standards": ["documentation"]
+    },
+    {
+      "object": "environment",
+      "skill": "ds-documentation",
+      "standards": ["documentation", "governance"]
+    }
+  ],
+  "actionSkills": {
+    "audit": "ds-quality-audit",
+    "research": "ds-research-design",
+    "document": "ds-documentation",
+    "release": "ds-release"
+  },
+  "modeSkills": {
+    "intake": "ds-intake",
+    "research": "ds-research-design",
+    "parity": "ds-figma-parity"
+  },
+  "deferredObjects": ["icons", "chart"],
+  "roles": [
+    {
+      "id": "ds-library-reader",
+      "path": "agents/ds-library-reader.toml",
+      "when": "Use for a focused inventory of unfamiliar APIs, variants, token consumers or composition across the selected project. Skip when facts are already clear and local."
+    },
+    {
+      "id": "ds-researcher",
+      "path": "agents/ds-researcher.toml",
+      "when": "Use when a substantive open design/engineering question needs independent primary-source research or comparison. Do not re-research settled decisions."
+    },
+    {
+      "id": "ds-reviewer",
+      "path": "agents/ds-reviewer.toml",
+      "when": "Use for an independent bounded review of a meaningful change against its Spec and evidence. Do not turn a small editorial fix into mandatory multi-agent work."
+    }
+  ],
+  "templates": [
+    "templates/brief.md",
+    "templates/component-spec.md",
+    "templates/project-AGENTS.md",
+    "templates/project-development.md",
+    "templates/system-brief.md",
+    "templates/primitive-matrix.md",
+    "templates/primitive-request.json",
+    "templates/directive.md"
+  ],
+  "tooling": "templates/project-tooling.json"
+}

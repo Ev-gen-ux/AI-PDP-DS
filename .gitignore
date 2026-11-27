@@ -1,37 +1,21 @@
-# Dependencies
+# Local dependencies and runtime/recovery/task data
 node_modules/
+.local/
+.cache/
+.eslintcache
 
-# Build outputs
-dist/
-storybook-static/
-coverage/
-
-# Generated theme files (regenerated from /tokens)
-src/theme/tokens.ts
-src/theme/variables.light.css
-src/theme/variables.dark.css
-
-# Env
+# Credentials; the documented example is transferable
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Editor
+# Editor and OS files
 .vscode/
 .idea/
 *.swp
 .DS_Store
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Transient logs; systems may explicitly retain task evidence
 *.log
-
-# Misc
-.eslintcache
-.cache/
-
-# Local AI/QA metrics (do not commit)
-.local/
-component_list.md
+npm-debug.log*
+yarn-error.log*

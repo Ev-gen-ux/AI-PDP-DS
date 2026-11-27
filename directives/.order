@@ -1,0 +1,54 @@
+# Process navigation. Use the branches relevant to the selected task.
+# Rules are workspace-relative: direct paths and parent-workspace globs.
+
+# Entry, coordination and task state.
+directives/intake.md
+**/design-system-developer/directives/intake.md
+directives/coordination.md
+**/design-system-developer/directives/coordination.md
+directives/task-state.md
+**/design-system-developer/directives/task-state.md
+
+# Project container, briefing and research.
+directives/system.md
+**/design-system-developer/directives/system.md
+directives/briefing.md
+**/design-system-developer/directives/briefing.md
+directives/research-design.md
+**/design-system-developer/directives/research-design.md
+
+# Technical foundation and components.
+directives/project-setup.md
+**/design-system-developer/directives/project-setup.md
+directives/primitive-values.md
+**/design-system-developer/directives/primitive-values.md
+directives/tokens-themes.md
+**/design-system-developer/directives/tokens-themes.md
+directives/component.md
+**/design-system-developer/directives/component.md
+
+# Delivery surfaces and parity.
+directives/code-delivery.md
+**/design-system-developer/directives/code-delivery.md
+directives/figma-delivery.md
+**/design-system-developer/directives/figma-delivery.md
+directives/figma-parity.md
+**/design-system-developer/directives/figma-parity.md
+
+# Documentation, quality, release and handoff.
+directives/documentation.md
+**/design-system-developer/directives/documentation.md
+directives/quality-audit.md
+**/design-system-developer/directives/quality-audit.md
+directives/release.md
+**/design-system-developer/directives/release.md
+directives/project-export.md
+**/design-system-developer/directives/project-export.md
+directives/verify-deliver.md
+**/design-system-developer/directives/verify-deliver.md
+
+# Environment maintenance and navigation settings.
+directives/environment-checks.md
+**/design-system-developer/directives/environment-checks.md
+directives/.order
+**/design-system-developer/directives/.order

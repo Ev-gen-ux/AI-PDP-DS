@@ -1,0 +1,6 @@
+
+> @evgeni_design_84/ai-pdp-ds@1.0.1 typecheck
+> tsc -p tsconfig.json --noEmit
+
+
+

@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-26",
+  "scope": "Current AI-PDP-DS core scenario evidence review; no source repairs",
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "basis": "docs/environment-rebuild-plan.md section 7 and final acceptance condition",
+  "conclusion": "Owner accepted first local core profile Codex + React with recorded evidence and explicit limits; this is not unrestricted multi-client or release certification.",
+  "scenarios": [
+    {
+      "scenario": "Small repair",
+      "status": "accepted historical scope; current applicability revalidated",
+      "evidence": [
+        ".local/tasks/select-button-geometry-pilot/state.json",
+        ".local/select-button-revalidation-result.json"
+      ],
+      "limit": "Current check: no stale/problems. Historical browser evidence reused after relevant source/value equivalence audit; no new browser run."
+    },
+    {
+      "scenario": "Figma component",
+      "status": "accepted by owner; browser verification explicitly declined",
+      "evidence": [
+        ".local/input-password-composition-owner-acceptance.json",
+        ".local/input-password-composition-result.json",
+        "docs/input-password-component-spec.md",
+        ".local/input-password-final-owner-acceptance.json"
+      ],
+      "limit": "Browser visual/geometry/manual a11y not performed, no PASS claimed. Owner explicitly removed this check from required acceptance scope and accepted InputPassword."
+    },
+    {
+      "scenario": "Ambiguous unique request",
+      "status": "passed and explicitly accepted by owner: clarification before implementation",
+      "evidence": [
+        "_process_log.md",
+        "docs/input-password-component-spec.md",
+        ".local/ambiguous-request-combobox-acceptance.json"
+      ],
+      "limit": "Owner supplied an unspecified Combobox request; existing code inspected, material behavior/delivery questions asked. Owner accepted this scenario and explicitly cancelled component creation. No Combobox implementation or design claimed."
+    },
+    {
+      "scenario": "Token/theme change",
+      "status": "accepted scope, corrected composition verified",
+      "evidence": [
+        ".local/input-password-colors-result.json",
+        ".local/input-password-composition-result.json",
+        ".local/input-password-composition-owner-acceptance.json"
+      ],
+      "limit": "Initial 22-role migration superseded for nested DS ownership; current 15 body roles, native nested semantics, regeneration, related tests and Figma checks. Browser limit retained."
+    },
+    {
+      "scenario": "Audit",
+      "status": "observed",
+      "evidence": [
+        ".local/core-readiness-review-2026-11-26.md",
+        ".local/core-scenarios-review-2026-11-26.json"
+      ],
+      "limit": "Read-only source review, local report/acceptance/STATE only; no new model evaluation or current CI execution."
+    },
+    {
+      "scenario": "Resume in a new session",
+      "status": "partial",
+      "evidence": [
+        "docs/environment/compatibility.md",
+        ".local/core-readiness-review-2026-11-26.md"
+      ],
+      "limit": "Canonical-root ordinary reading/local commands verified and accepted earlier. CLI resume/check used; this long chat is not an independent fresh-context evaluation."
+    },
+    {
+      "scenario": "External manual edit",
+      "status": "technical evidence only; agent end-to-end scenario unverified",
+      "evidence": [
+        "docs/environment/workflows/task-state.md",
+        ".local/core-readiness-review-2026-11-26.md"
+      ],
+      "limit": "Hash/stale mechanism exists. Current audit detected changed shared inputs, but this is not a controlled external actor edit with demonstrated preservation before regeneration."
+    },
+    {
+      "scenario": "Icons",
+      "status": "excluded from current scope by explicit owner decision",
+      "evidence": [
+        "docs/environment-rebuild-plan.md",
+        "_process_log.md"
+      ],
+      "limit": "Not required for current core acceptance; only a new explicit owner instruction can start this work."
+    },
+    {
+      "scenario": "Charts",
+      "status": "excluded from current scope by explicit owner decision",
+      "evidence": [
+        "docs/environment-rebuild-plan.md"
+      ],
+      "limit": "Not required for current core acceptance; only a new explicit owner instruction can start this work."
+    },
+    {
+      "scenario": "Unavailable integration/publication secrets",
+      "status": "local independence and limitation handling observed",
+      "evidence": [
+        ".local/input-password-composition-result.json",
+        "docs/environment/compatibility.md"
+      ],
+      "limit": "Local work completed, browser unavailable reported without bypass; no publication performed. Does not certify all clients or all missing-tool variants."
+    }
+  ],
+  "findings": [],
+  "recommendedSequence": [
+    "Await a new owner task within accepted Codex/React scope; do not start excluded modules automatically"
+  ],
+  "notRun": [
+    "Full quality report",
+    "New tests/builds",
+    "Browser access retry",
+    "External CI/status verification",
+    "Code/Figma/token repair",
+    "Commit/push/PR/publication"
+  ],
+  "preservedTrackedDirtyFiles": 39,
+  "verification": "HEAD and all pre-existing tracked/untracked dirty file hashes unchanged. Historical task states read but not refreshed.",
+  "latestOwnerDecision": "InputPassword accepted; browser verification explicitly declined, not an acceptance blocker. Icons/charts remain out of scope.",
+  "latestOwnerScopeDecision": "Icon/chart development excluded until new explicit instruction. SelectButton evidence revalidated.",
+  "coreAcceptance": ".local/core-acceptance.json"
+}

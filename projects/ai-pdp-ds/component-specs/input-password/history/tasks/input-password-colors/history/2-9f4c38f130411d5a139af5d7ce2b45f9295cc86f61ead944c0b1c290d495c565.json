@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "input-password-colors",
+  "revision": 2,
+  "updatedAt": "2026-11-26T13:33:46.752Z",
+  "title": "InputPassword own component color semantics",
+  "status": "ready",
+  "route": {
+    "action": "repair",
+    "object": "tokens",
+    "platform": "web-react",
+    "delivery": [
+      "code",
+      "figma"
+    ]
+  },
+  "scope": {
+    "summary": "Create inputPassword color group in Figma, bind existing component colors, synchronize local sources and consumer",
+    "preserve": [
+      "Existing palette values and other component semantics",
+      "InputPassword geometry and interaction",
+      "Previous local edits outside this task",
+      "No commit/push/PR/publication"
+    ]
+  },
+  "sourceCommit": "cc58d2b175f6e2e61d61e6800d4c4f1b9590de38",
+  "spec": {
+    "path": "docs/input-password-component-spec.md",
+    "sha256": "168ea30ebf9b25eaf69ea6fe06648bdaff50a6fa77b2a4fbbfbfb87b67973467"
+  },
+  "inputs": [
+    {
+      "path": "tokens/semantic/colors.light-theme.json",
+      "sha256": "6a0c500c57e978e9bae4f3fddca653066aad7badabd44128bcffd97ba1382367"
+    },
+    {
+      "path": "tokens/semantic/colors.dark-theme.json",
+      "sha256": "7932c16a3b81f4043d993f451901bfb6c5cdabcfd8e350b2a41b0d28e8f73477"
+    },
+    {
+      "path": "src/components/input-password/InputPassword.tsx",
+      "sha256": "4fbbb3001640c2e8759949adebd509b36aa2737b932938f5bad835888ea775f0"
+    },
+    {
+      "path": "src/components/label/Label.tsx",
+      "sha256": "41c05f45cd52c5e8ce5e0c53277f5eea7f2b387425e011f1b9c7ed09ef8ecffa"
+    },
+    {
+      "path": "src/components/inline-message/InlineMessage.tsx",
+      "sha256": "414e40afff4cf33a775bef302e8613e3832da3bc336150af0238feb8ad217f6f"
+    }
+  ],
+  "decisions": [
+    "Owner explicitly authorized inspect and correct Figma and code.",
+    "Component color semantics must be independent even when palette values coincide."
+  ],
+  "questions": [],
+  "evidence": [],
+  "acceptance": null,
+  "blockedReason": null,
+  "nextStep": "Create own Figma color roles and rebind InputPassword"
+}

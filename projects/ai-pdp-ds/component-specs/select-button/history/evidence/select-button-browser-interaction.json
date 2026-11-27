@@ -1,0 +1,22 @@
+{
+  "focus": {
+    "focused": true,
+    "visible": true,
+    "height": 32,
+    "shadow": "rgb(157, 195, 234) 0px 0px 0px 2px"
+  },
+  "hover": {
+    "hovered": true,
+    "height": 32,
+    "background": "rgb(222, 224, 226)"
+  },
+  "open": {
+    "expanded": "true",
+    "height": 32
+  },
+  "selection": {
+    "expanded": "false",
+    "text": "Attribute 2",
+    "height": 32
+  }
+}
