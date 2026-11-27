@@ -4,7 +4,7 @@ Design System Developer работает самостоятельно либо �
 
 ## Установка и запуск
 
-Нужны Git, Node 22 и npm 10.9+. Из клона выполнить npm ci, затем npm run env:check, npm test, npm run lint и npm run format:check. Локальные toolchains, node_modules и приватные env не входят в Git. При nvm выполнить nvm use. Вложенный пример устанавливается отдельно: cd projects/ai-pdp-ds, npm ci, npm run tokens:build, npm run storybook. Адрес выводится сервером; стандартный порт 6006. Локальная работа не требует Figma/Chromatic/npm credentials.
+Нужны Git, Node 22.13+ в ветке 22 и npm 10.9+. Из клона выполнить npm ci, затем npm run env:check, npm test, npm run lint и npm run format:check. Локальные toolchains, node_modules и приватные env не входят в Git. При nvm выполнить nvm use. Вложенный пример устанавливается отдельно: cd projects/ai-pdp-ds, npm ci, npm run tokens:build, npm run storybook. Адрес выводится сервером; стандартный порт 6006. Локальная работа не требует Figma/Chromatic/npm credentials.
 
 ## Кто управляет процессом
 
