@@ -2,8 +2,8 @@ import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import dotenv from 'dotenv';
 import { createSyncPlan, readTokenSources } from './figma-sync-plan.js';
 
-dotenv.config({ path: '.env.local' });
-dotenv.config();
+dotenv.config({ path: '.env.local', quiet: true });
+dotenv.config({ quiet: true });
 
 async function main() {
   const args = process.argv.slice(2);
