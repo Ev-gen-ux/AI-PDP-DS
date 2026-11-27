@@ -204,6 +204,11 @@ test('managed primitive command works detached, requires project scope and rejec
     assert.match(denied.stderr, /Private environment files/);
     assert.equal((denied.stdout + denied.stderr).includes('PRIVATE_SENTINEL'), false);
   }
+  for (const path of ['.git/config', '.GIT/config', '.GiT/HEAD']) {
+    const denied = run(['plan', '--input', path]);
+    assert.equal(denied.status, 1);
+    assert.match(denied.stderr, /Unsafe project-relative path/);
+  }
   write('.env.example', { values: { font: 'Example Font' } });
   assert.equal(run(['plan', '--input', '.env.example']).status, 0);
   assert.equal(run(['matrix', '--root', root, '--project', 'test']).status, 1);
