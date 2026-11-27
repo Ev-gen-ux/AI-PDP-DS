@@ -167,5 +167,10 @@
       "version": ">=10.9.0",
       "onFail": "error"
     }
+  },
+  "overrides": {
+    "eslint-plugin-react-hooks": {
+      "zod-validation-error": "4.0.2"
+    }
   }
 }
