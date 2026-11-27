@@ -3,25 +3,41 @@ import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { createRequire } from 'node:module';
-import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath, URL } from 'node:url';
 import { resolve, dirname } from 'node:path';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const require = createRequire(resolve(root, 'package.json'));
 const packages = JSON.parse(readFileSync(resolve(root, 'package-lock.json'), 'utf8')).packages;
+const { satisfies } = require('semver');
 
-test('no vulnerable minimatch 7–10 or incompatible legacy glob survives resolution', () => {
+test('known vulnerable dependency versions do not survive resolution', () => {
+  const vulnerable = {
+    minimatch: '>=7 <11.0.1',
+    'brace-expansion': '<1.1.21 || >=2 <2.1.7 || >=3 <5.0.7 || >=4 <5.0.12',
+    uuid: '<11.1.1',
+  };
   for (const [path, metadata] of Object.entries(packages)) {
-    const major = Number(metadata.version?.split('.')[0]);
-    if (path.endsWith('/minimatch')) assert.ok(major < 7 || major >= 11, path);
-    if (
-      path.endsWith('/glob') &&
-      metadata.name !== '@bundled-es-modules/glob' &&
-      !path.endsWith('/@bundled-es-modules/glob')
-    ) {
-      assert.ok(major < 10 || major >= 14, path);
+    for (const [name, range] of Object.entries(vulnerable)) {
+      if (path.endsWith('node_modules/' + name)) {
+        assert.equal(satisfies(metadata.version, range), false, `${path}@${metadata.version}`);
+      }
     }
   }
+});
+
+test('a fresh npm process recognizes overrides and reports a valid installed dependency tree', () => {
+  const result = spawnSync(
+    'npm',
+    ['ls', 'minimatch', 'glob', 'uuid', 'brace-expansion', '--all', '--json'],
+    {
+      cwd: root,
+      encoding: 'utf8',
+      maxBuffer: 4 * 1024 * 1024,
+    },
+  );
+  assert.equal(result.status, 0, result.stderr + result.stdout.slice(-3000));
 });
 
 test('every installed brace-expansion retains nested and numeric expansion', () => {

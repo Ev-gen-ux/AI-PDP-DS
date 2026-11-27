@@ -172,10 +172,30 @@
     "eslint-plugin-react-hooks": {
       "zod-validation-error": "4.0.2"
     },
-    "minimatch@>=7 <11.0.1": "11.0.9",
-    "glob@>=10 <14": "14.0.6",
     "@storybook/addon-actions": {
       "uuid": "11.1.1"
+    },
+    "@figma/code-connect": {
+      "minimatch": "11.0.9",
+      "glob": "14.0.6"
+    },
+    "@ts-morph/common": {
+      "minimatch": "11.0.9"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.9"
+    },
+    "@microsoft/api-extractor": {
+      "minimatch": "11.0.9"
+    },
+    "@vue/language-core": {
+      "minimatch": "11.0.9"
+    },
+    "@joshwooding/vite-plugin-react-docgen-typescript": {
+      "glob": "14.0.6"
+    },
+    "@bundled-es-modules/glob": {
+      "glob": "14.0.6"
     }
   }
 }

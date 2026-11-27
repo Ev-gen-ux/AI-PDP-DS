@@ -1,0 +1,252 @@
+[
+  {
+    "path": "node_modules/@bundled-es-modules/glob/node_modules/balanced-match",
+    "before": "4.0.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/@bundled-es-modules/glob/node_modules/brace-expansion",
+    "before": "5.0.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/@bundled-es-modules/glob/node_modules/glob",
+    "before": "13.0.6",
+    "after": null
+  },
+  {
+    "path": "node_modules/@bundled-es-modules/glob/node_modules/minimatch",
+    "before": "10.2.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/@eslint/config-array/node_modules/brace-expansion",
+    "before": "1.1.14",
+    "after": "1.1.22"
+  },
+  {
+    "path": "node_modules/@eslint/eslintrc/node_modules/brace-expansion",
+    "before": "1.1.14",
+    "after": "1.1.22"
+  },
+  {
+    "path": "node_modules/@isaacs/cliui",
+    "before": "9.0.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/@isaacs/nonrecursive-glob-match",
+    "before": null,
+    "after": "1.1.0"
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/@isaacs/cliui",
+    "before": "8.0.2",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/ansi-regex",
+    "before": "6.2.2",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/ansi-styles",
+    "before": "6.2.3",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/glob",
+    "before": "10.5.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/jackspeak",
+    "before": "3.4.3",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/lru-cache",
+    "before": "10.4.3",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/path-scurry",
+    "before": "1.11.1",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/string-width",
+    "before": "5.1.2",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/strip-ansi",
+    "before": "7.2.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/@joshwooding/vite-plugin-react-docgen-typescript/node_modules/wrap-ansi",
+    "before": "8.1.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/@microsoft/api-extractor/node_modules/balanced-match",
+    "before": "4.0.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/@microsoft/api-extractor/node_modules/brace-expansion",
+    "before": "5.0.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/@microsoft/api-extractor/node_modules/minimatch",
+    "before": "10.2.3",
+    "after": null
+  },
+  {
+    "path": "node_modules/@pkgjs/parseargs",
+    "before": "0.11.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/@ts-morph/common/node_modules/balanced-match",
+    "before": "4.0.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/@ts-morph/common/node_modules/brace-expansion",
+    "before": "5.0.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/@ts-morph/common/node_modules/minimatch",
+    "before": "10.2.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/balanced-match",
+    "before": "4.0.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "before": "5.0.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch",
+    "before": "10.2.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/brace-expansion",
+    "before": "2.1.0",
+    "after": "5.1.0"
+  },
+  {
+    "path": "node_modules/brace-expansion/node_modules/balanced-match",
+    "before": null,
+    "after": "4.0.4"
+  },
+  {
+    "path": "node_modules/eastasianwidth",
+    "before": "0.2.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/eslint-plugin-jsx-a11y/node_modules/brace-expansion",
+    "before": "1.1.14",
+    "after": "1.1.22"
+  },
+  {
+    "path": "node_modules/eslint-plugin-react/node_modules/brace-expansion",
+    "before": "1.1.14",
+    "after": "1.1.22"
+  },
+  {
+    "path": "node_modules/eslint/node_modules/brace-expansion",
+    "before": "1.1.14",
+    "after": "1.1.22"
+  },
+  {
+    "path": "node_modules/foreground-child",
+    "before": "3.3.1",
+    "after": null
+  },
+  {
+    "path": "node_modules/glob",
+    "before": "11.1.0",
+    "after": "14.0.6"
+  },
+  {
+    "path": "node_modules/glob/node_modules/balanced-match",
+    "before": "4.0.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/glob/node_modules/brace-expansion",
+    "before": "5.0.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/glob/node_modules/minimatch",
+    "before": "10.2.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/jackspeak",
+    "before": "4.2.3",
+    "after": null
+  },
+  {
+    "path": "node_modules/minimatch",
+    "before": "9.0.9",
+    "after": "11.0.9"
+  },
+  {
+    "path": "node_modules/package-json-from-dist",
+    "before": "1.0.1",
+    "after": null
+  },
+  {
+    "path": "node_modules/path-scurry",
+    "before": "2.0.2",
+    "after": "3.0.0"
+  },
+  {
+    "path": "node_modules/path-scurry/node_modules/lru-cache",
+    "before": "11.3.5",
+    "after": "11.5.3"
+  },
+  {
+    "path": "node_modules/string-width-cjs",
+    "before": "4.2.3",
+    "after": null
+  },
+  {
+    "path": "node_modules/string-width-cjs/node_modules/emoji-regex",
+    "before": "8.0.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/string-width-cjs/node_modules/is-fullwidth-code-point",
+    "before": "3.0.0",
+    "after": null
+  },
+  {
+    "path": "node_modules/strip-ansi-cjs",
+    "before": "6.0.1",
+    "after": null
+  },
+  {
+    "path": "node_modules/uuid",
+    "before": "9.0.1",
+    "after": "11.1.1"
+  },
+  {
+    "path": "node_modules/wrap-ansi-cjs",
+    "before": "7.0.0",
+    "after": null
+  }
+]

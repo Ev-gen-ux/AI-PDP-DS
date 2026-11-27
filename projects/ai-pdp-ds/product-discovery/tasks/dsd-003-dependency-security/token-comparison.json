@@ -1,0 +1,23 @@
+{
+  "comparedTo": "baseline.json",
+  "allEqual": true,
+  "files": {
+    "tokens/primitives/palette.json": true,
+    "tokens/primitives/spacers.json": true,
+    "tokens/primitives/typographyBase.json": true,
+    "tokens/semantic/borderRadius.json": true,
+    "tokens/semantic/colors.dark-theme.json": true,
+    "tokens/semantic/colors.light-theme.json": true,
+    "tokens/semantic/effects.json": true,
+    "tokens/semantic/spacing.json": true,
+    "tokens/semantic/typography.md.json": true,
+    "tokens/semantic/typography.xl.json": true,
+    "tokens/semantic/typography.xs.json": true,
+    "scripts/style-dictionary.build.js": true,
+    "scripts/style-dictionary.config.js": true,
+    "src/theme/variables.light.css": true,
+    "src/theme/variables.dark.css": true,
+    "src/theme/tokens.ts": true,
+    "dist/figma.tokens.json": true
+  }
+}

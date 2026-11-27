@@ -1,0 +1,76 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@figma/code-connect": {
+      "name": "@figma/code-connect",
+      "severity": "high",
+      "isDirect": true,
+      "via": ["zod", "zod-validation-error"],
+      "effects": [],
+      "range": "0.2.0 - 2.1.0",
+      "nodes": ["node_modules/@figma/code-connect"],
+      "fixAvailable": {
+        "name": "@figma/code-connect",
+        "version": "2.1.1",
+        "isSemVerMajor": true
+      }
+    },
+    "zod": {
+      "name": "zod",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1243066,
+          "name": "zod",
+          "dependency": "zod",
+          "title": "Zod can exhaust memory while validating oversized constrained collections",
+          "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+          "severity": "high",
+          "cwe": ["CWE-770"],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<4.6.6"
+        }
+      ],
+      "effects": ["@figma/code-connect", "zod-validation-error"],
+      "range": "<4.6.6",
+      "nodes": ["node_modules/zod"],
+      "fixAvailable": {
+        "name": "@figma/code-connect",
+        "version": "2.1.1",
+        "isSemVerMajor": true
+      }
+    },
+    "zod-validation-error": {
+      "name": "zod-validation-error",
+      "severity": "high",
+      "isDirect": false,
+      "via": ["zod"],
+      "effects": [],
+      "range": "<=4.0.0-beta.2",
+      "nodes": ["node_modules/zod-validation-error"],
+      "fixAvailable": true
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 3,
+      "critical": 0,
+      "total": 3
+    },
+    "dependencies": {
+      "prod": 11,
+      "dev": 879,
+      "optional": 52,
+      "peer": 1,
+      "peerOptional": 0,
+      "total": 889
+    }
+  }
+}
