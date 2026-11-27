@@ -97,29 +97,30 @@ prepare-hooks.js устанавливает Husky только при собст
 
 Полный запуск и сценарии описаны в [руководстве](docs/environment-guide.md). Следующие таблицы индексируют текущую структуру; процедуры и требования остаются в своих канонических документах.
 
-| Файл/папка                       | Назначение                             |
-| -------------------------------- | -------------------------------------- |
-| README.md                        | Вход пользователя и быстрый запуск     |
-| AGENTS.md                        | Профиль ведущего и правила             |
-| ARCHITECTURE.md                  | Структура и владение                   |
-| PROCESS.md                       | Маршрут, состояния и приёмка           |
-| BACKLOG.md                       | Будущие улучшения                      |
-| .nvmrc                           | Версия Node разработки                 |
-| package.json                     | Private package, scripts и инструменты |
-| package-lock.json                | Воспроизводимая установка инструментов |
-| eslint.config.js                 | Lint JavaScript разработчика           |
-| .prettierrc.json                 | Форматирование                         |
-| .prettierignore                  | Границы форматирования                 |
-| .gitignore                       | Исключения секретов/runtime            |
-| .order                           | Порядок корневого Explorer             |
-| LICENSE                          | Лицензия исходников                    |
-| .github/CODEOWNERS               | Владельцы review                       |
-| .github/pull_request_template.md | Форма описания изменения               |
-| .github/workflows/ci.yml         | Раздельные проверки среды и примера    |
-| .husky/pre-commit                | Локальные проверки перед commit        |
-| config/routes.json               | Реестр маршрутов                       |
-| docs/environment-guide.md        | Установка и сценарии                   |
-| docs/limitations.md              | Границы возможностей                   |
+| Файл/папка                       | Назначение                                       |
+| -------------------------------- | ------------------------------------------------ |
+| README.md                        | Вход пользователя и быстрый запуск               |
+| AGENTS.md                        | Профиль ведущего и правила                       |
+| ARCHITECTURE.md                  | Структура и владение                             |
+| PROCESS.md                       | Маршрут, состояния и приёмка                     |
+| SECURITY.md                      | Политика безопасности и сообщения об уязвимостях |
+| BACKLOG.md                       | Будущие улучшения                                |
+| .nvmrc                           | Версия Node разработки                           |
+| package.json                     | Private package, scripts и инструменты           |
+| package-lock.json                | Воспроизводимая установка инструментов           |
+| eslint.config.js                 | Lint JavaScript разработчика                     |
+| .prettierrc.json                 | Форматирование                                   |
+| .prettierignore                  | Границы форматирования                           |
+| .gitignore                       | Исключения секретов/runtime                      |
+| .order                           | Порядок корневого Explorer                       |
+| LICENSE                          | Лицензия исходников                              |
+| .github/CODEOWNERS               | Владельцы review                                 |
+| .github/pull_request_template.md | Форма описания изменения                         |
+| .github/workflows/ci.yml         | Раздельные проверки среды и примера              |
+| .husky/pre-commit                | Локальные проверки перед commit                  |
+| config/routes.json               | Реестр маршрутов                                 |
+| docs/environment-guide.md        | Установка и сценарии                             |
+| docs/limitations.md              | Границы возможностей                             |
 
 ### agents
 
@@ -163,7 +164,7 @@ prepare-hooks.js устанавливает Husky только при собст
 
 ### templates
 
-В корне templates два канонических документа: specifications.md и project-instructions.md. TEMPLATE-маркеры задают именованные разделы в Markdown-ограждении (от трёх обратных кавычек, с одинаковой длиной открытия/закрытия); строгий parser снимает ограждение, проверяя уникальность и структуру. Create извлекает системный бриф; init — формы задач/Spec. Манифест project/tooling.json 1.5.0 использует source/section/target для генерации автономных проектных файлов. Набор сохраняет прежние target-пути; обновление проверяет локальные хеши, существующие системы автоматически не меняются. Старые локальные формы поддерживаются при отсутствии общего документа.
+В корне templates два канонических документа: specifications.md и project-instructions.md. TEMPLATE-маркеры задают именованные разделы в Markdown-ограждении (от трёх обратных кавычек, с одинаковой длиной открытия/закрытия); строгий parser снимает ограждение, проверяя уникальность и структуру. Create извлекает системный бриф; init — формы задач/Spec. Манифест project/tooling.json 1.5.1 использует source/section/target для генерации автономных проектных файлов. Набор сохраняет прежние target-пути; обновление проверяет локальные хеши, существующие системы автоматически не меняются. Старые локальные формы поддерживаются при отсутствии общего документа.
 
 - [templates/specifications.md#brief](templates/specifications.md#brief) — Бриф: {{id}}.
 - [templates/specifications.md#component-spec](templates/specifications.md#component-spec) — Component Spec: {{component}}.
