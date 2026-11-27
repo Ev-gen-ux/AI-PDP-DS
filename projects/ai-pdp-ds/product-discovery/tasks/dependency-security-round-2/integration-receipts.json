@@ -1,0 +1,151 @@
+{
+  "date": "2026-11-27",
+  "integrated": [
+    {
+      "pr": 132,
+      "head": "ba8e8a386737ae76090eeacf91316335f1312d82",
+      "merge": "da0485ba0d2d44f659e98ef20be299068338a8c4",
+      "mergedAt": "2026-11-27T12:58:41Z",
+      "checks": [
+        {
+          "name": "developer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46002065448/job/140515954054"
+        },
+        {
+          "name": "ai-pdp-ds",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46002065448/job/140515953626"
+        }
+      ],
+      "url": "https://github.com/Ev-gen-ux/design-system-developer/pull/132"
+    },
+    {
+      "pr": 142,
+      "head": "4c77e6bea1d0e0bf2ed28f38bde4cac849b9a155",
+      "merge": "cc9d6e77faafc17d102eec7e54b86c172f065590",
+      "mergedAt": "2026-11-27T13:02:10Z",
+      "checks": [
+        {
+          "name": "developer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46003183718/job/140519748839"
+        },
+        {
+          "name": "ai-pdp-ds",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46003183718/job/140519749252"
+        }
+      ],
+      "url": "https://github.com/Ev-gen-ux/design-system-developer/pull/142"
+    },
+    {
+      "pr": 139,
+      "head": "461c793ce7d42552baef8e1d79e01ed71348403b",
+      "merge": "35de3ec252e025d47e6eddef897bf763f0fbc7e3",
+      "mergedAt": "2026-11-27T13:05:02Z",
+      "checks": [
+        {
+          "name": "developer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46003675007/job/140521370178"
+        },
+        {
+          "name": "ai-pdp-ds",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46003675007/job/140521370606"
+        }
+      ],
+      "url": "https://github.com/Ev-gen-ux/design-system-developer/pull/139"
+    },
+    {
+      "pr": 138,
+      "head": "21423989996e122c74ccd7efaeba2ce6594ec644",
+      "merge": "dcc3b7182c5037f83356ff719708b90d4ab8692e",
+      "mergedAt": "2026-11-27T13:09:30Z",
+      "checks": [
+        {
+          "name": "developer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46004149871/job/140522962084"
+        },
+        {
+          "name": "ai-pdp-ds",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46004149871/job/140522961429"
+        }
+      ],
+      "url": "https://github.com/Ev-gen-ux/design-system-developer/pull/138"
+    },
+    {
+      "pr": 135,
+      "head": "06d612645051f0c6631c36415d22b0100e91e3fe",
+      "merge": "e48097b6cc86762df712854855b1c498dd72739d",
+      "mergedAt": "2026-11-27T13:12:52Z",
+      "checks": [
+        {
+          "name": "developer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46004742406/job/140524971346"
+        },
+        {
+          "name": "ai-pdp-ds",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/Ev-gen-ux/design-system-developer/actions/runs/46004742406/job/140524970834"
+        }
+      ],
+      "url": "https://github.com/Ev-gen-ux/design-system-developer/pull/135"
+    }
+  ],
+  "duplicates": [
+    {
+      "pr": 141,
+      "supersededBy": 132,
+      "targetVersionsVerifiedInMain": {
+        "node_modules/form-data": "4.0.6",
+        "node_modules/hasown": "2.0.4"
+      }
+    },
+    {
+      "pr": 140,
+      "supersededBy": 139,
+      "targetVersionsVerifiedInMain": {
+        "node_modules/baseline-browser-mapping": "2.11.40",
+        "node_modules/browserslist": "4.29.6",
+        "node_modules/caniuse-lite": "1.0.30001828",
+        "node_modules/electron-to-chromium": "1.5.495",
+        "node_modules/node-releases": "2.0.66",
+        "node_modules/update-browserslist-db": "1.4.0"
+      }
+    },
+    {
+      "pr": 134,
+      "supersededBy": 139,
+      "targetVersionsVerifiedInMain": {
+        "node_modules/baseline-browser-mapping": "2.11.40"
+      }
+    },
+    {
+      "pr": 131,
+      "supersededBy": 138,
+      "targetVersionsVerifiedInMain": {
+        "node_modules/nanoid": "3.3.20"
+      }
+    }
+  ],
+  "finalCandidate": {
+    "pr": 137,
+    "requiredChecks": ["developer", "ai-pdp-ds"],
+    "status": "requires-current-base-CI-before-merge"
+  }
+}
