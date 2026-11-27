@@ -26,8 +26,8 @@ import { writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: '.env.local' });
-dotenv.config();
+dotenv.config({ path: '.env.local', quiet: true });
+dotenv.config({ quiet: true });
 
 const FIGMA_API = 'https://api.figma.com/v1';
 const { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } = process.env;
