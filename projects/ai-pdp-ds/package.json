@@ -6,10 +6,11 @@
   "author": "Ev-gen-ux",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ev-gen-ux/AI-PDP-DS.git"
+    "url": "https://github.com/Ev-gen-ux/design-system-developer.git",
+    "directory": "projects/ai-pdp-ds"
   },
-  "homepage": "https://github.com/Ev-gen-ux/AI-PDP-DS#readme",
-  "bugs": "https://github.com/Ev-gen-ux/AI-PDP-DS/issues",
+  "homepage": "https://github.com/Ev-gen-ux/design-system-developer/tree/main/projects/ai-pdp-ds#readme",
+  "bugs": "https://github.com/Ev-gen-ux/design-system-developer/issues",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
