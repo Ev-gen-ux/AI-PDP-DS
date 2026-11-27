@@ -1,0 +1,32 @@
+{
+  "method": "SHA-256 comparison after normal npm ci and tokens:build",
+  "beforeVersion": "5.4.0",
+  "afterVersion": "5.4.4",
+  "node": "22.23.5",
+  "candidateRevision": "2b951cb53285f8d4a7cc46525eb66586c8dc4ef6",
+  "candidateLockSha256": "b4fea3938d580e0db4198e219e606bc2253defed993c30c94642c75d892dd5a2",
+  "inputs": {
+    "tokens/primitives/palette.json": "ed8ca25e8540d7db9de5bb8b17f3649840a688b17405b635c3931e3e50026484",
+    "tokens/primitives/spacers.json": "2ba676042d35410376ed49bea22709528b9600c87342463a2ba3e4a90bdc5542",
+    "tokens/primitives/typographyBase.json": "bc0acbf4a46b462ed290c37a87a1d8e08706586d489edf70fda9bc31190fe32d",
+    "tokens/semantic/borderRadius.json": "120cf206864ed1e140affcba78369fbeaa6ea46eb5aed0a439f0ab9ca41590bf",
+    "tokens/semantic/colors.dark-theme.json": "d35c9d64347b5297474d0c029b4f45d478b4f5ea0d8cb13e639c7183bf4f16cd",
+    "tokens/semantic/colors.light-theme.json": "e6dab711bfdbe39c411fc74812b4415174496bfd7e071407d4c5c33a8524e50a",
+    "tokens/semantic/effects.json": "27f56a2d4c4ccc2eb98414d7c930294919dfc29a1fec9c16eaeb6f93d8af095a",
+    "tokens/semantic/spacing.json": "4e5010b70eac7f317a0d99028ccd2fc7a48e009c240c42843742417f528cda54",
+    "tokens/semantic/typography.md.json": "83d6489f32c2fd69cdabf7be2626f79d28548e7daa94a3290450948e8e3a59d1",
+    "tokens/semantic/typography.xl.json": "51c73f2f33a7db38b6a768ca64d33e12fde1379d00fe577675df2750fb6c4f09",
+    "tokens/semantic/typography.xs.json": "bd41d1536d4a3c305030d75420eb4239599650fb46c99227570ec563f9bf2c72"
+  },
+  "outputs": {
+    "src/theme/variables.light.css": "c0df8b1dd0b62ec33b052964f7d33f4723125f9d491bf2e38ce644cddb628647",
+    "src/theme/variables.dark.css": "427cd916945bf024708e1a79f92d0bade8d31cba87c8897dbec686ab56d9bba7",
+    "src/theme/tokens.ts": "1be2fdc476eb1f07be9b233e2d62d9ebfebb6852772ba3f9ae570a6d6946a84a",
+    "dist/figma.tokens.json": "66cdc3557f835e43d0e79e058c5ace7c51b02d8a265d8604a71a2ce0a052bbe3"
+  },
+  "generatorScripts": {
+    "scripts/style-dictionary.build.js": "458cd51546c9474ae4dc85f7fcfa62f494a2bee1c33bd2907277fa345b27dc9d",
+    "scripts/style-dictionary.config.js": "e17eea63b768635a60f0e0082d8a796601d275262c27d49f87ed6b99a51c389d"
+  },
+  "byteIdentical": true
+}
