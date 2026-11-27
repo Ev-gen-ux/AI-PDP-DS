@@ -26,6 +26,28 @@ describe('TableCell', () => {
     expect(screen.getByText('textContent')).toBeInTheDocument();
   });
 
+  it('resets the draft on controlled edit sessions and external value changes', () => {
+    const view = (editing: boolean, value: string) => (
+      <ThemeProvider theme={theme}>
+        <TableCellInlineEdit editing={editing} value={value} />
+      </ThemeProvider>
+    );
+    const { rerender } = render(view(true, 'original'));
+    const editor = () => screen.getByRole('textbox', { name: 'Inline edit value' });
+    expect(editor()).toHaveFocus();
+    fireEvent.change(editor(), { target: { value: 'draft' } });
+    expect(editor()).toHaveValue('draft');
+    rerender(view(true, 'external'));
+    expect(editor()).toHaveValue('external');
+    fireEvent.change(editor(), { target: { value: 'another draft' } });
+    rerender(view(false, 'external'));
+    rerender(view(true, 'external'));
+    expect(editor()).toHaveValue('external');
+    expect(editor()).toHaveFocus();
+    fireEvent.keyDown(editor(), { key: 'Escape' });
+    expect(editor()).toHaveValue('external');
+  });
+
   it('switches to edit mode on double click and commits on Enter', () => {
     render(
       <ThemeProvider theme={theme}>
