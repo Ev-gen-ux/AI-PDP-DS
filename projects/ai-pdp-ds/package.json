@@ -118,7 +118,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-storybook": "^0.11.1",
     "husky": "^9.1.7",
     "jsdom": "^25.0.1",
@@ -166,6 +166,11 @@
       "name": "npm",
       "version": ">=10.9.0",
       "onFail": "error"
+    }
+  },
+  "overrides": {
+    "eslint-plugin-react-hooks": {
+      "zod-validation-error": "4.0.2"
     }
   }
 }

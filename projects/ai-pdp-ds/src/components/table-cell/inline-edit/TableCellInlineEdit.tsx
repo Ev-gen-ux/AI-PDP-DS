@@ -94,9 +94,17 @@ export const TableCellInlineEdit = ({
   const [pressed, setPressed] = useState(false);
   const [draftValue, setDraftValue] = useState(currentValue);
 
+  const [previousEditState, setPreviousEditState] = useState({ isEditing, currentValue });
+  if (
+    previousEditState.isEditing !== isEditing ||
+    previousEditState.currentValue !== currentValue
+  ) {
+    setPreviousEditState({ isEditing, currentValue });
+    if (isEditing) setDraftValue(currentValue);
+  }
+
   useEffect(() => {
     if (isEditing) {
-      setDraftValue(currentValue);
       inputRef.current?.focus();
       const caretPos = currentValue.length;
       inputRef.current?.setSelectionRange(caretPos, caretPos);
