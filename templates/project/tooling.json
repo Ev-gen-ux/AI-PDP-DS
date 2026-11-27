@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "1.4.0",
+  "version": "1.5.0",
   "files": [
     {
       "source": "scripts/environment/journal.js",
@@ -31,32 +31,37 @@
       "target": "scripts/quality-report.js"
     },
     {
-      "source": "templates/brief.md",
-      "target": "templates/brief.md"
+      "source": "templates/specifications.md",
+      "target": "templates/brief.md",
+      "section": "brief"
     },
     {
-      "source": "templates/component-spec.md",
-      "target": "templates/component-spec.md"
+      "source": "templates/specifications.md",
+      "target": "templates/component-spec.md",
+      "section": "component-spec"
     },
     {
-      "source": "templates/project-AGENTS.md",
-      "target": "AGENTS.md"
+      "source": "templates/project-instructions.md",
+      "target": "AGENTS.md",
+      "section": "project-agents"
     },
     {
-      "source": "templates/project-development.md",
-      "target": "docs/development.md"
+      "source": "templates/project-instructions.md",
+      "target": "docs/development.md",
+      "section": "project-development"
     },
     {
       "source": "scripts/environment/primitives.js",
       "target": "scripts/environment/primitives.js"
     },
     {
-      "source": "templates/primitive-request.json",
+      "source": "templates/project/primitive-request.json",
       "target": "templates/primitive-request.json"
     },
     {
-      "source": "templates/primitive-matrix.md",
-      "target": "templates/primitive-matrix.md"
+      "source": "templates/specifications.md",
+      "target": "templates/primitive-matrix.md",
+      "section": "primitive-matrix"
     }
   ],
   "scripts": {

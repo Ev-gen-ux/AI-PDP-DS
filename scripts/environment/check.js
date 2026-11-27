@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, existsSync, realpathSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { identifier, safePath, projectContext } from './project.js';
-import { findJournal, readJournal } from './journal.js';
+import { findJournal, readJournal, templateSection } from './journal.js';
 import { linked } from './links.js';
 export { links } from './links.js';
 
@@ -319,7 +319,8 @@ export function checkEnvironment(root, { taskId, journal, system } = {}) {
         'Duplicate/empty kit targets',
       );
       for (const row of kit.files) {
-        read(root, row.source);
+        const source = read(root, row.source);
+        if (row.section !== undefined) templateSection(source, row.section);
         safePath(root, row.target, true);
       }
       return kit.files.length;

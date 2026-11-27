@@ -168,7 +168,8 @@ test('new projects receive the delivery and typography brief before technical se
   assert.equal(brief.includes('{{id}}'), false);
   assert.equal(existsSync(join(project.root, 'src')), false);
   assert.equal(existsSync(join(project.root, 'package.json')), false);
-  writeFileSync(join(root, 'templates/system-brief.md'), 'invalid');
+  const book = join(root, 'templates/specifications.md');
+  writeFileSync(book, readFileSync(book, 'utf8').replace('<!-- BRIEF:DRAFT -->', ''));
   assert.throws(() => createProject(root, 'invalid-bank'), /draft marker/);
   assert.equal(existsSync(join(root, 'projects/invalid-bank')), false);
 });

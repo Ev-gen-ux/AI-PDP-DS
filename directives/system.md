@@ -6,7 +6,7 @@
 
 ## Входы
 
-Поручение, имя/ID, исходные материалы и принятые ограничения. Общая архитектура — [ARCHITECTURE](../ARCHITECTURE.md), форма — [системный бриф](../templates/system-brief.md).
+Поручение, имя/ID, исходные материалы и принятые ограничения. Общая архитектура — [ARCHITECTURE](../ARCHITECTURE.md), форма — [системный бриф](../templates/specifications.md#system-brief).
 
 ## Условия начала
 

@@ -113,9 +113,11 @@ test('flat factory installation and invalid kit destinations are rejected', (t) 
   const root = target(t),
     fakeFactory = temporary(t);
   cpSync(join(factory, 'templates'), join(fakeFactory, 'templates'), { recursive: true });
-  const path = join(fakeFactory, 'templates/project-tooling.json'),
+  const path = join(fakeFactory, 'templates/project/tooling.json'),
     kit = JSON.parse(readFileSync(path));
-  kit.files = [{ source: 'templates/brief.md', target: '../outside.md' }];
+  kit.files = [
+    { source: 'templates/specifications.md', section: 'brief', target: '../outside.md' },
+  ];
   writeFileSync(path, JSON.stringify(kit));
   assert.throws(() => installTooling(fakeFactory, root), /Unsafe/);
   assert.equal(existsSync(join(root, 'package.json')), false);
@@ -126,9 +128,15 @@ test('managed upgrades replace only unchanged prior files', (t) => {
   cpSync(join(factory, 'templates'), join(source, 'templates'), { recursive: true });
   cpSync(join(factory, 'scripts'), join(source, 'scripts'), { recursive: true });
   installTooling(source, root);
-  const doc = join(source, 'templates/project-development.md');
-  writeFileSync(doc, readFileSync(doc, 'utf8') + '\nNew kit guidance.\n');
-  const path = join(source, 'templates/project-tooling.json'),
+  const doc = join(source, 'templates/project-instructions.md');
+  writeFileSync(
+    doc,
+    readFileSync(doc, 'utf8').replace(
+      '# Развитие дизайн-системы',
+      '# Развитие дизайн-системы\n\nNew kit guidance.',
+    ),
+  );
+  const path = join(source, 'templates/project/tooling.json'),
     kit = JSON.parse(readFileSync(path));
   const [major, minor, patch] = kit.version.split('.').map(Number);
   kit.version = [major, minor, patch + 1].join('.');

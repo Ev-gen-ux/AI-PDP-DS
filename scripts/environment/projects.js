@@ -3,7 +3,7 @@ import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { identifier, safePath, projectList, projectContext } from './project.js';
-import { initJournal } from './journal.js';
+import { initJournal, templateSection } from './journal.js';
 import { installTooling } from './tooling.js';
 import { exportProject } from './export.js';
 
@@ -27,9 +27,9 @@ export function createProject(root, id, name = id) {
       storybook: '.storybook',
     },
   };
-  const systemBrief = safePath(root, 'templates/system-brief.md', true);
+  const systemBrief = safePath(root, 'templates/specifications.md', true);
   const briefText = existsSync(systemBrief)
-    ? readFileSync(systemBrief, 'utf8').replaceAll('{{id}}', id)
+    ? templateSection(readFileSync(systemBrief, 'utf8'), 'system-brief').replaceAll('{{id}}', id)
     : undefined;
   if (briefText !== undefined && !briefText.includes('<!-- BRIEF:DRAFT -->'))
     throw Error('System brief template must retain its draft marker');

@@ -6,7 +6,7 @@
 
 ## Входы
 
-Заполненный [системный бриф](../templates/system-brief.md), STATE задачи, источник и версия технического шаблона/фундамента, состав поставки storybook/figma/both, темы, ограничения и критерии запуска. Требования результата — [архитектура](../ARCHITECTURE.md), [токены](../docs/standards/tokens.md) и [качество](../docs/standards/quality.md).
+Заполненный [системный бриф](../templates/specifications.md#system-brief), STATE задачи, источник и версия технического шаблона/фундамента, состав поставки storybook/figma/both, темы, ограничения и критерии запуска. Требования результата — [архитектура](../ARCHITECTURE.md), [токены](../docs/standards/tokens.md) и [качество](../docs/standards/quality.md).
 
 ## Условия начала
 

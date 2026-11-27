@@ -1,0 +1,21 @@
+# Canonical source books, then machine kit and executable scripts.
+templates/project
+**/design-system-developer/templates/project
+templates/specifications.md
+**/design-system-developer/templates/specifications.md
+templates/project-instructions.md
+**/design-system-developer/templates/project-instructions.md
+templates/project/tooling.json
+**/design-system-developer/templates/project/tooling.json
+templates/project/primitive-request.json
+**/design-system-developer/templates/project/primitive-request.json
+templates/project/scripts
+**/design-system-developer/templates/project/scripts
+templates/project/scripts/quality-report.js
+**/design-system-developer/templates/project/scripts/quality-report.js
+templates/project/scripts/component-quality.js
+**/design-system-developer/templates/project/scripts/component-quality.js
+templates/project/scripts/component-test.js
+**/design-system-developer/templates/project/scripts/component-test.js
+templates/.order
+**/design-system-developer/templates/.order

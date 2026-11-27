@@ -194,14 +194,9 @@
     }
   ],
   "templates": [
-    "templates/brief.md",
-    "templates/component-spec.md",
-    "templates/project-AGENTS.md",
-    "templates/project-development.md",
-    "templates/system-brief.md",
-    "templates/primitive-matrix.md",
-    "templates/primitive-request.json",
-    "templates/directive.md"
+    "templates/specifications.md",
+    "templates/project-instructions.md",
+    "templates/project/primitive-request.json"
   ],
-  "tooling": "templates/project-tooling.json"
+  "tooling": "templates/project/tooling.json"
 }

@@ -63,7 +63,7 @@ design-system-developer/
 
 AGENTS.md содержит профиль основного ведущего инженера/архитектора; agents/ — канонические роли отдельных исполнителей. PROCESS.md определяет общий маршрут, config/routes.json — соответствие задач, скиллов и процедур. Skills выбирают ветку; директивы описывают выполнение.
 
-Каждая директива следует [общему формату](templates/directive.md) с входами, условиями, этапами, решениями, результатом, проверкой и возвратом. [Project setup](directives/project-setup.md) разворачивает выбранный фундамент после брифа; [code delivery](directives/code-delivery.md) и [Figma delivery](directives/figma-delivery.md) обслуживают выбранные носители; [паритет](directives/figma-parity.md) сравнивает их. Процедуры реализуются ведущим через доступные инструменты, а не выполняются одним только чтением Markdown. Нового дублирующего оркестратора или хранилища задач нет.
+Каждая директива следует [общему формату](templates/project-instructions.md#directive) с входами, условиями, этапами, решениями, результатом, проверкой и возвратом. [Project setup](directives/project-setup.md) разворачивает выбранный фундамент после брифа; [code delivery](directives/code-delivery.md) и [Figma delivery](directives/figma-delivery.md) обслуживают выбранные носители; [паритет](directives/figma-parity.md) сравнивает их. Процедуры реализуются ведущим через доступные инструменты, а не выполняются одним только чтением Markdown. Нового дублирующего оркестратора или хранилища задач нет.
 
 ## Самостоятельный проект
 
@@ -85,7 +85,7 @@ Product Discovery, Component Specs и src находятся рядом. Общ�
 
 ## Инструменты и передача
 
-projects.js создаёт контейнеры и запускает разрешённые локальные команды. templates/project-tooling.json задаёт версию независимого набора, устанавливаемого внутри проекта; обновление отказывает при локальном конфликте и не выполняется скрыто.
+projects.js создаёт контейнеры и запускает разрешённые локальные команды. templates/project/tooling.json задаёт версию независимого набора, устанавливаемого внутри проекта; обновление отказывает при локальном конфликте и не выполняется скрыто.
 
 prepare-hooks.js устанавливает Husky только при собственном .git. Генерируемая .husky/\_ восстанавливается при установке и не включается в экспорт проекта.
 
@@ -163,18 +163,20 @@ prepare-hooks.js устанавливает Husky только при собст
 
 ### templates
 
-- [templates/brief.md](templates/brief.md) — Бриф: {{id}}.
-- [templates/component-spec.md](templates/component-spec.md) — Component Spec: {{component}}.
-- [templates/directive.md](templates/directive.md) — Формат рабочей директивы.
-- [templates/primitive-matrix.md](templates/primitive-matrix.md) — Матрица примитивов.
-- [templates/primitive-request.json](templates/primitive-request.json) — Форма или копируемый проектный инструмент.
+В корне templates два канонических документа: specifications.md и project-instructions.md. TEMPLATE-маркеры задают именованные разделы в Markdown-ограждении (от трёх обратных кавычек, с одинаковой длиной открытия/закрытия); строгий parser снимает ограждение, проверяя уникальность и структуру. Create извлекает системный бриф; init — формы задач/Spec. Манифест project/tooling.json 1.5.0 использует source/section/target для генерации автономных проектных файлов. Набор сохраняет прежние target-пути; обновление проверяет локальные хеши, существующие системы автоматически не меняются. Старые локальные формы поддерживаются при отсутствии общего документа.
+
+- [templates/specifications.md#brief](templates/specifications.md#brief) — Бриф: {{id}}.
+- [templates/specifications.md#component-spec](templates/specifications.md#component-spec) — Component Spec: {{component}}.
+- [templates/project-instructions.md#directive](templates/project-instructions.md#directive) — Формат рабочей директивы.
+- [templates/specifications.md#primitive-matrix](templates/specifications.md#primitive-matrix) — Матрица примитивов.
+- [templates/project/primitive-request.json](templates/project/primitive-request.json) — Форма или копируемый проектный инструмент.
 - [templates/project/scripts/component-quality.js](templates/project/scripts/component-quality.js) — Форма или копируемый проектный инструмент.
 - [templates/project/scripts/component-test.js](templates/project/scripts/component-test.js) — Форма или копируемый проектный инструмент.
 - [templates/project/scripts/quality-report.js](templates/project/scripts/quality-report.js) — Форма или копируемый проектный инструмент.
-- [templates/project-AGENTS.md](templates/project-AGENTS.md) — Работа с этой дизайн-системой.
-- [templates/project-development.md](templates/project-development.md) — Развитие дизайн-системы.
-- [templates/project-tooling.json](templates/project-tooling.json) — Форма или копируемый проектный инструмент.
-- [templates/system-brief.md](templates/system-brief.md) — Бриф дизайн-системы: {{id}}.
+- [templates/project-instructions.md#project-agents](templates/project-instructions.md#project-agents) — Работа с этой дизайн-системой.
+- [templates/project-instructions.md#project-development](templates/project-instructions.md#project-development) — Развитие дизайн-системы.
+- [templates/project/tooling.json](templates/project/tooling.json) — Форма или копируемый проектный инструмент.
+- [templates/specifications.md#system-brief](templates/specifications.md#system-brief) — Бриф дизайн-системы: {{id}}.
 
 ### scripts/environment
 

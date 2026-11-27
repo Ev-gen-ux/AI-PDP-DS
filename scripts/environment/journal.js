@@ -330,6 +330,42 @@ export function findJournal(root, id, environment = false) {
   return readJournal(root, relative(root, matches[0]).split('\\').join('/'));
 }
 
+export function templateSection(text, id) {
+  if (typeof text !== 'string' || typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))
+    throw Error('Invalid template section');
+  const start = '<!-- TEMPLATE:' + id + ':START -->';
+  const end = '<!-- TEMPLATE:' + id + ':END -->';
+  const lines = text.replaceAll('\r\n', '\n').split('\n');
+  if (
+    lines.filter((line) => line === start).length !== 1 ||
+    lines.filter((line) => line === end).length !== 1
+  )
+    throw Error('Missing or duplicate template section: ' + id);
+  const a = lines.indexOf(start),
+    b = lines.indexOf(end);
+  const body = lines
+    .slice(a + 1, b)
+    .join('\n')
+    .trim();
+  const match = /^(`{3,})markdown\n([\s\S]+)\n\1$/.exec(body);
+  if (b <= a || !match || !match[2].startsWith('# ') || /<!-- TEMPLATE:/.test(match[2]))
+    throw Error('Malformed template section: ' + id);
+  if (
+    [...match[2].matchAll(/^ {0,3}(`{3,})[ \t]*$/gm)].some(
+      (fence) => fence[1].length >= match[1].length,
+    )
+  )
+    throw Error('Premature closing fence in template section: ' + id);
+  const draft = ['brief', 'system-brief'].includes(id)
+    ? 'BRIEF'
+    : id === 'component-spec'
+      ? 'SPEC'
+      : null;
+  if (draft && !match[2].includes('<!-- ' + draft + ':DRAFT -->'))
+    throw Error('Template section must retain its draft marker: ' + id);
+  return match[2].trimEnd() + '\n';
+}
+
 export function initJournal(project, id, options = {}) {
   identifier(id);
   identifier(project.id);
@@ -395,8 +431,15 @@ export function initJournal(project, id, options = {}) {
   // Preflight all destinations before creating anything.
   for (const p of [directory, log, brief, ...(spec ? [spec] : [])]) safePath(root, p, true);
   const template = (name, fallback) => {
+    const book = safePath(root, 'templates/specifications.md', true);
     const path = safePath(root, 'templates/' + name + '.md', true);
-    return (existsSync(path) ? readFileSync(path, 'utf8') : fallback)
+    return (
+      existsSync(book)
+        ? templateSection(readFileSync(book, 'utf8'), name)
+        : existsSync(path)
+          ? readFileSync(path, 'utf8')
+          : fallback
+    )
       .replaceAll('{{id}}', id)
       .replaceAll('{{component}}', component ?? '');
   };

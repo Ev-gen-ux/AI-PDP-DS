@@ -11,6 +11,7 @@ import {
 import { dirname, resolve } from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import { safePath, readProject } from './project.js';
+import { templateSection } from './journal.js';
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const read = (root, path) => readFileSync(safePath(root, path));
 function atomic(path, bytes) {
@@ -32,7 +33,7 @@ export function installTooling(factoryRoot, projectRoot) {
   const lock = safePath(root, '.tooling-install.lock', true);
   const fd = openSync(lock, 'wx');
   try {
-    const kit = JSON.parse(read(factoryRoot, 'templates/project-tooling.json'));
+    const kit = JSON.parse(read(factoryRoot, 'templates/project/tooling.json'));
     if (
       kit.schemaVersion !== 1 ||
       !/^\d+\.\d+\.\d+$/.test(kit.version) ||
@@ -57,7 +58,11 @@ export function installTooling(factoryRoot, projectRoot) {
       )
         throw Error('Invalid or duplicate tooling target');
       seen.add(row.target);
-      const content = read(factoryRoot, row.source),
+      const source = read(factoryRoot, row.source);
+      const content =
+          row.section === undefined
+            ? source
+            : Buffer.from(templateSection(source.toString('utf8'), row.section)),
         path = safePath(root, row.target, true),
         sha256 = hash(content);
       managed[row.target] = sha256;
