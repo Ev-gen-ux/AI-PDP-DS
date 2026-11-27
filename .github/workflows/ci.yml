@@ -39,7 +39,7 @@ jobs:
           cache-dependency-path: projects/ai-pdp-ds/package-lock.json
       - run: npm ci --prefer-offline --no-audit
       - run: npm run quality:report
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ai-pdp-ds-quality
