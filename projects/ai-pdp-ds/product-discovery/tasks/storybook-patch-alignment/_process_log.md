@@ -1,0 +1,46 @@
+# Task: storybook-patch-alignment
+
+<!-- prettier-ignore-start -->
+
+<!-- STATE:START -->
+## STATE
+
+- version: 2
+- id: "storybook-patch-alignment"
+- system: "ai-pdp-ds"
+- title: "Align Storybook patch versions after security update"
+- action: "repair"
+- object: "system"
+- status: "review"
+- revision: 6
+- updatedAt: "2026-11-27T12:44:24.173Z"
+- scope: "Correct Storybook patch-family mismatch observed during authorized PR integration."
+- brief: {"path":"product-discovery/tasks/storybook-patch-alignment/brief.md","sha256":"59ef8c4156ee5cf7220aa05df35c3b2d64394360e2383ca73d83073f87f434b0"}
+- spec: null
+- nextStep: "Merge only after required current-base full CI. Owner visual acceptance remains separate."
+- questions: []
+- decisions: ["Owner authorized sequential PR review/integration; this clear compatibility repair preserves accepted component contracts."]
+- inputs: [{"path":"package.json","sha256":"7fc83d9f6bf6ed1a063f33d7ebfea6f2ea115f401fe038ca05ac564e898f4fda"},{"path":"package-lock.json","sha256":"9ffd4a35ee8f8653f3e0a7da275f316ac63c393c75d81667a0f06eb389a1e98c"},{"path":"product-discovery/tasks/storybook-patch-alignment/verification.md","sha256":"0d40de6ab999961c512600f81d524c8ab3ad6039be30cefb4460b9cc7691c1e8"}]
+- evidence: []
+- exceptions: []
+- specApproval: null
+- acceptance: null
+- blockedReason: null
+- returnStatus: null
+<!-- STATE:END -->
+
+<!-- prettier-ignore-end -->
+
+## Journal
+
+- 2026-11-27T12:40:21.902Z: task created; unknown requirements remain open.
+
+- 2026-11-27T12:40:21.922Z: discovery → discovery; revision 2.
+
+- 2026-11-27T12:40:21.930Z: discovery → ready; revision 3.
+
+- 2026-11-27T12:40:21.937Z: ready → implementation; revision 4.
+
+- 2026-11-27T12:44:24.166Z: implementation → implementation; revision 5.
+
+- 2026-11-27T12:44:24.175Z: implementation → review; revision 6.
