@@ -1,0 +1,58 @@
+[
+  {
+    "fixed": "11.0.1",
+    "ghsa": "GHSA-g3hv-75wg-m249",
+    "number": 150,
+    "package": "minimatch",
+    "severity": "medium"
+  },
+  {
+    "fixed": "1.1.21",
+    "ghsa": "GHSA-q2hr-2g5m-vwhr",
+    "number": 108,
+    "package": "brace-expansion",
+    "severity": "medium"
+  },
+  {
+    "fixed": "2.1.7",
+    "ghsa": "GHSA-q2hr-2g5m-vwhr",
+    "number": 107,
+    "package": "brace-expansion",
+    "severity": "medium"
+  },
+  {
+    "fixed": "5.0.12",
+    "ghsa": "GHSA-q2hr-2g5m-vwhr",
+    "number": 106,
+    "package": "brace-expansion",
+    "severity": "medium"
+  },
+  {
+    "fixed": "2.1.2",
+    "ghsa": "GHSA-3jxr-9vmj-r5cp",
+    "number": 45,
+    "package": "brace-expansion",
+    "severity": "high"
+  },
+  {
+    "fixed": "1.1.16",
+    "ghsa": "GHSA-3jxr-9vmj-r5cp",
+    "number": 44,
+    "package": "brace-expansion",
+    "severity": "high"
+  },
+  {
+    "fixed": "5.0.7",
+    "ghsa": "GHSA-3jxr-9vmj-r5cp",
+    "number": 43,
+    "package": "brace-expansion",
+    "severity": "high"
+  },
+  {
+    "fixed": "11.1.1",
+    "ghsa": "GHSA-w5hq-g745-h8pq",
+    "number": 15,
+    "package": "uuid",
+    "severity": "medium"
+  }
+]
