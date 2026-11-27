@@ -12,8 +12,10 @@ export function safePath(root, name, missing = false) {
   if (typeof name !== 'string' || !name || isAbsolute(name) || name.includes('\\'))
     throw Error('Unsafe project-relative path');
   const parts = name.split('/');
-  if (parts.some((p) => !p || p === '.' || p === '..' || p === '.git'))
+  if (parts.some((p) => !p || p === '.' || p === '..' || p.toLowerCase() === '.git'))
     throw Error('Unsafe project-relative path');
+  if (parts.some((p) => /^\.env(?:\.|$)/i.test(p) && p !== '.env.example'))
+    throw Error('Private environment files are not allowed as project paths');
   let current = root;
   for (const part of parts) {
     current = join(current, part);
