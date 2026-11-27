@@ -1,0 +1,3 @@
+# Dependency security review, round 2
+
+Owner authorized implementation of the next 10 Dependabot PRs: 131,132,134,135,137,138,139,140,141,142. Review exact diffs and compatibility, integrate sequentially only after current-base developer and ai-pdp-ds CI; close overlapping proposals only after verifying their changes are in main. Preserve component API, token semantics, Storybook 8.6.19 alignment and consumer engines. Verify Style Dictionary patch output against the existing generator. No Figma operations, publication, framework/platform work or protection bypass. Newly generated PRs are recorded separately.
